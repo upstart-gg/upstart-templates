@@ -1,0 +1,41 @@
+{%- comment -%} Cast and credits as a printed program sets them, on muslin: the role (italic) and the actor, the job and the name. Each list item is "Role / Name"; an actor whose name is a record of `company` links to their place on the company page. Pass `production` and `data`. {%- endcomment -%}
+<section id="cast" class="bg-secondary text-secondary-content">
+  <div class="mx-auto max-w-[84rem] px-5 py-20 md:px-10 md:py-24">
+    <div class="border-b-2 border-secondary-content pb-6 text-center">
+      <p class="label">The program</p>
+      <h2 class="title mt-3 text-[clamp(3rem,5vw+1rem,6rem)]">{{ production.title }}</h2>
+      <p class="credit mt-2">{{ production.author }}{% if production.version != blank %} · {{ production.version }}{% endif %}</p>
+    </div>
+    <div class="figures mt-10 grid gap-12 md:grid-cols-2 md:gap-16">
+      <div>
+        <h3 class="text-[1.875rem]">Cast</h3>
+        <dl class="mt-4">
+          {%- for line in production.cast %}
+          {%- assign parts = line | split: " / " %}
+          {%- assign actor = parts | last | strip %}
+          <div class="flex items-baseline gap-3 border-b border-secondary-content/20 py-2">
+            <dt class="italic">{{ parts | first | strip }}</dt>
+            <span class="min-w-4 flex-1 border-b border-dotted border-secondary-content/40" aria-hidden="true"></span>
+            <dd class="text-right font-medium">
+              {%- assign linked = false %}{% for member in data.company %}{% if member.name == actor %}{% assign linked = true %}<a href="/company#{{ member.id }}" class="hover:underline">{{ actor }}</a>{% endif %}{% endfor %}{% unless linked %}{{ actor }}{% endunless -%}
+            </dd>
+          </div>
+          {%- endfor %}
+        </dl>
+      </div>
+      <div>
+        <h3 class="text-[1.875rem]">Creative team</h3>
+        <dl class="mt-4">
+          {%- for line in production.creative %}
+          {%- assign parts = line | split: " / " %}
+          <div class="flex items-baseline gap-3 border-b border-secondary-content/20 py-2">
+            <dt>{{ parts | first | strip }}</dt>
+            <span class="min-w-4 flex-1 border-b border-dotted border-secondary-content/40" aria-hidden="true"></span>
+            <dd class="text-right font-medium">{{ parts | last | strip }}</dd>
+          </div>
+          {%- endfor %}
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>

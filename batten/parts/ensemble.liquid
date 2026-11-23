@@ -1,0 +1,21 @@
+<section class="border-t border-base-300 bg-base-100 text-base-content" aria-labelledby="ensemble-title">
+  <div class="mx-auto max-w-[84rem] px-5 py-20 md:px-10 md:py-24">
+    <p class="label">The ensemble</p>
+    <h2 id="ensemble-title" class="mt-3 text-[clamp(2.5rem,4vw+1rem,4.5rem)]">Twelve actors, all season</h2>
+    <ul class="mt-12 grid grid-cols-2 gap-x-5 gap-y-10 sm:grid-cols-3 lg:grid-cols-4" data-reveal="stagger">
+      {%- for member in data.company %}{% if member.group == "ensemble" %}
+      <li id="{{ member.id }}" class="scroll-mt-28">
+        {%- if member.photo %}
+        <div class="bw"><img src="{{ member.photo }}" class="aspect-[4/5] w-full object-cover"></div>
+        {%- else %}
+        {%- assign names = member.name | split: " " %}
+        <div class="weave grid aspect-[4/5] place-items-center border border-base-300" aria-hidden="true"><span class="title text-[clamp(3.5rem,6vw,5.5rem)] text-base-content/80">{{ names.first | slice: 0 }}{{ names.last | slice: 0 }}</span></div>
+        {%- endif %}
+        <h3 class="mt-4 text-[1.75rem] leading-none">{{ member.name }}</h3>
+        {%- if member.since %}<p class="mt-2 text-[1rem] text-base-content/70">In the company since {{ member.since }}</p>{% endif %}
+        {%- if member.this_season != blank %}<p class="mt-1 text-[1rem]"><span class="text-base-content/70">This season:</span> {{ member.this_season }}</p>{% endif %}
+      </li>
+      {%- endif %}{% endfor %}
+    </ul>
+  </div>
+</section>

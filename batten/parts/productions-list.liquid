@@ -1,0 +1,26 @@
+<section class="border-t border-base-300 bg-base-100 text-base-content" aria-labelledby="productions-title">
+  <div class="mx-auto max-w-[84rem] px-5 py-20 md:px-10 md:py-24">
+    <p class="label">Six productions</p>
+    <h2 id="productions-title" class="mt-3 text-[clamp(2.5rem,4vw+1rem,4.5rem)]">The plays</h2>
+    <ul class="mt-10 divide-y divide-base-300 border-y border-base-300">
+      {%- for production in data.productions %}
+      <li class="grid gap-5 py-8 sm:grid-cols-[6.5rem_1fr] md:gap-8 lg:grid-cols-[6.5rem_1fr_auto] lg:items-center" data-opens="{{ production.opens }}" data-closes="{{ production.closes }}">
+        <div class="flex w-24 flex-col items-center self-start bg-base-200 py-3">
+          <span class="gothic figures text-[3.5rem] leading-none">{{ production.opens | append: "T12:00:00" | date: "%-d" }}</span>
+          <span class="gothic mt-1 text-[1.25rem] text-base-content/80">{{ production.opens | append: "T12:00:00" | date: "%b" }}</span>
+        </div>
+        <div class="min-w-0">
+          <p class="flex flex-wrap gap-2"><span class="run-tag" data-tag="now">On now</span><span class="run-tag" data-tag="next">Next</span><span class="run-tag" data-tag="later">On sale</span><span class="run-tag" data-tag="closed">Closed</span>{% if production.in_rep_with != blank %}<span class="rep-tag">In rep</span>{% endif %}</p>
+          <h3 class="title mt-3 text-[clamp(2.75rem,3vw+1.5rem,4.5rem)]"><a href="/season/{{ production.id }}" class="hover:text-primary">{{ production.title }}</a></h3>
+          <p class="credit mt-2">{{ production.author }}{% if production.version != blank %} · {{ production.version }}{% endif %}{% if production.director != blank %} · {{ production.director }}{% endif %}</p>
+          <p class="figures mt-3 flex flex-wrap gap-x-5 gap-y-1 text-[1rem] text-base-content/80"><span>{{ production.opens | append: "T12:00:00" | date: "%b %-d" }} – {{ production.closes | append: "T12:00:00" | date: "%b %-d" }}</span><span>{{ production.stage }}</span><span>{{ production.running_time }}</span><span>{{ production.ages }}</span></p>
+        </div>
+        <div class="flex flex-wrap gap-3 sm:col-start-2 lg:col-start-3">
+          {%- if production.tickets %}<a href="{{ production.tickets }}" class="btn btn-primary">Tickets</a>{% endif %}
+          <a href="/season/{{ production.id }}" class="btn btn-outline">About the play</a>
+        </div>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,23 @@
+{
+  "name": "Batten access performances table",
+  "kind": "features",
+  "source": "upstart",
+  "description": "A light muslin band with a table of every production’s ASL-interpreted, audio-described, open-captioned and relaxed performances, their dates in tabular figures and a dash where there is none; on a phone, a ruled list per production with its marks.",
+  "tags": ["access", "accessibility", "ASL", "audio description", "captions", "relaxed performance", "table"],
+  "mood": ["professional", "editorial"],
+  "synonyms": [
+    "access performances",
+    "accessibility",
+    "ASL",
+    "captioned",
+    "représentations accessibles",
+    "accessibilité",
+    "LSF",
+    "audiodescription",
+    "sous-titrage"
+  ],
+  "data": {
+    "name": "productions",
+    "family": "collection"
+  }
+}

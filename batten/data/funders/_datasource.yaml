@@ -1,0 +1,23 @@
+label: With thanks
+fields:
+  - name: name
+    label: Name
+    kind: text
+    required: true
+  - name: logo
+    label: Logo
+    kind: image
+  - name: href
+    label: Link
+    kind: link
+  - name: caption
+    label: Caption
+    kind: text
+order:
+  [
+    riverside-arts-fund,
+    kettle-river-millwork,
+    halvard-family-foundation,
+    sawmill-row-credit-union,
+    ostrander-family-trust,
+  ]

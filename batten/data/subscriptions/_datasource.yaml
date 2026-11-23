@@ -1,0 +1,50 @@
+label: Subscription requests
+collected: true
+answer: subscriptions-thanks
+body: notes
+messages:
+  required: "{field} is needed."
+  invalid: "{field} doesn't look right. Please check it."
+  too_many: "Too many requests were sent from here. Please try again in a few minutes."
+  sent: "Thank you. The box office will call you."
+fields:
+  - name: package
+    label: Package
+    kind: choice
+    required: true
+    choices: [Full Season, Pick Four, Under 30, Flex Pass]
+  - name: night
+    label: Your night
+    kind: choice
+    required: true
+    choices: [Weeknight, Friday evening, Saturday evening, Saturday matinee, Sunday matinee]
+  - name: seats
+    label: How many seats
+    kind: number
+    required: true
+  - name: plays
+    label: The plays, for Pick Four
+    kind: list
+    choices: [Uncle Vanya, Ice Out, The Snow Queen, Hedda Gabler, Short Days, Twelfth Night]
+  - name: seating
+    label: Where you like to sit
+    kind: choice
+    choices: [Close to the stage, In the middle, On the aisle, A wheelchair space]
+  - name: access
+    label: Anything that would make your visit easier
+    kind: text
+  - name: name
+    label: Your name
+    kind: text
+    required: true
+  - name: email
+    label: Your email
+    kind: email
+    required: true
+  - name: phone
+    label: Your phone
+    kind: phone
+    required: true
+  - name: notes
+    label: Anything else
+    kind: markdown

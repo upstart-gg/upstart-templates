@@ -1,0 +1,9 @@
+{
+  "alt": "A painted backdrop in grays: a frozen lake at night, one ice-fishing house far off with its window lit",
+  "generated": {
+    "model": "gemini/gemini-nano-banana-2.1",
+    "prompt": "A theatrical painted backdrop, a scenic artist's drop painted in grisaille, shades of gray and soft black on raw muslin, broad visible brush strokes and the weave of the cloth showing, no people, no text, a wide stage composition: a frozen lake at night under a huge sky, one ice-fishing house far off with its window lit. A close view of the painted surface filling the whole frame edge to edge, with no edge of the cloth, no pipe, no stage and no floor around it; the scene's weight in the middle third of the width, deep grays in the lower part. The same hand and style as the reference drop.",
+    "date": "2026-11-23T17:03:47.978Z",
+    "references": ["/media/cloth-uncle-vanya.webp"]
+  }
+}

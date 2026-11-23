@@ -1,0 +1,21 @@
+:root {
+  --theme-color-primary: oklch(0.66 0.28 320);
+  --theme-color-primary-content: oklch(0.145 0.006 320);
+  --theme-color-secondary: oklch(0.88 0.03 80);
+  --theme-color-secondary-content: oklch(0.145 0.006 320);
+  --theme-color-accent: oklch(0.86 0.085 320);
+  --theme-color-accent-content: oklch(0.145 0.006 320);
+  --theme-color-neutral: oklch(0.105 0.004 320);
+  --theme-color-neutral-content: oklch(0.955 0.006 320);
+  --theme-color-surface: oklch(0.145 0.006 320);
+  --theme-color-surface-alt: oklch(0.205 0.012 320);
+  --theme-color-border: oklch(0.32 0.012 320);
+  --theme-color-text: oklch(0.955 0.006 320);
+  --theme-font-heading: "League Gothic", "Arial Narrow", "Helvetica Neue", Impact, sans-serif;
+  --theme-font-body: "Spectral", Georgia, "Times New Roman", serif;
+  --theme-radius: 0rem;
+  --theme-radius-field: 0rem;
+  --theme-depth: 0;
+  --theme-size: 0.25rem;
+  --theme-border: 1px;
+}

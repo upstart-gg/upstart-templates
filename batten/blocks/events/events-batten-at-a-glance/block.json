@@ -1,0 +1,23 @@
+{
+  "name": "Batten season at a glance",
+  "kind": "events",
+  "source": "upstart",
+  "description": "The season’s months as columns, each as wide as its days, a lane per stage and each production a bar in the house color from its first performance to its last; two plays in rep share a lane as two thin bars and a pale hairline marks today. On a phone, a list of the months with the productions that cross each.",
+  "tags": ["season", "calendar", "timeline", "months", "productions", "theater", "in rep"],
+  "mood": ["dark", "professional", "editorial"],
+  "synonyms": [
+    "season calendar",
+    "timeline",
+    "what’s on when",
+    "month by month",
+    "calendrier de saison",
+    "frise",
+    "mois par mois",
+    "programmation",
+    "agenda"
+  ],
+  "data": {
+    "name": "productions",
+    "family": "collection"
+  }
+}

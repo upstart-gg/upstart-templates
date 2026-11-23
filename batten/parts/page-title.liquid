@@ -1,0 +1,8 @@
+{%- comment -%} A page's first screen: its label, its title in League Gothic, and a line. Pass `label`, `title` and `text`. {%- endcomment -%}
+<section class="bg-base-100 text-base-content">
+  <div class="mx-auto max-w-[84rem] px-5 pt-20 pb-12 md:px-10 md:pt-28 md:pb-16">
+    <p class="label">{{ label }}</p>
+    <h1 class="title mt-4 text-[clamp(3.75rem,9vw+1rem,10rem)]">{{ title }}</h1>
+    <p class="intro mt-6 max-w-[48ch] text-base-content/90">{{ text }}</p>
+  </div>
+</section>

@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Visit — Bottineau Rep</title>
+<meta name="description" content="Visit Bottineau Rep at the Sash Works, 212 Sawmill Row NE in Northeast Minneapolis: the box office, getting here, access at the theater and the bar in the loading dock.">
+<meta property="og:title" content="Visit — Bottineau Rep">
+<meta property="og:description" content="The Sash Works, 212 Sawmill Row NE, Northeast Minneapolis: the box office, getting here and access.">
+</head>
+<body>
+{% render 'header' %}
+<main>
+{% render 'page-title', label: "Bottineau Rep · Visit", title: "Visit", text: "The Sash Works, at 212 Sawmill Row NE, between the river and the rail yards. The doors and the bar open an hour before every performance." %}
+{% render 'box-office' %}
+{% render 'getting-here' %}
+{% render 'access-visit' %}
+{% render 'notes', items: data["visit-notes"], label: "At the theater", title: "On the night", image: "/media/battens-lit.jpg" %}
+{% render 'faq', items: data["visit-faq"], label: "Questions", title: "Before you visit", columns: true %}
+</main>
+{% render 'footer' %}
+</body>
+</html>

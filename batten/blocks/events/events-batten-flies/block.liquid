@@ -1,0 +1,45 @@
+<section id="season" class="bg-base-100 text-base-content" data-flies aria-labelledby="flies-title">
+  <div class="flies-stage" data-flies-stage>
+    <div class="flies-label px-5 pt-16 md:px-10 lg:pt-20">
+      <p class="label" id="flies-title">The season · six plays</p>
+    </div>
+    <div class="flies-cloths">
+      {%- for production in data.productions %}
+      <article class="cloth" data-cloth id="{{ production.id }}" data-opens="{{ production.opens }}" data-closes="{{ production.closes }}">
+        <div class="cloth-pipe" data-batten aria-hidden="true"></div>
+        <div class="cloth-face">
+          {%- if production.cloth %}
+          <img src="{{ production.cloth }}" class="cloth-painting bw">
+          {%- else %}
+          <div class="cloth-painting weave" aria-hidden="true"></div>
+          {%- endif %}
+          <div class="cloth-scrim" aria-hidden="true"></div>
+          <div class="cloth-texts">
+            <p class="flex flex-wrap gap-2">
+              <span class="run-tag" data-tag="now">On now</span><span class="run-tag" data-tag="next">Next</span><span class="run-tag" data-tag="later">On sale</span><span class="run-tag" data-tag="closed">Closed</span>
+              {%- if production.in_rep_with != blank %}{% for other in data.productions %}{% if other.id == production.in_rep_with %}
+              <span class="rep-tag">In rep with {{ other.title }}</span>
+              {%- endif %}{% endfor %}{% endif %}
+            </p>
+            <h3 class="title mt-4 max-w-[16ch] text-[clamp(3.75rem,9vw+1rem,11rem)]">{{ production.title }}</h3>
+            <p class="credit mt-4 max-w-[60ch]">{{ production.author }}{% if production.version != blank %} · {{ production.version }}{% endif %}{% if production.director != blank %} · {{ production.director }}{% endif %}</p>
+            <p class="gothic mt-3 text-[1.75rem] md:text-[2.25rem]">{{ production.opens | append: "T12:00:00" | date: "%b %-d" }} – {{ production.closes | append: "T12:00:00" | date: "%b %-d" }} · {{ production.stage }}</p>
+            <div class="mt-6 flex flex-wrap gap-3">
+              {%- if production.tickets %}<a href="{{ production.tickets }}" class="btn btn-primary">Tickets</a>{% endif %}
+              <a href="/season/{{ production.id }}" class="btn btn-outline">About the play</a>
+            </div>
+          </div>
+        </div>
+        <div class="cloth-hem" aria-hidden="true"></div>
+      </article>
+      {%- endfor %}
+    </div>
+    <nav aria-label="The season's cues" class="flies-rail border-y border-base-300 bg-base-200">
+      <ol class="flex flex-wrap gap-x-6 gap-y-2 px-5 py-3 md:px-10" data-flies-rail>
+        {%- for production in data.productions %}
+        <li><a href="#{{ production.id }}" class="flies-cue gothic text-[1.25rem] hover:text-primary"><span class="flies-cue-number figures inline-grid min-w-[1.6em] place-items-center border border-current px-1 pt-0.5">{{ forloop.index }}</span>{{ production.title }}</a></li>
+        {%- endfor %}
+      </ol>
+    </nav>
+  </div>
+</section>

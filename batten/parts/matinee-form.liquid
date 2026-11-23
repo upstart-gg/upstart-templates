@@ -1,0 +1,63 @@
+<section id="matinee" class="bg-secondary text-secondary-content" aria-labelledby="matinee-title">
+  <div class="mx-auto grid max-w-[84rem] gap-10 px-5 py-20 md:px-10 md:py-24 lg:grid-cols-12">
+    <div class="lg:col-span-4">
+      <p class="label">For schools</p>
+      <h2 id="matinee-title" class="mt-3 text-[clamp(2.5rem,4vw+1rem,4.5rem)]">Ask for a student matinee</h2>
+      <p class="body-copy mt-5">Weekday mornings at 10:30, $12 a student, teachers and chaperones free. June sends a date and the study guide within a week.</p>
+    </div>
+    <form hx-post="/_data/matinee-requests" hx-target="this" hx-swap="outerHTML" hx-status:422="target:#matinee-requests-problems swap:innerHTML" class="grid gap-x-6 gap-y-2 sm:grid-cols-2 lg:col-span-8">
+      <fieldset class="fieldset sm:col-span-2">
+        <legend class="fieldset-legend text-secondary-content">School</legend>
+        <input name="school" class="input w-full" required maxlength="200" autocomplete="organization">
+      </fieldset>
+      <fieldset class="fieldset">
+        <legend class="fieldset-legend text-secondary-content">Teacher's name</legend>
+        <input name="teacher" class="input w-full" required maxlength="200" autocomplete="name">
+      </fieldset>
+      <fieldset class="fieldset">
+        <legend class="fieldset-legend text-secondary-content">Grade</legend>
+        <input name="grade" class="input w-full" required maxlength="40" placeholder="Grade 8">
+      </fieldset>
+      <fieldset class="fieldset">
+        <legend class="fieldset-legend text-secondary-content">Number of students</legend>
+        <input name="students" type="number" min="1" max="284" class="input w-full" required>
+      </fieldset>
+      <fieldset class="fieldset">
+        <legend class="fieldset-legend text-secondary-content">Number of adults</legend>
+        <input name="adults" type="number" min="0" max="60" class="input w-full">
+      </fieldset>
+      <fieldset class="fieldset sm:col-span-2">
+        <legend class="fieldset-legend text-secondary-content">The play</legend>
+        <select name="play" class="select w-full" required>
+          {%- for production in data.productions %}<option>{{ production.title }}</option>{% endfor %}
+        </select>
+      </fieldset>
+      <fieldset class="fieldset">
+        <legend class="fieldset-legend text-secondary-content">A date that would suit</legend>
+        <input name="first_date" type="date" class="input w-full" required>
+      </fieldset>
+      <fieldset class="fieldset">
+        <legend class="fieldset-legend text-secondary-content">Another date that would suit</legend>
+        <input name="second_date" type="date" class="input w-full">
+      </fieldset>
+      <fieldset class="fieldset sm:col-span-2">
+        <legend class="fieldset-legend text-secondary-content">Access needs</legend>
+        <input name="access" class="input w-full" maxlength="300" placeholder="Wheelchair spaces, an ASL interpreter, a quiet room…">
+      </fieldset>
+      <fieldset class="fieldset">
+        <legend class="fieldset-legend text-secondary-content">Email</legend>
+        <input name="email" type="email" class="input w-full" required maxlength="200" autocomplete="email">
+      </fieldset>
+      <fieldset class="fieldset">
+        <legend class="fieldset-legend text-secondary-content">Phone</legend>
+        <input name="phone" type="tel" class="input w-full" maxlength="40" autocomplete="tel">
+      </fieldset>
+      <fieldset class="fieldset sm:col-span-2">
+        <legend class="fieldset-legend text-secondary-content">Anything else</legend>
+        <textarea name="notes" class="textarea w-full" rows="3" maxlength="2000"></textarea>
+      </fieldset>
+      <div id="matinee-requests-problems" class="sm:col-span-2"></div>
+      <div class="sm:col-span-2"><button class="btn mt-2 border-0 bg-secondary-content text-secondary hover:bg-base-200">Ask for a matinee</button></div>
+    </form>
+  </div>
+</section>

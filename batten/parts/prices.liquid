@@ -1,0 +1,31 @@
+{%- comment -%} Ticket prices as ruled rows over `ticket-prices`, then pay-what-you-can Thursdays and the box office. {%- endcomment -%}
+<section class="bg-base-100 text-base-content" aria-labelledby="prices-title">
+  <div class="mx-auto grid max-w-[84rem] gap-12 px-5 py-20 md:px-10 md:py-24 lg:grid-cols-12">
+    <div class="lg:col-span-4" data-reveal>
+      <p class="label">Tickets</p>
+      <h2 id="prices-title" class="mt-3 text-[clamp(2.5rem,4vw+1rem,4.5rem)]">Prices</h2>
+      <p class="body-copy mt-5">Sold by the box office, online, by phone and at the door from two hours before each performance.</p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        {%- for item in data.navigation %}{% if item.place == "button" %}<a href="{{ item.href }}" class="btn btn-primary">{{ item.label }}</a>{% endif %}{% endfor %}
+        <a href="tel:+16125550163" class="btn btn-outline figures">(612) 555-0163</a>
+      </div>
+    </div>
+    <div class="lg:col-span-8">
+      <ul class="divide-y divide-base-300 border-y border-base-300" data-reveal="stagger">
+        {%- for price in data["ticket-prices"] %}
+        <li class="grid gap-2 py-5 sm:grid-cols-[1fr_auto] sm:items-baseline sm:gap-8">
+          <div>
+            <h3 class="text-[1.875rem]">{{ price.name }}</h3>
+            <p class="mt-1 text-base-content/80">{{ price.description }}</p>
+          </div>
+          <p class="sm:text-right"><span class="gothic figures text-[2.5rem] text-primary">{{ price.price }}</span><span class="block text-[1rem] text-base-content/70">{{ price.period }}</span></p>
+        </li>
+        {%- endfor %}
+      </ul>
+      <div class="mt-8 border-l-4 border-primary pl-5">
+        <h3 class="text-[1.875rem]">Pay-what-you-can Thursdays</h3>
+        <p class="body-copy mt-1">Forty seats every Thursday evening, any play, for whatever you can give. At the door from 6:30, first come first seated.</p>
+      </div>
+    </div>
+  </div>
+</section>

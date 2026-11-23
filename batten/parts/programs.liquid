@@ -1,0 +1,24 @@
+<section id="programs" class="bg-base-100 text-base-content" aria-labelledby="programs-title">
+  <div class="mx-auto max-w-[84rem] px-5 pb-20 md:px-10 md:pb-24">
+    <h2 id="programs-title" class="sr-only">The programs</h2>
+    <ul class="divide-y divide-base-300 border-y border-base-300">
+      {%- for program in data.programs %}
+      <li class="grid gap-6 py-10 lg:grid-cols-12">
+        <div class="lg:col-span-4">
+          <h3 class="title text-[clamp(2.5rem,3vw+1.25rem,4rem)]">{{ program.name }}</h3>
+          {%- if program.image %}<div class="bw mt-6"><img src="{{ program.image }}" class="aspect-[3/2] w-full object-cover"></div>{% endif %}
+        </div>
+        <dl class="figures divide-y divide-base-300 self-start border-y border-base-300 text-[1rem] lg:col-span-3">
+          {%- if program.who != blank %}<div class="py-2.5"><dt class="label">For</dt><dd>{{ program.who }}</dd></div>{% endif %}
+          {%- if program.when != blank %}<div class="py-2.5"><dt class="label">When</dt><dd>{{ program.when }}</dd></div>{% endif %}
+          {%- if program.price != blank %}<div class="py-2.5"><dt class="label">Price</dt><dd class="gothic text-[1.625rem] text-primary">{{ program.price }}</dd></div>{% endif %}
+        </dl>
+        <div class="lg:col-span-5">
+          <p class="body-copy">{{ program.summary }}</p>
+          {%- if program.cta %}<a href="{{ program.href }}" class="btn btn-outline mt-6">{{ program.cta }}</a>{% endif %}
+        </div>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>

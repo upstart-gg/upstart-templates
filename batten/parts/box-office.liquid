@@ -1,0 +1,26 @@
+<section class="bg-base-100 text-base-content" aria-labelledby="box-office-title">
+  <div class="mx-auto grid max-w-[84rem] gap-12 px-5 pb-20 md:px-10 md:pb-24 lg:grid-cols-12">
+    <div class="lg:col-span-5" data-reveal>
+      <p class="label">The box office</p>
+      <h2 id="box-office-title" class="mt-3 text-[clamp(2.5rem,4vw+1rem,4.5rem)]">Tickets, seats and questions</h2>
+      <p class="body-copy mt-5">In the lobby of the Sash Works, on the phone and by email. Open Tuesday to Saturday from noon to 6, and from two hours before each performance.</p>
+      <p class="gothic figures mt-8 text-[2rem]"><a href="tel:+16125550163" class="text-primary hover:underline">(612) 555-0163</a></p>
+      <p class="mt-1"><a href="mailto:boxoffice@bottineaurep.example" class="text-link">boxoffice@bottineaurep.example</a></p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        {%- for item in data.navigation %}{% if item.place == "button" %}<a href="{{ item.href }}" class="btn btn-primary">{{ item.label }}</a>{% endif %}{% endfor %}
+        <a href="https://www.openstreetmap.org/search?query=212%20Sawmill%20Row%20NE%2C%20Minneapolis" class="btn btn-outline" target="_blank" rel="noopener">Get directions</a>
+      </div>
+    </div>
+    <table class="figures w-full self-start border-collapse text-left lg:col-span-6 lg:col-start-7">
+      <caption class="sr-only">The box office's hours</caption>
+      <tbody>
+        {%- for slot in data.hours %}
+        <tr class="border-b border-base-300 first:border-t">
+          <th scope="row" class="gothic py-3.5 pr-6 text-[1.375rem] font-normal">{{ slot.day }}</th>
+          <td class="py-3.5">{{ slot.hours }}{% if slot.note != blank %}<span class="block text-[1rem] text-base-content/70">{{ slot.note }}</span>{% endif %}</td>
+        </tr>
+        {%- endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>

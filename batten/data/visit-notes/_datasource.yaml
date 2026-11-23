@@ -1,0 +1,8 @@
+label: At the theater
+fields:
+  - name: title
+    kind: text
+    required: true
+  - name: text
+    kind: text
+order: [the-bar, latecomers, coat-check, children]

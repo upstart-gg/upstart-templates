@@ -1,0 +1,24 @@
+{%- comment -%} The next production's cloth hanging in the flies, only its lower third showing (data-next-cloth): on hover it comes down a little, and a click brings its page down whole. Pass `production` (this page's) and `data`. {%- endcomment -%}
+{%- assign next_p = nil -%}
+{%- assign found = false -%}
+{%- for p in data.productions %}{% if found %}{% assign next_p = p %}{% break %}{% endif %}{% if p.id == production.id %}{% assign found = true %}{% endif %}{% endfor -%}
+{%- unless next_p %}{% assign next_p = data.productions | first %}{% endunless -%}
+{%- if next_p and next_p.id != production.id %}
+<section class="bg-base-100 pt-16 text-base-content" aria-labelledby="next-cloth-title">
+  <p id="next-cloth-title" class="label mx-auto max-w-[84rem] px-5 pb-4 md:px-10">Next on the rail</p>
+  <a href="/season/{{ next_p.id }}" class="next-cloth-window block" data-next-cloth>
+    <div class="cloth" data-opens="{{ next_p.opens }}" data-closes="{{ next_p.closes }}">
+      <div class="cloth-face">
+        {%- if next_p.cloth %}<img src="{{ next_p.cloth }}" class="cloth-painting bw">{% else %}<div class="cloth-painting weave" aria-hidden="true"></div>{% endif %}
+        <div class="cloth-scrim" aria-hidden="true"></div>
+        <div class="cloth-texts">
+          <p class="flex flex-wrap gap-2"><span class="run-tag" data-tag="now">On now</span><span class="run-tag" data-tag="next">Next</span><span class="run-tag" data-tag="later">On sale</span><span class="run-tag" data-tag="closed">Closed</span></p>
+          <p class="title mt-3 text-[clamp(3.25rem,7vw+1rem,8rem)]">{{ next_p.title }}</p>
+          <p class="gothic mt-2 text-[1.5rem]">{{ next_p.opens | append: "T12:00:00" | date: "%b %-d" }} – {{ next_p.closes | append: "T12:00:00" | date: "%b %-d" }} · {{ next_p.stage }}</p>
+        </div>
+      </div>
+      <div class="cloth-hem" aria-hidden="true"></div>
+    </div>
+  </a>
+</section>
+{%- endif %}

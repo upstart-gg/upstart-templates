@@ -1,0 +1,19 @@
+{
+  "name": "Batten statement cloth",
+  "kind": "hero",
+  "source": "upstart",
+  "description": "A black cloth hung on its pipe under the theater portal, its three pick-up lines rising out of sight: a small box office line, a label, one huge statement in condensed poster capitals with its last words underlined in the house color, a sentence, two buttons and a ruled foot. It comes down from the flies and swings a little once the page has loaded.",
+  "tags": ["hero", "dark statement", "theater", "season", "statement", "cloth", "no image"],
+  "mood": ["dark", "bold", "editorial"],
+  "synonyms": [
+    "theater hero",
+    "season opener",
+    "dark statement",
+    "stage",
+    "en-tête de théâtre",
+    "saison",
+    "grand titre sombre",
+    "manifeste",
+    "rideau de fer"
+  ]
+}

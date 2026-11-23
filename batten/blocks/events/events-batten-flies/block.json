@@ -1,0 +1,24 @@
+{
+  "name": "Batten flies: the season as painted cloths",
+  "kind": "events",
+  "source": "upstart",
+  "description": "The season’s productions as painted cloths on their pipes, each with its title painted large at its foot, its credit line, its run, an On now / Next / On sale / Closed tag chosen by the date and its buttons. On a large screen each cloth flies in from above as the page scrolls, lands and swings, in front of the last; a rail at the stage’s foot numbers the cues. Stacked one after another on a phone, under reduced motion and while editing.",
+  "tags": ["season", "productions", "theater", "shows", "scroll", "immersive", "cloths", "on now"],
+  "mood": ["dark", "bold", "editorial"],
+  "synonyms": [
+    "season",
+    "shows",
+    "productions",
+    "what’s on",
+    "plays",
+    "saison",
+    "spectacles",
+    "à l’affiche",
+    "programmation",
+    "pièces"
+  ],
+  "data": {
+    "name": "productions",
+    "family": "collection"
+  }
+}

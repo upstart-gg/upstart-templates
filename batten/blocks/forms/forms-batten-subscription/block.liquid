@@ -1,0 +1,75 @@
+<section id="ask" class="bg-secondary text-secondary-content" aria-labelledby="ask-title">
+  <div class="mx-auto grid max-w-[84rem] gap-10 px-5 py-20 md:px-10 md:py-24 lg:grid-cols-12">
+    <div class="lg:col-span-8">
+      <p class="label">The request</p>
+      <h2 id="ask-title" class="mt-3 text-[clamp(2.5rem,4vw+1rem,4.5rem)]">Ask for a subscription</h2>
+      <p class="body-copy mt-4">Tell us what you'd like. The box office calls you within two working days to choose your seats and take payment.</p>
+      <form hx-post="/_data/subscriptions" hx-target="this" hx-swap="outerHTML" hx-status:422="target:#subscriptions-problems swap:innerHTML" class="mt-8 grid gap-x-6 gap-y-2 sm:grid-cols-2">
+        <fieldset class="fieldset">
+          <legend class="fieldset-legend text-secondary-content">Package</legend>
+          <select name="package" class="select w-full" required>
+            <option>Full Season</option><option>Pick Four</option><option>Under 30</option><option>Flex Pass</option>
+          </select>
+        </fieldset>
+        <fieldset class="fieldset">
+          <legend class="fieldset-legend text-secondary-content">Your night</legend>
+          <select name="night" class="select w-full" required>
+            <option>Weeknight</option><option>Friday evening</option><option>Saturday evening</option><option>Saturday matinee</option><option>Sunday matinee</option>
+          </select>
+        </fieldset>
+        <fieldset class="fieldset">
+          <legend class="fieldset-legend text-secondary-content">How many seats</legend>
+          <input name="seats" type="number" min="1" max="12" value="2" class="input w-full" required>
+        </fieldset>
+        <fieldset class="fieldset">
+          <legend class="fieldset-legend text-secondary-content">Where you like to sit</legend>
+          <select name="seating" class="select w-full">
+            <option>Close to the stage</option><option>In the middle</option><option>On the aisle</option><option>A wheelchair space</option>
+          </select>
+        </fieldset>
+        <fieldset class="fieldset sm:col-span-2">
+          <legend class="fieldset-legend text-secondary-content">The plays, for Pick Four</legend>
+          <div class="grid gap-2 sm:grid-cols-3">
+            <label class="flex items-center gap-2 text-[1rem]"><input type="checkbox" name="plays" value="Uncle Vanya" class="checkbox checkbox-sm">Uncle Vanya</label>
+            <label class="flex items-center gap-2 text-[1rem]"><input type="checkbox" name="plays" value="Ice Out" class="checkbox checkbox-sm">Ice Out</label>
+            <label class="flex items-center gap-2 text-[1rem]"><input type="checkbox" name="plays" value="The Snow Queen" class="checkbox checkbox-sm">The Snow Queen</label>
+            <label class="flex items-center gap-2 text-[1rem]"><input type="checkbox" name="plays" value="Hedda Gabler" class="checkbox checkbox-sm">Hedda Gabler</label>
+            <label class="flex items-center gap-2 text-[1rem]"><input type="checkbox" name="plays" value="Short Days" class="checkbox checkbox-sm">Short Days</label>
+            <label class="flex items-center gap-2 text-[1rem]"><input type="checkbox" name="plays" value="Twelfth Night" class="checkbox checkbox-sm">Twelfth Night</label>
+          </div>
+        </fieldset>
+        <fieldset class="fieldset sm:col-span-2">
+          <legend class="fieldset-legend text-secondary-content">Anything that would make your visit easier</legend>
+          <input name="access" class="input w-full" maxlength="300" placeholder="A seat near the interpreters, a step-free route, a quiet place at the interval…">
+        </fieldset>
+        <fieldset class="fieldset">
+          <legend class="fieldset-legend text-secondary-content">Your name</legend>
+          <input name="name" class="input w-full" required maxlength="200" autocomplete="name">
+        </fieldset>
+        <fieldset class="fieldset">
+          <legend class="fieldset-legend text-secondary-content">Your phone</legend>
+          <input name="phone" type="tel" class="input w-full" required maxlength="40" autocomplete="tel">
+        </fieldset>
+        <fieldset class="fieldset sm:col-span-2">
+          <legend class="fieldset-legend text-secondary-content">Your email</legend>
+          <input name="email" type="email" class="input w-full" required maxlength="200" autocomplete="email">
+        </fieldset>
+        <fieldset class="fieldset sm:col-span-2">
+          <legend class="fieldset-legend text-secondary-content">Anything else</legend>
+          <textarea name="notes" class="textarea w-full" rows="3" maxlength="2000"></textarea>
+        </fieldset>
+        <div id="subscriptions-problems" class="sm:col-span-2"></div>
+        <div class="sm:col-span-2"><button class="btn mt-2 border-0 bg-secondary-content text-secondary hover:bg-base-200">Ask for a subscription</button></div>
+      </form>
+    </div>
+    <aside class="self-start bg-secondary-content p-8 text-secondary lg:col-span-4 lg:mt-24">
+      <p class="title text-[2.75rem]">Rather call?</p>
+      <p class="gothic figures mt-2 text-[2rem] text-primary"><a href="tel:+16125550163">(612) 555-0163</a></p>
+      <dl class="figures mt-6 divide-y divide-base-300 border-y border-base-300 text-[1rem]">
+        <div class="flex justify-between gap-4 py-1.5"><dt>Tuesday to Saturday</dt><dd class="text-right opacity-80">Noon–6 pm</dd></div>
+        <div class="flex justify-between gap-4 py-1.5"><dt>Show days</dt><dd class="text-right opacity-80">From two hours before</dd></div>
+      </dl>
+      <p class="mt-6 border-l-4 border-primary pl-4">Nothing is charged until we've spoken.</p>
+    </aside>
+  </div>
+</section>

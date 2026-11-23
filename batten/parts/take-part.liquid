@@ -1,0 +1,22 @@
+<section class="bg-base-200 text-base-content">
+  <div class="mx-auto grid max-w-[84rem] gap-12 px-5 py-20 md:px-10 md:py-28 lg:grid-cols-12">
+    <div class="lg:col-span-5" data-reveal>
+      <p class="label">Take part</p>
+      <h2 class="mt-3 text-[clamp(2.5rem,4vw+1rem,4.5rem)]">Beyond the stage</h2>
+      <p class="body-copy mt-5">A theater is a building full of people who know how to make things. Come and learn some of it, at any age.</p>
+      <a href="/learn" class="btn btn-outline mt-8">Learn &amp; take part</a>
+    </div>
+    <ol class="divide-y divide-base-300 border-y border-base-300 lg:col-span-7" data-reveal="stagger">
+      {%- for door in data["home-doors"] %}
+      <li class="grid gap-3 py-6 sm:grid-cols-[3rem_1fr]">
+        <span class="gothic figures text-[2rem] text-primary">{{ forloop.index | prepend: "0" }}</span>
+        <div>
+          <h3 class="text-[1.875rem]">{{ door.title }}</h3>
+          <p class="body-copy mt-2">{{ door.text }}</p>
+          {%- if door.href %}<p class="mt-3"><a href="{{ door.href }}" class="text-link">{{ door.link_label }}</a></p>{% endif %}
+        </div>
+      </li>
+      {%- endfor %}
+    </ol>
+  </div>
+</section>

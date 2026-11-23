@@ -1,0 +1,13 @@
+label: Box office hours
+fields:
+  - name: day
+    label: Day
+    kind: text
+    required: true
+  - name: hours
+    label: Hours
+    kind: text
+  - name: note
+    label: Note
+    kind: text
+order: [monday, tuesday, wednesday, thursday, friday, saturday, sunday]

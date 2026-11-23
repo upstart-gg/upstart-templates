@@ -1,0 +1,24 @@
+<section class="border-t border-base-300 bg-base-100 text-base-content">
+  <div class="mx-auto max-w-[84rem] px-5 py-20 md:px-10 md:py-28">
+    <div class="max-w-3xl" data-reveal>
+      <p class="label">In rep this winter</p>
+      <h2 class="mt-3 text-[clamp(2.5rem,4vw+1rem,4.5rem)]">Two plays, one company, one set of flies</h2>
+      <p class="body-copy mt-5">From January 20 to March 19, two plays share the Mainstage on alternate nights. After every performance the crew flies one set out and the other in, ready for the next night.</p>
+    </div>
+    <div class="mt-12 grid gap-px border border-base-300 bg-base-300 md:grid-cols-2" data-reveal="stagger">
+      {%- for production in data.productions %}{% if production.in_rep_with != blank %}
+      <article class="flex flex-col bg-base-100" data-opens="{{ production.opens }}" data-closes="{{ production.closes }}">
+        {%- if production.cloth %}<img src="{{ production.cloth }}" class="bw aspect-[16/9] w-full object-cover">{% endif %}
+        <div class="flex flex-1 flex-col p-6 md:p-8">
+          <p class="flex flex-wrap gap-2"><span class="run-tag" data-tag="now">On now</span><span class="run-tag" data-tag="next">Next</span><span class="run-tag" data-tag="later">On sale</span><span class="run-tag" data-tag="closed">Closed</span></p>
+          <h3 class="title mt-3 text-[clamp(3rem,4vw+1.5rem,5rem)]">{{ production.title }}</h3>
+          <p class="credit mt-2">{{ production.author }}</p>
+          <p class="gothic mt-5 text-[1.625rem] text-accent">{{ production.times }}</p>
+          <p class="mt-auto pt-6"><a href="/season/{{ production.id }}" class="text-link">About the play</a></p>
+        </div>
+      </article>
+      {%- endif %}{% endfor %}
+    </div>
+    <p class="gothic mt-8 text-[1.75rem] md:text-[2.25rem]">See both on a Saturday: <span class="text-primary">Hedda at 2, Short Days at 7:30</span></p>
+  </div>
+</section>

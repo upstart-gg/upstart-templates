@@ -1,0 +1,13 @@
+label: The call sheet
+collected: true
+answer: newsletter-thanks
+messages:
+  required: "{field} is needed."
+  invalid: "{field} doesn't look right."
+  too_many: "Too many sign-ups from here. Please try again in a few minutes."
+  sent: "Thank you, you're on the call sheet."
+fields:
+  - name: email
+    label: Email address
+    kind: email
+    required: true

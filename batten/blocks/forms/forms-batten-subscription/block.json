@@ -1,0 +1,23 @@
+{
+  "name": "Batten subscription request",
+  "kind": "forms",
+  "source": "upstart",
+  "description": "A request for a subscription on a light muslin band: the package, the night, the seats, the plays for a pick-of-four, where to sit, access needs, name, phone and email; beside it a stage-black panel to call the box office instead, with its hours and “Nothing is charged until we’ve spoken”.",
+  "tags": ["form", "subscription", "season tickets", "request", "box office", "theater"],
+  "mood": ["professional", "editorial"],
+  "synonyms": [
+    "subscription form",
+    "season tickets",
+    "subscribe",
+    "request",
+    "abonnement",
+    "formulaire d’abonnement",
+    "s’abonner",
+    "demande",
+    "carte de saison"
+  ],
+  "data": {
+    "name": "subscriptions",
+    "family": "collection"
+  }
+}

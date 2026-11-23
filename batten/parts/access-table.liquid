@@ -1,0 +1,48 @@
+<section id="access" class="bg-secondary text-secondary-content" aria-labelledby="access-title">
+  <div class="mx-auto max-w-[84rem] px-5 py-20 md:px-10 md:py-24">
+    <div class="grid gap-6 lg:grid-cols-12 lg:items-end">
+      <div class="lg:col-span-7">
+        <p class="label">Access performances</p>
+        <h2 id="access-title" class="mt-3 text-[clamp(2.5rem,4vw+1rem,4.5rem)]">Every play, every way</h2>
+      </div>
+      <p class="body-copy lg:col-span-5">Every play has an ASL-interpreted, an audio-described and an open-captioned performance; the family show and the last play of the season have a relaxed one too. <a href="/visit#access" class="text-link">What each one is</a></p>
+    </div>
+    <div class="mt-10 hidden overflow-x-auto md:block">
+      <table class="figures w-full min-w-[44rem] border-collapse text-left text-[1rem]">
+        <thead>
+          <tr class="border-b-2 border-secondary-content">
+            <th scope="col" class="gothic py-3 pr-4 text-[1.25rem] font-normal">The play</th>
+            <th scope="col" class="gothic py-3 pr-4 text-[1.25rem] font-normal">ASL-interpreted</th>
+            <th scope="col" class="gothic py-3 pr-4 text-[1.25rem] font-normal">Audio-described <span class="text-secondary-content/70">with touch tour</span></th>
+            <th scope="col" class="gothic py-3 pr-4 text-[1.25rem] font-normal">Open-captioned</th>
+            <th scope="col" class="gothic py-3 text-[1.25rem] font-normal">Relaxed</th>
+          </tr>
+        </thead>
+        <tbody>
+          {%- for production in data.productions %}
+          <tr class="border-b border-secondary-content/25">
+            <th scope="row" class="py-3 pr-4 font-semibold"><a href="/season/{{ production.id }}" class="hover:underline">{{ production.title }}</a></th>
+            <td class="py-3 pr-4">{% if production.asl != blank %}{{ production.asl }}{% else %}<span aria-label="None">–</span>{% endif %}</td>
+            <td class="py-3 pr-4">{% if production.described != blank %}{{ production.described }}{% else %}<span aria-label="None">–</span>{% endif %}</td>
+            <td class="py-3 pr-4">{% if production.captioned != blank %}{{ production.captioned }}{% else %}<span aria-label="None">–</span>{% endif %}</td>
+            <td class="py-3">{% if production.relaxed != blank %}{{ production.relaxed }}{% else %}<span aria-label="None">–</span>{% endif %}</td>
+          </tr>
+          {%- endfor %}
+        </tbody>
+      </table>
+    </div>
+    <ul class="mt-10 divide-y divide-secondary-content/25 border-y-2 border-secondary-content md:hidden">
+      {%- for production in data.productions %}
+      <li class="py-4">
+        <h3 class="text-[1.625rem]"><a href="/season/{{ production.id }}">{{ production.title }}</a></h3>
+        <dl class="figures mt-2 grid grid-cols-[3rem_1fr] gap-x-3 gap-y-1 text-[1rem]">
+          {%- if production.asl != blank %}<dt class="gothic">ASL</dt><dd>{{ production.asl }}</dd>{% endif %}
+          {%- if production.described != blank %}<dt class="gothic">AD</dt><dd>{{ production.described }}, touch tour 75 minutes before</dd>{% endif %}
+          {%- if production.captioned != blank %}<dt class="gothic">OC</dt><dd>{{ production.captioned }}</dd>{% endif %}
+          {%- if production.relaxed != blank %}<dt class="gothic">RP</dt><dd>{{ production.relaxed }}, relaxed</dd>{% endif %}
+        </dl>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>

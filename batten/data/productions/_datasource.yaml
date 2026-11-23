@@ -1,0 +1,84 @@
+label: Productions
+fields:
+  - name: title
+    label: Title
+    kind: text
+    required: true
+  - name: author
+    label: Author line
+    kind: text
+  - name: version
+    label: Version or translation
+    kind: text
+  - name: director
+    label: Director line
+    kind: text
+  - name: stage
+    label: Stage
+    kind: choice
+    choices: [Mainstage, The Loft]
+  - name: opens
+    label: First performance
+    kind: date
+  - name: opening
+    label: Opening night
+    kind: date
+  - name: closes
+    label: Last performance
+    kind: date
+  - name: previews
+    label: Previews
+    kind: text
+  - name: in_rep_with
+    label: In rep with (the other production's id)
+    kind: text
+  - name: times
+    label: Weekly times
+    kind: text
+  - name: running_time
+    label: Running time
+    kind: text
+  - name: ages
+    label: Ages
+    kind: text
+  - name: prices
+    label: Prices
+    kind: text
+  - name: advisories
+    label: Content advisories
+    kind: list
+  - name: tickets
+    label: Tickets page at the box office
+    kind: link
+  - name: cloth
+    label: Cloth (the painting)
+    kind: image
+  - name: photos
+    label: Photos
+    kind: images
+  - name: cast
+    label: Cast (role / actor)
+    kind: list
+  - name: creative
+    label: Creative team (job / name)
+    kind: list
+  - name: asl
+    label: ASL-interpreted performance
+    kind: text
+  - name: described
+    label: Audio-described performance
+    kind: text
+  - name: captioned
+    label: Open-captioned performance
+    kind: text
+  - name: relaxed
+    label: Relaxed performance
+    kind: text
+  - name: summary
+    label: Summary
+    kind: text
+  - name: body
+    label: Introduction
+    kind: markdown
+body: body
+sort: opens

@@ -1,0 +1,827 @@
+/* League Gothic and Spectral, files of the template, under the SIL Open Font License (fonts/*-OFL.txt). */
+@font-face {
+  font-family: "League Gothic";
+  src: url("/fonts/league-gothic-latin-wdth-normal.woff2") format("woff2");
+  font-weight: 400;
+  font-stretch: 75% 100%;
+  font-style: normal;
+  font-display: swap;
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "League Gothic";
+  src: url("/fonts/league-gothic-latin-ext-wdth-normal.woff2") format("woff2");
+  font-weight: 400;
+  font-stretch: 75% 100%;
+  font-style: normal;
+  font-display: swap;
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Spectral";
+  src: url("/fonts/spectral-latin-300-normal.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Spectral";
+  src: url("/fonts/spectral-latin-ext-300-normal.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Spectral";
+  src: url("/fonts/spectral-latin-300-italic.woff2") format("woff2");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Spectral";
+  src: url("/fonts/spectral-latin-ext-300-italic.woff2") format("woff2");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Spectral";
+  src: url("/fonts/spectral-latin-400-normal.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Spectral";
+  src: url("/fonts/spectral-latin-ext-400-normal.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Spectral";
+  src: url("/fonts/spectral-latin-400-italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Spectral";
+  src: url("/fonts/spectral-latin-ext-400-italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Spectral";
+  src: url("/fonts/spectral-latin-500-normal.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Spectral";
+  src: url("/fonts/spectral-latin-ext-500-normal.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Spectral";
+  src: url("/fonts/spectral-latin-500-italic.woff2") format("woff2");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Spectral";
+  src: url("/fonts/spectral-latin-ext-500-italic.woff2") format("woff2");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Spectral";
+  src: url("/fonts/spectral-latin-600-normal.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Spectral";
+  src: url("/fonts/spectral-latin-ext-600-normal.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Spectral";
+  src: url("/fonts/spectral-latin-600-italic.woff2") format("woff2");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Spectral";
+  src: url("/fonts/spectral-latin-ext-600-italic.woff2") format("woff2");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+:root {
+  /* The portal's legs, down both sides of every page, and its header piece's height. */
+  --leg: 0.375rem;
+  --header-h: 3.75rem;
+  /* How far a cloth's pipe runs past its edges. */
+  --pipe-over: 0.5rem;
+}
+@media (width >= 48rem) {
+  :root {
+    --leg: 1rem;
+    --header-h: 4.25rem;
+    --pipe-over: 1rem;
+  }
+}
+@media (width >= 64rem) {
+  :root {
+    --leg: 1.5rem;
+    --header-h: 4.5rem;
+    --pipe-over: 1.25rem;
+  }
+}
+
+@layer base {
+  html {
+    scroll-padding-top: calc(var(--header-h) + 0.5rem);
+  }
+  /* The legs, drawn as the page's own frame, so a page with no script, and a whole-page
+     picture, show them full length. A fixed copy (.portal-legs) covers them while scrolling. */
+  body {
+    border-inline: var(--leg) solid var(--color-primary);
+    font-size: 1.125rem;
+    line-height: 1.65;
+    font-variant-numeric: lining-nums;
+  }
+  /* League Gothic has one weight and no italic: never bold, never slanted by the browser. */
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-weight: 400;
+    font-synthesis: none;
+    font-stretch: 88%;
+    text-transform: uppercase;
+    line-height: 0.92;
+    letter-spacing: 0.005em;
+    text-wrap: balance;
+  }
+
+  /* ---- Type ---------------------------------------------------------------------------- */
+
+  /* A cloth's title and the home's statement: League Gothic at its narrowest, as a poster. */
+  .title {
+    font-family: var(--font-heading);
+    font-weight: 400;
+    font-stretch: 75%;
+    text-transform: uppercase;
+    line-height: 0.86;
+    letter-spacing: 0.005em;
+    text-wrap: balance;
+  }
+  /* Links, buttons, dates and cue numbers: League Gothic at its full width. */
+  .gothic {
+    font-family: var(--font-heading);
+    font-weight: 400;
+    font-stretch: 100%;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    line-height: 1;
+  }
+  /* A credit line set as a poster's billing, and the labels above headings. */
+  .credit {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-variant-caps: all-small-caps;
+    font-size: 1.125rem;
+    letter-spacing: 0.06em;
+    line-height: 1.35;
+  }
+  .label {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-variant-caps: all-small-caps;
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+    line-height: 1.35;
+    color: color-mix(in oklch, currentColor 72%, transparent);
+  }
+  .body-copy {
+    max-width: 64ch;
+    color: color-mix(in oklch, currentColor 80%, transparent);
+    line-height: 1.65;
+    text-wrap: pretty;
+  }
+  /* A production's intro, and the short lines that open a page. */
+  .intro {
+    font-weight: 300;
+    font-size: clamp(1.375rem, 1vw + 1rem, 1.75rem);
+    line-height: 1.35;
+    text-wrap: pretty;
+  }
+  /* The program, the tables, prices and times: figures in columns. */
+  .figures {
+    font-variant-numeric: lining-nums tabular-nums;
+  }
+  /* Links in text: magenta, a fine underline; stage black where the ground is muslin or magenta. */
+  .text-link {
+    color: var(--color-primary);
+    text-decoration-line: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+  }
+  .text-link:hover {
+    text-decoration-thickness: 2px;
+  }
+  .bg-secondary .text-link,
+  .bg-primary .text-link {
+    color: inherit;
+  }
+  /* A long text from a record: what Markdown makes. */
+  .record-body > * + * {
+    margin-top: 1em;
+  }
+  .record-body a {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+  .record-body em {
+    font-style: italic;
+  }
+
+  /* ---- Pictures: black and white, so the house color is the only color on the site. ---- */
+  .bw img,
+  img.bw {
+    filter: grayscale(1) contrast(1.05);
+  }
+}
+
+/* ---- The portal: a header piece across the top, two legs down the sides, never moving. ---- */
+.portal-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  height: var(--header-h);
+  view-transition-name: portal-header;
+}
+.portal-legs {
+  position: fixed;
+  inset: 0;
+  z-index: 49;
+  pointer-events: none;
+  border-inline: var(--leg) solid var(--color-primary);
+  view-transition-name: portal-legs;
+}
+/* The current page's link, underlined in stage black. */
+.portal-link {
+  text-decoration-line: none;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 2px;
+}
+.portal-link:hover,
+.portal-link[aria-current="page"] {
+  text-decoration-line: underline;
+}
+/* The legs end at the footer's foot on a magenta rule. */
+.house-footer {
+  border-bottom: 0.625rem solid var(--color-primary);
+}
+
+/* ---- A cloth: a painting on its pipe, its title painted at its foot. ------------------------ */
+.cloth {
+  position: relative;
+  padding-top: 0.4rem;
+  transform-origin: 50% 0;
+}
+/* The pipe (data-batten): a black bar past the cloth's edges, with its three pick-up lines. */
+.cloth-pipe {
+  position: absolute;
+  top: 0;
+  left: calc(-1 * var(--pipe-over));
+  right: calc(-1 * var(--pipe-over));
+  height: 0.4rem;
+  background: var(--color-neutral);
+  border-block: 1px solid var(--color-base-300);
+}
+.cloth-pipe::before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: var(--pipe-over);
+  right: var(--pipe-over);
+  height: var(--lines, 2.5rem);
+  background-image:
+    linear-gradient(var(--color-base-300), var(--color-base-300)),
+    linear-gradient(var(--color-base-300), var(--color-base-300)),
+    linear-gradient(var(--color-base-300), var(--color-base-300));
+  background-size: 1px 100%;
+  background-position:
+    12% 0,
+    50% 0,
+    88% 0;
+  background-repeat: no-repeat;
+}
+.cloth-face {
+  position: relative;
+  display: grid;
+  background: var(--color-base-200);
+  overflow: hidden;
+}
+.cloth-painting {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+.cloth-texts {
+  position: relative;
+  padding: 1.5rem 1.25rem 1.75rem;
+}
+/* The hem at its foot. */
+.cloth-hem {
+  height: 0.5rem;
+  background: var(--color-base-200);
+}
+@media (width >= 48rem) {
+  .cloth-painting {
+    aspect-ratio: 16 / 10;
+  }
+  .cloth-texts {
+    padding: 2rem 2.25rem 2.25rem;
+  }
+}
+/* From 1024 px, the painting fills the cloth and its texts stand on the scrim at its foot. */
+@media (width >= 64rem) {
+  .cloth-face {
+    min-height: clamp(34rem, 54vw, 50rem);
+  }
+  .cloth-painting,
+  .cloth-scrim,
+  .cloth-texts {
+    grid-area: 1 / 1;
+  }
+  .cloth-painting {
+    height: 100%;
+    aspect-ratio: auto;
+  }
+  .cloth-scrim {
+    background: linear-gradient(
+      to top,
+      var(--color-base-100),
+      color-mix(in oklch, var(--color-base-100), transparent 20%) 30%,
+      color-mix(in oklch, var(--color-base-100), transparent 45%) 50%,
+      transparent 78%
+    );
+  }
+  .cloth-texts {
+    align-self: end;
+    padding: 3rem 3rem 3rem;
+  }
+}
+
+/* The black cloth of the home's statement: a faint weave of the surface and its alternate. */
+.weave {
+  background-color: var(--color-base-100);
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0 3px,
+      color-mix(in oklch, var(--color-base-200), transparent 55%) 3px 4px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent 0 3px,
+      color-mix(in oklch, var(--color-base-200), transparent 65%) 3px 4px
+    );
+}
+.statement-key {
+  text-decoration-line: underline;
+  text-decoration-color: var(--color-primary);
+  text-decoration-thickness: 0.07em;
+  text-underline-offset: 0.1em;
+  text-decoration-skip-ink: none;
+}
+
+/* ---- The run's tags: the stylesheet shows the one the script chose; with none, no tag. ------ */
+.run-tag {
+  display: none;
+  align-items: center;
+  padding: 0.3rem 0.55rem 0.2rem;
+  font-family: var(--font-heading);
+  font-stretch: 100%;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 1.125rem;
+  line-height: 1;
+  white-space: nowrap;
+  border: 1px solid currentColor;
+}
+[data-run="now"] .run-tag[data-tag="now"] {
+  display: inline-flex;
+  background: var(--color-primary);
+  color: var(--color-primary-content);
+  border-color: var(--color-primary);
+}
+[data-run="next"] .run-tag[data-tag="next"],
+[data-run="later"] .run-tag[data-tag="later"] {
+  display: inline-flex;
+}
+[data-run="closed"] .run-tag[data-tag="closed"] {
+  display: inline-flex;
+  opacity: 0.7;
+}
+.rep-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.55rem 0.2rem;
+  background: var(--color-accent);
+  color: var(--color-accent-content);
+  font-family: var(--font-heading);
+  font-stretch: 100%;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 1.125rem;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* ---- The flies (data-flies): the season's cloths, stacked, or flown in by scripts/flies.js. ---- */
+.flies-stage {
+  display: flex;
+  flex-direction: column;
+}
+.flies-cloths {
+  display: flex;
+  flex-direction: column;
+  gap: 4.5rem;
+  padding: 3.5rem calc(var(--pipe-over) + 0.25rem) 1rem;
+}
+/* As a stack, the rail is the list of the six at the top, under the label. */
+.flies-label {
+  order: -2;
+}
+.flies-rail {
+  order: -1;
+}
+.flies-cue {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+.flies-cue[aria-current="step"] {
+  color: var(--color-primary);
+}
+.flies-cue[aria-current="step"] .flies-cue-number {
+  background: var(--color-primary);
+  color: var(--color-primary-content);
+}
+/* Flying, from 1024 px: one screen a cloth; the stage sticks under the portal's header,
+   clipped at its top, so a cloth above it is out of sight in the flies. */
+[data-flying] .flies-stage {
+  position: sticky;
+  top: var(--header-h);
+  height: calc(100svh - var(--header-h));
+  overflow: clip;
+}
+[data-flying] .flies-cloths {
+  position: relative;
+  flex: 1;
+  gap: 0;
+  margin: 0 1rem;
+  padding: 0;
+}
+[data-flying] [data-cloth] {
+  position: absolute;
+  inset: 3.25rem 0 0.75rem;
+  display: flex;
+  flex-direction: column;
+  --pipe-over: 0.75rem;
+  --lines: 100vh;
+  will-change: transform;
+}
+[data-flying] [data-cloth] .cloth-face {
+  flex: 1;
+  min-height: 0;
+}
+[data-flying] .flies-rail {
+  order: 0;
+}
+[data-flying] .flies-label {
+  padding: 0;
+  position: absolute;
+  top: 0.9rem;
+  left: 1.5rem;
+  z-index: 10;
+}
+
+/* ---- A production's first screen (data-fly-out): its cloth fills the screen from 1024 px;
+   flying, it sticks under the header, in front of the page, and rises a little faster than the
+   page scrolls, uncovering the black of the stage, then the overview. ----------------------- */
+@media (width >= 64rem) {
+  .production-first {
+    height: clamp(34rem, 56vw, 52rem);
+    display: flex;
+    flex-direction: column;
+  }
+  .production-first > .cloth {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .production-first .cloth-face {
+    flex: 1;
+    min-height: 0;
+  }
+}
+[data-fly-out][data-flying] {
+  height: calc(100svh - var(--header-h));
+  position: sticky;
+  top: var(--header-h);
+  z-index: 20;
+}
+
+/* ---- The next cloth in the flies (data-next-cloth): only its lower third shows. ----------- */
+.next-cloth-window {
+  position: relative;
+  height: clamp(16rem, 34vw, 26rem);
+  overflow: hidden;
+  border-top: 0.75rem solid var(--color-neutral);
+}
+.next-cloth-window .cloth {
+  position: absolute;
+  inset: auto 0 0;
+  height: 300%;
+  margin-inline: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.next-cloth-window .cloth-face {
+  flex: 1;
+}
+.next-cloth-window .cloth-painting {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  aspect-ratio: auto;
+}
+.next-cloth-window .cloth-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    var(--color-base-100),
+    color-mix(in oklch, var(--color-base-100), transparent 30%) 20%,
+    transparent 34%
+  );
+}
+.next-cloth-window .cloth-texts {
+  position: absolute;
+  inset: auto 0 0;
+}
+@media (prefers-reduced-motion: no-preference) and (hover: hover) {
+  .next-cloth-window .cloth {
+    transition: translate 0.5s cubic-bezier(0.3, 0, 0.15, 1);
+  }
+  [data-next-cloth]:hover .cloth,
+  [data-next-cloth]:focus-visible .cloth {
+    translate: 0 1.5rem;
+  }
+}
+
+/* ---- The season at a glance: the months as columns, each production a bar. --------------- */
+.glance-lane {
+  position: relative;
+  min-height: 4.25rem;
+}
+.glance-bar {
+  position: absolute;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  left: calc(var(--from) * 100%);
+  width: calc((var(--to) - var(--from)) * 100%);
+  min-width: 0.5rem;
+}
+.glance-bar[data-slot="1"] {
+  bottom: 50%;
+  margin-bottom: 1px;
+}
+.glance-bar[data-slot="2"] {
+  top: 50%;
+  margin-top: 1px;
+}
+.glance-today {
+  display: none;
+}
+[data-today] .glance-today {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc(var(--today) * 100%);
+  width: 1px;
+  background: var(--color-accent);
+  pointer-events: none;
+}
+
+/* ---- Buttons and fields: square, flat; League Gothic on buttons. ------------------------- */
+@layer components {
+  .btn {
+    font-family: var(--font-heading);
+    font-weight: 400;
+    font-stretch: 100%;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 1.3125rem;
+    line-height: 1;
+    white-space: nowrap;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .btn:not(.btn-square, .btn-circle, .btn-sm) {
+    padding-inline: 1.25rem;
+  }
+  .btn-sm {
+    font-size: 1.0625rem;
+  }
+  .btn-outline {
+    border-color: currentColor;
+  }
+  .input,
+  .select,
+  .textarea {
+    border-radius: 0;
+    font-size: 1.0625rem;
+  }
+  .fieldset-legend {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 1rem;
+  }
+  /* On muslin, the fields are a paler muslin with stage-black text. */
+  .bg-secondary :is(.input, .select, .textarea) {
+    background-color: color-mix(in oklch, var(--color-secondary), var(--color-base-content) 62%);
+    color: var(--color-secondary-content);
+    border-color: color-mix(in oklch, var(--color-secondary-content) 45%, transparent);
+  }
+  .bg-secondary :is(.input, .textarea)::placeholder {
+    color: color-mix(in oklch, var(--color-secondary-content) 55%, transparent);
+  }
+  .bg-secondary .checkbox {
+    color: var(--color-secondary-content);
+    border-color: var(--color-secondary-content);
+    background-color: color-mix(in oklch, var(--color-secondary), var(--color-base-content) 62%);
+  }
+  .bg-secondary .checkbox:checked {
+    background-color: var(--color-secondary-content);
+    color: var(--color-secondary);
+  }
+}
+
+/* Upstart's "Image credits" link, lined up with the footer's container. */
+footer [data-up-credits] {
+  padding-inline: calc(max(0px, (100% - 80rem) / 2) + 1.25rem);
+  padding-bottom: 1.5rem;
+  font-size: 0.9375rem;
+  opacity: 0.75;
+}
+@media (width >= 48rem) {
+  footer [data-up-credits] {
+    padding-inline: calc(max(0px, (100% - 80rem) / 2) + 2.5rem);
+  }
+}
+
+/* Lenis (MIT) */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis:not(.lenis-autoToggle).lenis-stopped {
+  overflow: clip;
+}
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+/* ---- The next page's cloth: it comes down from the flies in front of the last, inside the
+   portal, which keeps still; then swings a little about its top edge. ----------------------- */
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition {
+    navigation: auto;
+  }
+  ::view-transition-group(root) {
+    background: var(--color-neutral);
+  }
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    clip-path: inset(0 var(--leg));
+    mix-blend-mode: normal;
+  }
+  ::view-transition-old(root) {
+    animation: house-dims 0.95s linear both;
+  }
+  ::view-transition-new(root) {
+    transform-origin: 50% 0;
+    animation: cloth-comes-in 0.95s both;
+  }
+  ::view-transition-group(portal-header),
+  ::view-transition-group(portal-legs) {
+    animation: none;
+  }
+  ::view-transition-old(portal-header),
+  ::view-transition-old(portal-legs) {
+    display: none;
+  }
+  ::view-transition-new(portal-header),
+  ::view-transition-new(portal-legs) {
+    animation: none;
+  }
+  @keyframes cloth-comes-in {
+    0% {
+      translate: 0 -100%;
+      rotate: 0deg;
+      animation-timing-function: cubic-bezier(0.3, 0, 0.15, 1);
+    }
+    60% {
+      translate: 0 0;
+      rotate: 0deg;
+      animation-timing-function: ease-out;
+    }
+    74% {
+      rotate: 0.4deg;
+    }
+    88% {
+      rotate: -0.15deg;
+    }
+    100% {
+      translate: 0 0;
+      rotate: 0deg;
+    }
+  }
+  @keyframes house-dims {
+    to {
+      filter: brightness(0.5);
+    }
+  }
+  /* On a phone, the page comes down without the swing. */
+  @media (width < 48rem) {
+    ::view-transition-old(root) {
+      animation-duration: 0.5s;
+    }
+    ::view-transition-new(root) {
+      animation: page-comes-down 0.5s cubic-bezier(0.3, 0, 0.15, 1) both;
+    }
+    @keyframes page-comes-down {
+      from {
+        translate: 0 -100%;
+      }
+    }
+  }
+}

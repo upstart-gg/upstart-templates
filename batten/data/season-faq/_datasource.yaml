@@ -1,0 +1,9 @@
+label: Questions about the season
+fields:
+  - name: question
+    kind: text
+    required: true
+  - name: answer
+    kind: markdown
+body: answer
+order: [exchanges, latecomers, children, intermission, in-rep, drinks]

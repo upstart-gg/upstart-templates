@@ -1,0 +1,8 @@
+label: Access at the Sash Works
+fields:
+  - name: title
+    kind: text
+    required: true
+  - name: text
+    kind: text
+order: [step-free, wheelchair-spaces, hearing-loop, headsets, programs, quiet-room, service-animals, restrooms]

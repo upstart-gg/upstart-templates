@@ -1,0 +1,19 @@
+<section class="border-t border-base-300 bg-base-100 text-base-content" aria-labelledby="getting-here-title">
+  <div class="mx-auto max-w-[84rem] px-5 py-20 md:px-10 md:py-24">
+    <div class="grid gap-10 lg:grid-cols-12 lg:items-end">
+      <div class="lg:col-span-6" data-reveal>
+        <p class="label">Getting here</p>
+        <h2 id="getting-here-title" class="mt-3 text-[clamp(2.5rem,4vw+1rem,4.5rem)]">Between the river and the rail yards</h2>
+      </div>
+      <div class="bw lg:col-span-6"><img src="/media/sash-works-side.jpg" class="aspect-[16/7] w-full object-cover"></div>
+    </div>
+    <ul class="mt-12 grid gap-px border border-base-300 bg-base-300 sm:grid-cols-2 lg:grid-cols-4" data-reveal="stagger">
+      {%- for way in data["getting-here"] %}
+      <li class="bg-base-100 p-6">
+        <h3 class="text-[1.75rem]">{{ way.title }}</h3>
+        <p class="body-copy mt-2 text-[1.0625rem]">{{ way.text }}</p>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>

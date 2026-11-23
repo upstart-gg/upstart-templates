@@ -1,0 +1,22 @@
+{
+  "name": "Batten house footer",
+  "kind": "footer",
+  "source": "upstart",
+  "description": "A flies-black footer: the company’s name in condensed capitals, the address, phone and box office email, the box office’s hours day by day, the site’s links and its social links; the portal’s magenta legs end on a magenta rule at its foot. It carries the theater’s time zone for the run’s tags.",
+  "tags": ["footer", "theater", "box office", "hours", "address", "links"],
+  "mood": ["dark", "professional"],
+  "synonyms": [
+    "footer",
+    "bottom of page",
+    "contact",
+    "box office hours",
+    "pied de page",
+    "bas de page",
+    "coordonnées",
+    "horaires de billetterie"
+  ],
+  "data": {
+    "name": "navigation",
+    "family": "collection"
+  }
+}

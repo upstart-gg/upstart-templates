@@ -1,0 +1,8 @@
+label: What subscribers get
+fields:
+  - name: title
+    kind: text
+    required: true
+  - name: text
+    kind: text
+order: [the-same-seat, free-exchanges, extra-tickets, a-guest-pass, first-choice]

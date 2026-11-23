@@ -1,0 +1,16 @@
+<section class="border-y border-base-300 bg-base-200 text-base-content">
+  <div class="mx-auto flex max-w-[84rem] flex-col gap-5 px-5 py-8 md:flex-row md:items-center md:justify-between md:px-10">
+    <div>
+      <h2 class="text-[2rem]">The call sheet</h2>
+      <p class="mt-1 text-base-content/80">One email a month, before tickets go on sale.</p>
+    </div>
+    <form hx-post="/_data/newsletter" hx-target="this" hx-swap="outerHTML" hx-status:422="target:#call-sheet-problems swap:innerHTML" class="w-full md:max-w-md">
+      <div class="join w-full">
+        <label class="sr-only" for="call-sheet-email">Email address</label>
+        <input id="call-sheet-email" name="email" type="email" required maxlength="200" autocomplete="email" placeholder="you@example.com" class="input join-item w-full">
+        <button type="submit" class="btn btn-primary join-item">Sign up</button>
+      </div>
+      <div id="call-sheet-problems" class="mt-2"></div>
+    </form>
+  </div>
+</section>

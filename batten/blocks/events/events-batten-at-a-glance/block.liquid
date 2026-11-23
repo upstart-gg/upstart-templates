@@ -1,0 +1,74 @@
+{%- assign first = data.productions | first -%}
+{%- assign start = first.opens | append: "T12:00:00" | date: "%Y-%m-01" -%}
+{%- assign last_close = first.closes -%}
+{%- for p in data.productions %}{% if p.closes > last_close %}{% assign last_close = p.closes %}{% endif %}{% endfor -%}
+{%- assign last_month = last_close | slice: 0, 7 -%}
+{%- assign month = start -%}
+{%- assign months = "" -%}
+{%- assign widths = "" -%}
+{%- for i in (1..24) -%}
+  {%- assign t0 = month | append: "T12:00:00" | date: "%s" | plus: 0 -%}
+  {%- assign next = t0 | plus: 2764800 | date: "%Y-%m-01" -%}
+  {%- assign t1 = next | append: "T12:00:00" | date: "%s" | plus: 0 -%}
+  {%- assign days = t1 | minus: t0 | divided_by: 86400.0 | round -%}
+  {%- if months != "" %}{% assign months = months | append: "," %}{% assign widths = widths | append: " " %}{% endif -%}
+  {%- assign months = months | append: month -%}
+  {%- assign widths = widths | append: "minmax(0," | append: days | append: "fr)" -%}
+  {%- assign m7 = month | slice: 0, 7 -%}
+  {%- assign month = next -%}
+  {%- if m7 == last_month %}{% break %}{% endif -%}
+{%- endfor -%}
+{%- assign season_end = month -%}
+{%- assign month_list = months | split: "," -%}
+{%- assign s0 = start | append: "T12:00:00" | date: "%s" | plus: 0 -%}
+{%- assign s1 = season_end | append: "T12:00:00" | date: "%s" | plus: 0 -%}
+{%- assign span = s1 | minus: s0 | times: 1.0 -%}
+<section class="bg-base-100 text-base-content" aria-labelledby="glance-title">
+  <div class="mx-auto max-w-[84rem] px-5 py-20 md:px-10 md:py-24">
+    <p class="label">The season at a glance</p>
+    <h2 id="glance-title" class="mt-3 text-[clamp(2.5rem,4vw+1rem,4.5rem)]">What's on when</h2>
+    <div class="mt-10 hidden md:block" data-glance data-starts="{{ start }}" data-ends="{{ season_end }}">
+      <div class="grid border-b border-base-300" style="grid-template-columns: 7rem 1fr">
+        <span></span>
+        <div class="grid" style="grid-template-columns: {{ widths }}">
+          {%- for m in month_list %}
+          <span class="gothic border-l border-base-300 px-2 pb-2 text-[1.25rem]">{{ m | append: "T12:00:00" | date: "%b" }}{% if forloop.first or m contains "-01-01" %} <span class="text-base-content/60">{{ m | slice: 0, 4 }}</span>{% endif %}</span>
+          {%- endfor %}
+        </div>
+      </div>
+      {%- assign stages = "Mainstage,The Loft" | split: "," %}
+      {%- for stage in stages %}
+      <div class="grid border-b border-base-300" style="grid-template-columns: 7rem 1fr">
+        <p class="gothic self-center text-[1.25rem] text-base-content/80">{{ stage }}</p>
+        <div class="glance-lane bg-base-200">
+          <div class="pointer-events-none absolute inset-0 grid" style="grid-template-columns: {{ widths }}" aria-hidden="true">{% for m in month_list %}<span class="border-l border-base-300"></span>{% endfor %}</div>
+          {%- assign slot = 0 %}
+          {%- for p in data.productions %}{% if p.stage == stage %}
+          {%- assign from = p.opens | append: "T12:00:00" | date: "%s" | minus: s0 | divided_by: span | round: 4 -%}
+          {%- assign to = p.closes | append: "T12:00:00" | date: "%s" | plus: 86400 | minus: s0 | divided_by: span | round: 4 -%}
+          {%- if p.in_rep_with != blank %}{% assign slot = slot | plus: 1 %}{% endif %}
+          <a href="/season/{{ p.id }}" class="glance-bar flex items-center overflow-hidden bg-primary px-2 text-primary-content hover:bg-accent hover:text-accent-content" style="--from: {{ from }}; --to: {{ to }}"{% if p.in_rep_with != blank %} data-slot="{{ slot }}"{% endif %} data-opens="{{ p.opens }}" data-closes="{{ p.closes }}">
+            <span class="gothic truncate {% if p.in_rep_with != blank %}text-[0.9375rem]{% else %}text-[1.25rem]{% endif %}">{{ p.title }}</span>
+          </a>
+          {%- endif %}{% endfor %}
+          <span class="glance-today" aria-hidden="true"></span>
+        </div>
+      </div>
+      {%- endfor %}
+      <p class="mt-4 flex items-center gap-3 text-[1rem] text-base-content/70"><span class="inline-block h-4 w-px bg-accent" aria-hidden="true"></span>Today</p>
+    </div>
+    <ol class="mt-8 divide-y divide-base-300 border-y border-base-300 md:hidden">
+      {%- for m in month_list %}
+      {%- assign m_end = m | slice: 0, 7 | append: "-31" %}
+      <li class="grid grid-cols-[4.5rem_1fr] gap-3 py-3">
+        <span class="gothic pt-1 text-[1.375rem]">{{ m | append: "T12:00:00" | date: "%b" }}</span>
+        <ul class="flex flex-col gap-1.5">
+          {%- for p in data.productions %}{% if p.opens <= m_end and p.closes >= m %}
+          <li><a href="/season/{{ p.id }}" class="gothic block bg-primary px-2 py-1.5 text-[1.125rem] text-primary-content">{{ p.title }}</a></li>
+          {%- endif %}{% endfor %}
+        </ul>
+      </li>
+      {%- endfor %}
+    </ol>
+  </div>
+</section>

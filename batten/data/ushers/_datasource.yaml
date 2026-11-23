@@ -1,0 +1,24 @@
+label: Volunteer ushers
+collected: true
+answer: ushers-thanks
+messages:
+  required: "{field} is needed."
+  invalid: "{field} doesn't look right. Please check it."
+  too_many: "Too many sign-ups were sent from here. Please try again in a few minutes."
+  sent: "Thank you for signing up to usher."
+fields:
+  - name: name
+    label: Your name
+    kind: text
+    required: true
+  - name: email
+    label: Your email
+    kind: email
+    required: true
+  - name: phone
+    label: Your phone
+    kind: phone
+  - name: nights
+    label: The nights you can do
+    kind: list
+    choices: [Tuesday, Wednesday, Thursday, Friday, Saturday evening, Saturday matinee, Sunday matinee]

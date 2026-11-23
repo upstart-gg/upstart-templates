@@ -1,0 +1,28 @@
+label: Programs
+fields:
+  - name: name
+    label: Name
+    kind: text
+    required: true
+  - name: who
+    label: Who it is for
+    kind: text
+  - name: when
+    label: When
+    kind: text
+  - name: price
+    label: Price
+    kind: text
+  - name: summary
+    label: Summary
+    kind: text
+  - name: image
+    label: Image
+    kind: image
+  - name: cta
+    label: Button
+    kind: text
+  - name: href
+    label: Button link
+    kind: link
+order: [the-teen-company, student-matinees, classes-for-adults, pay-what-you-can-thursdays, rail-tours]

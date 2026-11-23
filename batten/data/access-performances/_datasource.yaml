@@ -1,0 +1,8 @@
+label: Access performances
+fields:
+  - name: title
+    kind: text
+    required: true
+  - name: text
+    kind: text
+order: [asl, described, captioned, relaxed]

@@ -1,0 +1,13 @@
+{
+  "name": "Batten company billing block",
+  "kind": "team",
+  "source": "upstart",
+  "description": "The company’s actors set as a poster’s billing block: their names in condensed capitals, centered in rows under a heading, each a link to their place on the company page, then a button to meet the company.",
+  "tags": ["team", "ensemble", "actors", "company", "names", "billing", "poster"],
+  "mood": ["bold", "editorial", "dark"],
+  "synonyms": ["ensemble", "cast", "company", "actors", "troupe", "distribution", "comédiens", "compagnie", "affiche"],
+  "data": {
+    "name": "company",
+    "family": "collection"
+  }
+}

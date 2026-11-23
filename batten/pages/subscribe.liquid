@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Subscribe — Bottineau Rep</title>
+<meta name="description" content="Subscribe to Bottineau Rep's 2027–28 season: the same seat for every play, the best price of the season and free exchanges. Full Season, Pick Four, Under 30 and the Flex Pass.">
+<meta property="og:title" content="Subscribe — Bottineau Rep">
+<meta property="og:description" content="The same seat for every play, the best price of the season and free exchanges, from $132.">
+</head>
+<body>
+{% render 'header' %}
+<main>
+{% render 'page-title', label: "Bottineau Rep · Subscribe", title: "Subscribe", text: "The same seat for every play, the best price of the season, and exchanges whenever life gets in the way. Tell us what you'd like; the box office will call to choose your seats and take payment." %}
+{% render 'packages' %}
+{% render 'perks' %}
+{% render 'subscription-form' %}
+{% render 'faq', items: data["subscribe-faq"], label: "Questions", title: "Before you subscribe" %}
+</main>
+{% render 'footer' %}
+</body>
+</html>

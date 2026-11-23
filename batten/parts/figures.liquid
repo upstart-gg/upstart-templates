@@ -1,0 +1,14 @@
+<section class="bg-neutral text-neutral-content" aria-labelledby="figures-title">
+  <div class="mx-auto max-w-[84rem] px-5 py-20 md:px-10 md:py-24">
+    <p class="label">What it pays for</p>
+    <h2 id="figures-title" class="mt-3 text-[clamp(2.5rem,4vw+1rem,4.5rem)]">Last season, because of you</h2>
+    <dl class="mt-12 grid gap-px border border-base-300 bg-base-300 md:grid-cols-3" data-reveal="stagger">
+      {%- for figure in data["support-figures"] %}
+      <div class="flex flex-col-reverse bg-neutral p-7">
+        <dt class="mt-2 text-[1.125rem]">{{ figure.label }}{% if figure.note != blank %}<span class="block text-[1rem] text-neutral-content/70">{{ figure.note }}</span>{% endif %}</dt>
+        <dd class="title figures text-[clamp(4rem,6vw+1rem,7rem)] text-primary">{{ figure.value }}</dd>
+      </div>
+      {%- endfor %}
+    </dl>
+  </div>
+</section>

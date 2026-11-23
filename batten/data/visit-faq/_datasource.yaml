@@ -1,0 +1,9 @@
+label: Questions about visiting
+fields:
+  - name: question
+    kind: text
+    required: true
+  - name: answer
+    kind: markdown
+body: answer
+order: [dress, food, recording, photos, lost-property, buy-at-the-door]

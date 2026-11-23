@@ -1,0 +1,34 @@
+{%- comment -%} The portal: its header piece in the house color, and its two legs (fixed, over the page's own frame). On a production's page, pass `tickets` (its box office page): below 1024 px "Tickets" takes the place of "Box office" in the bar. {%- endcomment -%}
+<div class="portal-legs" aria-hidden="true"></div>
+<header class="portal-header bg-primary text-primary-content">
+  <div class="mx-auto flex h-full max-w-[90rem] items-center gap-4 px-4 md:px-6 lg:gap-8">
+    <a href="/" class="title shrink-0 text-[2.125rem] whitespace-nowrap md:text-[2.5rem]">Bottineau Rep</a>
+    <nav aria-label="Main" class="ml-auto hidden lg:block">
+      <ul class="flex items-center gap-5 xl:gap-8">
+        {%- for item in data.navigation %}{% if item.place == "both" or item.place == "header" %}
+        {%- assign below = item.href | append: "/" %}
+        <li><a href="{{ item.href }}" class="portal-link gothic text-[1.25rem] whitespace-nowrap"{% if page.url == item.href or page.url contains below %} aria-current="page"{% endif %}>{{ item.label }}</a></li>
+        {%- endif %}{% endfor %}
+      </ul>
+    </nav>
+    <div class="ml-auto flex items-center gap-2 lg:ml-0">
+      {%- for item in data.navigation %}{% if item.place == "button" %}
+      <a href="{{ item.href }}" class="btn btn-sm md:btn-md border-0 bg-primary-content text-primary hover:bg-base-200 {% if tickets %}hidden lg:inline-flex{% endif %}">{{ item.label }}</a>
+      {%- endif %}{% endfor %}
+      {%- if tickets %}<a href="{{ tickets }}" class="btn btn-sm md:btn-md border-0 bg-primary-content text-primary hover:bg-base-200 lg:hidden">Tickets</a>{% endif %}
+      <div class="dropdown dropdown-end lg:hidden">
+        <div tabindex="0" role="button" class="btn btn-square btn-ghost btn-sm md:btn-md text-primary-content hover:bg-primary-content/10" aria-label="Open the menu">
+          <svg class="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true"><path d="M3 7h18"/><path d="M3 12h18"/><path d="M3 17h18"/></svg>
+        </div>
+        <ul tabindex="0" class="dropdown-content z-50 mt-3 flex w-[min(20rem,calc(100vw-2rem))] flex-col border border-base-300 bg-neutral p-3 text-neutral-content">
+          {%- for item in data.navigation %}{% if item.place == "both" or item.place == "header" %}
+          <li><a href="{{ item.href }}" class="gothic block border-b border-base-300 px-3 py-3.5 text-[1.625rem] hover:text-primary"{% if page.url == item.href %} aria-current="page"{% endif %}>{{ item.label }}</a></li>
+          {%- endif %}{% endfor %}
+          {%- for item in data.navigation %}{% if item.place == "button" %}
+          <li class="pt-3"><a href="{{ item.href }}" class="btn btn-primary w-full">{{ item.label }}</a></li>
+          {%- endif %}{% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>

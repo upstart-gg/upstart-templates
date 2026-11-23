@@ -1,0 +1,37 @@
+<section id="usher" class="bg-secondary text-secondary-content" aria-labelledby="ushers-title">
+  <div class="mx-auto grid max-w-[84rem] gap-10 px-5 py-20 md:px-10 md:py-24 lg:grid-cols-12">
+    <div class="lg:col-span-5">
+      <p class="label">Volunteer</p>
+      <h2 id="ushers-title" class="mt-3 text-[clamp(2.5rem,4vw+1rem,4.5rem)]">Usher with us</h2>
+      <p class="body-copy mt-5">Tear tickets, show people to their seats, and watch the play from the back of the house. Two nights a month is plenty, and the coffee is on us.</p>
+    </div>
+    <form hx-post="/_data/ushers" hx-target="this" hx-swap="outerHTML" hx-status:422="target:#ushers-problems swap:innerHTML" class="grid gap-x-6 gap-y-2 sm:grid-cols-2 lg:col-span-7">
+      <fieldset class="fieldset sm:col-span-2">
+        <legend class="fieldset-legend text-secondary-content">Your name</legend>
+        <input name="name" class="input w-full" required maxlength="200" autocomplete="name">
+      </fieldset>
+      <fieldset class="fieldset">
+        <legend class="fieldset-legend text-secondary-content">Your email</legend>
+        <input name="email" type="email" class="input w-full" required maxlength="200" autocomplete="email">
+      </fieldset>
+      <fieldset class="fieldset">
+        <legend class="fieldset-legend text-secondary-content">Your phone</legend>
+        <input name="phone" type="tel" class="input w-full" maxlength="40" autocomplete="tel">
+      </fieldset>
+      <fieldset class="fieldset sm:col-span-2">
+        <legend class="fieldset-legend text-secondary-content">The nights you can do</legend>
+        <div class="grid grid-cols-2 gap-2 sm:grid-cols-3">
+          <label class="flex items-center gap-2 text-[1rem]"><input type="checkbox" name="nights" value="Tuesday" class="checkbox checkbox-sm">Tuesday</label>
+          <label class="flex items-center gap-2 text-[1rem]"><input type="checkbox" name="nights" value="Wednesday" class="checkbox checkbox-sm">Wednesday</label>
+          <label class="flex items-center gap-2 text-[1rem]"><input type="checkbox" name="nights" value="Thursday" class="checkbox checkbox-sm">Thursday</label>
+          <label class="flex items-center gap-2 text-[1rem]"><input type="checkbox" name="nights" value="Friday" class="checkbox checkbox-sm">Friday</label>
+          <label class="flex items-center gap-2 text-[1rem]"><input type="checkbox" name="nights" value="Saturday evening" class="checkbox checkbox-sm">Saturday evening</label>
+          <label class="flex items-center gap-2 text-[1rem]"><input type="checkbox" name="nights" value="Saturday matinee" class="checkbox checkbox-sm">Saturday matinee</label>
+          <label class="flex items-center gap-2 text-[1rem]"><input type="checkbox" name="nights" value="Sunday matinee" class="checkbox checkbox-sm">Sunday matinee</label>
+        </div>
+      </fieldset>
+      <div id="ushers-problems" class="sm:col-span-2"></div>
+      <div class="sm:col-span-2"><button class="btn mt-2 border-0 bg-secondary-content text-secondary hover:bg-base-200">Sign up to usher</button></div>
+    </form>
+  </div>
+</section>

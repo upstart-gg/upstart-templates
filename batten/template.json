@@ -1,0 +1,26 @@
+{
+  "id": "batten",
+  "version": "1.0.0",
+  "name": "Batten",
+  "description": "A repertory theater's season told as a stage changes scene: inside a fixed magenta portal, each production is a painted cloth flown in from the flies as you scroll, landing at its trim with a slight swing, and every page comes down the same way.",
+  "category": "event",
+  "tags": [
+    "theater",
+    "repertory",
+    "season",
+    "performing arts",
+    "box office",
+    "subscriptions",
+    "access performances",
+    "immersive"
+  ],
+  "author": {
+    "name": "Upstart",
+    "url": "https://upstart.gg"
+  },
+  "licence": "MIT",
+  "app": "0.2.0",
+  "shoot": {
+    "clock": "2027-09-24T18:30:00-05:00"
+  }
+}

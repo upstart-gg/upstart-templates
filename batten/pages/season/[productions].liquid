@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>{{ record.title }} — Bottineau Rep</title>
+<meta name="description" content="{{ record.title }}, {{ record.author | downcase }}, at Bottineau Rep in Northeast Minneapolis: {{ record.summary }}">
+<meta property="og:title" content="{{ record.title }} — Bottineau Rep">
+<meta property="og:description" content="{{ record.summary }}">
+</head>
+<body>
+{% render 'header', tickets: record.tickets %}
+<main>
+{% render 'production-cloth', production: record, data: data %}
+{%- assign photos = record.photos | size %}
+<nav aria-label="On this page" class="production-tabs border-y border-base-300 bg-base-200 text-base-content lg:sticky lg:top-[var(--header-h)] lg:z-10">
+  <div class="mx-auto flex max-w-[84rem] items-center gap-x-6 gap-y-2 px-5 py-3 md:px-10">
+    <ul class="flex flex-wrap gap-x-6 gap-y-2">
+      <li><a href="#overview" class="gothic text-[1.25rem] whitespace-nowrap hover:text-primary">Overview</a></li>
+      <li><a href="#dates" class="gothic text-[1.25rem] whitespace-nowrap hover:text-primary">Dates &amp; times</a></li>
+      <li><a href="#access" class="gothic text-[1.25rem] whitespace-nowrap hover:text-primary">Access</a></li>
+      <li><a href="#cast" class="gothic text-[1.25rem] whitespace-nowrap hover:text-primary">Cast &amp; credits</a></li>
+      {%- if photos > 0 %}<li><a href="#photos" class="gothic text-[1.25rem] whitespace-nowrap hover:text-primary">Photos</a></li>{% endif %}
+    </ul>
+    {%- if record.tickets %}<a href="{{ record.tickets }}" class="btn btn-primary btn-sm ml-auto hidden lg:inline-flex">Tickets</a>{% endif %}
+  </div>
+</nav>
+
+<section id="overview" class="bg-base-100 text-base-content">
+  <div class="mx-auto grid max-w-[84rem] gap-12 px-5 py-20 md:px-10 md:py-24 lg:grid-cols-12">
+    <div class="lg:col-span-8">
+      <p class="label">Overview</p>
+      <p class="intro mt-4 max-w-[34ch] text-[clamp(1.5rem,1.2vw+1rem,1.875rem)]">{{ record.summary }}</p>
+      <div class="record-body body-copy mt-8">{{ record.body }}</div>
+    </div>
+    <aside class="lg:col-span-4 lg:pt-10">
+      <dl class="divide-y divide-base-300 border-y border-base-300">
+        {%- if record.running_time != blank %}<div class="py-4"><dt class="label">Running time</dt><dd class="mt-1">{{ record.running_time }}</dd></div>{% endif %}
+        {%- if record.ages != blank %}<div class="py-4"><dt class="label">Ages</dt><dd class="mt-1">{{ record.ages }}</dd></div>{% endif %}
+        {%- if record.stage != blank %}<div class="py-4"><dt class="label">Stage</dt><dd class="mt-1">{{ record.stage }}, the Sash Works</dd></div>{% endif %}
+        {%- if record.in_rep_with != blank %}{% for other in data.productions %}{% if other.id == record.in_rep_with %}
+        <div class="py-4"><dt class="label">In rep</dt><dd class="mt-1">In rep with <a href="/season/{{ other.id }}" class="text-link">{{ other.title }}</a>, on alternate nights</dd></div>
+        {%- endif %}{% endfor %}{% endif %}
+      </dl>
+    </aside>
+  </div>
+</section>
+
+<section id="dates" class="border-t border-base-300 bg-base-100 text-base-content">
+  <div class="mx-auto grid max-w-[84rem] gap-10 px-5 py-20 md:px-10 md:py-24 lg:grid-cols-12">
+    <div class="lg:col-span-4">
+      <p class="label">Dates &amp; times</p>
+      <h2 class="title mt-3 text-[clamp(2.75rem,4vw+1rem,5rem)]">{{ record.opens | append: "T12:00:00" | date: "%b %-d" }} – {{ record.closes | append: "T12:00:00" | date: "%b %-d" }}</h2>
+      <div class="mt-8 flex flex-wrap gap-3">
+        {%- if record.tickets %}<a href="{{ record.tickets }}" class="btn btn-primary">Tickets</a>{% endif %}
+        <a href="tel:+16125550163" class="btn btn-outline figures">(612) 555-0163</a>
+      </div>
+    </div>
+    <dl class="figures divide-y divide-base-300 border-y border-base-300 lg:col-span-8">
+      {%- if record.previews != blank %}<div class="grid gap-1 py-4 sm:grid-cols-[11rem_1fr]"><dt class="gothic text-[1.375rem]">Previews</dt><dd>{{ record.previews }}</dd></div>{% endif %}
+      {%- if record.opening %}<div class="grid gap-1 py-4 sm:grid-cols-[11rem_1fr]"><dt class="gothic text-[1.375rem]">Opening night</dt><dd>{{ record.opening | append: "T12:00:00" | date: "%A, %B %-d" }}</dd></div>{% endif %}
+      {%- if record.closes %}<div class="grid gap-1 py-4 sm:grid-cols-[11rem_1fr]"><dt class="gothic text-[1.375rem]">Closing</dt><dd>{{ record.closes | append: "T12:00:00" | date: "%A, %B %-d" }}</dd></div>{% endif %}
+      {%- if record.times != blank %}<div class="grid gap-1 py-4 sm:grid-cols-[11rem_1fr]"><dt class="gothic text-[1.375rem]">Every week</dt><dd>{{ record.times }}</dd></div>{% endif %}
+      {%- if record.prices != blank %}<div class="grid gap-1 py-4 sm:grid-cols-[11rem_1fr]"><dt class="gothic text-[1.375rem]">Prices</dt><dd>{{ record.prices }}</dd></div>{% endif %}
+      <div class="grid gap-1 py-4 sm:grid-cols-[11rem_1fr]"><dt class="gothic text-[1.375rem]">Thursdays</dt><dd>Pay what you can: forty seats at the door from 6:30.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section id="access" class="border-t border-base-300 bg-base-100 text-base-content">
+  <div class="mx-auto grid max-w-[84rem] gap-10 px-5 py-20 md:px-10 md:py-24 lg:grid-cols-12">
+    <div class="lg:col-span-4">
+      <p class="label">Access</p>
+      <h2 class="mt-3 text-[clamp(2.5rem,4vw+1rem,4.5rem)]">Every way to see it</h2>
+    </div>
+    <div class="lg:col-span-8">
+      <ul class="figures divide-y divide-base-300 border-y border-base-300">
+        {%- if record.asl != blank %}<li class="grid grid-cols-[3.5rem_1fr] items-baseline gap-4 py-4"><span class="gothic bg-accent px-1.5 pt-1 pb-0.5 text-center text-[1.25rem] text-accent-content">ASL</span><span><span class="font-medium">ASL-interpreted</span> · {{ record.asl }}</span></li>{% endif %}
+        {%- if record.described != blank %}<li class="grid grid-cols-[3.5rem_1fr] items-baseline gap-4 py-4"><span class="gothic bg-accent px-1.5 pt-1 pb-0.5 text-center text-[1.25rem] text-accent-content">AD</span><span><span class="font-medium">Audio-described</span> · {{ record.described }}, with a touch tour 75 minutes before</span></li>{% endif %}
+        {%- if record.captioned != blank %}<li class="grid grid-cols-[3.5rem_1fr] items-baseline gap-4 py-4"><span class="gothic bg-accent px-1.5 pt-1 pb-0.5 text-center text-[1.25rem] text-accent-content">OC</span><span><span class="font-medium">Open-captioned</span> · {{ record.captioned }}</span></li>{% endif %}
+        {%- if record.relaxed != blank %}<li class="grid grid-cols-[3.5rem_1fr] items-baseline gap-4 py-4"><span class="gothic bg-accent px-1.5 pt-1 pb-0.5 text-center text-[1.25rem] text-accent-content">RP</span><span><span class="font-medium">Relaxed</span> · {{ record.relaxed }}</span></li>{% endif %}
+      </ul>
+      <p class="body-copy mt-6">Ask for a wheelchair space, a companion seat or a seat near the stage when you book. <a href="/visit#access" class="text-link">Access at the Sash Works</a></p>
+    </div>
+  </div>
+</section>
+
+{% render 'program', production: record, data: data %}
+
+{%- if photos > 0 %}
+<section id="photos" class="bg-base-100 text-base-content">
+  <div class="mx-auto max-w-[84rem] px-5 py-20 md:px-10 md:py-24">
+    <p class="label">Photos</p>
+    <h2 class="mt-3 text-[clamp(2.5rem,4vw+1rem,4.5rem)]">In rehearsal and in the shop</h2>
+    <ul class="bw mt-10 columns-1 gap-4 sm:columns-2 lg:columns-3" data-reveal="stagger">
+      {%- for photo in record.photos %}
+      <li class="mb-4 break-inside-avoid"><img src="{{ photo }}" class="w-full"></li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+{%- endif %}
+
+{%- assign advisories = record.advisories | size %}
+{%- if advisories > 0 %}
+<section class="border-t border-base-300 bg-base-100 text-base-content">
+  <div class="mx-auto max-w-[84rem] px-5 py-12 md:px-10">
+    <details class="group max-w-3xl border-y border-base-300">
+      <summary class="flex cursor-pointer list-none items-center justify-between gap-6 py-5 [&::-webkit-details-marker]:hidden">
+        <span class="gothic text-[1.5rem]">Content advisories <span class="text-base-content/70">(they may give away the plot)</span></span>
+        <span class="gothic text-[1.75rem] leading-none text-primary group-open:hidden" aria-hidden="true">+</span><span class="gothic hidden text-[1.75rem] leading-none text-primary group-open:inline" aria-hidden="true">–</span>
+      </summary>
+      <ul class="body-copy list-disc space-y-1 pb-6 pl-6">
+        {%- for advisory in record.advisories %}<li>{{ advisory }}</li>{% endfor %}
+      </ul>
+    </details>
+  </div>
+</section>
+{%- endif %}
+
+{% render 'next-cloth', production: record, data: data %}
+</main>
+{% render 'footer' %}
+</body>
+</html>

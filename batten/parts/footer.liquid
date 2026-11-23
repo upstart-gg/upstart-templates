@@ -1,0 +1,34 @@
+<footer class="house-footer bg-neutral text-neutral-content" data-tz="America/Chicago">
+  <div class="mx-auto grid max-w-[84rem] gap-12 px-5 pt-20 pb-12 md:grid-cols-12 md:px-10">
+    <div class="md:col-span-5">
+      <p class="title text-[2.5rem] text-neutral-content">Bottineau Rep</p>
+      <p class="mt-4 leading-relaxed text-neutral-content/80">The Sash Works<br>212 Sawmill Row NE<br>Minneapolis, Minnesota 55418</p>
+      <p class="figures mt-4 leading-relaxed"><a href="tel:+16125550163" class="text-link">(612) 555-0163</a><br><a href="mailto:boxoffice@bottineaurep.example" class="text-link">boxoffice@bottineaurep.example</a></p>
+    </div>
+    <div class="md:col-span-4">
+      <p class="label">The box office</p>
+      <dl class="figures mt-4 divide-y divide-base-300 border-y border-base-300 text-[1rem]">
+        {%- for slot in data.hours %}
+        <div class="flex justify-between gap-6 py-2"><dt>{{ slot.day }}</dt><dd class="text-right text-neutral-content/80">{{ slot.hours }}</dd></div>
+        {%- endfor %}
+      </dl>
+      <p class="mt-3 text-[1rem] text-neutral-content/70">And from two hours before each performance.</p>
+    </div>
+    <nav aria-label="Footer" class="md:col-span-3">
+      <p class="label">The theater</p>
+      <ul class="mt-4 space-y-2">
+        {%- for item in data.navigation %}{% if item.place == "both" or item.place == "footer" %}
+        <li><a href="{{ item.href }}" class="gothic text-[1.375rem] hover:text-primary">{{ item.label }}</a></li>
+        {%- endif %}{% endfor %}
+      </ul>
+      <ul class="mt-6 flex flex-wrap gap-x-5 gap-y-2">
+        {%- for item in data.navigation %}{% if item.place == "social" %}
+        <li><a href="{{ item.href }}" class="text-link text-[1rem]" target="_blank" rel="noopener">{{ item.label }}</a></li>
+        {%- endif %}{% endfor %}
+      </ul>
+    </nav>
+  </div>
+  <div class="mx-auto max-w-[84rem] px-5 pb-8 md:px-10">
+    <p class="border-t border-base-300 pt-6 text-[0.9375rem] text-neutral-content/70">Bottineau Repertory Theater is a nonprofit company of twelve actors in Northeast Minneapolis, since 1998.</p>
+  </div>
+</footer>

@@ -1,0 +1,14 @@
+label: Beyond the stage
+fields:
+  - name: title
+    kind: text
+    required: true
+  - name: text
+    kind: text
+  - name: href
+    label: Link
+    kind: link
+  - name: link_label
+    label: Link label
+    kind: text
+order: [the-teen-company, student-matinees, classes-for-adults, rail-tours]

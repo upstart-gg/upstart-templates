@@ -1,0 +1,9 @@
+label: Questions about subscriptions
+fields:
+  - name: question
+    kind: text
+    required: true
+  - name: answer
+    kind: markdown
+body: answer
+order: [change-nights, add-a-play, miss-one, renewal]

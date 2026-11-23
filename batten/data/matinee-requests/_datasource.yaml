@@ -1,0 +1,53 @@
+label: Student matinee requests
+collected: true
+answer: matinee-requests-thanks
+body: notes
+messages:
+  required: "{field} is needed."
+  invalid: "{field} doesn't look right. Please check it."
+  too_many: "Too many requests were sent from here. Please try again in a few minutes."
+  sent: "Thank you. June will write within a week."
+fields:
+  - name: school
+    label: School
+    kind: text
+    required: true
+  - name: teacher
+    label: Teacher's name
+    kind: text
+    required: true
+  - name: grade
+    label: Grade
+    kind: text
+    required: true
+  - name: students
+    label: Number of students
+    kind: number
+    required: true
+  - name: adults
+    label: Number of adults
+    kind: number
+  - name: play
+    label: The play
+    kind: text
+    required: true
+  - name: first_date
+    label: A date that would suit
+    kind: date
+    required: true
+  - name: second_date
+    label: Another date that would suit
+    kind: date
+  - name: access
+    label: Access needs
+    kind: text
+  - name: email
+    label: Email
+    kind: email
+    required: true
+  - name: phone
+    label: Phone
+    kind: phone
+  - name: notes
+    label: Anything else
+    kind: markdown

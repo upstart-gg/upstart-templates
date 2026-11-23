@@ -1,0 +1,20 @@
+<section class="bg-base-100 text-base-content" aria-labelledby="giving-title">
+  <div class="mx-auto max-w-[84rem] px-5 pb-20 md:px-10 md:pb-24">
+    <h2 id="giving-title" class="sr-only">Ways to give</h2>
+    <ul class="grid gap-px border border-base-300 bg-base-300 lg:grid-cols-3">
+      {%- for tier in data.giving %}
+      <li class="flex flex-col p-7 md:p-9 {% if tier.featured %}bg-base-200{% else %}bg-base-100{% endif %}">
+        <h3 class="title text-[2.75rem]">{{ tier.name }}</h3>
+        {%- if tier.featured %}<p class="mt-2"><span class="rep-tag">Most asked for</span></p>{% endif %}
+        <p class="gothic figures mt-5 text-[3.5rem] leading-none text-primary">{{ tier.price }}</p>
+        {%- if tier.period != blank %}<p class="mt-1 text-[1rem] text-base-content/70">{{ tier.period }}</p>{% endif %}
+        <p class="body-copy mt-3">{{ tier.description }}</p>
+        <ul class="mt-4 space-y-1.5 text-[1rem]">
+          {%- for feature in tier.features %}<li class="flex gap-3"><span class="text-primary" aria-hidden="true">—</span>{{ feature }}</li>{% endfor %}
+        </ul>
+        {%- if tier.cta %}<div class="mt-auto pt-8"><a href="{{ tier.href }}" class="btn {% if tier.featured %}btn-primary{% else %}btn-outline{% endif %}">{{ tier.cta }}</a></div>{% endif %}
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>

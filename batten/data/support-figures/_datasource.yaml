@@ -1,0 +1,11 @@
+label: What giving pays for
+fields:
+  - name: value
+    kind: text
+    required: true
+  - name: label
+    kind: text
+    required: true
+  - name: note
+    kind: text
+order: [students, pay-what-you-can, teens]
