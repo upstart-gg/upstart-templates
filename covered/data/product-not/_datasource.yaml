@@ -1,0 +1,9 @@
+label: What it does and doesn't
+fields:
+  - name: title
+    kind: text
+    required: true
+  - name: side
+    kind: choice
+    choices: [does, leaves]
+order: [the-week, the-hours, the-swaps, the-export, orders, payroll, hiring]

@@ -1,0 +1,40 @@
+{%- comment -%} Customer stories: the first of `stories` large with its cover, the others as plain rows. {%- endcomment -%}
+<section class="bg-base-100 text-base-content">
+  <div class="mx-auto max-w-[84rem] px-5 pb-20 md:px-8 md:pb-28">
+    <div class="flex flex-wrap items-end justify-between gap-4">
+      <div>
+        <p class="kicker text-primary">Customers</p>
+        <h2 class="heading-section mt-3">Kitchens and counters like yours</h2>
+      </div>
+      <a href="/customers" class="text-link font-semibold">All the stories</a>
+    </div>
+    <div class="mt-12 grid gap-10 lg:grid-cols-12 lg:gap-14">
+      {%- assign lead = data.stories | first -%}
+      <article class="lg:col-span-7" data-reveal>
+        <a href="/customers/{{ lead.id }}" class="group block">
+          {%- if lead.cover -%}<img src="{{ lead.cover }}" class="aspect-[3/2] w-full rounded-box object-cover">{%- else -%}<div class="aspect-[3/2] w-full rounded-box bg-gradient-to-br from-secondary to-base-200"></div>{%- endif -%}
+          <blockquote class="mt-7 font-heading text-[clamp(1.5rem,1.4vw+1rem,2.125rem)] leading-tight font-semibold tracking-[-0.015em]">&ldquo;{{ lead.quote }}&rdquo;</blockquote>
+          <div class="mt-6 flex items-center gap-3">
+            {% render 'avatar', story: lead %}
+            <div class="leading-snug">
+              <p class="font-semibold">{{ lead.person }}, {{ lead.role }}, {{ lead.business }}</p>
+              <p class="text-[0.9375rem] text-base-content/75">{{ lead.city }} · {{ lead.team }} people</p>
+            </div>
+          </div>
+          <span class="text-link mt-6 inline-flex items-center gap-1.5 font-semibold">Read the story<svg class="size-4 transition-transform group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span>
+        </a>
+      </article>
+      <ul class="divide-y divide-base-300 border-y border-base-300 lg:col-span-5 lg:self-start" data-reveal="stagger">
+        {%- for story in data.stories offset: 1 -%}
+        <li>
+          <a href="/customers/{{ story.id }}" class="group block py-7">
+            <p class="kicker text-base-content/75">{{ story.business }} · {{ story.team }} people</p>
+            <p class="mt-2.5 text-[1.1875rem] leading-snug font-semibold group-hover:text-primary">&ldquo;{{ story.quote }}&rdquo;</p>
+            <p class="mt-3 text-[0.9375rem] text-base-content/75">{{ story.person }}, {{ story.city }}</p>
+          </a>
+        </li>
+        {%- endfor -%}
+      </ul>
+    </div>
+  </div>
+</section>

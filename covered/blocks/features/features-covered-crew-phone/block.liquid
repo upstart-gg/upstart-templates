@@ -1,0 +1,20 @@
+<section class="bg-base-100 text-base-content">
+  <div class="mx-auto max-w-[84rem] px-5 pb-20 md:px-8 md:pb-28">
+    <div class="grid items-center gap-12 rounded-box bg-secondary px-6 py-12 text-secondary-content md:px-12 md:py-16 lg:grid-cols-12 lg:gap-16 lg:px-16">
+      <div class="lg:col-span-5" data-reveal>{% render 'ui-phone' %}</div>
+      <div class="lg:col-span-7">
+        <p class="kicker">For the crew</p>
+        <h2 class="heading-section mt-3 max-w-[20ch]">Your crew gets an app, not a group text.</h2>
+        <p class="mt-4 max-w-[52ch] text-[1.0625rem] leading-relaxed">Free for everyone on your team, on any phone, in English and Spanish.</p>
+        <ul class="mt-9 grid gap-x-10 gap-y-7 sm:grid-cols-2">
+          {%- for point in data["crew-points"] -%}
+          <li class="border-t-2 border-secondary-content/20 pt-4">
+            <h3 class="text-[1.125rem]">{{ point.title }}</h3>
+            <p class="mt-1.5 text-[0.9375rem] leading-relaxed">{{ point.text }}</p>
+          </li>
+          {%- endfor -%}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

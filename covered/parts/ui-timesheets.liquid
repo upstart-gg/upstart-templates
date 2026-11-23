@@ -1,0 +1,38 @@
+{%- comment -%} The day's timesheets, from `timesheets`: each punch, its flag, approved or not. {%- endcomment -%}
+<div class="ui overflow-hidden rounded-box border border-base-300 bg-base-100 text-base-content soft-shadow">
+  <div class="flex flex-wrap items-center justify-between gap-3 border-b border-base-300 px-4 py-3 md:px-5">
+    <div>
+      <p class="ui-title text-base md:text-lg">Friday, March 12</p>
+      <p class="ui-meta">Timesheets · Bramble &amp; Bun</p>
+    </div>
+    <span class="ui-button">Approve day</span>
+  </div>
+  <div class="relative overflow-x-auto">
+    <table class="w-full min-w-[32rem] text-left">
+      <thead>
+        <tr class="text-[0.6875rem] font-semibold uppercase tracking-[0.06em] text-base-content/70">
+          <th scope="col" class="px-4 py-2.5 md:px-5">Who</th>
+          <th scope="col" class="px-2 py-2.5">In</th>
+          <th scope="col" class="px-2 py-2.5">Out</th>
+          <th scope="col" class="px-2 py-2.5">Break</th>
+          <th scope="col" class="px-2 py-2.5 text-right">Total</th>
+          <th scope="col" class="px-4 py-2.5 md:px-5"><span class="sr-only">Status</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        {%- for ts in data.timesheets -%}
+        <tr class="border-t border-base-300">
+          <th scope="row" class="px-4 py-2.5 font-normal md:px-5">
+            <span class="flex items-center gap-2"><span class="initials role-{{ ts.role | replace: ' ', '-' }}" aria-hidden="true">{{ ts.initials }}</span><span class="leading-tight"><span class="block text-[0.8125rem] font-semibold">{{ ts.person }}</span>{% if ts.flag %}<span class="mt-0.5 inline-flex items-center gap-1 text-[0.75rem] font-medium"><span class="role-dot bg-accent" aria-hidden="true"></span>{{ ts.flag }}</span>{% endif %}</span></span>
+          </th>
+          <td class="px-2 py-2.5 font-medium">{% render 'time', t: ts.clock_in %}</td>
+          <td class="px-2 py-2.5 font-medium">{% render 'time', t: ts.clock_out %}</td>
+          <td class="px-2 py-2.5 text-base-content/75">{% if ts.break_minutes > 0 %}{{ ts.break_minutes }} min{% else %}None{% endif %}</td>
+          <td class="px-2 py-2.5 text-right font-semibold">{{ ts.total }}</td>
+          <td class="px-4 py-2.5 text-right md:px-5">{% if ts.approved %}<span class="ui-pill ui-pill-done">Approved</span>{% else %}<span class="ui-pill ui-pill-wait">To check</span>{% endif %}</td>
+        </tr>
+        {%- endfor -%}
+      </tbody>
+    </table>
+  </div>
+</div>

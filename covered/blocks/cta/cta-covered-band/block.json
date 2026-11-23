@@ -1,0 +1,18 @@
+{
+  "name": "Covered closing band with the proof line",
+  "kind": "cta",
+  "source": "upstart",
+  "description": "A closing band in the primary color: one short heading, the proof line under it, and two buttons, the trial and the demo.",
+  "tags": ["call to action", "closing", "free trial", "demo", "band"],
+  "mood": ["bold", "professional"],
+  "synonyms": [
+    "call to action",
+    "closing band",
+    "sign up",
+    "start trial",
+    "appel à l'action",
+    "bandeau final",
+    "essai gratuit",
+    "demander une démo"
+  ]
+}

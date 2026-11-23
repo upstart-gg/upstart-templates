@@ -1,0 +1,8 @@
+label: Every plan includes
+fields:
+  - name: title
+    kind: text
+    required: true
+  - name: text
+    kind: text
+order: [crew-app, texts, languages, a-person, first-week, cancel]

@@ -1,0 +1,21 @@
+:root {
+  --theme-color-primary: oklch(0.48 0.09 172);
+  --theme-color-primary-content: oklch(0.982 0.006 80);
+  --theme-color-secondary: oklch(0.885 0.055 170);
+  --theme-color-secondary-content: oklch(0.25 0.02 60);
+  --theme-color-accent: oklch(0.72 0.13 26);
+  --theme-color-accent-content: oklch(0.25 0.02 60);
+  --theme-color-neutral: oklch(0.28 0.022 60);
+  --theme-color-neutral-content: oklch(0.955 0.008 80);
+  --theme-color-surface: oklch(0.974 0.007 80);
+  --theme-color-surface-alt: oklch(0.945 0.012 80);
+  --theme-color-border: oklch(0.885 0.012 80);
+  --theme-color-text: oklch(0.25 0.02 60);
+  --theme-font-heading: "Geologica", ui-sans-serif, system-ui, sans-serif;
+  --theme-font-body: "Golos Text", ui-sans-serif, system-ui, sans-serif;
+  --theme-radius: 0.75rem;
+  --theme-radius-field: 0.625rem;
+  --theme-depth: 0;
+  --theme-size: 0.25rem;
+  --theme-border: 1px;
+}

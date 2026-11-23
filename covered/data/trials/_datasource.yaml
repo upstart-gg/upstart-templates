@@ -1,0 +1,39 @@
+label: Trial requests
+collected: true
+answer: trials-thanks
+messages:
+  required: "{field} is required."
+  invalid: "{field} doesn't look right. Please check it."
+  too_many: "Too many requests were sent from here. Please try again in a few minutes."
+  sent: "Thanks, it's sent."
+fields:
+  - name: name
+    label: Your name
+    kind: text
+    required: true
+  - name: email
+    label: Work email
+    kind: email
+    required: true
+  - name: phone
+    label: Mobile phone
+    kind: phone
+    required: true
+  - name: business
+    label: Your place's name
+    kind: text
+    required: true
+  - name: kind
+    label: What kind of place
+    kind: choice
+    choices: [Restaurant, Café, Bakery, Bar, Something else]
+  - name: locations
+    label: How many locations
+    kind: number
+  - name: crew
+    label: How many people
+    kind: number
+  - name: now
+    label: How you schedule now
+    kind: choice
+    choices: [Paper on the wall, A spreadsheet, A group text, Another app]

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>How it works — Staff Meal</title>
+<meta name="description" content="The schedule, the timesheets, the swaps and availability, and the payroll export: the four jobs a restaurant or café manager does every week, each done in one place.">
+<meta property="og:title" content="How Staff Meal runs your week">
+<meta property="og:description" content="Four jobs a manager does every week, each done in one place, and the crew's side of each.">
+</head>
+<body>
+{% render 'header' %}
+<main>
+<section class="bg-base-100 text-base-content">
+  <div class="mx-auto max-w-[84rem] px-5 pt-16 pb-16 md:px-8 md:pt-24 md:pb-20">
+    <p class="kicker text-primary">Product</p>
+    <h1 class="mt-3 max-w-[20ch] text-[clamp(2.25rem,2.8vw+1rem,4rem)]">How Staff Meal runs your week</h1>
+    <p class="body-copy mt-5 text-[1.125rem]">Four jobs a manager does every week, each done in one place, and the crew&rsquo;s side of each.</p>
+    <img src="/media/back-of-house.jpg" class="mt-12 aspect-[16/9] w-full rounded-box object-cover object-[40%_85%] md:mt-14 md:aspect-[21/9]">
+  </div>
+</section>
+{% render 'rail' %}
+{% render 'chapters' %}
+{% render 'not-does' %}
+{% render 'crew-numbers' %}
+{% render 'closing' %}
+</main>
+{% render 'footer' %}
+</body>
+</html>

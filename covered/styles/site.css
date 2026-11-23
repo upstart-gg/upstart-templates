@@ -1,0 +1,675 @@
+/* Geologica, Golos Text and Shantell Sans, files of the template, under the SIL Open Font License
+   (fonts/*-OFL.txt), subset to Latin and Latin Extended. Geologica is variable in weight, sharpness
+   (SHRP), cursive (CRSV) and slant; Golos Text in weight; Shantell Sans in weight, bounce (BNCE),
+   informality (INFM) and spacing (SPAC). */
+@font-face {
+  font-family: "Geologica";
+  src: url("/fonts/geologica-latin-full-normal.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Geologica";
+  src: url("/fonts/geologica-latin-ext-full-normal.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Golos Text";
+  src: url("/fonts/golos-text-latin-wght-normal.woff2") format("woff2");
+  font-weight: 400 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Golos Text";
+  src: url("/fonts/golos-text-latin-ext-wght-normal.woff2") format("woff2");
+  font-weight: 400 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Shantell Sans";
+  src: url("/fonts/shantell-sans-latin-full-normal.woff2") format("woff2");
+  font-weight: 300 800;
+  font-style: normal;
+  font-display: swap;
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Shantell Sans";
+  src: url("/fonts/shantell-sans-latin-ext-full-normal.woff2") format("woff2");
+  font-weight: 300 800;
+  font-style: normal;
+  font-display: swap;
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* In the components layer, so that Tailwind's classes on an element still win over these rules. */
+@layer components {
+  body {
+    font-size: 1.0625rem;
+    font-feature-settings: "lnum";
+  }
+
+  /* Headings: Geologica 600, its sharpness and cursive at rest. */
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-variation-settings:
+      "SHRP" 0,
+      "CRSV" 0;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+  h1 {
+    font-weight: 700;
+    line-height: 1.02;
+  }
+  h2 {
+    line-height: 1.08;
+  }
+  h3,
+  h4 {
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+
+  /* The section headings' size, the small headings' size. */
+  .heading-section {
+    font-size: clamp(1.875rem, 2.2vw + 1rem, 3rem);
+  }
+  .heading-small {
+    font-size: 1.375rem;
+  }
+
+  /* "Staff Meal": Geologica 800 with its corners cut like a pen stroke (sharpness 60). */
+  .wordmark {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-variation-settings:
+      "SHRP" 60,
+      "CRSV" 0;
+    letter-spacing: -0.025em;
+    line-height: 1;
+  }
+
+  /* Labels above headings, a plan's limit, a story's facts. */
+  .kicker {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1.35;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Prices, the figures row, totals: Geologica 600 in tabular figures. */
+  .figure {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-variation-settings:
+      "SHRP" 0,
+      "CRSV" 0;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+
+  /* The body's measure and color. */
+  .body-copy {
+    max-width: 62ch;
+    line-height: 1.65;
+    color: color-mix(in oklch, var(--color-base-content) 80%, transparent);
+  }
+
+  /* Buttons: rounded rectangles like an app's, sentence case, 600. */
+  .btn {
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: none;
+    white-space: nowrap;
+    transition:
+      background-color 150ms ease,
+      border-color 150ms ease,
+      color 150ms ease;
+  }
+  .btn-outline {
+    border-color: var(--color-base-content);
+    color: var(--color-base-content);
+  }
+  .btn-outline:hover {
+    background-color: var(--color-base-content);
+    color: var(--color-base-100);
+  }
+  /* On the jade panel and the closing band: order-pad white with jade text. */
+  .btn-on-primary {
+    background-color: var(--color-primary-content);
+    border-color: var(--color-primary-content);
+    color: var(--color-primary);
+  }
+  .btn-on-primary:hover {
+    background-color: color-mix(in oklch, var(--color-primary-content) 88%, var(--color-primary));
+    border-color: color-mix(in oklch, var(--color-primary-content) 88%, var(--color-primary));
+  }
+  .btn-line-on-primary {
+    background-color: transparent;
+    border-color: color-mix(in oklch, var(--color-primary-content) 70%, transparent);
+    color: var(--color-primary-content);
+  }
+  .btn-line-on-primary:hover {
+    background-color: color-mix(in oklch, var(--color-primary-content) 12%, transparent);
+    border-color: var(--color-primary-content);
+  }
+
+  /* Links in text: jade, underlined 1 px with a 3 px offset. */
+  .text-link,
+  .staff-prose a {
+    color: var(--color-primary);
+    text-decoration-line: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+  .text-link:hover,
+  .staff-prose a:hover {
+    text-decoration-thickness: 2px;
+  }
+
+  /* The soft shadow of the product's cards and the hero card, made from the neutral. */
+  .soft-shadow {
+    box-shadow:
+      0 1px 2px oklch(from var(--color-neutral) l c h / 0.08),
+      0 18px 40px -18px oklch(from var(--color-neutral) l c h / 0.12),
+      0 8px 16px -8px oklch(from var(--color-neutral) l c h / 0.12);
+  }
+
+  /* Long texts: the stories and the help articles. */
+  .staff-prose {
+    line-height: 1.7;
+    color: color-mix(in oklch, var(--color-base-content) 85%, transparent);
+  }
+  .staff-prose > * + * {
+    margin-top: 1.1rem;
+  }
+  .staff-prose h2 {
+    margin-top: 2.25rem;
+    font-size: 1.5rem;
+    color: var(--color-base-content);
+  }
+  .staff-prose h3 {
+    margin-top: 1.75rem;
+    font-size: 1.2rem;
+    color: var(--color-base-content);
+  }
+  .staff-prose strong {
+    font-weight: 600;
+    color: var(--color-base-content);
+  }
+  .staff-prose ul {
+    list-style: disc;
+    padding-left: 1.4rem;
+  }
+  .staff-prose ol {
+    list-style: none;
+    counter-reset: step;
+    padding-left: 0;
+  }
+  .staff-prose ol > li {
+    counter-increment: step;
+    position: relative;
+    padding-left: 2.6rem;
+    min-height: 1.9rem;
+  }
+  .staff-prose ol > li + li {
+    margin-top: 0.75rem;
+  }
+  .staff-prose ol > li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: grid;
+    place-items: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 9999px;
+    background-color: var(--color-secondary);
+    color: var(--color-secondary-content);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 0.875rem;
+    font-variant-numeric: tabular-nums;
+  }
+  .staff-prose blockquote {
+    border-left: 3px solid var(--color-primary);
+    padding-left: 1.1rem;
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    line-height: 1.4;
+    color: var(--color-base-content);
+  }
+
+  /* ——— The product, built in HTML from the theme ——— */
+
+  /* Inside the product: Golos at interface sizes, figures in columns. */
+  .ui {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    line-height: 1.35;
+    font-variant-numeric: tabular-nums;
+  }
+  .ui-title {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-variation-settings:
+      "SHRP" 0,
+      "CRSV" 0;
+    letter-spacing: -0.01em;
+  }
+  .ui-meta {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: color-mix(in oklch, var(--color-base-content) 70%, transparent);
+  }
+
+  /* An initials disc. */
+  .initials {
+    display: inline-grid;
+    place-items: center;
+    flex: none;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 9999px;
+    background-color: color-mix(in oklch, var(--color-base-content) 8%, var(--color-base-100));
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--color-base-content);
+  }
+  .initials-primary {
+    background-color: var(--color-primary);
+    color: var(--color-primary-content);
+  }
+
+  /* A shift chip, colored by its role: the same color in the week, the timesheets and the phone. */
+  .chip {
+    display: flex;
+    flex-direction: column;
+    gap: 0.05rem;
+    width: 100%;
+    min-height: 2.5rem;
+    padding: 0.3rem 0.45rem;
+    border-radius: 0.5rem;
+    font-size: 0.75rem;
+    line-height: 1.2;
+    font-weight: 500;
+    color: var(--color-base-content);
+    white-space: nowrap;
+  }
+  .chip .chip-time {
+    font-weight: 600;
+  }
+  @media (width < 48rem) {
+    .chip {
+      padding-inline: 0.35rem;
+      font-size: 0.6875rem;
+    }
+  }
+  .chip .chip-tag {
+    white-space: normal;
+    font-size: 0.6875rem;
+    color: color-mix(in oklch, var(--color-base-content) 75%, transparent);
+  }
+  .role-kitchen {
+    background-color: var(--color-secondary);
+  }
+  .role-counter {
+    background-color: color-mix(in oklch, var(--color-accent) 30%, var(--color-base-100));
+  }
+  .role-coffee-bar {
+    background-color: color-mix(in oklch, var(--color-base-content) 8%, var(--color-base-100));
+  }
+  .role-dot {
+    display: inline-block;
+    flex: none;
+    width: 0.55rem;
+    height: 0.55rem;
+    border-radius: 9999px;
+  }
+  .chip-open {
+    background-color: var(--color-base-100);
+    border: 1.5px dashed var(--color-primary);
+    color: var(--color-primary);
+  }
+  .chip-open .chip-time {
+    color: var(--color-base-content);
+  }
+  .chip-cant {
+    white-space: normal;
+    background-color: var(--color-base-100);
+    background-image: repeating-linear-gradient(
+      -45deg,
+      color-mix(in oklch, var(--color-base-content) 10%, transparent) 0 2px,
+      transparent 2px 7px
+    );
+    color: color-mix(in oklch, var(--color-base-content) 75%, transparent);
+  }
+  .offers-badge {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    margin-top: 0.1rem;
+    padding: 0 0.35rem;
+    border-radius: 9999px;
+    background-color: var(--color-accent);
+    color: var(--color-accent-content);
+    font-size: 0.625rem;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+
+  /* The week: a table of people by days. */
+  .week-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    table-layout: fixed;
+  }
+  .week-table th,
+  .week-table td {
+    border-top: 1px solid var(--color-base-300);
+    padding: 0.3rem;
+    vertical-align: middle;
+  }
+  .week-table thead th {
+    border-top: 0;
+    padding-block: 0.6rem;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: color-mix(in oklch, var(--color-base-content) 70%, transparent);
+  }
+  .week-table td + td,
+  .week-table th + td {
+    border-left: 1px solid var(--color-base-300);
+  }
+
+  /* A status pill inside the product. */
+  .ui-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.15rem 0.55rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .ui-pill-done {
+    background-color: color-mix(in oklch, var(--color-primary) 14%, var(--color-base-100));
+    color: var(--color-primary);
+  }
+  .ui-pill-wait {
+    background-color: color-mix(in oklch, var(--color-accent) 22%, var(--color-base-100));
+    color: var(--color-base-content);
+  }
+  .ui-pill-plain {
+    background-color: color-mix(in oklch, var(--color-base-content) 8%, var(--color-base-100));
+    color: var(--color-base-content);
+  }
+  .ui-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: var(--radius-field);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    white-space: nowrap;
+    background-color: var(--color-primary);
+    color: var(--color-primary-content);
+  }
+  .ui-button-quiet {
+    background-color: transparent;
+    border: 1px solid var(--color-base-300);
+    color: var(--color-base-content);
+  }
+
+  /* The crew's phone: one flat phone in espresso, never tilted. */
+  .phone {
+    width: min(19rem, 100%);
+    padding: 0.6rem;
+    border-radius: 2.6rem;
+    background-color: var(--color-neutral);
+  }
+  .phone-screen {
+    position: relative;
+    overflow: hidden;
+    border-radius: 2.05rem;
+    background-color: var(--color-base-100);
+    color: var(--color-base-content);
+  }
+  .phone-notch {
+    width: 5.5rem;
+    height: 1.4rem;
+    margin: 0.55rem auto 0;
+    border-radius: 9999px;
+    background-color: var(--color-neutral);
+  }
+
+  /* ——— The tidy-up: the paper before, the week after ——— */
+
+  /* The sheet on the walk-in door: the surface lifted a little, a pencil grid on it. */
+  .paper-sheet {
+    background-color: color-mix(in oklch, var(--color-base-100), var(--color-primary-content) 60%);
+    background-image:
+      linear-gradient(oklch(from var(--color-base-content) l c h / 0.07) 1px, transparent 1px),
+      linear-gradient(90deg, oklch(from var(--color-base-content) l c h / 0.05) 1px, transparent 1px);
+    background-size:
+      100% 1.6rem,
+      1.6rem 100%;
+    border-radius: 0.2rem;
+    box-shadow:
+      0 1px 1px oklch(from var(--color-neutral) l c h / 0.1),
+      0 22px 40px -24px oklch(from var(--color-neutral) l c h / 0.35);
+    transform: rotate(-1.5deg);
+  }
+  .paper-writing {
+    transform: rotate(-1.5deg);
+  }
+  /* The manager's marker: Shantell Sans, informal and bouncing. */
+  .marker {
+    font-family: "Shantell Sans", ui-rounded, "Comic Sans MS", cursive;
+    font-weight: 500;
+    font-variation-settings:
+      "INFM" 100,
+      "BNCE" 40;
+    color: var(--color-base-content);
+    line-height: 1.15;
+  }
+  .marker-title {
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+  /* A day's zone, ruled in pencil (the ink at 22%). */
+  .paper-day {
+    border-color: oklch(from var(--color-base-content) l c h / 0.22);
+  }
+  .scrawl {
+    display: inline-block;
+    transform: rotate(var(--tilt, 0deg));
+    white-space: nowrap;
+  }
+  .struck {
+    position: relative;
+    display: inline-block;
+    color: color-mix(in oklch, var(--color-base-content) 80%, transparent);
+  }
+  .struck svg {
+    position: absolute;
+    inset: -0.1em -0.25em;
+    width: calc(100% + 0.5em);
+    height: calc(100% + 0.2em);
+    overflow: visible;
+  }
+  .paper-arrow {
+    color: var(--color-base-content);
+  }
+  /* The sticky notes: pale jade, ticket coral, then a peach between them. */
+  .sticky-note {
+    display: block;
+    width: fit-content;
+    max-width: 10rem;
+    padding: 0.55rem 0.65rem 0.7rem;
+    border-radius: 0.15rem;
+    box-shadow: 0 10px 14px -10px oklch(from var(--color-neutral) l c h / 0.45);
+    transform: rotate(var(--tilt, 0deg));
+    font-size: 0.9375rem;
+    white-space: normal;
+  }
+  .sticky-note-1 {
+    background-color: var(--color-secondary);
+  }
+  .sticky-note-2 {
+    background-color: var(--color-accent);
+  }
+  .sticky-note-3 {
+    background-color: color-mix(in oklch, var(--color-accent) 40%, var(--color-base-100));
+  }
+  /* Masking tape: the kraft-light mixed with espresso, translucent. */
+  .tape {
+    width: 5.5rem;
+    height: 1.5rem;
+    background-color: oklch(from color-mix(in oklch, var(--color-base-200), var(--color-neutral) 12%) l c h / 0.75);
+    box-shadow: 0 1px 2px oklch(from var(--color-neutral) l c h / 0.12);
+  }
+  /* The coffee ring: two irregular rings of espresso at 18%. */
+  .coffee-ring {
+    width: 6.5rem;
+    height: 6.5rem;
+    border-radius: 50%;
+    background:
+      radial-gradient(
+        circle at 52% 48%,
+        transparent 0 55%,
+        oklch(from var(--color-neutral) l c h / 0.18) 57% 60%,
+        oklch(from var(--color-neutral) l c h / 0.06) 63%,
+        transparent 66%
+      ),
+      radial-gradient(
+        ellipse 46% 50% at 47% 53%,
+        transparent 0 88%,
+        oklch(from var(--color-neutral) l c h / 0.14) 92% 96%,
+        transparent 100%
+      );
+  }
+
+  /* The toast at the week's corner. */
+  .toast-published {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.55rem 0.9rem;
+    border-radius: var(--radius-field);
+    background-color: var(--color-neutral);
+    color: var(--color-neutral-content);
+    font-size: 0.875rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  /* ——— One job at a time: daisyUI's tabs on radio inputs, as pills ——— */
+  .job-tabs.tabs-box {
+    gap: 0.5rem;
+    padding: 0;
+    border-radius: 0;
+    background-color: transparent;
+    box-shadow: none;
+  }
+  .job-tabs > .tab {
+    height: 2.6rem;
+    padding-inline: 1rem;
+    border-radius: var(--radius-field);
+    font-weight: 600;
+    font-size: 0.9375rem;
+    white-space: nowrap;
+    color: var(--color-base-content);
+    border: 1px solid var(--color-base-300);
+    background-color: var(--color-base-100);
+  }
+  .job-tabs > .tab:hover {
+    border-color: var(--color-base-content);
+  }
+  .job-tabs > .tab:checked,
+  .job-tabs > .tab[aria-selected="true"] {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--color-primary-content);
+    box-shadow: none;
+  }
+  .job-tabs > .tab-content {
+    margin-top: 2rem;
+    border: 0;
+    padding: 0;
+    background: transparent;
+  }
+
+  /* The product page's rail: the chapter in view filled in jade. */
+  .rail-link {
+    display: inline-flex;
+    align-items: center;
+    height: 2.5rem;
+    padding-inline: 1rem;
+    border-radius: var(--radius-field);
+    font-weight: 600;
+    font-size: 0.9375rem;
+    white-space: nowrap;
+    color: var(--color-base-content);
+    transition:
+      background-color 150ms ease,
+      color 150ms ease;
+  }
+  .rail-link:hover {
+    background-color: var(--color-base-200);
+  }
+  .rail-link[aria-current="true"] {
+    background-color: var(--color-primary);
+    color: var(--color-primary-content);
+  }
+}
+
+/* Small states and the new panel's piece of the product, under no-preference only. */
+@media (prefers-reduced-motion: no-preference) {
+  .chip {
+    transition:
+      translate 150ms ease,
+      box-shadow 150ms ease;
+  }
+  .chip:hover {
+    translate: 0 -1px;
+    box-shadow: 0 6px 12px -8px oklch(from var(--color-neutral) l c h / 0.5);
+  }
+  .job-tabs > .tab:checked + .tab-content [data-panel-piece] {
+    transition: translate 250ms cubic-bezier(0.22, 1, 0.36, 1);
+    @starting-style {
+      translate: 0 8px;
+    }
+  }
+}

@@ -1,0 +1,48 @@
+label: Customer stories
+fields:
+  - name: business
+    kind: text
+    required: true
+  - name: kind
+    label: Kind of place
+    kind: text
+  - name: city
+    kind: text
+  - name: team
+    label: People
+    kind: number
+  - name: locations
+    kind: number
+  - name: since
+    label: On Staff Meal since
+    kind: number
+  - name: person
+    label: Owner or manager
+    kind: text
+  - name: role
+    kind: text
+  - name: initials
+    kind: text
+  - name: portrait
+    kind: image
+  - name: cover
+    kind: image
+  - name: work_photo
+    label: A photo of the work
+    kind: image
+  - name: quote
+    kind: text
+  - name: headline
+    kind: text
+  - name: summary
+    kind: text
+  - name: before
+    kind: text
+  - name: now
+    kind: text
+  - name: figures
+    kind: list
+  - name: body
+    kind: markdown
+body: body
+order: [bramble-and-bun, dos-puentes, kettle-ten, windbreak]

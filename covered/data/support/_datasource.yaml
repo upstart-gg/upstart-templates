@@ -1,0 +1,29 @@
+label: Support requests
+collected: true
+answer: support-thanks
+body: message
+messages:
+  required: "{field} is required."
+  invalid: "{field} doesn't look right. Please check it."
+  too_many: "Too many requests were sent from here. Please try again in a few minutes."
+  sent: "Thanks, it's sent."
+fields:
+  - name: name
+    label: Your name
+    kind: text
+    required: true
+  - name: email
+    label: Email
+    kind: email
+    required: true
+  - name: business
+    label: Your place
+    kind: text
+  - name: topic
+    label: Topic
+    kind: choice
+    choices: [Getting started, The schedule, Timesheets & pay, The crew's app, Billing]
+  - name: message
+    label: Your message
+    kind: markdown
+    required: true

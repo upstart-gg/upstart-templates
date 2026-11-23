@@ -1,0 +1,67 @@
+label: Shifts
+fields:
+  - name: person
+    label: Who
+    kind: text
+  - name: initials
+    kind: text
+  - name: role
+    kind: choice
+    choices: [kitchen, counter, coffee bar]
+  - name: day
+    kind: choice
+    choices: [mon, tue, wed, thu, fri, sat, sun]
+    required: true
+  - name: start
+    label: Starts (24-hour, 06:00)
+    kind: text
+  - name: end
+    label: Ends (24-hour, 14:00)
+    kind: text
+  - name: hours
+    kind: number
+  - name: state
+    kind: choice
+    choices: [set, open, cant]
+  - name: tag
+    label: Line in the chip
+    kind: text
+  - name: paper
+    label: On the paper before the tidy-up
+    kind: choice
+    choices: [in place, moved, note, struck]
+  - name: paper_from
+    label: Written on another day (moved)
+    kind: choice
+    choices: [mon, tue, wed, thu, fri, sat, sun]
+  - name: paper_note
+    label: Sticky note's words (note)
+    kind: text
+  - name: paper_struck
+    label: Name crossed out beside it (struck)
+    kind: text
+order:
+  [
+    open-sat,
+    jo-mon,
+    jo-tue,
+    jo-fri,
+    jo-sat,
+    maya-wed,
+    maya-thu,
+    maya-sun,
+    priya-mon,
+    priya-wed,
+    priya-sat,
+    priya-sun,
+    kenji-wed,
+    kenji-fri,
+    kenji-sat,
+    luis-mon,
+    luis-tue,
+    luis-thu,
+    luis-sun,
+    dana-tue,
+    dana-fri,
+    dana-sat,
+  ]

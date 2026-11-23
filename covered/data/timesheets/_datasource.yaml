@@ -1,0 +1,26 @@
+label: Timesheets
+fields:
+  - name: person
+    kind: text
+    required: true
+  - name: initials
+    kind: text
+  - name: role
+    kind: choice
+    choices: [kitchen, counter, coffee bar]
+  - name: clock_in
+    label: Clocked in (24-hour)
+    kind: text
+  - name: clock_out
+    label: Clocked out (24-hour)
+    kind: text
+  - name: break_minutes
+    label: Break (minutes)
+    kind: number
+  - name: total
+    kind: text
+  - name: flag
+    kind: text
+  - name: approved
+    kind: boolean
+order: [luis, jo, dana, ana, kenji]

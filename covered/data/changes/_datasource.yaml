@@ -1,0 +1,17 @@
+label: Changes
+fields:
+  - name: title
+    kind: text
+    required: true
+  - name: date
+    kind: date
+  - name: kind
+    kind: choice
+    choices: [new, better, fixed]
+  - name: job
+    kind: choice
+    choices: [schedule, timesheets, swaps, payroll, crew app]
+  - name: body
+    kind: markdown
+body: body
+sort: -date

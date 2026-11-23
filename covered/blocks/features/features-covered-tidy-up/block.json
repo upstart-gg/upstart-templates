@@ -1,0 +1,22 @@
+{
+  "name": "Covered paper schedule that tidies itself",
+  "kind": "features",
+  "source": "upstart",
+  "description": "A paper schedule taped up crooked, with sticky notes, crossed-out names and a coffee ring, that sorts itself once into the product's clean week as it comes into view: each name flies to its slot, each note to what it asked for. With no script, the clean week alone.",
+  "tags": ["before and after", "schedule", "week", "product demo", "shifts", "rota", "animation"],
+  "mood": ["playful", "professional", "warm"],
+  "synonyms": [
+    "before after",
+    "schedule demo",
+    "weekly rota",
+    "product tour",
+    "avant après",
+    "planning",
+    "semaine de travail",
+    "démonstration du produit"
+  ],
+  "data": {
+    "name": "shifts",
+    "family": "collection"
+  }
+}

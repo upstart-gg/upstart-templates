@@ -1,0 +1,23 @@
+{%- comment -%} The split screen: the photo to the window's left edge, the jade panel to its right, the product's card floating over the photo near the seam (data-reveal="late"). {%- endcomment -%}
+<section class="bg-primary text-primary-content">
+  <div class="grid lg:min-h-[min(calc(100svh-4.5rem),54rem)] lg:grid-cols-2">
+    <div class="relative">
+      <div class="aspect-[4/3] overflow-hidden lg:absolute lg:inset-0 lg:aspect-auto"><img src="/media/hero-baker.jpg" class="h-full w-full origin-[88%_45%] scale-[1.22] object-cover object-[62%_45%]"></div>
+      <div class="absolute right-4 -bottom-12 z-10 md:right-8 lg:right-10 lg:bottom-12" data-reveal="late">
+        {% render 'ui-card' %}
+      </div>
+    </div>
+    <div class="flex items-center px-5 pt-20 pb-14 md:px-10 md:pt-24 md:pb-20 lg:px-14 lg:py-20 xl:px-20">
+      <div class="max-w-[36rem]">
+        <p class="kicker text-primary-content/90">Schedules &amp; timesheets for restaurants and cafés</p>
+        <h1 class="mt-5 text-[clamp(2.5rem,3.4vw+1rem,4.75rem)] tracking-[-0.02em]">Every shift covered by Sunday night.</h1>
+        <p class="mt-6 max-w-[34rem] text-[1.125rem] leading-relaxed text-primary-content/90">Staff Meal builds next week from this one, sends it to your crew&rsquo;s phones, and sorts out the swaps and the timesheets, so the schedule stops living on the walk-in door.</p>
+        <div class="mt-9 flex flex-wrap gap-3">
+          <a href="/start#trial" class="btn btn-on-primary btn-lg h-13 px-6">Start your free trial</a>
+          <a href="#tidy-up" class="btn btn-line-on-primary btn-lg h-13 px-6">See how it works</a>
+        </div>
+        {% render 'proof', on: "primary", class: "mt-6" %}
+      </div>
+    </div>
+  </div>
+</section>

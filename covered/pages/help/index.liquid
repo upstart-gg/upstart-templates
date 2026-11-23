@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Help — Staff Meal</title>
+<meta name="description" content="Short answers on logging in, the schedule, timesheets, the payroll export, the crew's app and billing, written by the people who pick up the phone.">
+<meta property="og:title" content="Staff Meal help">
+<meta property="og:description" content="Short answers, written by the people who pick up the phone.">
+</head>
+<body>
+{% render 'header' %}
+<main>
+<section class="bg-base-100 text-base-content">
+  <div class="mx-auto max-w-[84rem] px-5 pt-16 pb-12 md:px-8 md:pt-24 md:pb-16">
+    <h1 class="max-w-[16ch] text-[clamp(2.25rem,2.8vw+1rem,4rem)]">Help</h1>
+    <p class="body-copy mt-5 text-[1.125rem]">Short answers, written by the people who pick up the phone.</p>
+  </div>
+</section>
+{% render 'help-topics' %}
+{% render 'talk' %}
+{% render 'support-form' %}
+</main>
+{% render 'footer' %}
+</body>
+</html>

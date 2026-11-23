@@ -1,0 +1,20 @@
+{%- comment -%} Questions in two columns, over a section list passed as `questions`. {%- endcomment -%}
+<section class="bg-base-100 text-base-content">
+  <div class="mx-auto max-w-[84rem] px-5 py-20 md:px-8 md:py-28">
+    <div class="grid gap-12 lg:grid-cols-12">
+      <div class="lg:col-span-4">
+        <p class="kicker text-primary">{{ kicker | default: "Questions" }}</p>
+        <h2 class="heading-section mt-3 max-w-[16ch]">{{ title | default: "What managers ask us first" }}</h2>
+        <p class="body-copy mt-4">Or call <a href="tel:+18165550134" class="text-link font-semibold whitespace-nowrap">(816) 555-0134</a>, from 7 am to 10 pm Central.</p>
+      </div>
+      <div class="grid gap-x-12 gap-y-9 sm:grid-cols-2 lg:col-span-8">
+        {%- for item in questions -%}
+        <div class="border-t border-base-300 pt-5">
+          <h3 class="text-[1.125rem]">{{ item.question }}</h3>
+          <div class="mt-2.5 leading-relaxed text-base-content/80">{{ item.answer }}</div>
+        </div>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,9 @@
+label: Questions
+fields:
+  - name: question
+    kind: text
+    required: true
+  - name: answer
+    kind: markdown
+body: answer
+order: [crew-pays, bring-in, after-trial, pos, spanish, a-person]

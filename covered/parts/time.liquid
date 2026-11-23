@@ -1,0 +1,2 @@
+{%- comment -%} A 24-hour time ("06:00", "18:30") as the product shows it: "6a", "6:30p". short: true leaves out a and p ("6"), for the paper. For a site in French, German or most of Europe, write t as it is. {%- endcomment -%}
+{%- if t -%}{%- assign parts = t | split: ":" -%}{%- assign h = parts[0] | plus: 0 -%}{%- assign m = parts[1] -%}{%- if h == 0 -%}12{%- elsif h > 12 -%}{{ h | minus: 12 }}{%- else -%}{{ h }}{%- endif -%}{%- if m and m != "00" -%}:{{ m }}{%- endif -%}{%- unless short -%}{%- if h < 12 -%}a{%- else -%}p{%- endif -%}{%- endunless -%}{%- endif -%}

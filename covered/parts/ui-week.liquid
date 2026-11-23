@@ -1,0 +1,102 @@
+{%- comment -%}
+  The product's week, drawn from `shifts`: a row per person (in the records' order), the open shifts on top,
+  a column per day, a chip per shift in its role's color, and each row's hours summed. Below md it shows
+  Friday to Sunday only (Tailwind's classes, never a script). Its frame, bar, headings and totals carry
+  data-tidy-chrome and its toast data-tidy-toast, for the tidy-up; elsewhere they are plain.
+{%- endcomment -%}
+{%- assign days = "mon,tue,wed,thu,fri,sat,sun" | split: "," -%}
+{%- assign labels = "Mon 8,Tue 9,Wed 10,Thu 11,Fri 12,Sat 13,Sun 14" | split: "," -%}
+{%- assign people = data.shifts | map: "person" | uniq -%}
+<div class="ui relative" data-tidy-week>
+  <div class="absolute inset-0 rounded-box border border-base-300 bg-base-100 soft-shadow" data-tidy-chrome aria-hidden="true"></div>
+  <div class="relative">
+    <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 border-b border-base-300 px-4 py-3 md:px-5" data-tidy-chrome>
+      <div class="flex items-baseline gap-3">
+        <p class="ui-title text-base md:text-lg">Week of March 8</p>
+        <p class="ui-meta hidden sm:block">Bramble &amp; Bun · Waldo</p>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="ui-pill ui-pill-done"><svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Published</span>
+        <span class="ui-button ui-button-quiet hidden md:inline-flex">Copy to next week</span>
+      </div>
+    </div>
+    <table class="week-table">
+      <caption class="sr-only">Bramble &amp; Bun's schedule for the week of March 8, by person and day</caption>
+      <colgroup>
+        <col class="w-[6.25rem] md:w-[9.5rem] lg:w-[11rem]">
+        {%- for d in days -%}<col class="{% unless forloop.index > 4 %}hidden md:table-column{% endunless %}">{%- endfor -%}
+        <col class="w-[2.5rem] md:w-[3.75rem]">
+      </colgroup>
+      <thead data-tidy-chrome>
+        <tr>
+          <th scope="col" class="pl-3 text-left md:pl-5">Team</th>
+          {%- for d in days -%}
+          <th scope="col" class="text-left {% unless forloop.index > 4 %}hidden md:table-cell{% endunless %} {% if d == "sat" or d == "sun" %}text-primary{% endif %}">{{ labels[forloop.index0] }}</th>
+          {%- endfor -%}
+          <th scope="col" class="pr-3 text-right md:pr-5">Hrs</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row" class="pl-3 text-left md:pl-5" data-tidy-chrome>
+            <span class="flex items-center gap-2"><span class="initials border border-dashed border-primary bg-base-100 text-primary" aria-hidden="true">+</span><span class="text-[0.8125rem] leading-tight font-semibold">Open<span class="hidden sm:inline"> shifts</span></span></span>
+          </th>
+          {%- for d in days -%}
+          {%- assign di = forloop.index0 -%}
+          <td class="{% unless forloop.index > 4 %}hidden md:table-cell{% endunless %}">
+            {%- for shift in data.shifts -%}{%- if shift.state == "open" and shift.day == d -%}
+            <span class="chip chip-open" data-shift="{{ shift.id }}" data-day="{{ di }}">
+              <span class="chip-time">{% render 'time', t: shift.start %}–{% render 'time', t: shift.end %}</span>
+              <span>Open</span>
+              {%- if shift.tag -%}<span class="offers-badge">{{ shift.tag }}</span>{%- endif -%}
+            </span>
+            {%- endif -%}{%- endfor -%}
+          </td>
+          {%- endfor -%}
+          <td class="pr-3 text-right md:pr-5" data-tidy-chrome></td>
+        </tr>
+        {%- for person in people -%}{%- if person != blank -%}
+        {%- assign mine = data.shifts | where: "person", person -%}
+        {%- assign first = mine | first -%}
+        {%- assign total = 0 -%}{%- for s in mine -%}{%- assign total = total | plus: s.hours -%}{%- endfor -%}
+        <tr>
+          <th scope="row" class="pl-3 text-left font-normal md:pl-5" data-tidy-chrome>
+            <span class="flex items-center gap-2">
+              <span class="initials role-{{ first.role | replace: ' ', '-' }}" aria-hidden="true">{{ first.initials }}</span>
+              <span class="min-w-0 leading-tight"><span class="block truncate text-[0.8125rem] font-semibold"><span class="md:hidden">{{ person | split: " " | first }}</span><span class="hidden md:inline">{{ person }}</span></span><span class="ui-meta hidden truncate capitalize sm:block">{{ first.role }}</span></span>
+            </span>
+          </th>
+          {%- for d in days -%}
+          {%- assign cell = mine | where: "day", d | first -%}
+          <td class="{% unless forloop.index > 4 %}hidden md:table-cell{% endunless %}">
+            {%- if cell -%}
+            {%- if cell.state == "cant" -%}
+            <span class="chip chip-cant" data-shift="{{ cell.id }}" data-day="{{ forloop.index0 }}"><span class="chip-time">{{ cell.tag | default: "Can't work" }}</span></span>
+            {%- else -%}
+            <span class="chip role-{{ cell.role | replace: ' ', '-' }}" data-shift="{{ cell.id }}" data-day="{{ forloop.index0 }}">
+              <span class="chip-time">{% render 'time', t: cell.start %}–{% render 'time', t: cell.end %}</span>
+              {%- if cell.tag -%}<span class="chip-tag">{{ cell.tag }}</span>{%- endif -%}
+            </span>
+            {%- endif -%}
+            {%- endif -%}
+          </td>
+          {%- endfor -%}
+          <td class="pr-3 text-right md:pr-5" data-tidy-chrome><span class="ui-title text-[0.9375rem]">{{ total }}</span></td>
+        </tr>
+        {%- endif -%}{%- endfor -%}
+      </tbody>
+    </table>
+    <div class="flex flex-wrap items-center gap-x-4 gap-y-1.5 border-t border-base-300 px-4 py-3 md:px-5 {% if toast %}pb-9 sm:pb-3{% endif %}" data-tidy-chrome>
+      <span class="ui-meta inline-flex items-center gap-1.5"><span class="role-dot role-kitchen" aria-hidden="true"></span>Kitchen</span>
+      <span class="ui-meta inline-flex items-center gap-1.5"><span class="role-dot role-counter" aria-hidden="true"></span>Counter</span>
+      <span class="ui-meta inline-flex items-center gap-1.5"><span class="role-dot role-coffee-bar" aria-hidden="true"></span>Coffee bar</span>
+      <span class="ui-meta hidden sm:inline">· Nobody over 40 hours</span>
+    </div>
+  </div>
+  {%- if toast -%}
+  <p class="toast-published soft-shadow absolute -bottom-5 right-4 z-[1] md:right-6" data-tidy-toast role="status">
+    <svg class="size-4 text-secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+    Published · sent to 11 phones
+  </p>
+  {%- endif -%}
+</div>

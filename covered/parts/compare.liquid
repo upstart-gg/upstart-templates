@@ -1,0 +1,26 @@
+{%- comment -%} Compare the plans, over `pricing-compare`: "yes" is a check, blank a dash, any other words shown as they are. {%- endcomment -%}
+<section class="bg-base-100 text-base-content">
+  <div class="mx-auto max-w-[84rem] px-5 py-20 md:px-8 md:py-28">
+    <h2 class="heading-section max-w-[18ch]">Compare the plans</h2>
+    <div class="mt-10 relative overflow-x-auto rounded-box border border-base-300">
+      <table class="w-full min-w-[36rem] text-left">
+        <thead class="bg-base-200">
+          <tr>
+            <th scope="col" class="px-5 py-4"><span class="sr-only">Feature</span></th>
+            {%- for plan in data.plans -%}<th scope="col" class="px-4 py-4 text-center"><span class="block font-heading text-[1.125rem] font-semibold">{{ plan.name }}</span><span class="block text-[0.875rem] font-medium text-base-content/75">{{ plan.monthly }} a location</span></th>{%- endfor -%}
+          </tr>
+        </thead>
+        <tbody>
+          {%- for row in data["pricing-compare"] -%}
+          <tr class="border-t border-base-300">
+            <th scope="row" class="px-5 py-3.5 font-medium">{{ row.feature }}</th>
+            {% render 'compare-cell', cell: row.counter %}
+            {% render 'compare-cell', cell: row.full_house %}
+            {% render 'compare-cell', cell: row.group %}
+          </tr>
+          {%- endfor -%}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

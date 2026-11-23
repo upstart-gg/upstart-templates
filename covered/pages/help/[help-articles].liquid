@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>{{ record.title }} — Staff Meal help</title>
+<meta name="description" content="{{ record.summary }}">
+<meta property="og:title" content="{{ record.title }}">
+<meta property="og:description" content="{{ record.summary }}">
+</head>
+<body>
+{% render 'header' %}
+<main>
+<article class="bg-base-100 text-base-content">
+  <div class="mx-auto max-w-[84rem] px-5 pt-14 pb-16 md:px-8 md:pt-20 md:pb-24">
+    <a href="/help" class="text-link text-[0.9375rem] font-semibold">Help</a>
+    <div class="mt-8 max-w-[44rem]">
+      <span class="inline-flex rounded-full bg-secondary px-3 py-1 text-[0.8125rem] font-semibold text-secondary-content">{{ record.topic }}</span>
+      <h1 class="mt-4 text-[clamp(2rem,2.4vw+1rem,3.25rem)]">{{ record.title }}</h1>
+      <p class="mt-3 text-[0.9375rem] text-base-content/75">Updated {{ record.updated | date: "%B %-d, %Y" }}</p>
+      <div class="staff-prose mt-9 text-[1.0625rem]">{{ record.body }}</div>
+    </div>
+    {%- assign related = data["help-articles"] | where: "topic", record.topic -%}
+    {%- if related.size > 1 -%}
+    <div class="mt-16 max-w-[44rem] border-t border-base-300 pt-8">
+      <h2 class="kicker text-base-content/75">More in this topic</h2>
+      <ul class="mt-4 space-y-3">
+        {%- for article in related -%}{%- if article.id != record.id -%}<li><a href="/help/{{ article.id }}" class="text-link font-semibold">{{ article.title }}</a></li>{%- endif -%}{%- endfor -%}
+      </ul>
+    </div>
+    {%- endif -%}
+    <div class="mt-12 max-w-[44rem] rounded-box bg-secondary px-6 py-6 text-secondary-content md:px-8">
+      <p class="text-[1.125rem] font-semibold">Still stuck? Call us at <a href="tel:+18165550134" class="underline underline-offset-3 whitespace-nowrap">(816) 555-0134</a></p>
+      <p class="mt-1">A person, 7 am to 10 pm Central, every day.</p>
+    </div>
+  </div>
+</article>
+</main>
+{% render 'footer' %}
+</body>
+</html>

@@ -1,0 +1,17 @@
+{%- comment -%} The plans with the Monthly or Yearly switch (radio inputs, no script), over `plans`. {%- endcomment -%}
+<section class="bg-base-200 text-base-content">
+  <div class="group mx-auto max-w-[84rem] px-5 py-16 md:px-8 md:py-20">
+    <fieldset class="flex w-fit flex-wrap gap-1 rounded-field border border-base-300 bg-base-100 p-1">
+      <legend class="sr-only">Billing</legend>
+      <label class="flex h-10 cursor-pointer items-center gap-2 rounded-field px-4 font-semibold whitespace-nowrap has-checked:bg-primary has-checked:text-primary-content has-focus-visible:outline-2 has-focus-visible:outline-primary">
+        <input type="radio" name="covered-billing" id="covered-billing-monthly" value="monthly" class="sr-only" checked>Monthly
+      </label>
+      <label class="flex h-10 cursor-pointer items-center gap-2 rounded-field px-4 font-semibold whitespace-nowrap has-checked:bg-primary has-checked:text-primary-content has-focus-visible:outline-2 has-focus-visible:outline-primary">
+        <input type="radio" name="covered-billing" id="covered-billing-yearly" value="yearly" class="sr-only">Yearly: two months free
+      </label>
+    </fieldset>
+    <div class="mt-10 group-has-[#covered-billing-yearly:checked]:hidden">{% render 'plan-cards', price: "monthly", full: true %}</div>
+    <div class="mt-10 hidden group-has-[#covered-billing-yearly:checked]:block">{% render 'plan-cards', price: "yearly", full: true %}</div>
+    {% render 'proof', class: "mt-8" %}
+  </div>
+</section>

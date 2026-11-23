@@ -1,0 +1,14 @@
+{%- comment -%} The figures row, over a section list passed as `figures`, in text, no stars. {%- endcomment -%}
+<section class="bg-base-100 text-base-content">
+  <div class="mx-auto max-w-[84rem] px-5 py-16 md:px-8 md:py-20">
+    <dl class="grid divide-y divide-base-300 border-y border-base-300 md:grid-cols-3 md:divide-x md:divide-y-0">
+      {%- for figure in figures -%}
+      <div class="flex flex-col gap-2 py-7 md:px-8 md:py-9 md:first:pl-0">
+        <dt class="order-2 text-[1.0625rem] font-semibold">{{ figure.label }}</dt>
+        <dd class="figure order-1 text-[2.75rem] text-primary">{{ figure.value }}</dd>
+        {%- if figure.note -%}<dd class="order-3 text-[0.9375rem] text-base-content/75">{{ figure.note }}</dd>{%- endif -%}
+      </div>
+      {%- endfor -%}
+    </dl>
+  </div>
+</section>

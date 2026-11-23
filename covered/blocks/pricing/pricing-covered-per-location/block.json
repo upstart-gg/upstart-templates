@@ -1,0 +1,22 @@
+{
+  "name": "Covered plans per location with a yearly switch",
+  "kind": "pricing",
+  "source": "upstart",
+  "description": "Three plans priced per location with the whole team included, a Monthly or Yearly switch that works with no script, the highlighted plan ringed in the primary color with its badge, and the proof line under them.",
+  "tags": ["pricing", "plans", "per location", "yearly billing", "free trial", "saas"],
+  "mood": ["professional", "minimal"],
+  "synonyms": [
+    "pricing table",
+    "plans",
+    "prices",
+    "subscription",
+    "tarifs",
+    "formules",
+    "abonnement",
+    "prix par établissement"
+  ],
+  "data": {
+    "name": "plans",
+    "family": "section"
+  }
+}

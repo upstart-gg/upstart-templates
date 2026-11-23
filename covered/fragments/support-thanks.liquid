@@ -1,0 +1,5 @@
+{%- assign first_name = record.name | split: " " | first -%}
+<div class="rounded-box bg-secondary p-6 text-secondary-content md:p-8" role="status">
+  <p class="heading-small">Thanks, {{ first_name }}. It&rsquo;s with us.</p>
+  <p class="mt-3 leading-relaxed">A person will answer at {{ record.email }} within two hours while we&rsquo;re open, 7 am to 10 pm Central. In a hurry? Call (816) 555-0134.</p>
+</div>

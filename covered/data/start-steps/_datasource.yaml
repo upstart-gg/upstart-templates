@@ -1,0 +1,8 @@
+label: Steps
+fields:
+  - name: title
+    kind: text
+    required: true
+  - name: text
+    kind: text
+order: [log-in, crew-list, first-week, crew-app]

@@ -1,0 +1,2 @@
+{%- comment -%} A customer: their portrait once the maker has one, their initials on jade until then. {%- endcomment -%}
+{%- if story.portrait -%}<img src="{{ story.portrait }}" class="{{ box | default: 'size-11' }} shrink-0 rounded-full object-cover">{%- else -%}<span class="{{ box | default: 'size-11' }} inline-grid shrink-0 place-items-center rounded-full bg-primary font-semibold text-primary-content {{ type | default: 'text-sm' }}" aria-hidden="true">{{ story.initials }}</span>{%- endif -%}

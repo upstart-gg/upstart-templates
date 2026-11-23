@@ -1,0 +1,23 @@
+{%- comment -%} "Have us show you": a demo request posted to `demos`, answered by fragments/demos-thanks. A part of the day, never a booking widget. {%- endcomment -%}
+<div id="demo" class="scroll-mt-28 rounded-box bg-base-200 p-6 md:p-9">
+  <p class="kicker text-primary">20 minutes on a call</p>
+  <h2 class="heading-small mt-2 text-[1.75rem]">Have us show you</h2>
+  <form hx-post="/_data/demos" hx-target="this" hx-swap="outerHTML" hx-status:422="target:#demo-problems swap:innerHTML" class="mt-6 grid gap-x-4 gap-y-1 sm:grid-cols-2">
+    <fieldset class="fieldset sm:col-span-2"><legend class="fieldset-legend">Your name</legend><input name="name" class="input w-full" required maxlength="120" autocomplete="name"></fieldset>
+    <fieldset class="fieldset"><legend class="fieldset-legend">Email</legend><input name="email" type="email" class="input w-full" required maxlength="200" autocomplete="email"></fieldset>
+    <fieldset class="fieldset"><legend class="fieldset-legend">Phone</legend><input name="phone" type="tel" class="input w-full" maxlength="40" autocomplete="tel"></fieldset>
+    <fieldset class="fieldset"><legend class="fieldset-legend">Your place&rsquo;s name</legend><input name="business" class="input w-full" required maxlength="160" autocomplete="organization"></fieldset>
+    <fieldset class="fieldset"><legend class="fieldset-legend">How many locations</legend><input name="locations" type="number" min="1" max="200" value="1" class="input w-full"></fieldset>
+    <fieldset class="fieldset sm:col-span-2"><legend class="fieldset-legend">Best time for a 20-minute call</legend>
+      <div class="flex flex-wrap gap-2">
+        {%- assign whens = "Before the lunch rush,The afternoon lull,After close" | split: "," -%}
+        {%- for when in whens -%}
+        <label class="flex h-11 cursor-pointer items-center gap-2 rounded-field border border-base-300 bg-base-100 px-4 font-medium whitespace-nowrap has-checked:border-primary has-checked:bg-primary has-checked:text-primary-content has-focus-visible:outline-2 has-focus-visible:outline-primary"><input type="radio" name="when" value="{{ when }}" class="sr-only" {% if forloop.index == 2 %}checked{% endif %}>{{ when }}</label>
+        {%- endfor -%}
+      </div>
+    </fieldset>
+    <fieldset class="fieldset sm:col-span-2"><legend class="fieldset-legend">Anything we should know</legend><textarea name="message" class="textarea w-full" rows="3" maxlength="2000"></textarea></fieldset>
+    <div id="demo-problems" class="sm:col-span-2"></div>
+    <div class="mt-4 sm:col-span-2"><button class="btn btn-outline btn-lg h-13 w-full px-6 sm:w-auto">Ask for a demo</button></div>
+  </form>
+</div>

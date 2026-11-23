@@ -1,0 +1,21 @@
+<section class="bg-base-100 text-base-content">
+  <div class="mx-auto grid max-w-[84rem] gap-10 px-5 py-20 md:px-8 md:py-28 lg:grid-cols-12">
+    <div class="lg:col-span-4">
+      <h2 class="heading-section max-w-[14ch]">Write to support</h2>
+      <p class="body-copy mt-4">We answer within two hours while we&rsquo;re open.</p>
+    </div>
+    <div class="rounded-box border border-base-300 bg-base-100 p-6 soft-shadow md:p-9 lg:col-span-8">
+      <form hx-post="/_data/support" hx-target="this" hx-swap="outerHTML" hx-status:422="target:#support-problems swap:innerHTML" class="grid gap-x-4 gap-y-1 sm:grid-cols-2">
+        <fieldset class="fieldset"><legend class="fieldset-legend">Your name</legend><input name="name" class="input w-full" required maxlength="120" autocomplete="name"></fieldset>
+        <fieldset class="fieldset"><legend class="fieldset-legend">Email</legend><input name="email" type="email" class="input w-full" required maxlength="200" autocomplete="email"></fieldset>
+        <fieldset class="fieldset"><legend class="fieldset-legend">Your place</legend><input name="business" class="input w-full" maxlength="160" autocomplete="organization"></fieldset>
+        <fieldset class="fieldset"><legend class="fieldset-legend">Topic</legend>
+          <select name="topic" class="select w-full"><option>Getting started</option><option>The schedule</option><option>Timesheets &amp; pay</option><option>The crew's app</option><option>Billing</option></select>
+        </fieldset>
+        <fieldset class="fieldset sm:col-span-2"><legend class="fieldset-legend">Your message</legend><textarea name="message" class="textarea w-full" rows="5" required maxlength="4000"></textarea></fieldset>
+        <div id="support-problems" class="sm:col-span-2"></div>
+        <div class="mt-4 sm:col-span-2"><button class="btn btn-primary btn-lg h-13 px-6">Send it</button></div>
+      </form>
+    </div>
+  </div>
+</section>

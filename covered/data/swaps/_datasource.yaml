@@ -1,0 +1,17 @@
+label: Swaps
+fields:
+  - name: from
+    label: Offered by
+    kind: text
+    required: true
+  - name: to
+    label: Taken by
+    kind: text
+  - name: shift
+    kind: text
+  - name: state
+    kind: choice
+    choices: [offered, taken, approved]
+  - name: when
+    kind: text
+order: [maya-friday, luis-thursday, maya-sunday]

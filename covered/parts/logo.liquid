@@ -1,0 +1,8 @@
+{%- comment -%} The wordmark beside its mark, two stacked rounded bars: two shifts. on: "dark" for the footer. {%- endcomment -%}
+<a href="/" class="inline-flex items-center gap-2.5 whitespace-nowrap {{ class }}" aria-label="Staff Meal, home">
+  <svg class="h-7 w-7 shrink-0" viewBox="0 0 28 28" aria-hidden="true">
+    <rect x="2" y="5" width="17" height="7.5" rx="3.75" class="{% if on == "dark" %}fill-secondary{% else %}fill-primary{% endif %}"/>
+    <rect x="9" y="15.5" width="17" height="7.5" rx="3.75" class="{% if on == "dark" %}fill-accent{% else %}fill-accent{% endif %}"/>
+  </svg>
+  <span class="wordmark text-[1.5rem]">Staff Meal</span>
+</a>

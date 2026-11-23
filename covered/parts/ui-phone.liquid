@@ -1,0 +1,38 @@
+{%- comment -%} The crew's phone: one flat phone, never tilted. Its person is the first of `crew`; the swap to take is the first offered of `swaps`. {%- endcomment -%}
+{%- assign me = data.crew | first -%}
+{%- assign offer = data.swaps | where: "state", "offered" | first -%}
+{%- assign first_name = me.name | split: " " | first -%}
+<div class="phone soft-shadow mx-auto">
+  <div class="phone-screen ui">
+    <div class="phone-notch" aria-hidden="true"></div>
+    <div class="px-4 pt-4 pb-5">
+      <div class="flex items-center justify-between">
+        <p class="ui-title text-[1.25rem]">Hi, {{ first_name }}</p>
+        <span class="initials role-{{ me.role | replace: ' ', '-' }}" aria-hidden="true">{{ me.initials }}</span>
+      </div>
+      <div class="mt-4 rounded-box bg-primary p-4 text-primary-content">
+        <p class="text-[0.6875rem] font-semibold uppercase tracking-[0.08em] text-primary-content/90">Your next shift</p>
+        <p class="mt-1.5 text-[1.0625rem] font-semibold leading-snug">{{ me.greeting }}</p>
+        <p class="mt-1 text-[0.8125rem] text-primary-content/90">Bramble &amp; Bun · with Priya, Kenji, Dana</p>
+      </div>
+      {%- if offer -%}
+      <div class="mt-3 rounded-box border border-base-300 p-3.5">
+        <div class="flex items-center gap-2">
+          <span class="role-dot bg-accent" aria-hidden="true"></span>
+          <p class="text-[0.8125rem] font-semibold">A shift to take</p>
+          <span class="ui-meta ml-auto">{{ offer.when }}</span>
+        </div>
+        <p class="mt-1.5 text-[0.875rem]">{{ offer.from }} offers {{ offer.shift }}</p>
+        <div class="mt-3 flex gap-2"><span class="ui-button ui-button-quiet flex-1">Not this time</span><span class="ui-button flex-1">Take it</span></div>
+      </div>
+      {%- endif -%}
+      <div class="mt-3 flex items-center justify-between gap-3 rounded-box bg-base-200 px-3.5 py-3">
+        <div>
+          <p class="text-[0.8125rem] font-semibold">At the door</p>
+          <p class="ui-meta">You&rsquo;re 40 yards away</p>
+        </div>
+        <span class="ui-button shrink-0 px-4 py-2 text-[0.9375rem]">Clock in</span>
+      </div>
+    </div>
+  </div>
+</div>

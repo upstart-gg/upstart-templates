@@ -1,0 +1,24 @@
+{%- comment -%} The manager's view of `swaps`: who offered, who took, and the yes to give. {%- endcomment -%}
+<div class="ui rounded-box border border-base-300 bg-base-100 text-base-content soft-shadow">
+  <div class="flex items-center justify-between gap-3 border-b border-base-300 px-4 py-3 md:px-5">
+    <p class="ui-title text-base md:text-lg">Swaps this week</p>
+    <span class="ui-meta">Bramble &amp; Bun</span>
+  </div>
+  <ul>
+    {%- for swap in data.swaps -%}
+    <li class="flex flex-wrap items-center gap-x-3 gap-y-2 border-t border-base-300 px-4 py-3.5 first:border-t-0 md:px-5">
+      <span class="flex -space-x-2" aria-hidden="true">
+        <span class="initials ring-2 ring-base-100">{{ swap.from | slice: 0 }}</span>
+        {%- if swap.to -%}<span class="initials initials-primary ring-2 ring-base-100">{{ swap.to | slice: 0 }}</span>{%- else -%}<span class="initials border border-dashed border-primary bg-base-100 text-primary ring-2 ring-base-100">?</span>{%- endif -%}
+      </span>
+      <div class="min-w-[11rem] flex-1">
+        <p class="text-[0.875rem] font-semibold">{% if swap.to %}{{ swap.to }} takes {{ swap.from }}&rsquo;s shift{% else %}{{ swap.from }} offers a shift{% endif %}</p>
+        <p class="ui-meta">{{ swap.shift }} · {{ swap.when }}</p>
+      </div>
+      {%- if swap.state == "approved" -%}<span class="ui-pill ui-pill-done">Approved</span>
+      {%- elsif swap.state == "taken" -%}<span class="flex gap-2"><span class="ui-button ui-button-quiet">Decline</span><span class="ui-button">Approve</span></span>
+      {%- else -%}<span class="ui-pill ui-pill-wait"><span class="role-dot bg-accent" aria-hidden="true"></span>Waiting for an offer</span>{%- endif -%}
+    </li>
+    {%- endfor -%}
+  </ul>
+</div>

@@ -1,0 +1,22 @@
+{
+  "name": "Covered one job at a time",
+  "kind": "features",
+  "source": "upstart",
+  "description": "Pill tabs that switch with no script, each opening a piece of the product drawn in HTML from the theme beside its title, two sentences, three points and a link to its chapter.",
+  "tags": ["features", "tabs", "product", "software", "saas", "jobs"],
+  "mood": ["professional", "minimal"],
+  "synonyms": [
+    "feature tabs",
+    "product features",
+    "what it does",
+    "how it works",
+    "onglets",
+    "fonctionnalités",
+    "ce que fait le produit",
+    "par métier"
+  ],
+  "data": {
+    "name": "jobs",
+    "family": "collection"
+  }
+}

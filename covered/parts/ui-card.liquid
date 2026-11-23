@@ -1,0 +1,18 @@
+{%- comment -%} The hero's floating card: the first approved swap of `swaps`, drawn in HTML. {%- endcomment -%}
+{%- assign swap = data.swaps | where: "state", "approved" | first -%}
+{%- if swap -%}
+<div class="ui w-[17.5rem] rounded-box border border-base-300 bg-base-100 p-4 text-base-content soft-shadow md:w-[19rem]">
+  <div class="flex items-center justify-between gap-3">
+    <span class="ui-pill ui-pill-done"><svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Swap approved</span>
+    <span class="ui-meta">{{ swap.when }}</span>
+  </div>
+  <div class="mt-3 flex items-center gap-3">
+    <span class="flex -space-x-2" aria-hidden="true">
+      <span class="initials ring-2 ring-base-100">{{ swap.from | slice: 0 }}</span>
+      <span class="initials initials-primary ring-2 ring-base-100">{{ swap.to | slice: 0 }}</span>
+    </span>
+    {%- assign day = swap.shift | split: " · " | first -%}{%- assign rest = swap.shift | remove_first: day | remove_first: " · " -%}
+    <p class="leading-snug"><span class="block text-[0.9375rem] font-semibold">{{ swap.to }} takes {{ swap.from }}&rsquo;s {{ day }}</span><span class="ui-meta block">{{ rest }}</span></p>
+  </div>
+</div>
+{%- endif -%}

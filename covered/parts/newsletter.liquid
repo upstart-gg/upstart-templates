@@ -1,0 +1,16 @@
+<section class="bg-base-200 text-base-content">
+  <div class="mx-auto flex max-w-[84rem] flex-col gap-5 px-5 py-10 md:flex-row md:items-center md:justify-between md:px-8">
+    <div>
+      <h2 class="text-[1.375rem]">Once a month by email</h2>
+      <p class="mt-1 text-base-content/80">Get what&rsquo;s new once a month. One email, no more.</p>
+    </div>
+    <form hx-post="/_data/newsletter" hx-target="this" hx-swap="outerHTML" hx-status:422="target:#newsletter-problems swap:innerHTML" class="w-full md:max-w-md">
+      <div class="flex gap-2">
+        <label class="sr-only" for="newsletter-email">Email address</label>
+        <input id="newsletter-email" name="email" type="email" required maxlength="200" autocomplete="email" placeholder="you@yourplace.com" class="input w-full">
+        <button class="btn btn-primary">Sign up</button>
+      </div>
+      <div id="newsletter-problems" class="mt-2"></div>
+    </form>
+  </div>
+</section>

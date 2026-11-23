@@ -1,0 +1,22 @@
+{
+  "id": "covered",
+  "version": "1.0.0",
+  "name": "Covered",
+  "description": "A work tool's site for crews who stand all day: a split screen of a baker at dawn beside a deep jade panel, a paper schedule taped to the walk-in door that sorts itself into the product's clean week, and the product shown one job at a time, built in the page from the theme.",
+  "category": "app",
+  "tags": [
+    "saas",
+    "software",
+    "scheduling",
+    "timesheets",
+    "restaurants",
+    "small teams",
+    "pricing",
+    "free trial",
+    "help center",
+    "changelog"
+  ],
+  "author": { "name": "Upstart", "url": "https://upstart.gg" },
+  "licence": "MIT",
+  "app": "0.2.0"
+}

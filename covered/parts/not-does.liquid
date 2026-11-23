@@ -1,0 +1,25 @@
+{%- comment -%} What it doesn't do, over `product-not`: what Staff Meal does, with jade checks, and what it leaves to others, with plain dashes. {%- endcomment -%}
+<section class="bg-base-100 text-base-content">
+  <div class="mx-auto max-w-[84rem] px-5 py-20 md:px-8 md:py-28">
+    <p class="kicker text-primary">What it doesn&rsquo;t do</p>
+    <h2 class="heading-section mt-3 max-w-[20ch]">It does the week, and does it well.</h2>
+    <div class="mt-12 grid gap-5 md:grid-cols-2">
+      <div class="rounded-box border border-base-300 bg-base-100 p-7 md:p-9">
+        <h3 class="heading-small">What Staff Meal does</h3>
+        <ul class="mt-6 space-y-4">
+          {%- for item in data["product-not"] -%}{%- if item.side == "does" -%}
+          <li class="flex gap-3"><svg class="mt-0.5 size-5 shrink-0 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>{{ item.title }}</span></li>
+          {%- endif -%}{%- endfor -%}
+        </ul>
+      </div>
+      <div class="rounded-box bg-base-200 p-7 md:p-9">
+        <h3 class="heading-small">What it leaves to others</h3>
+        <ul class="mt-6 space-y-4">
+          {%- for item in data["product-not"] -%}{%- if item.side == "leaves" -%}
+          <li class="flex gap-3"><svg class="mt-0.5 size-5 shrink-0 text-base-content/70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 12h12"/></svg><span class="text-base-content/85">{{ item.title }}</span></li>
+          {%- endif -%}{%- endfor -%}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

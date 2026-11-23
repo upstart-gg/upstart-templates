@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Staff Meal — Schedules and timesheets for restaurants and cafés</title>
+<meta name="description" content="Staff Meal builds next week's schedule from this one, sends it to your crew's phones, and sorts out the swaps, the timesheets and the payroll export. Free for 30 days, no credit card.">
+<meta property="og:title" content="Staff Meal — Every shift covered by Sunday night">
+<meta property="og:description" content="Schedules, timesheets, swaps and the payroll export for restaurant and café crews of 5 to 60, made in Kansas City.">
+</head>
+<body>
+{% render 'header' %}
+<main>
+{% render 'hero' %}
+{% render 'tidy-up' %}
+{% render 'figures', figures: data["home-figures"] %}
+{% render 'job-tabs' %}
+{% render 'crew' %}
+{% render 'stories-home' %}
+{% render 'pricing-short' %}
+{% render 'faq', questions: data["home-faq"] %}
+{% render 'closing' %}
+</main>
+{% render 'footer' %}
+</body>
+</html>

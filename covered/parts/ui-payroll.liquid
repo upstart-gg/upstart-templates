@@ -1,0 +1,45 @@
+{%- comment -%} The payroll export's panel, from `crew`: approved hours, overtime and tips per person. {%- endcomment -%}
+{%- assign reg = 0 -%}{%- assign ot = 0 -%}
+{%- for p in data.crew -%}{%- assign reg = reg | plus: p.regular -%}{%- assign ot = ot | plus: p.overtime -%}{%- endfor -%}
+<div class="ui rounded-box border border-base-300 bg-base-100 text-base-content soft-shadow">
+  <div class="flex flex-wrap items-center justify-between gap-3 border-b border-base-300 px-4 py-3 md:px-5">
+    <div>
+      <p class="ui-title text-base md:text-lg">Pay period Mar 1 – Mar 14</p>
+      <p class="ui-meta">Every day approved · {{ data.crew.size }} people</p>
+    </div>
+    <span class="ui-pill ui-pill-done">Ready to export</span>
+  </div>
+  <div class="relative overflow-x-auto">
+    <table class="w-full min-w-[26rem] text-left">
+      <thead>
+        <tr class="text-[0.6875rem] font-semibold uppercase tracking-[0.06em] text-base-content/70">
+          <th scope="col" class="px-4 py-2.5 md:px-5">Who</th>
+          <th scope="col" class="px-2 py-2.5 text-right">Regular</th>
+          <th scope="col" class="px-2 py-2.5 text-right">Overtime</th>
+          <th scope="col" class="px-4 py-2.5 text-right md:px-5">Tips</th>
+        </tr>
+      </thead>
+      <tbody>
+        {%- for p in data.crew -%}
+        <tr class="border-t border-base-300">
+          <th scope="row" class="px-4 py-2 font-normal md:px-5"><span class="flex items-center gap-2"><span class="initials role-{{ p.role | replace: ' ', '-' }}" aria-hidden="true">{{ p.initials }}</span><span class="text-[0.8125rem] font-semibold">{{ p.name }}</span></span></th>
+          <td class="px-2 py-2 text-right font-medium">{{ p.regular }} h</td>
+          <td class="px-2 py-2 text-right font-medium {% if p.overtime > 0 %}text-base-content{% else %}text-base-content/70{% endif %}">{% if p.overtime > 0 %}{{ p.overtime }} h{% else %}–{% endif %}</td>
+          <td class="px-4 py-2 text-right font-medium md:px-5">{{ p.tips }}</td>
+        </tr>
+        {%- endfor -%}
+        <tr class="border-t-2 border-base-300">
+          <th scope="row" class="px-4 py-2.5 text-[0.8125rem] font-semibold md:px-5">Total</th>
+          <td class="ui-title px-2 py-2.5 text-right">{{ reg }} h</td>
+          <td class="ui-title px-2 py-2.5 text-right">{{ ot }} h</td>
+          <td class="px-4 py-2.5 md:px-5"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="flex flex-wrap items-center gap-3 border-t border-base-300 px-4 py-3.5 md:px-5">
+    <span class="inline-flex items-center gap-2 rounded-field border border-base-300 px-3 py-1.5 text-[0.8125rem] font-medium"><span class="role-dot bg-primary" aria-hidden="true"></span>Your payroll service's format</span>
+    <span class="inline-flex items-center gap-2 rounded-field border border-base-300 px-3 py-1.5 text-[0.8125rem] font-medium text-base-content/75"><span class="role-dot border border-base-300" aria-hidden="true"></span>Plain spreadsheet</span>
+    <span class="ui-button ml-auto"><svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>Export</span>
+  </div>
+</div>

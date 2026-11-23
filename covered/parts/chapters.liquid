@@ -1,0 +1,23 @@
+{%- comment -%} The four chapters of `jobs`, alternating between the surface and kraft-light, each with its piece of the product, large, and its numbered small things. {%- endcomment -%}
+{%- for job in data.jobs -%}
+<section id="{{ job.id }}" class="scroll-mt-36 {% cycle 'bg-base-100', 'bg-base-200' %} text-base-content">
+  <div class="mx-auto max-w-[84rem] px-5 py-20 md:px-8 md:py-28">
+    <div class="grid gap-6 lg:grid-cols-12 lg:gap-12">
+      <div class="lg:col-span-5">
+        <p class="kicker text-primary">{{ job.kicker }}</p>
+        <h2 class="heading-section mt-3">{{ job.title }}</h2>
+      </div>
+      <p class="body-copy lg:col-span-6 lg:col-start-7 lg:pt-8">{{ job.details }}</p>
+    </div>
+    <div class="mt-12 md:mt-14">{% render 'job-panel', job: job, phone: true %}</div>
+    <div class="mt-14 border-t border-base-300 pt-10">
+      <h3 class="kicker text-base-content/75">Small things that save the evening</h3>
+      <ol class="mt-6 grid gap-8 md:grid-cols-3">
+        {%- for thing in job.small_things -%}
+        <li class="flex gap-4"><span class="figure text-[2rem] text-primary">{{ forloop.index | prepend: "0" }}</span><span class="pt-1 text-[1.0625rem] font-semibold leading-snug">{{ thing }}</span></li>
+        {%- endfor -%}
+      </ol>
+    </div>
+  </div>
+</section>
+{%- endfor -%}

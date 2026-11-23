@@ -1,0 +1,24 @@
+{%- comment -%} "Try it yourself": a trial request posted to `trials`, answered by fragments/trials-thanks. {%- endcomment -%}
+<div id="trial" class="scroll-mt-28 rounded-box border border-base-300 bg-base-100 p-6 soft-shadow md:p-9">
+  <p class="kicker text-primary">30 days of Full house</p>
+  <h2 class="heading-small mt-2 text-[1.75rem]">Try it yourself</h2>
+  <form hx-post="/_data/trials" hx-target="this" hx-swap="outerHTML" hx-status:422="target:#trial-problems swap:innerHTML" class="mt-6 grid gap-x-4 gap-y-1 sm:grid-cols-2">
+    <fieldset class="fieldset sm:col-span-2"><legend class="fieldset-legend">Your name</legend><input name="name" class="input w-full" required maxlength="120" autocomplete="name"></fieldset>
+    <fieldset class="fieldset"><legend class="fieldset-legend">Work email</legend><input name="email" type="email" class="input w-full" required maxlength="200" autocomplete="email"></fieldset>
+    <fieldset class="fieldset"><legend class="fieldset-legend">Mobile phone</legend><input name="phone" type="tel" class="input w-full" required maxlength="40" autocomplete="tel"><p class="label">We&rsquo;ll text your log-in here</p></fieldset>
+    <fieldset class="fieldset sm:col-span-2"><legend class="fieldset-legend">Your place&rsquo;s name</legend><input name="business" class="input w-full" required maxlength="160" autocomplete="organization"></fieldset>
+    <fieldset class="fieldset sm:col-span-2"><legend class="fieldset-legend">What kind of place</legend>
+      <select name="kind" class="select w-full"><option>Restaurant</option><option>Café</option><option>Bakery</option><option>Bar</option><option>Something else</option></select>
+    </fieldset>
+    <fieldset class="fieldset"><legend class="fieldset-legend">How many locations</legend><input name="locations" type="number" min="1" max="200" value="1" class="input w-full"></fieldset>
+    <fieldset class="fieldset"><legend class="fieldset-legend">How many people</legend><input name="crew" type="number" min="1" max="2000" class="input w-full"></fieldset>
+    <fieldset class="fieldset sm:col-span-2"><legend class="fieldset-legend">How you schedule now</legend>
+      <select name="now" class="select w-full"><option>Paper on the wall</option><option>A spreadsheet</option><option>A group text</option><option>Another app</option></select>
+    </fieldset>
+    <div id="trial-problems" class="sm:col-span-2"></div>
+    <div class="mt-4 sm:col-span-2">
+      <button class="btn btn-primary btn-lg h-13 w-full px-6 sm:w-auto">Start my free trial</button>
+      {% render 'proof', class: "mt-5" %}
+    </div>
+  </form>
+</div>

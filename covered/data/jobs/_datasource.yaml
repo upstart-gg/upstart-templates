@@ -1,0 +1,29 @@
+label: Jobs
+fields:
+  - name: title
+    kind: text
+    required: true
+  - name: tab
+    label: Tab
+    kind: text
+  - name: kicker
+    kind: text
+  - name: text
+    label: Two sentences
+    kind: text
+  - name: details
+    label: The chapter's longer text
+    kind: text
+  - name: points
+    kind: list
+  - name: small_things
+    label: Small things that save the evening
+    kind: list
+  - name: link_label
+    label: Link to its chapter
+    kind: text
+  - name: panel
+    label: Piece of the product
+    kind: choice
+    choices: [schedule, timesheets, swaps, payroll]
+order: [schedule, timesheets, swaps, payroll]

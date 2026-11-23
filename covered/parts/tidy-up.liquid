@@ -1,0 +1,84 @@
+{%- comment -%}
+  The tidy-up (data-tidy, scripts/tidy-up.js): Bramble & Bun's week as the product shows it (parts/ui-week),
+  and over it the paper it came from (data-tidy-paper, hidden until the script shows it). The paper is two
+  layers in the same layout: the sheet (its title, its pencil-ruled days, data-paper-sheet) and the writing
+  (each shift's scrawl, data-scrawl; its sticky note, data-note; the crossings-out and arrows, data-clutter).
+  Every word on the paper comes from the shifts' paper fields. With no script, the clean week alone.
+{%- endcomment -%}
+{%- assign days = "mon,tue,wed,thu,fri,sat,sun" | split: "," -%}
+{%- assign early = "mon,tue,wed,thu" | split: "," -%}
+<section id="tidy-up" class="scroll-mt-20 overflow-x-clip bg-base-200 text-base-content" data-tidy>
+  <div class="mx-auto max-w-[84rem] px-5 py-20 md:px-8 md:py-28">
+    <div class="grid gap-6 lg:grid-cols-12 lg:items-end lg:gap-10">
+      <div class="lg:col-span-7">
+        <p class="kicker text-primary">Before and after</p>
+        <h2 class="heading-section mt-3 max-w-[22ch]">From the sheet on the walk-in door to a week everyone can see.</h2>
+      </div>
+      <div class="lg:col-span-5">
+        <p class="body-copy">Sticky notes, crossed-out names and a &ldquo;can anyone cover Saturday?&rdquo; text at 11 pm. This is Bramble &amp; Bun&rsquo;s week, before and after: every shift in its place, the swaps settled, who can&rsquo;t work when, and the whole crew told at once.</p>
+        <a href="/product#schedule" class="text-link mt-4 inline-flex items-center gap-1.5 font-semibold">How the schedule works<svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+      </div>
+    </div>
+
+    <div class="relative mt-12 md:mt-16 xl:-mr-16 2xl:-mr-28" data-tidy-stage>
+      {% render 'ui-week', toast: true %}
+
+      <div class="absolute inset-0 z-[2]" data-tidy-paper hidden aria-hidden="true">
+        <div class="paper-sheet absolute inset-x-1 -top-2 -bottom-9 flex flex-col px-4 pt-4 pb-5 md:inset-x-3 md:px-6 md:pt-5" data-paper-sheet>
+          <p class="marker marker-title text-xl md:text-2xl">SCHEDULE <span class="font-medium">wk of 3/8</span></p>
+          <div class="mt-3 flex flex-1 flex-col md:grid md:grid-cols-7">
+            {%- for d in days -%}
+            <div class="paper-day flex-1 border-t-2 px-2 py-2 md:border-t-0 md:border-l-2 md:first:border-l-0 {% if early contains d %}hidden md:block{% endif %}">
+              <p class="marker text-lg font-bold uppercase">{{ d }}</p>
+            </div>
+            {%- endfor -%}
+          </div>
+        </div>
+
+        <span class="tape absolute -top-4 left-[14%] -rotate-6" data-tape></span>
+        <span class="tape absolute -top-4 right-[16%] rotate-[5deg]" data-tape></span>
+        <span class="coffee-ring absolute right-[6%] bottom-3 md:right-[9%] md:bottom-6" data-ring></span>
+
+        <div class="paper-writing absolute inset-x-1 -top-2 -bottom-9 flex flex-col px-4 pt-4 pb-5 md:inset-x-3 md:px-6 md:pt-5">
+          <p class="marker marker-title invisible text-xl md:text-2xl">SCHEDULE</p>
+          <div class="mt-3 flex flex-1 flex-col md:grid md:grid-cols-7">
+            {%- assign notes = 0 -%}
+            {%- for d in days -%}
+            <div class="flex-1 px-2 py-2 {% if early contains d %}hidden md:block{% endif %}">
+              <p class="marker invisible text-lg font-bold uppercase">{{ d }}</p>
+              <ul class="mt-1 flex flex-wrap items-start gap-x-4 gap-y-1.5 md:flex-col md:gap-x-0">
+                {%- for shift in data.shifts -%}
+                {%- assign first_name = shift.person | split: " " | first -%}
+                {%- assign written_here = false -%}
+                {%- if shift.paper == "moved" -%}
+                  {%- if shift.paper_from == d -%}{%- assign written_here = true -%}{%- endif -%}
+                {%- elsif shift.paper != "note" and shift.day == d -%}
+                  {%- assign written_here = true -%}
+                {%- endif -%}
+                {%- assign tilt = forloop.index | modulo: 5 | minus: 2 -%}
+                {%- if written_here -%}
+                <li class="marker text-base md:text-[1.0625rem]">
+                  {%- if shift.paper == "struck" -%}<span class="struck mr-1.5" data-clutter>{{ shift.paper_struck }}<svg viewBox="0 0 60 20" preserveAspectRatio="none" aria-hidden="true"><path d="M2 12 C 12 4, 18 16, 28 8 S 44 15, 58 6 M4 7 C 16 15, 30 3, 56 13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span>{%- endif -%}
+                  <span class="scrawl" data-scrawl="{{ shift.id }}" data-tilt="{{ tilt }}" style="--tilt: {{ tilt }}deg">{{ first_name }} {% render 'time', t: shift.start, short: true %}–{% render 'time', t: shift.end, short: true %}</span>
+                  {%- if shift.paper == "moved" -%}<svg class="paper-arrow ml-1 inline-block h-6 w-12 align-middle" viewBox="0 0 48 24" data-clutter aria-hidden="true"><path d="M3 18 C 14 2, 30 2, 42 13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M34 13.5 L 43 14 L 41 5.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>{%- endif -%}
+                </li>
+                {%- endif -%}
+                {%- if shift.paper == "moved" and shift.day == d and early contains shift.paper_from -%}
+                <li class="marker text-base md:hidden"><span class="scrawl" data-scrawl="{{ shift.id }}" data-tilt="{{ tilt }}" style="--tilt: {{ tilt }}deg">{{ first_name }} {% render 'time', t: shift.start, short: true %}–{% render 'time', t: shift.end, short: true %}?</span></li>
+                {%- endif -%}
+                {%- endfor -%}
+                {%- for shift in data.shifts -%}{%- if shift.paper == "note" and shift.day == d -%}
+                {%- assign notes = notes | plus: 1 -%}
+                {%- assign kind = notes | minus: 1 | modulo: 3 | plus: 1 -%}
+                {%- assign tilt = notes | times: 7 | modulo: 9 | minus: 4 -%}
+                <li class="mt-1"><span class="sticky-note sticky-note-{{ kind }} marker" data-note="{{ shift.id }}" data-tilt="{{ tilt }}" style="--tilt: {{ tilt }}deg">{{ shift.paper_note }}</span></li>
+                {%- endif -%}{%- endfor -%}
+              </ul>
+            </div>
+            {%- endfor -%}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

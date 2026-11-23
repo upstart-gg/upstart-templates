@@ -1,0 +1,33 @@
+<footer class="bg-neutral text-neutral-content">
+  <div class="mx-auto max-w-[84rem] px-5 pt-16 pb-10 md:px-8 md:pt-20">
+    <div class="grid gap-12 lg:grid-cols-[1.25fr_2fr]">
+      <div class="max-w-sm">
+        {% render 'logo', on: "dark" %}
+        <p class="mt-5 leading-relaxed text-neutral-content/80">Schedules and timesheets for restaurants and cafés. Made in Kansas City since 2021.</p>
+        <address class="mt-6 space-y-1.5 not-italic text-neutral-content/80">
+          <p>1717 Pressman Alley, 2nd floor<br>Kansas City, Missouri 64108</p>
+          <p><a href="tel:+18165550134" class="font-semibold text-neutral-content hover:underline">(816) 555-0134</a><br><span class="text-[0.9375rem]">A person, 7 am to 10 pm Central, every day</span></p>
+          <p><a href="mailto:hello@staffmeal.app" class="hover:underline">hello@staffmeal.app</a></p>
+        </address>
+      </div>
+      <div class="grid gap-10 sm:grid-cols-3">
+        {% for item in data.navigation %}{% if item.links.size > 0 %}
+        <nav aria-label="{{ item.label }}">
+          <h2 class="kicker text-neutral-content/70">{{ item.label }}</h2>
+          <ul class="mt-4 space-y-2.5">
+            {% for link in item.links %}<li><a href="{{ link.href }}" class="hover:text-secondary" {% if page.url == link.href %}aria-current="page"{% endif %}>{{ link.label }}</a></li>{% endfor %}
+          </ul>
+        </nav>
+        {% endif %}{% endfor %}
+      </div>
+    </div>
+    <div class="mt-14 flex flex-col gap-4 border-t border-neutral-content/15 pt-6 text-[0.9375rem] text-neutral-content/75 sm:flex-row sm:items-center sm:justify-between">
+      <p>© 2026 Staff Meal, Inc., Kansas City</p>
+      <nav aria-label="Social" class="flex flex-wrap gap-x-6 gap-y-2">
+        {% for item in data.navigation %}{% if item.place == "social" %}
+        <a href="{{ item.href }}" class="hover:text-secondary">{{ item.label }}</a>
+        {% endif %}{% endfor %}
+      </nav>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,8 @@
+label: Crew points
+fields:
+  - name: title
+    kind: text
+    required: true
+  - name: text
+    kind: text
+order: [their-shifts, offer-or-take, clock-in, availability]

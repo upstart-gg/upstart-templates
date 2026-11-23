@@ -1,0 +1,35 @@
+label: Demo requests
+collected: true
+answer: demos-thanks
+body: message
+messages:
+  required: "{field} is required."
+  invalid: "{field} doesn't look right. Please check it."
+  too_many: "Too many requests were sent from here. Please try again in a few minutes."
+  sent: "Thanks, it's sent."
+fields:
+  - name: name
+    label: Your name
+    kind: text
+    required: true
+  - name: email
+    label: Email
+    kind: email
+    required: true
+  - name: phone
+    label: Phone
+    kind: phone
+  - name: business
+    label: Your place's name
+    kind: text
+    required: true
+  - name: locations
+    label: How many locations
+    kind: number
+  - name: when
+    label: Best time for a 20-minute call
+    kind: choice
+    choices: [Before the lunch rush, The afternoon lull, After close]
+  - name: message
+    label: Anything we should know
+    kind: markdown

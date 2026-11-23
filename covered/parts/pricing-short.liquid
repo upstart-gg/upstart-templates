@@ -1,0 +1,13 @@
+<section id="pricing" class="scroll-mt-20 bg-base-200 text-base-content">
+  <div class="mx-auto max-w-[84rem] px-5 py-20 md:px-8 md:py-28">
+    <div class="grid gap-6 lg:grid-cols-12 lg:items-end">
+      <div class="lg:col-span-8">
+        <p class="kicker text-primary">Pricing</p>
+        <h2 class="heading-section mt-3 max-w-[22ch]">One price per location. Your whole crew included.</h2>
+      </div>
+      <div class="lg:col-span-4 lg:text-right"><a href="/pricing" class="text-link font-semibold">Compare the plans</a></div>
+    </div>
+    <div class="mt-12" data-reveal>{% render 'plan-cards', price: "monthly" %}</div>
+    {% render 'proof', class: "mt-8" %}
+  </div>
+</section>

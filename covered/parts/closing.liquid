@@ -1,0 +1,15 @@
+{%- comment -%} The closing band, on jade: both buttons and the proof line. {%- endcomment -%}
+<section class="bg-primary text-primary-content">
+  <div class="mx-auto max-w-[84rem] px-5 py-20 md:px-8 md:py-24">
+    <div class="grid gap-8 lg:grid-cols-12 lg:items-end">
+      <div class="lg:col-span-7">
+        <h2 class="heading-section max-w-[18ch]">Next week&rsquo;s schedule, done tonight.</h2>
+        {% render 'proof', on: "primary", class: "mt-6" %}
+      </div>
+      <div class="flex flex-wrap gap-3 lg:col-span-5 lg:justify-end">
+        <a href="/start#trial" class="btn btn-on-primary btn-lg h-13 px-6">Start your free trial</a>
+        <a href="/start#demo" class="btn btn-line-on-primary btn-lg h-13 px-6">Get a demo</a>
+      </div>
+    </div>
+  </div>
+</section>

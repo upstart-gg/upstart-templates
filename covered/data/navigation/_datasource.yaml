@@ -1,0 +1,13 @@
+label: Navigation
+fields:
+  - name: label
+    kind: text
+    required: true
+  - name: href
+    kind: link
+  - name: place
+    kind: choice
+    choices: [both, header, footer, social]
+  - name: links
+    kind: links
+order: [product, pricing, customers, help, product-column, customers-column, help-column, instagram]

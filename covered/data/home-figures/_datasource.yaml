@@ -1,0 +1,11 @@
+label: Key figures
+fields:
+  - name: value
+    kind: text
+    required: true
+  - name: label
+    kind: text
+    required: true
+  - name: note
+    kind: text
+order: [kitchens, minutes, reviews]

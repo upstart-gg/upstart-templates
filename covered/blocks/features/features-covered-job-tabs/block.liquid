@@ -1,0 +1,26 @@
+<section id="jobs" class="scroll-mt-20 bg-base-100 text-base-content">
+  <div class="mx-auto max-w-[84rem] px-5 py-20 md:px-8 md:py-28">
+    <p class="kicker text-primary">What it does all week</p>
+    <h2 class="heading-section mt-3 max-w-[24ch]">Four jobs a manager does every week, each in one place.</h2>
+    <div role="tablist" class="job-tabs tabs tabs-box mt-10 w-full">
+      {%- for job in data.jobs -%}
+      <input type="radio" name="covered-jobs" class="tab" aria-label="{{ job.tab }}" {% if forloop.first %}checked{% endif %}>
+      <div role="tabpanel" class="tab-content w-full">
+        <div class="grid gap-10 lg:grid-cols-12 lg:gap-12">
+          <div class="lg:col-span-8" data-panel-piece>{% render 'job-panel', job: job %}</div>
+          <div class="lg:col-span-4 lg:pt-2">
+            <h3 class="heading-small">{{ job.title }}</h3>
+            <p class="body-copy mt-3">{{ job.text }}</p>
+            <ul class="mt-6 space-y-3">
+              {%- for point in job.points -%}
+              <li class="flex gap-3"><svg class="mt-1 size-4.5 shrink-0 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>{{ point }}</span></li>
+              {%- endfor -%}
+            </ul>
+            <a href="/product#{{ job.id }}" class="text-link mt-7 inline-flex items-center gap-1.5 font-semibold">{{ job.link_label }}<svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+          </div>
+        </div>
+      </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,8 @@
+{%- comment -%} The product page's rail (data-tab-rail, scripts/tab-rail.js): sticky pills to the chapters of `jobs`. {%- endcomment -%}
+<nav aria-label="Chapters" class="sticky top-16 z-30 border-y border-base-300 bg-base-100/95 md:top-[4.5rem]" data-tab-rail>
+  <ul class="mx-auto flex max-w-[84rem] gap-1.5 relative overflow-x-auto px-5 py-2.5 md:px-8">
+    {%- for job in data.jobs -%}
+    <li><a href="#{{ job.id }}" class="rail-link">{{ job.tab }}</a></li>
+    {%- endfor -%}
+  </ul>
+</nav>

@@ -1,0 +1,30 @@
+label: Plans
+fields:
+  - name: name
+    kind: text
+    required: true
+  - name: monthly
+    label: Monthly price
+    kind: text
+  - name: yearly
+    label: Price a month, billed yearly
+    kind: text
+  - name: limit
+    kind: text
+  - name: description
+    kind: text
+  - name: features
+    kind: list
+  - name: cta
+    label: Button
+    kind: text
+  - name: href
+    label: Button link
+    kind: link
+  - name: featured
+    label: Highlighted
+    kind: boolean
+  - name: badge
+    label: Highlight's words
+    kind: text
+order: [counter, full-house, group]

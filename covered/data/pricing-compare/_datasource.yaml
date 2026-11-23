@@ -1,0 +1,29 @@
+label: Compare the plans
+fields:
+  - name: feature
+    kind: text
+    required: true
+  - name: counter
+    label: Counter (yes, blank or a short text)
+    kind: text
+  - name: full_house
+    label: Full house
+    kind: text
+  - name: group
+    label: Group
+    kind: text
+order:
+  [
+    crew-app,
+    people,
+    copy-week,
+    availability,
+    swaps,
+    time-off,
+    overtime-warning,
+    timesheets,
+    time-clock,
+    tips,
+    payroll-export,
+    shared-people,
+  ]

@@ -1,0 +1,22 @@
+{
+  "name": "Covered changelog with plain pills",
+  "kind": "blog",
+  "source": "upstart",
+  "description": "Dated changes, newest first, each with its date in large figures, a plain pill (new, better, fixed), the part of the product it touches, its title and a paragraph. No version numbers.",
+  "tags": ["changelog", "updates", "release notes", "what's new", "news"],
+  "mood": ["minimal", "professional"],
+  "synonyms": [
+    "changelog",
+    "release notes",
+    "product updates",
+    "what's new",
+    "nouveautés",
+    "journal des modifications",
+    "mises à jour",
+    "notes de version"
+  ],
+  "data": {
+    "name": "changes",
+    "family": "collection"
+  }
+}

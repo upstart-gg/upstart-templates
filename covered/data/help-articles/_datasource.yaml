@@ -1,0 +1,26 @@
+label: Help articles
+fields:
+  - name: title
+    kind: text
+    required: true
+  - name: topic
+    kind: choice
+    choices: [Getting started, The schedule, Timesheets & pay, The crew's app, Billing]
+  - name: summary
+    kind: text
+  - name: updated
+    kind: date
+  - name: body
+    kind: markdown
+body: body
+order:
+  [
+    logging-in,
+    bringing-in-your-crew,
+    copying-last-week,
+    open-shifts,
+    approving-the-days-hours,
+    exporting-for-payroll,
+    when-someone-cant-see-their-shifts,
+    what-happens-after-the-trial,
+  ]

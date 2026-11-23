@@ -1,0 +1,64 @@
+<section class="bg-base-200 text-base-content">
+  <div class="group mx-auto max-w-[84rem] px-5 py-16 md:px-8 md:py-20">
+    <fieldset class="flex w-fit flex-wrap gap-1 rounded-field border border-base-300 bg-base-100 p-1">
+      <legend class="sr-only">Billing</legend>
+      <label class="flex h-10 cursor-pointer items-center gap-2 rounded-field px-4 font-semibold whitespace-nowrap has-checked:bg-primary has-checked:text-primary-content has-focus-visible:outline-2 has-focus-visible:outline-primary">
+        <input type="radio" name="pricing-covered-billing" id="pricing-covered-billing-monthly" value="monthly" class="sr-only" checked>Monthly
+      </label>
+      <label class="flex h-10 cursor-pointer items-center gap-2 rounded-field px-4 font-semibold whitespace-nowrap has-checked:bg-primary has-checked:text-primary-content has-focus-visible:outline-2 has-focus-visible:outline-primary">
+        <input type="radio" name="pricing-covered-billing" id="pricing-covered-billing-yearly" value="yearly" class="sr-only">Yearly: two months free
+      </label>
+    </fieldset>
+    <div class="mt-10 group-has-[#pricing-covered-billing-yearly:checked]:hidden"><div class="grid gap-5 md:grid-cols-3">
+  {%- for plan in data.plans -%}
+  {%- assign amount = plan.monthly -%}
+  <div class="flex flex-col rounded-box border p-6 md:p-7 {% if plan.featured %}border-primary bg-base-100 ring-1 ring-primary{% else %}border-base-300 bg-base-100{% endif %}">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="heading-small">{{ plan.name }}</h3>
+      {%- if plan.featured and plan.badge -%}<span class="rounded-full bg-secondary px-2.5 py-1 text-[0.75rem] font-semibold whitespace-nowrap text-secondary-content">{{ plan.badge }}</span>{%- endif -%}
+    </div>
+    <p class="kicker mt-2 text-base-content/75">{{ plan.limit }}</p>
+    <p class="mt-6 flex items-baseline gap-2"><span class="figure text-[3rem]">{{ amount }}</span><span class="text-[0.9375rem] leading-tight text-base-content/75">per location<br>a month</span></p>
+    
+    <p class="mt-5 text-[0.9375rem] leading-relaxed text-base-content/80">{{ plan.description }}</p>
+    <ul class="mt-6 flex-1 space-y-2.5 text-[0.9375rem]">
+      {%- for feature in plan.features -%}
+      <li class="flex gap-2.5"><svg class="mt-0.5 size-4.5 shrink-0 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>{{ feature }}</span></li>
+      {%- endfor -%}
+    </ul>
+    
+    {%- if plan.href -%}<a href="{{ plan.href }}" class="btn {% if plan.featured %}btn-primary{% else %}btn-outline{% endif %} mt-7 w-full">{{ plan.cta }}</a>{%- endif -%}
+  </div>
+  {%- endfor -%}
+</div>
+</div>
+    <div class="mt-10 hidden group-has-[#pricing-covered-billing-yearly:checked]:block"><div class="grid gap-5 md:grid-cols-3">
+  {%- for plan in data.plans -%}
+  {%- assign amount = plan.yearly | default: plan.monthly -%}
+  <div class="flex flex-col rounded-box border p-6 md:p-7 {% if plan.featured %}border-primary bg-base-100 ring-1 ring-primary{% else %}border-base-300 bg-base-100{% endif %}">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="heading-small">{{ plan.name }}</h3>
+      {%- if plan.featured and plan.badge -%}<span class="rounded-full bg-secondary px-2.5 py-1 text-[0.75rem] font-semibold whitespace-nowrap text-secondary-content">{{ plan.badge }}</span>{%- endif -%}
+    </div>
+    <p class="kicker mt-2 text-base-content/75">{{ plan.limit }}</p>
+    <p class="mt-6 flex items-baseline gap-2"><span class="figure text-[3rem]">{{ amount }}</span><span class="text-[0.9375rem] leading-tight text-base-content/75">per location<br>a month, billed yearly</span></p>
+    
+    <p class="mt-5 text-[0.9375rem] leading-relaxed text-base-content/80">{{ plan.description }}</p>
+    <ul class="mt-6 flex-1 space-y-2.5 text-[0.9375rem]">
+      {%- for feature in plan.features -%}
+      <li class="flex gap-2.5"><svg class="mt-0.5 size-4.5 shrink-0 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>{{ feature }}</span></li>
+      {%- endfor -%}
+    </ul>
+    
+    {%- if plan.href -%}<a href="{{ plan.href }}" class="btn {% if plan.featured %}btn-primary{% else %}btn-outline{% endif %} mt-7 w-full">{{ plan.cta }}</a>{%- endif -%}
+  </div>
+  {%- endfor -%}
+</div>
+</div>
+    <p class="flex items-start gap-2 text-[0.9375rem] font-medium text-base-content/75 mt-8">
+  <svg class="mt-1 size-4 shrink-0 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+  <span>Free for 30 days · No credit card · We set up your first week with you</span>
+</p>
+
+  </div>
+</section>

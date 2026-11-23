@@ -1,0 +1,22 @@
+{
+  "name": "Covered customer stories, one large",
+  "kind": "testimonials",
+  "source": "upstart",
+  "description": "One customer story large, with its cover scene, its quote set big, the owner's initials on a disc in the primary color and a link to the story; the others beside it as plain ruled rows with their quote and team size.",
+  "tags": ["testimonials", "customer stories", "case studies", "quotes", "customers"],
+  "mood": ["professional", "editorial", "warm"],
+  "synonyms": [
+    "case studies",
+    "customer stories",
+    "reviews",
+    "what customers say",
+    "témoignages",
+    "histoires de clients",
+    "études de cas",
+    "avis clients"
+  ],
+  "data": {
+    "name": "stories",
+    "family": "collection"
+  }
+}

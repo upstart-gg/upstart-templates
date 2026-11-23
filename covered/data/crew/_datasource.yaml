@@ -1,0 +1,23 @@
+label: Crew
+fields:
+  - name: name
+    kind: text
+    required: true
+  - name: initials
+    kind: text
+  - name: role
+    kind: choice
+    choices: [kitchen, counter, coffee bar]
+  - name: regular
+    label: Regular hours (pay period)
+    kind: number
+  - name: overtime
+    label: Overtime hours
+    kind: number
+  - name: tips
+    label: Tips declared
+    kind: text
+  - name: greeting
+    label: Next shift, as their phone says it
+    kind: text
+order: [jo-baptiste, luis-ortega, maya-lindgren, kenji-ward, priya-raman, dana-fields]
