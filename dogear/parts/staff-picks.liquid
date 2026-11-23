@@ -1,0 +1,22 @@
+<section id="picks" class="scroll-mt-24 bg-base-200 text-base-content">
+  <div class="mx-auto max-w-[80rem] px-5 py-20 md:px-8 md:py-24">
+    <div class="flex flex-wrap items-end justify-between gap-6" data-reveal>
+      <div>
+        <p class="label text-base-content/75">The front table</p>
+        <h2 class="mt-3 text-[clamp(2rem,2.5vw+1rem,3.25rem)]">Staff picks</h2>
+      </div>
+      <p class="body-copy max-w-[46ch]">Each one has a card in it from the bookseller who can't stop recommending it. The table changes on Tuesdays.</p>
+    </div>
+    <ul class="mt-16 grid grid-cols-2 gap-x-5 gap-y-16 md:grid-cols-3 md:gap-x-12 lg:gap-x-20" data-picks>
+      {%- for book in data.products %}{% if book.pick %}
+      <li class="flex flex-col">
+        <div class="flex flex-1 items-end justify-center"><div class="w-full max-w-[15rem]">{% render 'pick', book: book, talker: 'full' %}</div></div>
+        <div class="mx-auto mt-5 flex w-full max-w-[15rem] flex-wrap items-center justify-between gap-x-3 gap-y-2">
+          <span class="facts text-base-content/85">{{ book.price }}</span>
+          {% render 'hold-link', book: book, class: 'text-link text-[0.9375rem] font-semibold whitespace-nowrap' %}
+        </div>
+      </li>
+      {%- endif %}{% endfor %}
+    </ul>
+  </div>
+</section>

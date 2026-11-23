@@ -1,0 +1,9 @@
+{
+  "alt": "A linocut print of a moth with its wings spread",
+  "generated": {
+    "model": "gemini/gemini-nano-banana-2.1",
+    "prompt": "A one-color relief print, a hand-pulled linocut: black ink on plain white paper, with the carved grain, gouge marks and slightly uneven ink of a real linocut, in the same hand and style as the reference print. The motif is centered with generous white paper around it. Pure black and white only, high contrast, no gray wash. No letters, no words, no numbers, no signature, no border, no frame, no person, no human face, no logo. The motif: a single moth with its wings spread flat, seen from above, symmetrical, its wings patterned with carved lines and dots.",
+    "date": "2026-11-23T17:06:09.788Z",
+    "references": ["/media/art-owl.webp"]
+  }
+}

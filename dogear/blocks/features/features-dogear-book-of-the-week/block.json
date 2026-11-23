@@ -1,0 +1,22 @@
+{
+  "name": "Dogear book of the week",
+  "kind": "features",
+  "source": "upstart",
+  "description": "One book large on greyboard with its bookseller's card, the start of their note, its facts in a ruled line, Hold a copy and a link to its page; then the next four picks as small rows with their jackets.",
+  "tags": ["features", "book of the week", "featured book", "staff pick", "bookshop"],
+  "mood": ["editorial", "warm"],
+  "synonyms": [
+    "book of the week",
+    "featured book",
+    "our favorite",
+    "book spotlight",
+    "livre de la semaine",
+    "coup de cœur",
+    "livre à la une",
+    "le livre du moment"
+  ],
+  "data": {
+    "name": "products",
+    "family": "collection"
+  }
+}

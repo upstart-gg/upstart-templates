@@ -1,0 +1,27 @@
+label: Club sign-ups
+collected: true
+answer: club-signups-thanks
+messages:
+  required: "{field} is required."
+  invalid: "{field} does not look right."
+  too_many: "Too many sign-ups from here. Please try again in a few minutes."
+  sent: "Thank you, your seat is saved."
+fields:
+  - name: club
+    label: The club
+    kind: text
+    required: true
+  - name: name
+    label: Your name
+    kind: text
+    required: true
+  - name: email
+    label: Your email
+    kind: email
+    required: true
+  - name: phone
+    label: Your phone
+    kind: phone
+  - name: hold_book
+    label: Hold the next book for me
+    kind: boolean

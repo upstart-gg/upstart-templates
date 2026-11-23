@@ -1,0 +1,19 @@
+<section id="booksellers" class="scroll-mt-24 bg-base-100 text-base-content">
+  <div class="mx-auto max-w-[80rem] px-5 pb-20 md:px-8 md:pb-24">
+    <div class="border-t border-base-content/80 pt-10" data-reveal>
+      <p class="label text-base-content/75">The booksellers</p>
+      <h2 class="mt-3 text-[clamp(2rem,2.5vw+1rem,3rem)]">Ask for any of us</h2>
+    </div>
+    <ul class="mt-12 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-5" data-reveal="stagger">
+      {%- for member in data.team %}
+      <li>
+        {% if member.photo %}<img src="{{ member.photo }}" class="aspect-[4/5] w-full max-w-[14rem] rounded-box object-cover">{% else %}<span class="initials size-20 rounded-box text-[2.25rem]" aria-hidden="true">{{ member.first_name | slice: 0 }}</span>{% endif %}
+        <h3 class="mt-4 text-[1.25rem]">{{ member.name }}</h3>
+        <p class="mt-0.5 text-[0.9375rem] text-base-content/75">{{ member.role }}</p>
+        <p class="mt-3 text-[0.9375rem]"><span class="label text-base-content/75">Reads</span> {{ member.reads }}</p>
+        <p class="mt-3"><a href="/books#{{ member.first_name | downcase }}" class="text-link text-[0.9375rem] font-semibold">See {{ member.first_name }}'s picks</a></p>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>

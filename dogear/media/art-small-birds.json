@@ -1,0 +1,9 @@
+{
+  "alt": "A linocut print of three small sparrows side by side on a wire",
+  "generated": {
+    "model": "gemini/gemini-nano-banana-2.1",
+    "prompt": "A one-color relief print, a hand-pulled linocut: black ink on plain white paper, with the carved grain, gouge marks and slightly uneven ink of a real linocut, in the same hand and style as the reference print. The motif is centered with generous white paper around it. Pure black and white only, high contrast, no gray wash. No letters, no words, no numbers, no signature, no border, no frame, no person, no human face, no logo. The motif: three small sparrows sitting close together on a single telephone wire, one of them looking down.",
+    "date": "2026-11-23T17:05:29.993Z",
+    "references": ["/media/art-owl.webp"]
+  }
+}

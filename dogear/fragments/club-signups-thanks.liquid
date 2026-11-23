@@ -1,0 +1,5 @@
+<div class="rounded-box bg-base-100 p-8 lg:col-span-8" role="status">
+  <p class="label text-base-content/75">See you at the counter</p>
+  <p class="mt-3 font-heading text-[1.75rem] leading-snug font-medium">Thank you, {{ record.name }}. Your seat at {{ record.club }} is saved.</p>
+  <p class="body-copy mt-3">{% if record.hold_book %}The next book will wait behind the counter with your name on it, at 15% off. {% endif %}We'll write to you before the next meeting.</p>
+</div>

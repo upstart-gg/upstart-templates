@@ -1,0 +1,776 @@
+/* Brygada 1918 and Libre Franklin, files of the template,
+   under the SIL Open Font License (fonts/*-OFL.txt). */
+@font-face {
+  font-family: "Brygada 1918";
+  src: url("/fonts/brygada-latin-normal.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Brygada 1918";
+  src: url("/fonts/brygada-latin-ext-normal.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Brygada 1918";
+  src: url("/fonts/brygada-latin-italic.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: italic;
+  font-display: swap;
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Brygada 1918";
+  src: url("/fonts/brygada-latin-ext-italic.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: italic;
+  font-display: swap;
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Libre Franklin";
+  src: url("/fonts/libre-franklin-latin-normal.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Libre Franklin";
+  src: url("/fonts/libre-franklin-latin-ext-normal.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Libre Franklin";
+  src: url("/fonts/libre-franklin-latin-italic.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Libre Franklin";
+  src: url("/fonts/libre-franklin-latin-ext-italic.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+:root {
+  /* How much of a card stays tucked behind its book, and the height of its printed band. */
+  --tuck: 0.625rem;
+  --band-h: 1.75rem;
+  --contact-shadow: oklch(from var(--color-base-content) l c h / 0.18);
+  --weave: oklch(from var(--color-base-content) l c h / 0.1);
+}
+
+@layer base {
+  body {
+    font-size: 1.0625rem;
+    line-height: 1.65;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-weight: 500;
+    line-height: 1.06;
+    letter-spacing: -0.012em;
+    text-wrap: balance;
+  }
+  h3,
+  h4 {
+    font-weight: 600;
+    line-height: 1.18;
+    letter-spacing: -0.005em;
+  }
+}
+
+@layer components {
+  /* Labels above headings: Brygada in small caps. */
+  .label {
+    font-family: var(--font-heading);
+    font-variant-caps: all-small-caps;
+    font-weight: 500;
+    font-size: 1.0625rem;
+    line-height: 1.3;
+    letter-spacing: 0.04em;
+  }
+  /* A book's facts, the hours, the dates and prices: Brygada's lining, tabular figures. */
+  .facts {
+    font-family: var(--font-heading);
+    font-variant-numeric: lining-nums tabular-nums;
+  }
+  .body-copy {
+    color: color-mix(in oklch, var(--color-base-content) 80%, transparent);
+    line-height: 1.7;
+  }
+  .wordmark {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 1;
+    letter-spacing: -0.01em;
+  }
+  .wordmark-sub {
+    font-family: var(--font-heading);
+    font-variant-caps: all-small-caps;
+    font-weight: 500;
+    font-size: 1.0625rem;
+    letter-spacing: 0.05em;
+  }
+
+  .btn {
+    font-weight: 600;
+  }
+
+  /* Links in text: ink over a 2 px ochre tape that fills the line on hover. */
+  .text-link {
+    color: inherit;
+    text-decoration: none;
+    background-image: linear-gradient(var(--color-primary), var(--color-primary));
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    background-size: 100% 2px;
+    padding-bottom: 3px;
+    transition: background-size 0.2s ease-out;
+  }
+  .text-link:hover,
+  .text-link:focus-visible {
+    background-size: 100% 100%;
+    color: var(--color-primary-content);
+  }
+  /* On the ink bands, links are ochre and the tape turns them to ink. */
+  .text-link.on-dark {
+    color: var(--color-primary);
+  }
+  .text-link.on-dark:hover,
+  .text-link.on-dark:focus-visible {
+    color: var(--color-primary-content);
+  }
+
+  /* Fields outlined in ink at 55 %, above the 3:1 an edge needs. */
+  .input,
+  .select,
+  .textarea {
+    border-color: color-mix(in oklch, var(--color-base-content) 55%, transparent);
+    background-color: var(--color-base-100);
+  }
+  .required-mark {
+    color: var(--color-accent);
+  }
+
+  /* The menu below the width where all the header's links fit. */
+  .site-menu > summary {
+    list-style: none;
+  }
+  .site-menu > summary::-webkit-details-marker {
+    display: none;
+  }
+  .site-menu .menu-close,
+  .site-menu[open] .menu-open {
+    display: none;
+  }
+  .site-menu[open] .menu-close {
+    display: inline;
+  }
+
+  /* Questions as plain ruled details. */
+  .question > summary {
+    list-style: none;
+    cursor: pointer;
+  }
+  .question > summary::-webkit-details-marker {
+    display: none;
+  }
+  .question .question-mark {
+    transition: rotate 0.2s ease-out;
+  }
+  .question[open] .question-mark {
+    rotate: 45deg;
+  }
+
+  /* A record's long text. */
+  .reading-text > * + * {
+    margin-top: 1.1em;
+  }
+  .reading-text a {
+    background-image: linear-gradient(var(--color-primary), var(--color-primary));
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    background-size: 100% 2px;
+    padding-bottom: 2px;
+  }
+  .reading-text h2 {
+    font-size: 1.5rem;
+    margin-top: 1.6em;
+  }
+
+  /* ---- The jackets ------------------------------------------------------------
+     data-jacket (band, frame, type, cloth, art), data-tone (ochre, umber, ink, paper,
+     endpaper, board) and data-format (hardcover, paperback, pocket, picture, large).
+     Each tone is made from the theme, so the Theme tab recolors every cover. */
+  [data-format] {
+    --r: 0.6667;
+    --f: 1;
+  }
+  [data-format="paperback"] {
+    --r: 0.65;
+    --f: 0.88;
+  }
+  [data-format="pocket"] {
+    --r: 0.6;
+    --f: 0.7;
+  }
+  [data-format="picture"] {
+    --r: 1.25;
+    --f: 1;
+  }
+  [data-format="large"] {
+    --r: 0.8;
+    --f: 1;
+  }
+
+  .jacket {
+    --j-bg: var(--color-primary);
+    --j-ink: var(--color-primary-content);
+    --j-title: var(--j-ink);
+    --j-panel: var(--color-base-100);
+    --j-panel-ink: var(--color-base-content);
+    position: relative;
+    display: block;
+    width: 100%;
+    aspect-ratio: var(--r);
+    container-type: inline-size;
+    overflow: hidden;
+    isolation: isolate;
+    background-color: var(--j-bg);
+    color: var(--j-ink);
+    border-radius: 1px 3px 3px 1px;
+    box-shadow:
+      0 1px 1px oklch(from var(--color-base-content) l c h / 0.12),
+      0 16px 20px -12px var(--contact-shadow);
+  }
+  .jacket[data-tone="umber"] {
+    --j-bg: color-mix(in oklch, var(--color-primary), var(--color-base-content) 45%);
+    --j-ink: var(--color-base-100);
+    --j-panel: var(--color-primary);
+    --j-panel-ink: var(--color-primary-content);
+  }
+  .jacket[data-tone="ink"] {
+    --j-bg: var(--color-neutral);
+    --j-ink: var(--color-neutral-content);
+    --j-title: var(--color-primary);
+    --j-panel: var(--color-primary);
+    --j-panel-ink: var(--color-primary-content);
+  }
+  .jacket[data-tone="paper"] {
+    --j-bg: var(--color-base-100);
+    --j-ink: var(--color-base-content);
+    --j-panel: var(--color-neutral);
+    --j-panel-ink: var(--color-neutral-content);
+    box-shadow:
+      inset 0 0 0 1px var(--color-base-300),
+      0 1px 1px oklch(from var(--color-base-content) l c h / 0.12),
+      0 16px 20px -12px var(--contact-shadow);
+  }
+  .jacket[data-tone="endpaper"] {
+    --j-bg: var(--color-secondary);
+    --j-ink: var(--color-secondary-content);
+  }
+  .jacket[data-tone="board"] {
+    --j-bg: var(--color-base-200);
+    --j-ink: var(--color-base-content);
+    --j-panel: var(--color-neutral);
+    --j-panel-ink: var(--color-neutral-content);
+  }
+  /* The hinge: a light line and a soft dark one, 6 % from the spine. */
+  .jacket::before {
+    content: "";
+    position: absolute;
+    inset-block: 0;
+    left: 6%;
+    width: 4px;
+    z-index: 3;
+    pointer-events: none;
+    background: linear-gradient(
+      90deg,
+      oklch(from var(--color-base-100) l c h / 0.4) 0 1px,
+      oklch(from var(--color-base-content) l c h / 0.16) 1px 4px
+    );
+  }
+  .jacket-face {
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 4cqi;
+  }
+  .jacket-title {
+    display: block;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 13cqi;
+    line-height: 1.02;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+    color: var(--j-title);
+  }
+  .jacket-author {
+    display: block;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 5cqi;
+    line-height: 1.2;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  /* band: a band across the middle with the title and the author. */
+  .jacket[data-jacket="band"] .jacket-face {
+    inset-inline: 0;
+    top: 50%;
+    translate: 0 -50%;
+    padding: 8cqi 9cqi 8cqi 14cqi;
+    background: var(--j-panel);
+    color: var(--j-panel-ink);
+  }
+  .jacket[data-jacket="band"] .jacket-title {
+    color: inherit;
+  }
+  /* frame: an inset rule, the title above and the author below. */
+  .jacket[data-jacket="frame"] .jacket-face {
+    inset: 8cqi 7cqi 8cqi 12cqi;
+    justify-content: space-between;
+    padding: 9cqi 7cqi;
+    border: 1px solid currentColor;
+    text-align: center;
+  }
+  .jacket[data-jacket="frame"] .jacket-title {
+    font-size: 14cqi;
+    font-weight: 500;
+  }
+  /* type: the title alone, huge, breaking over lines, flush left. */
+  .jacket[data-jacket="type"] .jacket-face {
+    inset: 9cqi 8cqi 9cqi 13cqi;
+    justify-content: space-between;
+  }
+  .jacket[data-jacket="type"] .jacket-title {
+    font-size: 14.5cqi;
+    font-weight: 700;
+    line-height: 0.98;
+    letter-spacing: -0.02em;
+    text-wrap: wrap;
+  }
+  /* cloth: woven cloth with a pasted paper label. */
+  .jacket[data-jacket="cloth"] {
+    background-image:
+      repeating-linear-gradient(0deg, var(--weave) 0 1px, transparent 1px 3px),
+      repeating-linear-gradient(90deg, var(--weave) 0 1px, transparent 1px 3px);
+  }
+  .jacket[data-jacket="cloth"] .jacket-face {
+    left: 18cqi;
+    right: 12cqi;
+    top: 20cqi;
+    padding: 7cqi 6cqi;
+    align-items: center;
+    text-align: center;
+    background: var(--color-base-100);
+    color: var(--color-base-content);
+    box-shadow:
+      0 0 0 1px oklch(from var(--color-base-content) l c h / 0.18),
+      0 1px 2px oklch(from var(--color-base-content) l c h / 0.2);
+  }
+  .jacket[data-jacket="cloth"] .jacket-title {
+    font-size: 11cqi;
+    color: inherit;
+  }
+  .jacket[data-jacket="cloth"] .jacket-author {
+    font-size: 4.5cqi;
+  }
+  /* art: the print over the top two thirds, the type below. */
+  .jacket-art {
+    position: absolute;
+    z-index: 1;
+    inset: 0 0 auto 0;
+    width: 100%;
+    height: 66%;
+    object-fit: cover;
+    mix-blend-mode: multiply;
+  }
+  .jacket[data-tone="ink"] .jacket-art,
+  .jacket[data-tone="umber"] .jacket-art {
+    filter: invert(1);
+    mix-blend-mode: screen;
+  }
+  .jacket[data-jacket="art"] .jacket-face {
+    inset: auto 0 0 0;
+    min-height: 34%;
+    justify-content: center;
+    gap: 3cqi;
+    padding: 4cqi 8cqi 8cqi 13cqi;
+  }
+  .jacket[data-jacket="art"] .jacket-title {
+    font-size: 11cqi;
+  }
+  .jacket[data-format="picture"] .jacket-art {
+    height: 62%;
+  }
+  .jacket[data-format="picture"] .jacket-title,
+  .jacket[data-format="picture"][data-jacket="art"] .jacket-title {
+    font-size: 8.5cqi;
+  }
+  .jacket[data-format="picture"] .jacket-author {
+    font-size: 3.6cqi;
+  }
+  .jacket[data-format="picture"][data-jacket="art"] .jacket-face {
+    min-height: 38%;
+    padding: 2.5cqi 6cqi 5cqi 10cqi;
+    gap: 2cqi;
+  }
+  /* A photo of the real cover takes the drawing's place. */
+  .jacket-photo {
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* ---- The shelf-talkers --------------------------------------------------------
+     A pick (data-pick) is a figure: its jacket's link, then its card (data-talker) as the
+     figcaption, tucked behind the book. data-talker="full" stands the whole card above
+     the book; "peek" (the hero) shows only its band where a pointer can hover, and the
+     whole card on a touch screen. scripts/talkers.js lowers the cards behind their books
+     as a data-picks comes into view, then raises them to rest. */
+  .pick {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    width: calc(var(--f) * 100%);
+    margin: 0 auto;
+    align-self: end;
+    /* Nothing of a card shows below its book. */
+    clip-path: inset(-60rem -60rem 0 -60rem);
+  }
+  .pick-book {
+    grid-row: 2;
+    grid-column: 1;
+    position: relative;
+    z-index: 10;
+    display: block;
+    border-radius: 1px 3px 3px 1px;
+  }
+  .pick-book:focus-visible {
+    outline: 2px solid var(--color-base-content);
+    outline-offset: 3px;
+  }
+  .talker {
+    grid-row: 1;
+    grid-column: 1;
+    position: relative;
+    z-index: 0;
+    width: 82%;
+    justify-self: center;
+    container-type: inline-size;
+    margin-bottom: calc(-1 * var(--tuck));
+    translate: 8% 0;
+    filter: drop-shadow(0 0 0.5px oklch(from var(--color-base-content) l c h / 0.55))
+      drop-shadow(0 2px 3px oklch(from var(--color-base-content) l c h / 0.12));
+  }
+  .talker-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--color-base-100);
+    color: var(--color-base-content);
+    /* The dog-ear: the card's top right corner turned down. */
+    clip-path: polygon(0 0, calc(100% - 0.875rem) 0, 100% 0.875rem, 100% 100%, 0 100%);
+    position: relative;
+  }
+  .talker-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0.875rem;
+    height: 0.875rem;
+    background: linear-gradient(to bottom left, transparent 50%, var(--color-base-300) 50%);
+  }
+  .talker-band {
+    display: flex;
+    align-items: center;
+    min-height: var(--band-h);
+    padding: 0.3rem 1.25rem 0.3rem 0.625rem;
+    background: var(--color-primary);
+    color: var(--color-primary-content);
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 0.6875rem;
+    line-height: 1.15;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  /* On a narrow card the band keeps the name alone ("Maritza's"); the word "pick" stays for screen readers. */
+  @container (max-width: 8.5rem) {
+    .talker-band {
+      padding: 0.3rem 0.875rem 0.3rem 0.4rem;
+      font-size: 0.59375rem;
+      letter-spacing: 0.05em;
+    }
+    .talker-pick {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
+  }
+  .talker-line {
+    display: block;
+    margin: 0.5rem 0.75rem 1rem;
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.375;
+    /* The card's faint rules under its line. */
+    background-image: linear-gradient(to top, var(--color-base-300) 1px, transparent 1px);
+    background-size: 100% 1lh;
+    background-position: 0 0.1lh;
+  }
+  .pick:focus-within .talker[data-talker="full"] {
+    translate: 8% -0.375rem;
+  }
+  @media (hover: hover) {
+    .pick:hover .talker[data-talker="full"] {
+      translate: 8% -0.375rem;
+    }
+    /* In the hero only the band peeks above the book; the card rises on hover. */
+    .talker[data-talker="peek"] {
+      grid-row: 2;
+      align-self: start;
+      /* The card takes no height of its own: the book sets the row, and the card's foot is cut below it. */
+      margin-bottom: -60rem;
+      translate: 8% calc(-1 * var(--band-h));
+    }
+    .talker[data-talker="peek"] .talker-line {
+      font-size: 0.9375rem;
+    }
+    /* Risen, a narrow book's card widens to be read. */
+    .pick:is(:hover, :focus-within) .talker[data-talker="peek"] {
+      width: max(82%, 11rem);
+      translate: 0 calc(-100% + var(--tuck));
+    }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .talker {
+      transition:
+        translate 0.3s ease-out,
+        width 0.3s ease-out;
+    }
+  }
+
+  /* ---- The front table: the hero's mosaic ---------------------------------------
+     A grid of tiles (greyboard, endpaper, one ochre), each with its book standing at
+     the bottom. Hardcovers span two rows, picture books and large books two columns. */
+  .front-table-wrap {
+    container-type: inline-size;
+  }
+  .front-table {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-flow: dense;
+    grid-auto-rows: minmax(calc((100cqi - 0.75rem) / 2 * 1.4), auto);
+    gap: 0.75rem;
+  }
+  @media (min-width: 48rem) {
+    .front-table {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-auto-rows: minmax(calc((100cqi - 2.25rem) / 4 * 1.4), auto);
+    }
+  }
+  .tile {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 0.5rem 0.625rem 0.875rem;
+    border-radius: var(--radius-box);
+    background: var(--color-base-200);
+    container-type: inline-size;
+  }
+  .tile[data-ground="endpaper"] {
+    background: var(--color-secondary);
+  }
+  .tile[data-ground="ochre"] {
+    background: var(--color-primary);
+  }
+  .tile:has(.pick:is(:hover, :focus-within)) {
+    z-index: 30;
+  }
+  .tile[data-format="hardcover"] {
+    grid-row: span 2;
+  }
+  @media (min-width: 48rem) {
+    .tile[data-format="picture"],
+    .tile[data-format="large"] {
+      grid-column: span 2;
+    }
+  }
+  .tile-photo {
+    padding: 0;
+    overflow: hidden;
+  }
+  /* Where a pointer hovers, the tiles keep their height and the books fit inside them. */
+  @media (hover: hover) {
+    .front-table {
+      grid-auto-rows: calc((100cqi - 0.75rem) / 2 * 1.4);
+    }
+    @media (min-width: 48rem) {
+      .front-table {
+        grid-auto-rows: calc((100cqi - 2.25rem) / 4 * 1.4);
+      }
+    }
+    .front-table .tile {
+      container-type: size;
+    }
+    .front-table .pick {
+      width: min(calc(var(--f) * 94cqi), calc((93cqh - var(--band-h)) * var(--r)));
+    }
+    .front-table .tile[data-format="picture"] .pick,
+    .front-table .tile[data-format="large"] .pick {
+      width: min(calc(var(--f) * 62cqi), calc((92cqh - var(--band-h)) * var(--r)));
+    }
+  }
+
+  /* A row or grid of books standing on a ledge, bottom-aligned. */
+  .shelf-row {
+    display: grid;
+    align-items: end;
+  }
+
+  /* ---- Readings: the date block and the tags that follow the clock ----------------
+     scripts/upcoming.js sets data-when (past, today, tonight) on each data-event. */
+  .date-block {
+    font-family: var(--font-heading);
+    font-variant-numeric: lining-nums tabular-nums;
+  }
+  [data-tag] {
+    display: none;
+    align-items: center;
+    padding: 0.125rem 0.5rem;
+    border-radius: 2px;
+    background: var(--color-accent);
+    color: var(--color-accent-content);
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 0.6875rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    line-height: 1.5;
+  }
+  [data-when="tonight"] [data-tag="tonight"],
+  [data-when="tonight"][data-tag-host] > [data-tag="tonight"],
+  [data-when="today"] [data-tag="today"] {
+    display: inline-flex;
+  }
+  /* ---- The gift card: ochre cloth with a pasted paper label, a bookplate ---------- */
+  .gift-card {
+    position: relative;
+    aspect-ratio: 1.586;
+    container-type: inline-size;
+    border-radius: 0.5rem;
+    background-color: var(--color-primary);
+    background-image:
+      repeating-linear-gradient(0deg, var(--weave) 0 1px, transparent 1px 3px),
+      repeating-linear-gradient(90deg, var(--weave) 0 1px, transparent 1px 3px);
+    color: var(--color-primary-content);
+    box-shadow:
+      0 1px 1px oklch(from var(--color-base-content) l c h / 0.14),
+      0 24px 30px -18px var(--contact-shadow);
+  }
+  .gift-label {
+    position: absolute;
+    inset: 11cqi 12cqi;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5cqi 6cqi;
+    background: var(--color-base-100);
+    color: var(--color-base-content);
+    box-shadow:
+      0 0 0 1px oklch(from var(--color-base-content) l c h / 0.2),
+      0 1px 2px oklch(from var(--color-base-content) l c h / 0.2);
+  }
+  .gift-label::before {
+    content: "";
+    position: absolute;
+    inset: 2.2cqi;
+    border: 1px solid var(--color-base-300);
+    pointer-events: none;
+  }
+  .gift-amount {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 12cqi;
+    line-height: 1;
+    font-variant-numeric: lining-nums;
+  }
+  .gift-line {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: 4.6cqi;
+    line-height: 1.3;
+  }
+  .gift-name {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-weight: 600;
+    font-size: 5.4cqi;
+  }
+
+  /* Initials on ochre, until the booksellers send photos. */
+  .initials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-primary);
+    color: var(--color-primary-content);
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-weight: 600;
+  }
+}
+
+/* Outside the layers, so that a row's own display (grid, flex) never shows a reading the list leaves out. */
+[data-upcoming] [data-when="past"],
+option[data-when="past"] {
+  display: none;
+}
+/* A list given a count shows only its first readings still to come: with no script by
+   their place, and once scripts/upcoming.js has counted them, by data-beyond. */
+[data-upcoming="3"]:not([data-counted]) > [data-event]:nth-child(n + 4),
+[data-upcoming="2"]:not([data-counted]) > [data-event]:nth-child(n + 3),
+[data-upcoming] > [data-beyond] {
+  display: none;
+}

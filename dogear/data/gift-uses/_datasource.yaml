@@ -1,0 +1,11 @@
+label: What a gift card is good for
+fields:
+  - name: title
+    kind: text
+    required: true
+  - name: text
+    kind: text
+  - name: icon
+    kind: choice
+    choices: [spark, bolt, shield, heart, clock, chat, leaf, star, chart, team, plug, sliders]
+order: [books, coffee, club-books, readings, several-visits, never-expires]

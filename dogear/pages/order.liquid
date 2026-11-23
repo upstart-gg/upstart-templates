@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Order a book — Half Title Books &amp; Coffee, Providence</title>
+<meta name="description" content="Order any book in print from Half Title in Providence, usually in three to five days, or hold a copy from the shelf the same day. We call when it's in and keep it behind the counter for ten days; you pay when you pick it up.">
+<meta property="og:title" content="Order a book — Half Title Books &amp; Coffee, Providence">
+<meta property="og:description" content="Order any book in print from Half Title in Providence, usually in three to five days, or hold a copy from the shelf the same day. We call when it's in and keep it behind the counter for ten days; you pay when you pick it up.">
+</head>
+<body>
+{% render 'header', page: page %}
+<main>
+{% render 'page-title', label: "Holds and special orders", title: "Order a book", intro: "If it's in print, we can get it, usually in three to five days. We call when it's here and keep it behind the counter for ten days. You pay when you pick it up." %}
+{% render 'order-form' %}
+{% render 'steps', items: data.order-steps, label: "From asking to reading", title: "How it goes" %}
+{% render 'faq', items: data.order-faq, title: "Before you order", columns: true %}
+</main>
+{% render 'footer' %}
+</body>
+</html>

@@ -1,0 +1,52 @@
+label: Book orders
+collected: true
+answer: special-orders-thanks
+body: remember
+messages:
+  required: "{field} is required."
+  invalid: "{field} does not look right."
+  too_many: "Too many requests from here. Please try again in a few minutes, or call us."
+  sent: "Thank you, we have your request."
+fields:
+  - name: kind
+    label: What you'd like
+    kind: choice
+    choices: [hold, order, signed]
+  - name: title
+    label: Title
+    kind: text
+    required: true
+  - name: author
+    label: Author
+    kind: text
+  - name: remember
+    label: What you remember about it
+    kind: markdown
+  - name: format
+    label: Format
+    kind: choice
+    choices: [any, hardcover, paperback]
+  - name: copies
+    label: Copies
+    kind: number
+  - name: name
+    label: Your name
+    kind: text
+    required: true
+  - name: phone
+    label: Your phone
+    kind: phone
+    required: true
+  - name: contact
+    label: Call or text
+    kind: choice
+    choices: [call, text]
+  - name: email
+    label: Your email
+    kind: email
+  - name: mail
+    label: Mail it to me instead
+    kind: boolean
+  - name: address
+    label: Mailing address
+    kind: text

@@ -1,0 +1,68 @@
+<section id="card" class="scroll-mt-24 bg-secondary text-secondary-content">
+  <div class="mx-auto grid max-w-[80rem] gap-12 px-5 py-16 md:px-8 md:py-24 lg:grid-cols-12 lg:gap-14">
+    <div class="lg:col-span-5">
+      <div class="lg:sticky lg:top-32">
+        {% render 'gift-card' %}
+        <p class="mt-8 max-w-[40ch] text-secondary-content/85">Any amount from $10. We'll call to take payment. It's ready the same day, or mailed free.</p>
+      </div>
+    </div>
+    <form hx-post="/_data/gift-card-requests" hx-target="this" hx-swap="outerHTML" hx-status:422="target:#gift-card-requests-problems swap:innerHTML" class="rounded-box bg-base-100 p-6 text-base-content md:p-10 lg:col-span-7" data-gift-form data-prefill>
+      <fieldset>
+        <legend class="font-heading text-[1.5rem] font-semibold">The card</legend>
+        <div class="mt-4 flex flex-wrap gap-2">
+          <label class="btn btn-outline has-[:checked]:btn-neutral"><input type="radio" name="amount" value="25" class="sr-only">$25</label>
+          <label class="btn btn-outline has-[:checked]:btn-neutral"><input type="radio" name="amount" value="50" class="sr-only" checked>$50</label>
+          <label class="btn btn-outline has-[:checked]:btn-neutral"><input type="radio" name="amount" value="100" class="sr-only">$100</label>
+          <label class="btn btn-outline has-[:checked]:btn-neutral"><input type="radio" name="amount" value="other" class="sr-only">Another amount</label>
+        </div>
+        <div class="mt-3 grid gap-x-5 gap-y-1 sm:grid-cols-2">
+          <fieldset class="fieldset">
+            <legend class="fieldset-legend text-[0.9375rem]">Another amount, in dollars</legend>
+            <input name="other_amount" type="number" class="input w-full" min="10" max="1000" step="5" placeholder="75">
+          </fieldset>
+          <div></div>
+          <fieldset class="fieldset">
+            <legend class="fieldset-legend text-[0.9375rem]">For</legend>
+            <input name="for_name" type="text" class="input w-full" maxlength="60" placeholder="Ana">
+          </fieldset>
+          <fieldset class="fieldset">
+            <legend class="fieldset-legend text-[0.9375rem]">From</legend>
+            <input name="from_name" type="text" class="input w-full" maxlength="60" placeholder="Lou">
+          </fieldset>
+          <fieldset class="fieldset sm:col-span-2">
+            <legend class="fieldset-legend text-[0.9375rem]">A message <span class="font-normal text-base-content/70">(we'll write it by hand)</span></legend>
+            <textarea name="message" class="textarea w-full" rows="3" maxlength="600"></textarea>
+          </fieldset>
+        </div>
+      </fieldset>
+      <fieldset class="mt-8">
+        <legend class="font-heading text-[1.5rem] font-semibold">Pick it up or mail it</legend>
+        <div class="mt-3 flex flex-wrap gap-x-6 gap-y-2">
+          <label class="flex items-center gap-2"><input type="radio" name="delivery" value="pickup" class="radio radio-sm" checked>Pick up at the counter</label>
+          <label class="flex items-center gap-2"><input type="radio" name="delivery" value="mail" class="radio radio-sm">Mail it, free</label>
+        </div>
+        <fieldset class="fieldset mt-2">
+          <legend class="fieldset-legend text-[0.9375rem]">Mailing address <span class="font-normal text-base-content/70">(if we mail it)</span></legend>
+          <input name="address" type="text" class="input w-full" maxlength="400" autocomplete="street-address">
+        </fieldset>
+      </fieldset>
+      <fieldset class="mt-8 grid gap-x-5 gap-y-1 sm:grid-cols-2">
+        <legend class="font-heading text-[1.5rem] font-semibold">You</legend>
+        <fieldset class="fieldset mt-3">
+          <legend class="fieldset-legend text-[0.9375rem]">Your name <span class="required-mark" aria-hidden="true">*</span></legend>
+          <input name="name" type="text" class="input w-full" required maxlength="200" autocomplete="name">
+        </fieldset>
+        <fieldset class="fieldset sm:mt-3">
+          <legend class="fieldset-legend text-[0.9375rem]">Your phone <span class="required-mark" aria-hidden="true">*</span></legend>
+          <input name="phone" type="tel" class="input w-full" required maxlength="30" autocomplete="tel">
+        </fieldset>
+        <fieldset class="fieldset sm:col-span-2">
+          <legend class="fieldset-legend text-[0.9375rem]">Your email <span class="font-normal text-base-content/70">(optional)</span></legend>
+          <input name="email" type="email" class="input w-full" maxlength="200" autocomplete="email">
+        </fieldset>
+      </fieldset>
+      <div id="gift-card-requests-problems" class="mt-4"></div>
+      <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3"><button class="btn btn-primary btn-lg whitespace-nowrap">Ask for the card</button><span class="text-base-content/75">We'll call to take payment.</span></div>
+    </form>
+  </div>
+</section>

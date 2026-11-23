@@ -1,0 +1,16 @@
+{%- comment -%} A book's drawn jacket: pass book (a record of products), or title, author, tone, jacket and format for a book not in the list. A photo in book.image takes the drawing's place. {%- endcomment -%}
+{%- assign j_title = book.name | default: title -%}
+{%- assign j_author = book.author | default: author -%}
+{%- assign j_layout = book.jacket | default: jacket | default: "band" -%}
+{%- assign j_tone = book.tone | default: tone | default: "ochre" -%}
+{%- assign j_format = book.format | default: format | default: "paperback" -%}
+{%- assign j_art = book.art | default: art -%}
+<span class="jacket {{ class }}" data-jacket="{{ j_layout }}" data-tone="{{ j_tone }}" data-format="{{ j_format }}">
+  {%- if book.image -%}
+  <img src="{{ book.image }}" class="jacket-photo">
+  <span class="sr-only">{{ j_title }}, by {{ j_author }}</span>
+  {%- else -%}
+  {%- if j_layout == "art" and j_art -%}<img src="{{ j_art }}" class="jacket-art">{%- endif -%}
+  <span class="jacket-face"><span class="jacket-title">{{ j_title }}</span>{% if j_author %}<span class="jacket-author">{{ j_author }}</span>{% endif %}</span>
+  {%- endif -%}
+</span>

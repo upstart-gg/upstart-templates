@@ -1,0 +1,31 @@
+<section class="bg-base-100 text-base-content">
+  <div class="mx-auto max-w-[80rem] space-y-5 px-5 pb-20 md:px-8 md:pb-24">
+    {%- for club in data.clubs %}
+    {%- assign nextbook = data.products | where: "name", club.next_book | first %}
+    <article id="{{ club.id }}" class="grid scroll-mt-24 gap-10 rounded-box px-6 py-10 md:grid-cols-12 md:px-10 md:py-12 {% cycle 'bg-base-200', 'bg-secondary text-secondary-content' %}">
+      <div class="md:col-span-8" data-reveal>
+        <p class="facts text-[1.0625rem] opacity-80">{{ club.when }}</p>
+        <h2 class="mt-2 text-[clamp(2rem,2vw+1.25rem,2.75rem)]">{{ club.name }}</h2>
+        <p class="mt-4 max-w-[52ch] text-[1.125rem] opacity-90">{{ club.about }}</p>
+        <p class="mt-4 flex flex-wrap gap-x-6 gap-y-1"><span><span class="label opacity-80">Led by</span> {{ club.leader }}</span>{% if club.ages %}<span><span class="label opacity-80">For</span> {{ club.ages }}</span>{% endif %}</p>
+        <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
+          <a href="/clubs?club={{ club.id }}#join" class="btn btn-primary whitespace-nowrap">Join this club</a>
+          {%- if club.next %}<p class="facts"><span class="label opacity-80">Next meeting</span> {{ club.next | date: "%A, %B %-d" }}</p>{% endif %}
+        </div>
+      </div>
+      {%- if club.next_book %}
+      <div class="flex items-end gap-5 md:col-span-4 md:justify-end">
+        <div class="max-w-[12rem] text-right max-md:order-2 max-md:text-left">
+          <p class="label opacity-80">Reading next</p>
+          <p class="mt-1 font-heading text-[1.25rem] font-semibold leading-snug">{% if nextbook %}<a href="/books/{{ nextbook.id }}" class="hover:underline hover:decoration-2 hover:underline-offset-4">{{ club.next_book }}</a>{% else %}{{ club.next_book }}{% endif %}</p>
+        </div>
+        <div class="w-24 shrink-0 sm:w-28">
+          {%- if nextbook %}<span class="block w-[calc(var(--f)*100%)]" data-format="{{ nextbook.format }}">{% render 'jacket', book: nextbook %}</span>
+          {%- else %}<span class="block w-[calc(var(--f)*100%)]" data-format="paperback">{% render 'jacket', title: club.next_book, jacket: 'type', tone: 'ochre', format: 'paperback' %}</span>{% endif %}
+        </div>
+      </div>
+      {%- endif %}
+    </article>
+    {%- endfor %}
+  </div>
+</section>

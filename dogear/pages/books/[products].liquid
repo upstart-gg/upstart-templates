@@ -1,0 +1,88 @@
+{%- assign bookseller = data.team | where: "first_name", record.picked_by | first -%}
+{%- assign reading = data.events | where: "book", record.name | first -%}
+{%- assign club = data.clubs | where: "next_book", record.name | first -%}
+<!doctype html>
+<html lang="en">
+<head>
+<title>{{ record.name }} by {{ record.author }} — Half Title Books &amp; Coffee</title>
+<meta name="description" content="{{ record.summary }}">
+<meta property="og:title" content="{{ record.name }} by {{ record.author }} — Half Title Books &amp; Coffee">
+<meta property="og:description" content="{{ record.summary }}">
+</head>
+<body>
+{% render 'header', page: page %}
+<main>
+<article class="bg-base-100 text-base-content">
+  <div class="mx-auto max-w-[80rem] px-5 pt-10 pb-20 md:px-8 md:pt-14 md:pb-28">
+    <p class="label text-base-content/75"><a href="/books" class="text-link">Books</a>{% if record.category %} · {{ record.category }}{% endif %}</p>
+    <div class="mt-8 grid gap-12 lg:grid-cols-12 lg:gap-14">
+      <div class="flex justify-center rounded-box bg-base-200 px-8 pt-14 pb-12 lg:col-span-5" data-picks>
+        <div class="w-[min(100%,18rem)]">
+          {%- if record.note %}{% render 'pick', book: record, talker: 'full' %}{% else %}<div class="mx-auto w-[calc(var(--f)*100%)]" data-format="{{ record.format }}">{% render 'jacket', book: record %}</div>{% endif %}
+        </div>
+      </div>
+      <div class="lg:col-span-7 lg:pt-6">
+        <h1 class="text-[clamp(2.5rem,3.5vw+1rem,4.25rem)] leading-[1.04]">{{ record.name }}</h1>
+        <p class="mt-3 text-[1.25rem] text-base-content/80">by {{ record.author }}</p>
+        <p class="facts mt-6 text-[1.5rem]">{{ record.price }}</p>
+        <div class="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3">
+          {% render 'hold-link', book: record, class: 'btn btn-primary btn-lg whitespace-nowrap' %}
+          <span class="text-[0.9375rem] text-base-content/75">{% if record.available == false %}Usually three to five days{% else %}On the shelf, held the same day{% endif %}</span>
+        </div>
+        <dl class="facts mt-10 border-t border-base-content/80">
+          {%- if record.publisher %}<div class="grid grid-cols-[8rem_1fr] gap-4 border-b border-base-300 py-3"><dt class="label text-base-content/75">Publisher</dt><dd>{{ record.publisher }}</dd></div>{% endif %}
+          {%- if record.pages %}<div class="grid grid-cols-[8rem_1fr] gap-4 border-b border-base-300 py-3"><dt class="label text-base-content/75">Pages</dt><dd>{{ record.pages }}</dd></div>{% endif %}
+          {%- if record.format %}<div class="grid grid-cols-[8rem_1fr] gap-4 border-b border-base-300 py-3"><dt class="label text-base-content/75">Format</dt><dd>{% case record.format %}{% when "hardcover" %}Hardcover{% when "paperback" %}Paperback{% when "pocket" %}Pocket paperback{% when "picture" %}Picture book{% when "large" %}Large format{% endcase %}</dd></div>{% endif %}
+          {%- if record.published %}<div class="grid grid-cols-[8rem_1fr] gap-4 border-b border-base-300 py-3"><dt class="label text-base-content/75">Came out</dt><dd>{{ record.published | date: "%B %-d, %Y" }}</dd></div>{% endif %}
+          {%- if record.category %}<div class="grid grid-cols-[8rem_1fr] gap-4 border-b border-base-300 py-3"><dt class="label text-base-content/75">Shelf</dt><dd>{{ record.category }}</dd></div>{% endif %}
+          {%- if record.badge == "Signed" %}<div class="grid grid-cols-[8rem_1fr] gap-4 border-b border-base-300 py-3"><dt class="label text-base-content/75">Copy</dt><dd class="text-accent">Signed copy</dd></div>{% endif %}
+        </dl>
+      </div>
+    </div>
+    <div class="mt-20 grid gap-10 lg:grid-cols-12">
+      <div class="lg:col-span-4">
+        <div class="flex items-center gap-4">
+          {%- if bookseller.photo %}<img src="{{ bookseller.photo }}" class="size-14 rounded-box object-cover">{% else %}<span class="initials size-14 rounded-box text-[1.5rem]" aria-hidden="true">{% if record.picked_by %}{{ record.picked_by | slice: 0 }}{% else %}H{% endif %}</span>{% endif %}
+          <h2 class="text-[clamp(1.75rem,1.5vw+1.25rem,2.25rem)]">{% if record.picked_by %}{{ record.picked_by }}{% else %}We{% endif %} on this book</h2>
+        </div>
+        {%- if bookseller %}<p class="mt-4 text-base-content/75"><span class="label">Reads mostly</span> {{ bookseller.reads }}. <a href="/books#{{ bookseller.first_name | downcase }}" class="text-link whitespace-nowrap">See {{ bookseller.first_name }}'s picks</a></p>{% endif %}
+      </div>
+      <div class="body-copy reading-text max-w-[62ch] text-[1.125rem] lg:col-span-8">{{ record.body }}</div>
+    </div>
+    {%- if reading or club %}
+    <div class="mt-16 grid gap-6 md:grid-cols-2">
+      {%- if reading %}
+      <a href="/events/{{ reading.id }}" class="group flex gap-5 rounded-box bg-base-200 p-6" data-event data-date="{{ reading.date }}" data-starts="{{ reading.starts }}">
+        {% render 'date-block', date: reading.date %}
+        <span class="min-w-0"><span class="label block text-base-content/75">Reading</span><span class="mt-1 block font-heading text-[1.25rem] font-semibold leading-snug group-hover:underline group-hover:decoration-primary group-hover:decoration-2 group-hover:underline-offset-4">{{ reading.title }}</span><span class="facts mt-1 block text-base-content/80">{{ reading.time }} · {{ reading.place }}</span><span class="mt-2 block"><span data-tag="tonight">Tonight</span></span></span>
+      </a>
+      {%- endif %}
+      {%- if club %}
+      <a href="/clubs#{{ club.id }}" class="group flex flex-col justify-center rounded-box bg-secondary p-6 text-secondary-content">
+        <span class="label text-secondary-content/80">Book club</span>
+        <span class="mt-1 font-heading text-[1.25rem] font-semibold leading-snug group-hover:underline group-hover:decoration-2 group-hover:underline-offset-4">{{ club.name }} reads it next</span>
+        <span class="facts mt-1 text-secondary-content/85">{{ club.when }}, next on {{ club.next | date: "%B %-d" }}</span>
+      </a>
+      {%- endif %}
+    </div>
+    {%- endif %}
+  </div>
+</article>
+<section class="bg-base-200 text-base-content">
+  <div class="mx-auto max-w-[80rem] px-5 py-20 md:px-8 md:py-24">
+    <h2 class="text-[clamp(1.75rem,2vw+1rem,2.5rem)]">If you liked this</h2>
+    <ul class="mt-12 grid grid-cols-2 gap-x-6 gap-y-14 md:grid-cols-3 md:gap-x-16" data-picks>
+      {%- assign shown = 0 %}
+      {%- for book in data.products %}{% if book.pick and book.id != record.id and book.picked_by == record.picked_by and shown < 3 %}{% assign shown = shown | plus: 1 %}
+      <li class="flex items-end justify-center"><div class="w-full max-w-[13rem]">{% render 'pick', book: book, talker: 'full' %}</div></li>
+      {%- endif %}{% endfor %}
+      {%- for book in data.products %}{% if book.pick and book.id != record.id and book.picked_by != record.picked_by and shown < 3 %}{% assign shown = shown | plus: 1 %}
+      <li class="flex items-end justify-center"><div class="w-full max-w-[13rem]">{% render 'pick', book: book, talker: 'full' %}</div></li>
+      {%- endif %}{% endfor %}
+    </ul>
+  </div>
+</section>
+</main>
+{% render 'footer' %}
+</body>
+</html>

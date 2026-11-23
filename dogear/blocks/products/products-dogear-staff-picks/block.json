@@ -1,0 +1,22 @@
+{
+  "name": "Dogear staff picks",
+  "kind": "products",
+  "source": "upstart",
+  "description": "This week's staff picks as a grid of drawn jackets on greyboard, each with its bookseller's card standing full above the book (their name and one line), rising into place as the grid comes into view; with the price and a Hold a copy link.",
+  "tags": ["products", "books", "staff picks", "shelf-talkers", "recommendations", "bookshop"],
+  "mood": ["editorial", "warm"],
+  "synonyms": [
+    "staff picks",
+    "booksellers' picks",
+    "recommended books",
+    "shelf talkers",
+    "coups de cœur",
+    "sélection des libraires",
+    "nos conseils de lecture",
+    "livres recommandés"
+  ],
+  "data": {
+    "name": "products",
+    "family": "collection"
+  }
+}

@@ -1,0 +1,7 @@
+{%- comment -%} A staff pick: the book's jacket, linked to its page, with its bookseller's card tucked behind it. talker: "full" (the whole card above the book) or "peek" (the band only, rising on hover). {%- endcomment -%}
+<figure class="pick" data-pick data-format="{{ book.format | default: 'paperback' }}">
+  <a href="/books/{{ book.id }}" class="pick-book">{% render 'jacket', book: book %}</a>
+  {%- if book.note %}
+  <figcaption class="talker" data-talker="{{ talker | default: 'full' }}"><span class="talker-card"><span class="talker-band"><span>{% if book.picked_by %}{{ book.picked_by }}'s{% else %}Our{% endif %}<span class="talker-pick"> pick</span><span class="sr-only">:</span></span></span><span class="talker-line">{{ book.note }}</span></span></figcaption>
+  {%- endif %}
+</figure>

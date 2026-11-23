@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Half Title Books &amp; Coffee — An independent bookshop in the Armory District, Providence</title>
+<meta name="description" content="Half Title is an independent bookshop and café in a 1912 corner pharmacy in Providence's Armory District: this week's staff picks, special orders in three to five days, free readings, four book clubs and coffee at the old soda counter.">
+<meta property="og:title" content="Half Title Books &amp; Coffee — An independent bookshop in the Armory District, Providence">
+<meta property="og:description" content="Half Title is an independent bookshop and café in a 1912 corner pharmacy in Providence's Armory District: this week's staff picks, special orders in three to five days, free readings, four book clubs and coffee at the old soda counter.">
+</head>
+<body>
+{% render 'header', page: page %}
+<main>
+{% render 'hero' %}
+{% render 'book-of-the-week' %}
+{% render 'new-row', limit: 6 %}
+{% render 'readings-band' %}
+{% render 'clubs-band' %}
+{% render 'order-band' %}
+{% render 'soda-counter' %}
+</main>
+{% render 'footer' %}
+</body>
+</html>

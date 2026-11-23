@@ -1,0 +1,27 @@
+{%- comment -%} The readings still to come, by date: pass count (3 on the home page), dark: true on ink, summary: true for their summaries. scripts/upcoming.js marks each one past, today or tonight in the shop's time zone (data-tz). {%- endcomment -%}
+<ol class="divide-y border-y {% if dark %}divide-neutral-content/20 border-neutral-content/20{% else %}divide-base-300 border-base-300{% endif %}" data-upcoming="{{ count }}" data-tz="America/New_York">
+  {%- for event in data.events %}
+  {%- assign ebook = data.products | where: "name", event.book | first %}
+  <li data-event data-date="{{ event.date }}" data-starts="{{ event.starts }}" class="grid grid-cols-[auto_minmax(0,1fr)] gap-5 py-8 sm:gap-8 md:grid-cols-[auto_minmax(0,1fr)_5.5rem]">
+    {% render 'date-block', date: event.date %}
+    <div class="min-w-0">
+      <p class="flex flex-wrap items-center gap-x-3 gap-y-2"><span data-tag="tonight">Tonight</span><span data-tag="today">Today</span><span class="facts {% if dark %}text-neutral-content/75{% else %}text-base-content/75{% endif %}">{{ event.time }} · {{ event.place }}</span></p>
+      <h3 class="mt-2 text-[1.375rem] leading-snug"><a href="/events/{{ event.id }}" class="hover:underline hover:decoration-primary hover:decoration-2 hover:underline-offset-4">{{ event.title }}</a></h3>
+      {%- if summary and event.summary %}
+      <p class="mt-2 max-w-[60ch] {% if dark %}text-neutral-content/80{% else %}text-base-content/80{% endif %}">{{ event.summary }}</p>
+      {%- endif %}
+      <div class="mt-4 flex flex-wrap items-center gap-x-5 gap-y-3">
+        <span class="facts">{{ event.price }}</span>
+        {%- if event.booking %}
+        <a href="{{ event.booking }}" class="btn btn-primary btn-sm whitespace-nowrap" rel="noopener" target="_blank">Get tickets</a>
+        {%- elsif event.rsvp == "walk-in" %}
+        <a href="/events/{{ event.id }}" class="btn btn-sm whitespace-nowrap {% if dark %}btn-outline border-neutral-content/60 text-neutral-content hover:bg-neutral-content hover:text-neutral{% else %}btn-outline{% endif %}">Details</a>
+        {%- else %}
+        <a href="/events/{{ event.id }}#rsvp" class="btn btn-primary btn-sm whitespace-nowrap">RSVP</a>
+        {%- endif %}
+      </div>
+    </div>
+    <div class="hidden md:block">{% if ebook %}<a href="/books/{{ ebook.id }}" class="block w-[calc(var(--f)*100%)]" data-format="{{ ebook.format }}" tabindex="-1" aria-hidden="true">{% render 'jacket', book: ebook %}</a>{% endif %}</div>
+  </li>
+  {%- endfor %}
+</ol>

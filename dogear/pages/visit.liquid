@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Visit — Half Title Books &amp; Coffee, 58 Gilder Street, Providence</title>
+<meta name="description" content="Half Title is at 58 Gilder Street in Providence's Armory District, in a 1912 corner pharmacy. Open every day; coffee at the old soda counter from 8 am on weekdays. Hours, directions, the café's menu and the booksellers.">
+<meta property="og:title" content="Visit — Half Title Books &amp; Coffee, 58 Gilder Street, Providence">
+<meta property="og:description" content="Half Title is at 58 Gilder Street in Providence's Armory District, in a 1912 corner pharmacy. Open every day; coffee at the old soda counter from 8 am on weekdays. Hours, directions, the café's menu and the booksellers.">
+</head>
+<body>
+{% render 'header', page: page %}
+<main>
+{% render 'story' %}
+{% render 'hours-address' %}
+{% render 'cafe-menu' %}
+{% render 'booksellers' %}
+{% render 'finding-us' %}
+{% render 'faq', items: data.visit-faq, title: "Before you visit" %}
+</main>
+{% render 'footer' %}
+</body>
+</html>

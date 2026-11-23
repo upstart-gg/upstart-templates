@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Book clubs — Half Title Books &amp; Coffee, Providence</title>
+<meta name="description" content="Four free book clubs at Half Title's soda counter in Providence: new fiction, fiction in translation, one very long book, and a young readers' club for ages 8 to 11. Members get 15% off the club's book.">
+<meta property="og:title" content="Book clubs — Half Title Books &amp; Coffee, Providence">
+<meta property="og:description" content="Four free book clubs at Half Title's soda counter in Providence: new fiction, fiction in translation, one very long book, and a young readers' club for ages 8 to 11. Members get 15% off the club's book.">
+</head>
+<body>
+{% render 'header', page: page %}
+<main>
+{% render 'page-title', label: "At the soda counter", title: "Book clubs", intro: "Four clubs, all free, all at the soda counter. Members get 15% off the club's book." %}
+{% render 'clubs' %}
+{% render 'steps', items: data.clubs-steps, label: "How it works", title: "Come as you are" %}
+{% render 'club-form' %}
+<section class="bg-base-100 text-base-content">
+  <div class="mx-auto max-w-[80rem] px-5 py-14 md:px-8">
+    <p class="flex flex-wrap items-baseline justify-between gap-4 border-y border-base-300 py-6"><span class="font-heading text-[1.375rem] font-medium">Running a club of your own? We'll order the copies and give your group 10% off.</span><a href="mailto:hello@halftitlebooks.com" class="text-link font-semibold whitespace-nowrap">Write to us</a></p>
+  </div>
+</section>
+</main>
+{% render 'footer' %}
+</body>
+</html>

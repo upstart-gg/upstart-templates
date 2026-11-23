@@ -1,0 +1,45 @@
+label: Gift card requests
+collected: true
+answer: gift-card-requests-thanks
+body: message
+messages:
+  required: "{field} is required."
+  invalid: "{field} does not look right."
+  too_many: "Too many requests from here. Please try again in a few minutes, or call us."
+  sent: "Thank you, we'll call to take payment."
+fields:
+  - name: amount
+    label: Amount
+    kind: choice
+    required: true
+    choices: ["25", "50", "100", other]
+  - name: other_amount
+    label: Another amount
+    kind: number
+  - name: for_name
+    label: For
+    kind: text
+  - name: from_name
+    label: From
+    kind: text
+  - name: message
+    label: A message for the card
+    kind: markdown
+  - name: delivery
+    label: Pick up or mail
+    kind: choice
+    choices: [pickup, mail]
+  - name: address
+    label: Mailing address
+    kind: text
+  - name: name
+    label: Your name
+    kind: text
+    required: true
+  - name: phone
+    label: Your phone
+    kind: phone
+    required: true
+  - name: email
+    label: Your email
+    kind: email

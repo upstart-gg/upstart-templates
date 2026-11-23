@@ -1,0 +1,8 @@
+<form hx-post="/_data/newsletter" hx-target="this" hx-swap="outerHTML" hx-status:422="target:#newsletter-problems swap:innerHTML" class="mt-4">
+  <label for="newsletter-email" class="block text-neutral-content/80">The Tuesday letter: new books and the week's readings</label>
+  <div class="mt-3 flex flex-wrap gap-2">
+    <input id="newsletter-email" name="email" type="email" required maxlength="200" autocomplete="email" placeholder="you@example.com" class="input min-w-0 flex-1 text-base-content">
+    <button class="btn btn-primary whitespace-nowrap">Sign up</button>
+  </div>
+  <div id="newsletter-problems" class="mt-2"></div>
+</form>

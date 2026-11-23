@@ -1,0 +1,76 @@
+<section id="order" class="scroll-mt-24 bg-base-100 text-base-content">
+  <div class="mx-auto grid max-w-[80rem] gap-10 px-5 pb-20 md:px-8 md:pb-24 lg:grid-cols-12 lg:items-start">
+    <form hx-post="/_data/special-orders" hx-target="this" hx-swap="outerHTML" hx-status:422="target:#special-orders-problems swap:innerHTML" class="rounded-box border border-base-300 p-6 md:p-10 lg:col-span-8" data-prefill>
+      <fieldset>
+        <legend class="font-heading text-[1.5rem] font-semibold">What you'd like</legend>
+        <div class="mt-4 grid gap-3 sm:grid-cols-3">
+          <label class="flex cursor-pointer items-start gap-3 rounded-field border border-base-content/40 p-4 has-[:checked]:border-base-content has-[:checked]:bg-base-200"><input type="radio" name="kind" value="hold" class="radio radio-sm mt-0.5" checked><span><span class="block font-semibold">Hold a copy</span><span class="block text-[0.9375rem] text-base-content/75">From the shelf, today</span></span></label>
+          <label class="flex cursor-pointer items-start gap-3 rounded-field border border-base-content/40 p-4 has-[:checked]:border-base-content has-[:checked]:bg-base-200"><input type="radio" name="kind" value="order" class="radio radio-sm mt-0.5"><span><span class="block font-semibold">Order it in</span><span class="block text-[0.9375rem] text-base-content/75">Three to five days</span></span></label>
+          <label class="flex cursor-pointer items-start gap-3 rounded-field border border-base-content/40 p-4 has-[:checked]:border-base-content has-[:checked]:bg-base-200"><input type="radio" name="kind" value="signed" class="radio radio-sm mt-0.5"><span><span class="block font-semibold">Keep me a signed copy</span><span class="block text-[0.9375rem] text-base-content/75">From a reading</span></span></label>
+        </div>
+      </fieldset>
+      <fieldset class="mt-10 grid gap-x-5 gap-y-1 sm:grid-cols-2">
+        <legend class="font-heading text-[1.5rem] font-semibold">The book</legend>
+        <fieldset class="fieldset mt-3">
+          <legend class="fieldset-legend text-[0.9375rem]">Title <span class="required-mark" aria-hidden="true">*</span></legend>
+          <input name="title" type="text" class="input w-full" required maxlength="300">
+        </fieldset>
+        <fieldset class="fieldset sm:mt-3">
+          <legend class="fieldset-legend text-[0.9375rem]">Author</legend>
+          <input name="author" type="text" class="input w-full" maxlength="200">
+        </fieldset>
+        <fieldset class="fieldset sm:col-span-2">
+          <legend class="fieldset-legend text-[0.9375rem]">Can't remember the title? Tell us what you know</legend>
+          <textarea name="remember" class="textarea w-full" rows="3" maxlength="2000" placeholder="Blue cover, about a lighthouse keeper, came out last spring"></textarea>
+        </fieldset>
+        <fieldset class="fieldset">
+          <legend class="fieldset-legend text-[0.9375rem]">Format</legend>
+          <select name="format" class="select w-full"><option value="any">Any</option><option value="hardcover">Hardcover</option><option value="paperback">Paperback</option></select>
+        </fieldset>
+        <fieldset class="fieldset">
+          <legend class="fieldset-legend text-[0.9375rem]">Copies</legend>
+          <input name="copies" type="number" class="input w-full" min="1" max="50" value="1">
+        </fieldset>
+      </fieldset>
+      <fieldset class="mt-10 grid gap-x-5 gap-y-1 sm:grid-cols-2">
+        <legend class="font-heading text-[1.5rem] font-semibold">You</legend>
+        <fieldset class="fieldset mt-3">
+          <legend class="fieldset-legend text-[0.9375rem]">Your name <span class="required-mark" aria-hidden="true">*</span></legend>
+          <input name="name" type="text" class="input w-full" required maxlength="200" autocomplete="name">
+        </fieldset>
+        <fieldset class="fieldset sm:mt-3">
+          <legend class="fieldset-legend text-[0.9375rem]">Your phone <span class="required-mark" aria-hidden="true">*</span></legend>
+          <input name="phone" type="tel" class="input w-full" required maxlength="30" autocomplete="tel">
+        </fieldset>
+        <fieldset class="fieldset">
+          <legend class="fieldset-legend text-[0.9375rem]">When it's in</legend>
+          <div class="flex flex-wrap gap-x-6 gap-y-2 pt-2">
+            <label class="flex items-center gap-2"><input type="radio" name="contact" value="call" class="radio radio-sm" checked>Call me</label>
+            <label class="flex items-center gap-2"><input type="radio" name="contact" value="text" class="radio radio-sm">Text me</label>
+          </div>
+        </fieldset>
+        <fieldset class="fieldset">
+          <legend class="fieldset-legend text-[0.9375rem]">Your email <span class="font-normal text-base-content/70">(optional)</span></legend>
+          <input name="email" type="email" class="input w-full" maxlength="200" autocomplete="email">
+        </fieldset>
+        <label class="mt-4 flex items-center gap-3 sm:col-span-2"><input name="mail" type="checkbox" value="true" class="checkbox checkbox-primary"><span>Mail it to me instead ($5 in the US)</span></label>
+        <fieldset class="fieldset sm:col-span-2">
+          <legend class="fieldset-legend text-[0.9375rem]">Mailing address <span class="font-normal text-base-content/70">(if we mail it)</span></legend>
+          <input name="address" type="text" class="input w-full" maxlength="400" autocomplete="street-address">
+        </fieldset>
+      </fieldset>
+      <div id="special-orders-problems" class="mt-4"></div>
+      <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3"><button class="btn btn-primary btn-lg whitespace-nowrap">Send the request</button><span class="text-base-content/75">We'll call when it's in.</span></div>
+    </form>
+    <aside class="rounded-box bg-base-200 p-6 md:p-8 lg:sticky lg:top-28 lg:col-span-4">
+      <p class="label text-base-content/75">Rather call?</p>
+      <p class="mt-1"><a href="tel:+14015550163" class="facts text-[1.75rem] font-semibold whitespace-nowrap">(401) 555-0163</a></p>
+      <dl class="mt-6 border-t border-base-content/70">
+        <div class="border-b border-base-300 py-3"><dt class="font-semibold">On the shelf</dt><dd class="text-base-content/80">Held the same day</dd></div>
+        <div class="border-b border-base-300 py-3"><dt class="font-semibold">Ordered</dt><dd class="text-base-content/80">Three to five days</dd></div>
+        <div class="border-b border-base-300 py-3"><dt class="font-semibold">Held for you</dt><dd class="text-base-content/80">Ten days, behind the counter</dd></div>
+        <div class="py-3"><dt class="font-semibold">Paying</dt><dd class="text-base-content/80">Nothing until you pick it up</dd></div>
+      </dl>
+    </aside>
+  </div>
+</section>

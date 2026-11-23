@@ -1,0 +1,25 @@
+label: Book clubs
+fields:
+  - name: name
+    label: Name
+    kind: text
+    required: true
+  - name: when
+    label: When
+    kind: text
+  - name: leader
+    label: Led by (first name)
+    kind: text
+  - name: about
+    label: What it reads
+    kind: text
+  - name: ages
+    label: Ages
+    kind: text
+  - name: next
+    label: Next meeting
+    kind: date
+  - name: next_book
+    label: Next book (its title)
+    kind: text
+order: [first-tuesdays, in-other-words, the-long-read, young-readers]

@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Books — Half Title Books &amp; Coffee, Providence</title>
+<meta name="description" content="This week's staff picks at Half Title, each with its bookseller's card, the books new this Tuesday and our signed copies. Everything is on our shelves or a phone call away.">
+<meta property="og:title" content="Books — Half Title Books &amp; Coffee, Providence">
+<meta property="og:description" content="This week's staff picks at Half Title, each with its bookseller's card, the books new this Tuesday and our signed copies. Everything is on our shelves or a phone call away.">
+</head>
+<body>
+{% render 'header', page: page %}
+<main>
+{% render 'page-title', label: "On the shelves", title: "Books", intro: "What we're reading, what came in on Tuesday, and what's signed. Everything here is on our shelves or a phone call away." %}
+{% render 'staff-picks' %}
+{% render 'by-bookseller' %}
+{% render 'new-row', limit: 50, all: true %}
+{% render 'signed' %}
+{% render 'ask-band' %}
+</main>
+{% render 'footer' %}
+</body>
+</html>

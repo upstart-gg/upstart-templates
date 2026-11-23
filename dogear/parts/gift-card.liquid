@@ -1,0 +1,14 @@
+{%- comment -%} The drawn gift card: ochre cloth with a pasted bookplate. Its slots (data-slot) hold sample words that scripts/gift-card.js replaces with what a visitor types in the request form. {%- endcomment -%}
+<div class="gift-card" data-gift-card>
+  <div class="gift-label">
+    <div class="flex items-baseline justify-between gap-3">
+      <span class="wordmark text-[6.5cqi]">Half Title</span>
+      <span class="wordmark-sub text-[3.6cqi]">Gift card</span>
+    </div>
+    <span class="gift-amount" data-slot="amount">$50</span>
+    <div class="grid grid-cols-2 gap-3 border-t border-base-300 pt-[2.5cqi]">
+      <span class="gift-line">For <span class="gift-name" data-slot="for">Ana</span></span>
+      <span class="gift-line">From <span class="gift-name" data-slot="from">Lou</span></span>
+    </div>
+  </div>
+</div>

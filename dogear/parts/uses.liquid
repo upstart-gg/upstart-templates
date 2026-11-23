@@ -1,0 +1,16 @@
+<section class="bg-base-100 text-base-content">
+  <div class="mx-auto grid max-w-[80rem] gap-10 px-5 py-20 md:px-8 md:py-24 lg:grid-cols-12">
+    <div class="lg:col-span-4" data-reveal>
+      <p class="label text-base-content/75">What it's good for</p>
+      <h2 class="mt-3 text-[clamp(2rem,2.5vw+1rem,3rem)]">Good for the whole shop</h2>
+    </div>
+    <ul class="grid gap-x-10 border-t border-base-content/80 sm:grid-cols-2 lg:col-span-8">
+      {%- for use in items %}
+      <li class="flex gap-4 border-b border-base-300 py-5">
+        <svg class="mt-1 size-5 shrink-0 text-base-content" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>
+        <span><span class="block font-heading text-[1.25rem] font-semibold">{{ use.title }}</span><span class="body-copy mt-1 block">{{ use.text }}</span></span>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>

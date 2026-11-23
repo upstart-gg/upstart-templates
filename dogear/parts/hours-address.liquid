@@ -1,0 +1,25 @@
+<section class="bg-base-200 text-base-content">
+  <div class="mx-auto grid max-w-[80rem] gap-12 px-5 py-20 md:px-8 md:py-24 lg:grid-cols-12">
+    <div class="lg:col-span-6" data-reveal>
+      <p class="label text-base-content/75">Hours</p>
+      <h2 class="mt-3 text-[clamp(2rem,2.5vw+1rem,3rem)]">Open every day</h2>
+      <table class="facts mt-8 w-full border-t border-base-content/80 text-left">
+        <tbody>
+          {%- for day in data.hours %}
+          <tr class="border-b border-base-300"><th scope="row" class="py-3 pr-4 font-semibold">{{ day.day }}</th><td class="py-3 pr-4">{{ day.hours }}</td><td class="py-3 text-base-content/75">{{ day.note }}</td></tr>
+          {%- endfor %}
+        </tbody>
+      </table>
+    </div>
+    <div class="lg:col-span-5 lg:col-start-8">
+      <p class="label text-base-content/75">Where</p>
+      <address class="mt-3 font-heading text-[clamp(1.75rem,1.5vw+1.25rem,2.25rem)] leading-tight font-medium not-italic">58 Gilder Street<br>Providence, RI 02909</address>
+      <p class="body-copy mt-4">In the Armory District of the West End, a block from the Cranston Street Armory.</p>
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a href="https://www.openstreetmap.org/search?query=58%20Gilder%20Street%2C%20Providence%2C%20RI%2002909" class="btn btn-primary whitespace-nowrap" rel="noopener" target="_blank">Get directions</a>
+        <a href="tel:+14015550163" class="btn btn-outline whitespace-nowrap">(401) 555-0163</a>
+      </div>
+      <p class="mt-5"><a href="mailto:hello@halftitlebooks.com" class="text-link">hello@halftitlebooks.com</a></p>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,22 @@
+{
+  "name": "Dogear front table",
+  "kind": "hero",
+  "source": "upstart",
+  "description": "A bookshop's hero: the headline and two buttons beside this week's staff picks as a mosaic of drawn book jackets at their true sizes on greyboard, endpaper and ochre tiles, each with its bookseller's card peeking above it and rising on hover, and one photo tile.",
+  "tags": ["hero", "picture mosaic", "bookshop", "staff picks", "books", "front table"],
+  "mood": ["editorial", "warm"],
+  "synonyms": [
+    "front table",
+    "staff picks hero",
+    "books mosaic",
+    "bookshop hero",
+    "table des nouveautés",
+    "coups de cœur des libraires",
+    "mosaïque de livres",
+    "en-tête librairie"
+  ],
+  "data": {
+    "name": "products",
+    "family": "collection"
+  }
+}

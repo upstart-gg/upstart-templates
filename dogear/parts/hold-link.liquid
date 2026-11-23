@@ -1,0 +1,9 @@
+{%- comment -%} "Hold a copy" for a book: the order form with its title and author written in. {%- endcomment -%}
+{%- if book.available == false -%}
+<a href="/order?title={{ book.name | url_encode }}&author={{ book.author | url_encode }}&kind=order#order" class="{{ class | default: 'btn btn-outline btn-sm whitespace-nowrap' }}">Order it in</a>
+{%- else -%}
+<a href="/order?title={{ book.name | url_encode }}&author={{ book.author | url_encode }}&kind=hold#order" class="{{ class | default: 'btn btn-outline btn-sm whitespace-nowrap' }}">Hold a copy</a>
+{%- endif -%}
+{%- if book.order_link and online != false %}
+<a href="{{ book.order_link }}" class="{{ class | default: 'btn btn-outline btn-sm whitespace-nowrap' }}" rel="noopener" target="_blank">Buy online</a>
+{%- endif -%}

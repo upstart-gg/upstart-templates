@@ -1,0 +1,9 @@
+label: Questions about readings
+fields:
+  - name: question
+    kind: text
+    required: true
+  - name: answer
+    kind: markdown
+body: answer
+order: [buy-the-book, sign-elsewhere, step-free, children, recorded, full]

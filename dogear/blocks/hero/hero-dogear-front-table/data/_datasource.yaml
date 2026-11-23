@@ -1,0 +1,90 @@
+label: Books
+fields:
+  - name: name
+    label: Title
+    kind: text
+    required: true
+  - name: author
+    label: Author
+    kind: text
+  - name: price
+    label: Price
+    kind: text
+  - name: summary
+    label: One line for lists
+    kind: text
+  - name: image
+    label: Photo of the cover
+    kind: image
+  - name: category
+    label: Shelf
+    kind: text
+  - name: badge
+    label: Badge
+    kind: text
+  - name: available
+    label: On the shelf
+    kind: boolean
+  - name: order_link
+    label: Online store link
+    kind: link
+  - name: publisher
+    label: Publisher
+    kind: text
+  - name: pages
+    label: Pages
+    kind: number
+  - name: published
+    label: Published
+    kind: date
+  - name: pick
+    label: Staff pick this week
+    kind: boolean
+  - name: new
+    label: New this Tuesday
+    kind: boolean
+  - name: featured
+    label: Book of the week
+    kind: boolean
+  - name: picked_by
+    label: Picked by (first name)
+    kind: text
+  - name: note
+    label: The card's line (90 characters at most)
+    kind: text
+  - name: format
+    label: Format
+    kind: choice
+    choices: [hardcover, paperback, pocket, picture, large]
+  - name: jacket
+    label: Drawn jacket
+    kind: choice
+    choices: [band, frame, type, cloth, art]
+  - name: tone
+    label: Jacket color
+    kind: choice
+    choices: [ochre, umber, ink, paper, endpaper, board]
+  - name: art
+    label: Jacket print
+    kind: image
+  - name: body
+    label: The bookseller's note
+    kind: markdown
+body: body
+order:
+  [
+    low-tide-at-conimicut,
+    the-weight-of-small-birds,
+    every-map-is-a-guess,
+    the-overnight-menu,
+    owl-has-a-question,
+    nine-hundred-rooms,
+    tuesday-soup,
+    field-notes-from-a-parking-lot,
+    the-quiet-hours-of-ada-lusk,
+    everybody-leaves-in-august,
+    weather-for-swimmers,
+    my-fathers-second-language,
+    the-lighthouse-at-cygnus-gate,
+    moth-hours,
+  ]

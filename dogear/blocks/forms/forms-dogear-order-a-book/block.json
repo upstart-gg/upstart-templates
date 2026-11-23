@@ -1,0 +1,22 @@
+{
+  "name": "Dogear order a book",
+  "kind": "forms",
+  "source": "upstart",
+  "description": "A hold or special order request: hold a copy, order it in or keep a signed copy; the title, the author and what the customer remembers; format and copies; name, phone, call or text, email and mailing; beside it a sticky greyboard panel with the phone and the shop's promises. Prefilled from Hold a copy links.",
+  "tags": ["forms", "special order", "hold", "book request", "bookshop", "order"],
+  "mood": ["professional", "warm"],
+  "synonyms": [
+    "order a book",
+    "special order",
+    "hold a copy",
+    "book request",
+    "commander un livre",
+    "réserver un livre",
+    "commande spéciale",
+    "mettre de côté"
+  ],
+  "data": {
+    "name": "special-orders",
+    "family": "collection"
+  }
+}

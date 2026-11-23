@@ -1,0 +1,25 @@
+label: Café menu
+fields:
+  - name: name
+    label: Name
+    kind: text
+    required: true
+  - name: description
+    label: Description
+    kind: text
+  - name: price
+    label: Price
+    kind: text
+  - name: course
+    label: Course
+    kind: choice
+    required: true
+    choices: [starters, mains, sides, desserts, pastries, drinks]
+  - name: tags
+    label: Tags
+    kind: list
+    choices: [vegetarian, vegan, gluten-free, spicy]
+  - name: image
+    label: Image
+    kind: image
+order: [drip-coffee, espresso, cappuccino, mocha, chai, pot-of-tea, portuguese-sweet-bread, malassadas]

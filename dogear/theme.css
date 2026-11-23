@@ -1,0 +1,21 @@
+:root {
+  --theme-color-primary: oklch(0.7 0.135 84);
+  --theme-color-primary-content: oklch(0.235 0.012 265);
+  --theme-color-secondary: oklch(0.885 0.03 300);
+  --theme-color-secondary-content: oklch(0.235 0.012 265);
+  --theme-color-accent: oklch(0.53 0.16 28);
+  --theme-color-accent-content: oklch(0.972 0.004 95);
+  --theme-color-neutral: oklch(0.255 0.014 265);
+  --theme-color-neutral-content: oklch(0.96 0.006 95);
+  --theme-color-surface: oklch(0.972 0.004 95);
+  --theme-color-surface-alt: oklch(0.915 0.007 85);
+  --theme-color-border: oklch(0.86 0.01 85);
+  --theme-color-text: oklch(0.235 0.012 265);
+  --theme-font-heading: "Brygada 1918", "Iowan Old Style", Georgia, serif;
+  --theme-font-body: "Libre Franklin", "Franklin Gothic", ui-sans-serif, system-ui, sans-serif;
+  --theme-radius: 0.25rem;
+  --theme-radius-field: 0.25rem;
+  --theme-depth: 0;
+  --theme-size: 0.28125rem;
+  --theme-border: 1px;
+}

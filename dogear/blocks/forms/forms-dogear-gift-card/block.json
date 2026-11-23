@@ -1,0 +1,22 @@
+{
+  "name": "Dogear gift card",
+  "kind": "forms",
+  "source": "upstart",
+  "description": "A gift card drawn as ochre cloth with a pasted bookplate, whose amount, For and From fill in as the visitor writes the request beside it: the amount, the names, a handwritten message, pickup or mail, and the buyer's contact. The shop calls to take payment.",
+  "tags": ["forms", "gift card", "gift voucher", "request", "bookshop"],
+  "mood": ["warm", "friendly"],
+  "synonyms": [
+    "gift card",
+    "gift voucher",
+    "gift certificate",
+    "buy a gift card",
+    "carte cadeau",
+    "bon cadeau",
+    "chèque cadeau",
+    "offrir un livre"
+  ],
+  "data": {
+    "name": "gift-card-requests",
+    "family": "collection"
+  }
+}

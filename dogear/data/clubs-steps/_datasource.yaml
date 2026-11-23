@@ -1,0 +1,11 @@
+label: How the clubs work
+fields:
+  - name: title
+    kind: text
+    required: true
+  - name: text
+    kind: text
+  - name: icon
+    kind: choice
+    choices: [spark, chat, phone, calendar, clipboard, cart, package, truck, tool, home, check, smile]
+order: [tell-us, pick-up-the-book, come-along, choose-the-next]

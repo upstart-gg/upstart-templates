@@ -1,0 +1,41 @@
+<footer id="visit" class="bg-neutral text-neutral-content" data-tz="America/New_York">
+  <div class="mx-auto max-w-[80rem] px-5 pt-20 pb-10 md:px-8 md:pt-24">
+    <div class="grid gap-14 lg:grid-cols-12 lg:gap-10">
+      <div class="lg:col-span-4">
+        {% render 'logo', class: 'text-primary' %}
+        <p class="mt-5 max-w-[34ch] text-neutral-content/80">Books &amp; coffee in the Armory District since 2019.</p>
+        {% render 'newsletter' %}
+      </div>
+      <div class="lg:col-span-3">
+        <p class="label text-neutral-content/70">The shop</p>
+        <address class="mt-4 not-italic leading-relaxed">58 Gilder Street<br>Providence, RI&nbsp;02909</address>
+        <p class="mt-3"><a href="https://www.openstreetmap.org/search?query=58%20Gilder%20Street%2C%20Providence%2C%20RI%2002909" class="text-link on-dark" rel="noopener" target="_blank">Get directions</a></p>
+        <p class="mt-3"><a href="tel:+14015550163" class="text-link on-dark whitespace-nowrap">(401) 555-0163</a></p>
+        <p class="mt-1.5"><a href="mailto:hello@halftitlebooks.com" class="text-link on-dark">hello@halftitlebooks.com</a></p>
+      </div>
+      <div class="lg:col-span-3">
+        <p class="label text-neutral-content/70">The week</p>
+        <ul class="facts mt-4 space-y-1.5">
+          {%- for day in data.hours %}
+          <li class="grid grid-cols-[6.5rem_1fr] gap-x-3"><span>{{ day.day }}</span><span>{{ day.hours }}</span></li>
+          {%- endfor %}
+        </ul>
+        <p class="mt-4 text-[0.9375rem] text-neutral-content/75">The café corner opens at 8 am, Monday to Friday.</p>
+      </div>
+      <div class="lg:col-span-2">
+        <p class="label text-neutral-content/70">Half Title</p>
+        <nav aria-label="Footer" class="mt-4">
+          <ul class="space-y-1.5">
+            {%- for item in data.navigation %}{% if item.place != "social" %}
+            <li><a href="{{ item.href }}" class="text-link on-dark">{{ item.label }}</a></li>
+            {%- endif %}{% endfor %}
+            {%- for item in data.navigation %}{% if item.place == "social" %}
+            <li><a href="{{ item.href }}" class="text-link on-dark" rel="noopener" target="_blank">{{ item.label }}</a></li>
+            {%- endif %}{% endfor %}
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <p class="mt-16 border-t border-neutral-content/20 pt-6 text-[0.9375rem] text-neutral-content/70">Half Title Books &amp; Coffee · 58 Gilder Street, Providence · A card tucked into every book we love</p>
+  </div>
+</footer>

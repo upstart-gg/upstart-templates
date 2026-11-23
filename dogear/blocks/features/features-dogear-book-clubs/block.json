@@ -1,0 +1,22 @@
+{
+  "name": "Dogear book clubs",
+  "kind": "features",
+  "source": "upstart",
+  "description": "The book clubs on a lavender endpaper band: each club as a ruled row with its day and time, what it reads and who leads it, and a Join a club button.",
+  "tags": ["features", "book clubs", "reading groups", "bookshop", "community"],
+  "mood": ["editorial", "friendly"],
+  "synonyms": [
+    "book clubs",
+    "reading groups",
+    "join a club",
+    "book club list",
+    "clubs de lecture",
+    "cercles de lecture",
+    "rejoindre un club",
+    "groupes de lecture"
+  ],
+  "data": {
+    "name": "clubs",
+    "family": "collection"
+  }
+}

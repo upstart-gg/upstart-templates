@@ -1,0 +1,28 @@
+{
+  "id": "dogear",
+  "version": "1.0.0",
+  "name": "Dogear",
+  "description": "A bookshop read like its front table on a Tuesday: this week's picks as a mosaic of drawn jackets, each bookseller's card rising from behind its cover, \"Hold a copy\" on every book, readings that know which one is tonight, and book clubs.",
+  "category": "business",
+  "tags": [
+    "bookshop",
+    "bookstore",
+    "books",
+    "staff picks",
+    "café",
+    "readings",
+    "events",
+    "book clubs",
+    "special orders",
+    "gift cards"
+  ],
+  "author": {
+    "name": "Upstart",
+    "url": "https://upstart.gg"
+  },
+  "licence": "MIT",
+  "app": "0.2.0",
+  "shoot": {
+    "clock": "2027-03-11T11:00:00-05:00"
+  }
+}

@@ -1,0 +1,30 @@
+label: RSVPs
+collected: true
+answer: rsvps-thanks
+messages:
+  required: "{field} is required."
+  invalid: "{field} does not look right."
+  too_many: "Too many RSVPs from here. Please try again in a few minutes."
+  sent: "Thank you, your seats are saved."
+fields:
+  - name: reading
+    label: The reading
+    kind: text
+    required: true
+  - name: name
+    label: Your name
+    kind: text
+    required: true
+  - name: email
+    label: Your email
+    kind: email
+    required: true
+  - name: seats
+    label: Seats
+    kind: number
+  - name: hold_book
+    label: Hold a copy of the book for me
+    kind: boolean
+  - name: access
+    label: Access needs
+    kind: text

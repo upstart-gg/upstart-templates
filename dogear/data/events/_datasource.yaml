@@ -1,0 +1,45 @@
+label: Readings & events
+fields:
+  - name: title
+    label: Title
+    kind: text
+    required: true
+  - name: date
+    label: Date
+    kind: date
+  - name: time
+    label: Time
+    kind: text
+  - name: starts
+    label: Starts at (24-hour, 19:00)
+    kind: text
+  - name: place
+    label: Place
+    kind: text
+  - name: price
+    label: Price
+    kind: text
+  - name: rsvp
+    label: How people come
+    kind: choice
+    choices: [rsvp, ticketed, walk-in]
+  - name: author
+    label: Author
+    kind: text
+  - name: book
+    label: The book (its title)
+    kind: text
+  - name: summary
+    label: Summary
+    kind: text
+  - name: cover
+    label: Cover
+    kind: image
+  - name: booking
+    label: Ticket link
+    kind: link
+  - name: body
+    label: About the evening
+    kind: markdown
+body: body
+sort: date

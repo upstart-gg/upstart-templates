@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Readings &amp; events — Half Title Books &amp; Coffee, Providence</title>
+<meta name="description" content="Readings, launches and story times at Half Title in Providence, most Thursdays at 7. Most nights are free with an RSVP; bigger nights move two blocks up to the Dexter Street Grange.">
+<meta property="og:title" content="Readings &amp; events — Half Title Books &amp; Coffee, Providence">
+<meta property="og:description" content="Readings, launches and story times at Half Title in Providence, most Thursdays at 7. Most nights are free with an RSVP; bigger nights move two blocks up to the Dexter Street Grange.">
+</head>
+<body>
+{% render 'header', page: page %}
+<main>
+{% render 'page-title', label: "In the shop and at the Grange", title: "Readings & events", intro: "Most nights are free, in the shop, at 7. We ask you to RSVP so we know how many chairs to unfold. Bigger nights move two blocks up to the Dexter Street Grange." %}
+<section class="bg-base-100 text-base-content">
+  <div class="mx-auto max-w-[80rem] px-5 pb-16 md:px-8 md:pb-20">
+    <div class="lg:max-w-[60rem]">{% render 'readings', count: "all", summary: true %}</div>
+  </div>
+</section>
+<section class="bg-base-100 text-base-content">
+  <div class="mx-auto grid max-w-[80rem] gap-px px-5 pb-20 md:grid-cols-2 md:px-8 md:pb-28">
+    <div class="border-t border-base-content/80 py-8 md:pr-10">
+      <h2 class="text-[1.5rem]">Can't come? We'll hold a signed copy for you.</h2>
+      <p class="body-copy mt-3">Tell us which book; the author signs it on the night, and it waits behind the counter for a week.</p>
+      <p class="mt-5"><a href="/order?kind=signed#order" class="text-link font-semibold">Keep me a signed copy</a></p>
+    </div>
+    <div class="border-t border-base-content/80 py-8 md:pl-10">
+      <h2 class="text-[1.5rem]">For authors and publicists</h2>
+      <p class="body-copy mt-3">We host about forty readings a year, in the shop for up to 45 and at the Grange for up to 160. Write to Owen with the book, the dates and a word on the author.</p>
+      <p class="mt-5"><a href="mailto:events@halftitlebooks.com" class="text-link font-semibold">events@halftitlebooks.com</a></p>
+    </div>
+  </div>
+</section>
+{% render 'faq', items: data.events-faq, title: "Before you come" %}
+</main>
+{% render 'footer' %}
+</body>
+</html>

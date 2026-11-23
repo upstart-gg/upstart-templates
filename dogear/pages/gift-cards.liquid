@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Gift cards — Half Title Books &amp; Coffee, Providence</title>
+<meta name="description" content="A Half Title gift card, any amount from $10, good for books, coffee at the counter, club books and readings. Ask for it here, we call to take payment, and it's ready the same day or mailed free.">
+<meta property="og:title" content="Gift cards — Half Title Books &amp; Coffee, Providence">
+<meta property="og:description" content="A Half Title gift card, any amount from $10, good for books, coffee at the counter, club books and readings. Ask for it here, we call to take payment, and it's ready the same day or mailed free.">
+</head>
+<body>
+{% render 'header', page: page %}
+<main>
+{% render 'page-title', label: "Cloth-bound, never expires", title: "Gift cards", intro: "For the reader in your life, or the one you're working on." %}
+{% render 'gift-form' %}
+{% render 'uses', items: data.gift-uses %}
+</main>
+{% render 'footer' %}
+</body>
+</html>

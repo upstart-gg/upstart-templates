@@ -1,0 +1,22 @@
+{
+  "name": "Dogear readings",
+  "kind": "events",
+  "source": "upstart",
+  "description": "The readings still to come on ink, each with its ochre date block, a red Tonight tag on the day (in the shop's time zone), the time and place, the price, RSVP or tickets, and its book's drawn jacket; past readings leave the list on their own.",
+  "tags": ["events", "readings", "author events", "book launches", "tonight", "bookshop"],
+  "mood": ["editorial", "dark"],
+  "synonyms": [
+    "readings",
+    "author events",
+    "upcoming events",
+    "book launches",
+    "lectures",
+    "rencontres d'auteurs",
+    "agenda de la librairie",
+    "événements à venir"
+  ],
+  "data": {
+    "name": "events",
+    "family": "collection"
+  }
+}

@@ -1,0 +1,13 @@
+<section class="bg-neutral text-neutral-content">
+  <div class="mx-auto max-w-[80rem] px-5 py-20 md:px-8 md:py-28">
+    <div class="grid gap-10 lg:grid-cols-12">
+      <div class="lg:col-span-4" data-reveal>
+        <p class="label text-neutral-content/75">Readings &amp; events</p>
+        <h2 class="mt-3 text-[clamp(2rem,2.5vw+1rem,3.25rem)]">Most nights are free.</h2>
+        <p class="mt-5 max-w-[36ch] text-neutral-content/80">RSVP and we'll unfold you a chair. Readings are most Thursdays at 7, in the shop or two blocks up at the Grange.</p>
+        <p class="mt-8"><a href="/events" class="text-link on-dark font-semibold">All events</a></p>
+      </div>
+      <div class="lg:col-span-8">{% render 'readings', data: data, count: 3, dark: true %}</div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,24 @@
+<section class="bg-base-100 text-base-content">
+  <div class="mx-auto grid max-w-[80rem] gap-12 px-5 pt-12 pb-20 md:px-8 lg:grid-cols-12 lg:gap-10 lg:pt-16 lg:pb-24">
+    <div class="lg:col-span-5 lg:self-center" data-reveal>
+      <p class="label text-base-content/75">Books &amp; coffee · Armory District, Providence</p>
+      <h1 class="mt-5 text-[clamp(2.75rem,5vw+1rem,5.75rem)] leading-[1.02] tracking-[-0.012em]">Ask us what we're reading.</h1>
+      <p class="body-copy mt-6 max-w-[42ch] text-[1.125rem]">Five booksellers, a front table that changes every Tuesday, and a card tucked into every book we love. Coffee at the old soda counter from 8.</p>
+      <div class="mt-9 flex flex-wrap gap-3">
+        <a href="/books#picks" class="btn btn-primary btn-lg whitespace-nowrap">This week's picks</a>
+        <a href="/order" class="btn btn-outline btn-lg whitespace-nowrap">Order a book</a>
+      </div>
+      <p class="facts mt-6 text-base-content/75">Open every day · 58 Gilder Street</p>
+    </div>
+    <div class="lg:col-span-7">
+      <div class="front-table-wrap"><div class="front-table" data-picks="load">
+        {%- assign shown = 0 -%}
+        {%- for book in data.products -%}{%- if book.pick and shown < 7 -%}{%- assign shown = shown | plus: 1 %}
+        <div class="tile{% if shown > 4 %} max-md:hidden{% endif %}" data-format="{{ book.format }}" data-ground="{% cycle 'board', 'endpaper', 'board', 'ochre', 'board', 'endpaper', 'board' %}">{% render 'pick', book: book, talker: 'peek' %}</div>
+        {%- endif -%}{%- endfor %}
+        <div class="tile tile-photo"><img src="/media/counter-readers.jpg" class="h-full w-full object-cover"></div>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>

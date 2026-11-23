@@ -1,0 +1,29 @@
+{%- comment -%} The books new this Tuesday: pass limit (6 on the home page) and all: true for the whole list. {%- endcomment -%}
+<section id="new" class="scroll-mt-24 bg-base-100 text-base-content">
+  <div class="mx-auto max-w-[80rem] px-5 py-20 md:px-8 md:py-24">
+    <div class="flex flex-wrap items-end justify-between gap-6" data-reveal>
+      <div>
+        <p class="label text-base-content/75">Tuesday's boxes</p>
+        <h2 class="mt-3 text-[clamp(2rem,2.5vw+1rem,3.25rem)]">New this Tuesday</h2>
+      </div>
+      <p class="body-copy max-w-[44ch]">Publishers release new books on Tuesdays. Here's what came in.</p>
+    </div>
+    <ul class="mt-14 grid grid-cols-2 gap-x-6 gap-y-12 sm:grid-cols-3 lg:grid-cols-6 lg:gap-x-8" data-reveal="stagger">
+      {%- assign listed = 0 -%}
+      {%- for book in data.products -%}{%- if book.new and listed < limit -%}{%- assign listed = listed | plus: 1 %}
+      <li class="flex flex-col">
+        <div class="flex min-h-[12rem] flex-1 items-end justify-center px-2">
+          <a href="/books/{{ book.id }}" class="block w-[calc(var(--f)*100%)]" data-format="{{ book.format }}">{% render 'jacket', book: book %}</a>
+        </div>
+        <h3 class="mt-5 text-[1.125rem] leading-snug"><a href="/books/{{ book.id }}" class="hover:underline hover:decoration-primary hover:decoration-2 hover:underline-offset-4">{{ book.name }}</a></h3>
+        <p class="mt-1 text-[0.9375rem] text-base-content/75">{{ book.author }}</p>
+        <p class="facts mt-1 text-base-content/85">{{ book.price }}{% if book.badge %} · <span class="{% if book.badge == 'Signed' %}text-accent{% endif %}">{{ book.badge }}</span>{% endif %}</p>
+        <div class="mt-3">{% render 'hold-link', book: book, online: false %}</div>
+      </li>
+      {%- endif -%}{%- endfor %}
+    </ul>
+    {%- unless all %}
+    <p class="mt-12"><a href="/books#new" class="text-link font-semibold">All new books</a></p>
+    {%- endunless %}
+  </div>
+</section>
