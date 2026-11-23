@@ -54,7 +54,7 @@ function setUp(section) {
 }
 
 function play(run, { chips, chrome, toast }) {
-  const { section, paper } = run;
+  const { section } = run;
   const animate = (el, keyframes, options) => {
     run.styled.add(el);
     run.animations.push(Motion.animate(el, keyframes, { ease: EASE, ...options }));
