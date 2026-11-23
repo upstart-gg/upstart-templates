@@ -4,9 +4,11 @@
       <p class="label text-base-content/75">The café corner</p>
       <h2 class="mt-3 text-[clamp(2rem,2.5vw+1rem,3rem)]">At the soda counter</h2>
       <p class="body-copy mt-4 max-w-[40ch]">Six stools. Books may come to the counter; please don't dunk them. From 8 am on weekdays.</p>
-      <div class="mt-8 grid grid-cols-2 gap-3">
-        <img src="/media/cappuccino.jpg" class="aspect-square w-full rounded-box object-cover">
-        <img src="/media/sweet-bread.jpg" class="aspect-square w-full rounded-box object-cover">
+      <div class="mt-8 grid grid-cols-3 gap-3">
+        {%- assign pictured = data.menu | where: "image" -%}
+        {%- for item in pictured limit: 3 %}
+        <img src="{{ item.image }}" class="aspect-square w-full rounded-box object-cover">
+        {%- endfor %}
       </div>
     </div>
     <div class="rounded-box bg-base-200 p-6 md:p-10 lg:col-span-7">

@@ -16,7 +16,7 @@
         {%- for book in data.products -%}{%- if book.pick and shown < 7 -%}{%- assign shown = shown | plus: 1 %}
         <div class="tile{% if shown > 4 %} max-md:hidden{% endif %}" data-format="{{ book.format }}" data-ground="{% cycle 'board', 'endpaper', 'board', 'ochre', 'board', 'endpaper', 'board' %}">{% render 'pick', book: book, talker: 'peek' %}</div>
         {%- endif -%}{%- endfor %}
-        <div class="tile tile-photo"><img src="/media/counter-readers.jpg" class="h-full w-full object-cover"></div>
+        <div class="tile tile-photo"><img src="/media/soda-counter.jpg" class="h-full w-full object-cover object-[72%_60%]"></div>
       </div>
       </div>
     </div>

@@ -4,7 +4,7 @@ author: "Tess Arrowood"
 price: "$18.00"
 summary: "Eleven stories set on the beaches of New England, out of season."
 category: "Stories"
-available: false
+available: true
 publisher: "Narrows Press"
 pages: 192
 published: "2027-03-09"
@@ -15,4 +15,4 @@ format: "paperback"
 jacket: "frame"
 tone: "board"
 ---
-Eleven stories about people who swim in the sea in October. Our copies went on Tuesday; more are on the way.
+Eleven stories about people who swim in the sea in October.

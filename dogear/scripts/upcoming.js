@@ -9,7 +9,7 @@
 // clears the timer and every data-when.
 const EVENING = 17 * 60;
 let timer;
-let marked = [];
+const marked = new Set();
 
 function today(tz) {
   const parts = (zone) =>
@@ -45,13 +45,13 @@ function mark() {
     if (when) event.dataset.when = when;
     else delete event.dataset.when;
     delete event.dataset.beyond;
-    marked.push(event);
+    marked.add(event);
   }
   for (const list of document.querySelectorAll("[data-upcoming]")) {
     const count = Number(list.dataset.upcoming);
     if (!count) continue;
     list.dataset.counted = "";
-    marked.push(list);
+    marked.add(list);
     let shown = 0;
     for (const event of list.querySelectorAll(":scope > [data-event]")) {
       if (event.dataset.when === "past") continue;
@@ -75,5 +75,5 @@ export function stop() {
     delete el.dataset.beyond;
     delete el.dataset.counted;
   }
-  marked = [];
+  marked.clear();
 }
