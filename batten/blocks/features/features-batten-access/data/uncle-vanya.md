@@ -20,9 +20,9 @@ advisories:
 tickets: https://boxoffice.bottineaurep.example/uncle-vanya
 cloth: /media/cloth-uncle-vanya.webp
 photos:
-  - /media/rehearsal-room.jpg
   - /media/paint-frame.jpg
-  - /media/set-model.jpg
+  - /media/rope-drums.jpg
+photos_note: "A backdrop on a paint frame and the drums of a fly rail: the shop's work before a first preview, not yet this production."
 cast:
   - Vanya / Teddy Okonkwo
   - Yelena / Rosalind Cheng

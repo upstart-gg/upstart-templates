@@ -238,7 +238,7 @@
     font-family: var(--font-body);
     font-weight: 500;
     font-variant-caps: all-small-caps;
-    font-size: 1.125rem;
+    font-size: 1rem;
     letter-spacing: 0.06em;
     line-height: 1.35;
   }
@@ -246,7 +246,7 @@
     font-family: var(--font-body);
     font-weight: 500;
     font-variant-caps: all-small-caps;
-    font-size: 1rem;
+    font-size: 0.875rem;
     letter-spacing: 0.08em;
     line-height: 1.35;
     color: color-mix(in oklch, currentColor 72%, transparent);
@@ -419,9 +419,17 @@
       transparent 78%
     );
   }
+  /* The texts carry their own scrim, from the surface, so that wherever they stand on the
+     painting, its lightest paint under them stays at least 4.5:1 with the work-light white. */
   .cloth-texts {
     align-self: end;
-    padding: 3rem 3rem 3rem;
+    padding: 7rem 3rem 3rem;
+    background: linear-gradient(
+      to top,
+      color-mix(in oklch, var(--color-base-100), transparent 22%),
+      color-mix(in oklch, var(--color-base-100), transparent 32%) calc(100% - 7rem),
+      transparent
+    );
   }
 }
 

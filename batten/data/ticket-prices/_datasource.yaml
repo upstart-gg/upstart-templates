@@ -20,4 +20,4 @@ fields:
   - name: featured
     label: Highlighted
     kind: boolean
-order: [previews, weeknights, weekends, under-30, groups]
+order: [previews, weeknights, weekends, under-30, children, groups]

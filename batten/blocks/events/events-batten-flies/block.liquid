@@ -21,7 +21,7 @@
               <span class="rep-tag">In rep with {{ other.title }}</span>
               {%- endif %}{% endfor %}{% endif %}
             </p>
-            <h3 class="title mt-4 max-w-[16ch] text-[clamp(3.75rem,9vw+1rem,11rem)]">{{ production.title }}</h3>
+            <h3 class="title mt-4 max-w-[16ch] text-[clamp(4rem,9vw+1rem,11rem)]">{{ production.title }}</h3>
             <p class="credit mt-4 max-w-[60ch]">{{ production.author }}{% if production.version != blank %} · {{ production.version }}{% endif %}{% if production.director != blank %} · {{ production.director }}{% endif %}</p>
             <p class="gothic mt-3 text-[1.75rem] md:text-[2.25rem]">{{ production.opens | append: "T12:00:00" | date: "%b %-d" }} – {{ production.closes | append: "T12:00:00" | date: "%b %-d" }} · {{ production.stage }}</p>
             <div class="mt-6 flex flex-wrap gap-3">

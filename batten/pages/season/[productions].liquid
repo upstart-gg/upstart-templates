@@ -89,7 +89,8 @@
 <section id="photos" class="bg-base-100 text-base-content">
   <div class="mx-auto max-w-[84rem] px-5 py-20 md:px-10 md:py-24">
     <p class="label">Photos</p>
-    <h2 class="mt-3 text-[clamp(2.5rem,4vw+1rem,4.5rem)]">In rehearsal and in the shop</h2>
+    <h2 class="mt-3 text-[clamp(2.5rem,4vw+1rem,4.5rem)]">In the shop</h2>
+    {%- if record.photos_note != blank %}<p class="body-copy mt-4">{{ record.photos_note }}</p>{% endif %}
     <ul class="bw mt-10 columns-1 gap-4 sm:columns-2 lg:columns-3" data-reveal="stagger">
       {%- for photo in record.photos %}
       <li class="mb-4 break-inside-avoid"><img src="{{ photo }}" class="w-full"></li>

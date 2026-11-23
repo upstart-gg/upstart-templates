@@ -17,25 +17,34 @@ export function start(root) {
       item.style.opacity = "0";
       item.style.transform = "translateY(16px)";
     }
-    stops.push(
-      Motion.inView(
-        el,
-        () => {
-          Motion.animate(
-            items,
-            { opacity: [0, 1], y: [16, 0] },
-            { duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: stagger ? Motion.stagger(0.07) : 0 },
-          );
-        },
-        { amount: 0.15 },
-      ),
-      () => {
-        for (const item of items) {
-          item.style.opacity = "";
-          item.style.transform = "";
-        }
-      },
-    );
+    // Each item watches for itself, so that a long list (twelve actors on a phone) reveals what is
+    // on the screen without waiting for a share of the whole list; items that come in together
+    // still rise 70 ms apart.
+    let batch = 0;
+    let frame;
+    for (const item of items) {
+      stops.push(
+        Motion.inView(
+          item,
+          () => {
+            const delay = stagger ? 0.07 * batch++ : 0;
+            cancelAnimationFrame(frame);
+            frame = requestAnimationFrame(() => {
+              batch = 0;
+            });
+            Motion.animate(item, { opacity: [0, 1], y: [16, 0] }, { duration: 0.7, ease: [0.22, 1, 0.36, 1], delay });
+          },
+          { amount: 0.1 },
+        ),
+      );
+    }
+    stops.push(() => {
+      cancelAnimationFrame(frame);
+      for (const item of items) {
+        item.style.opacity = "";
+        item.style.transform = "";
+      }
+    });
   }
 }
 

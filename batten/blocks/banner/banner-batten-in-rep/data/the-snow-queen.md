@@ -20,8 +20,10 @@ advisories:
 tickets: https://boxoffice.bottineaurep.example/the-snow-queen
 cloth: /media/cloth-the-snow-queen.webp
 photos:
+  - /media/set-model.jpg
   - /media/scene-shop.jpg
   - /media/battens-lit.jpg
+photos_note: "A set model in its box, a scene shop and battens under the work light: the shop's work before a first preview, not yet this production."
 cast:
   - Gerda / Lily Xiong
   - Kai / Marco Reyes

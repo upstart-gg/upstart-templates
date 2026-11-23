@@ -56,6 +56,9 @@ fields:
   - name: photos
     label: Photos
     kind: images
+  - name: photos_note
+    label: What the photos show
+    kind: text
   - name: cast
     label: Cast (role / actor)
     kind: list
