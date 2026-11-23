@@ -1,6 +1,6 @@
 {%- comment -%} The piece of the product a job shows: its panel choice picks the part. {%- endcomment -%}
 {%- case job.panel -%}
-{%- when "schedule" -%}{% render 'ui-week' %}
+{%- when "schedule" -%}{% render 'ui-week', draft: true %}
 {%- when "timesheets" -%}{% render 'ui-timesheets' %}
 {%- when "swaps" -%}<div class="grid items-center gap-8 lg:grid-cols-[minmax(0,1fr)_auto]">{% render 'ui-swaps' %}{% if phone %}<div class="hidden lg:block">{% render 'ui-phone' %}</div>{% endif %}</div>
 {%- when "payroll" -%}{% render 'ui-payroll' %}

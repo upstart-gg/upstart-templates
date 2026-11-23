@@ -1,10 +1,11 @@
 // The tidy-up (data-tidy): the paper schedule taped up crooked sorts itself, once, into the product's week.
 // In the markup the clean week is there and the paper over it is `hidden`, so with no script, under reduced
-// motion and while editing, the week alone shows. Here the paper is shown over the week, which its sheet
-// covers. Once the stage is in view, the week's chips, chrome and toast are hidden under it, the clutter
-// goes, each scrawl's chip flies from where the name was written to its slot (measured from the two boxes),
-// each sticky note flies to the chip it asked for, the sheet gives way to the card and the toast rises, in
-// about a second and a half. Then every inline style is cleared and the paper hidden again. It never replays
+// motion and while editing, the week alone shows. Here the paper is shown and the week's chips, chrome and
+// toast are hidden under it. As soon as the stage enters the screen, the paper holds still 0.6 s to be read;
+// at 0.6 s the clutter and the tape go; from 0.8 s each scrawl's chip flies from where the name was written
+// to its slot (measured from the two boxes), 35 ms apart; from 1.2 s each sticky note flies to the chip it
+// asked for; from 1.0 to 1.8 s the sheet gives way to the card; at 1.5 s the toast rises; from 2.0 to 2.5 s
+// the coffee ring goes last. Then every inline style is cleared and the paper hidden again. It never replays
 // and follows neither the pointer nor the scroll.
 const reduced = () => matchMedia("(prefers-reduced-motion: reduce)").matches;
 const within = (root, selector) =>
@@ -38,9 +39,14 @@ function setUp(section) {
 
   const run = { section, paper, styled: new Set(), animations: [], timers: [], stopView: null, done: false };
 
-  // The before: the paper shown over the week.
+  // The before: the paper shown, the week's pieces hidden under it until they arrive.
   paper.hidden = false;
+  for (const el of [...chips, ...chrome, toast].filter(Boolean)) {
+    el.style.opacity = "0";
+    run.styled.add(el);
+  }
 
+  // Played as soon as the stage enters the screen, so the week is never seen hidden without the play running.
   run.stopView = Motion.inView(
     stage,
     () => {
@@ -48,7 +54,7 @@ function setUp(section) {
       run.stopView = null;
       play(run, { chips, chrome, toast });
     },
-    { amount: 0.45 },
+    { amount: "some" },
   );
   return run;
 }
@@ -65,13 +71,9 @@ function play(run, { chips, chrome, toast }) {
   };
   const visible = (selector) => [...section.querySelectorAll(selector)].filter(shown);
 
-  // The week's pieces, under the sheet until now, hidden until they arrive.
-  for (const el of [...chips, ...chrome, toast].filter(Boolean)) style(el, { opacity: "0" });
-
-  // The clutter and the tape go first.
-  for (const el of visible("[data-clutter]")) animate(el, { opacity: [1, 0] }, { duration: 0.25, delay: 0.25 });
-  for (const el of visible("[data-tape]"))
-    animate(el, { y: [0, -6], opacity: [1, 0] }, { duration: 0.25, delay: 0.25 });
+  // The paper holds still 0.6 s, to be read; then the clutter and the tape go.
+  for (const el of visible("[data-clutter]")) animate(el, { opacity: [1, 0] }, { duration: 0.3, delay: 0.6 });
+  for (const el of visible("[data-tape]")) animate(el, { y: [0, -6], opacity: [1, 0] }, { duration: 0.3, delay: 0.6 });
 
   // Each chip, by day then by row, from its scrawl or its note. Measured now, before anything moves.
   const ordered = chips
@@ -91,7 +93,7 @@ function play(run, { chips, chrome, toast }) {
       const a = center(from);
       const b = center(home);
       const tilt = Number(note.dataset.tilt ?? 0);
-      const delay = 0.55 + noteFlight * 0.1;
+      const delay = 1.2 + noteFlight * 0.06;
       noteFlight += 1;
       animate(
         note,
@@ -102,41 +104,41 @@ function play(run, { chips, chrome, toast }) {
           scale: [1, home.width / from.width],
           opacity: [1, 1, 0],
         },
-        { duration: 0.6, delay, times: [0, 0.75, 1] },
+        { duration: 0.8, delay, times: [0, 0.75, 1] },
       );
-      animate(chip, { opacity: [0, 1] }, { duration: 0.2, delay: delay + 0.42 });
+      animate(chip, { opacity: [0, 1] }, { duration: 0.2, delay: delay + 0.6 });
     } else if (scrawl) {
       const a = center(scrawl.getBoundingClientRect());
       const b = center(home);
       const tilt = Number(scrawl.dataset.tilt ?? 0);
-      const delay = 0.4 + flight * 0.022;
+      const delay = 0.8 + flight * 0.035;
       flight += 1;
-      animate(scrawl, { opacity: [1, 0] }, { duration: 0.12, delay });
+      animate(scrawl, { opacity: [1, 0] }, { duration: 0.15, delay });
       animate(
         chip,
         { x: [a.x - b.x, 0], y: [a.y - b.y, 0], rotate: [tilt, 0], opacity: [0, 1, 1] },
-        { duration: 0.55, delay, times: [0, 0.2, 1] },
+        { duration: 0.7, delay, times: [0, 0.2, 1] },
       );
     } else {
-      animate(chip, { opacity: [0, 1] }, { duration: 0.3, delay: 0.7 });
+      animate(chip, { opacity: [0, 1] }, { duration: 0.3, delay: 1.0 });
     }
   }
 
   // The sheet straightens and gives way to the card; the ring goes last; the toast rises.
   for (const el of section.querySelectorAll("[data-paper-sheet]")) {
-    animate(el, { rotate: [-1.5, 0], opacity: [1, 0] }, { duration: 0.55, delay: 0.55 });
+    animate(el, { rotate: [-1.5, 0], opacity: [1, 0] }, { duration: 0.8, delay: 1.0 });
   }
-  for (const el of chrome) animate(el, { opacity: [0, 1] }, { duration: 0.45, delay: 0.55 });
+  for (const el of chrome) animate(el, { opacity: [0, 1] }, { duration: 0.6, delay: 1.0 });
   for (const el of section.querySelectorAll("[data-ring]"))
-    animate(el, { opacity: [1, 0] }, { duration: 0.3, delay: 0.95 });
-  if (toast) animate(toast, { y: [12, 0], opacity: [0, 1] }, { duration: 0.35, delay: 1.1 });
+    animate(el, { opacity: [1, 0] }, { duration: 0.5, delay: 2.0 });
+  if (toast) animate(toast, { y: [12, 0], opacity: [0, 1] }, { duration: 0.5, delay: 1.5 });
 
-  // Cleared as soon as the last animation ends, or after 1.8 s whatever happens.
+  // Cleared as soon as the last animation ends, or after 2.8 s whatever happens.
   Promise.all(run.animations.map((a) => a.finished ?? a)).then(
     () => clear(run),
     () => {},
   );
-  run.timers.push(setTimeout(() => clear(run), 1800));
+  run.timers.push(setTimeout(() => clear(run), 2800));
 }
 
 /** Leaves the page as the markup has it: the paper hidden, no inline style left. */

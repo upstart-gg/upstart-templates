@@ -1,0 +1,14 @@
+label: Ways to talk to a person
+fields:
+  - name: label
+    kind: text
+    required: true
+  - name: title
+    kind: text
+    required: true
+  - name: text
+    kind: text
+  - name: href
+    label: Link (tel:, mailto:), none for the highlighted card
+    kind: text
+order: [call, write, photo]

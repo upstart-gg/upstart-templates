@@ -10,6 +10,7 @@ const within = (root, selector) =>
 
 const EASE = [0.22, 1, 0.36, 1];
 let stops = [];
+let animations = [];
 
 const hide = (el, y) => {
   el.style.opacity = "0";
@@ -26,8 +27,7 @@ export function start(root) {
     const how = el.dataset.reveal;
     if (how === "late") {
       hide(el, 12);
-      const a = Motion.animate(el, { opacity: [0, 1], y: [12, 0] }, { duration: 0.6, delay: 0.5, ease: EASE });
-      stops.push(() => a.stop());
+      animations.push(Motion.animate(el, { opacity: [0, 1], y: [12, 0] }, { duration: 0.6, delay: 0.5, ease: EASE }));
       continue;
     }
     const items = how === "stagger" ? [...el.children] : [el];
@@ -36,10 +36,12 @@ export function start(root) {
       Motion.inView(
         el,
         () => {
-          Motion.animate(
-            items,
-            { opacity: [0, 1], y: [16, 0] },
-            { duration: 0.7, ease: EASE, delay: Motion.stagger(0.07) },
+          animations.push(
+            Motion.animate(
+              items,
+              { opacity: [0, 1], y: [16, 0] },
+              { duration: 0.7, ease: EASE, delay: Motion.stagger(0.07) },
+            ),
           );
         },
         { amount: 0.15 },
@@ -48,7 +50,10 @@ export function start(root) {
   }
 }
 
+/** Stops the animations first, then clears the styles they and `hide` set. */
 export function stop() {
+  for (const a of animations) a.stop();
+  animations = [];
   for (const stop of stops) stop();
   stops = [];
 }

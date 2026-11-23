@@ -1,0 +1,17 @@
+label: Promises under the forms
+fields:
+  - name: title
+    kind: text
+    required: true
+  - name: text
+    kind: text
+  - name: phone
+    label: Phone number after the text, as a link
+    kind: text
+  - name: phone_href
+    label: The phone's link (tel:+1…)
+    kind: text
+  - name: icon
+    kind: choice
+    choices: [card, cancel, phone]
+order: [no-card, cancel, phone]

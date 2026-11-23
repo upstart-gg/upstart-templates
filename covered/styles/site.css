@@ -369,6 +369,11 @@
     );
     color: color-mix(in oklch, var(--color-base-content) 75%, transparent);
   }
+  .chip-free {
+    background-color: var(--color-base-100);
+    border: 1.5px dashed color-mix(in oklch, var(--color-primary) 45%, var(--color-base-300));
+    color: var(--color-primary);
+  }
   .offers-badge {
     display: inline-flex;
     align-items: center;

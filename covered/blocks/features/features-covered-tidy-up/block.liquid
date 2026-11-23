@@ -21,7 +21,7 @@
           <p class="marker marker-title text-xl md:text-2xl">SCHEDULE <span class="font-medium">wk of 3/8</span></p>
           <div class="mt-3 flex flex-1 flex-col md:grid md:grid-cols-7">
             {%- for d in days -%}
-            <div class="paper-day flex-1 border-t-2 px-2 py-2 md:border-t-0 md:border-l-2 md:first:border-l-0 {% if early contains d %}hidden md:block{% endif %}">
+            <div data-paper-day class="paper-day flex-1 border-t-2 px-2 py-2 md:border-t-0 md:border-l-2 md:first:border-l-0 {% if early contains d %}hidden md:block{% endif %}">
               <p class="marker text-lg font-bold uppercase">{{ d }}</p>
             </div>
             {%- endfor -%}

@@ -6,4 +6,4 @@ fields:
   - name: side
     kind: choice
     choices: [does, leaves]
-order: [the-week, the-hours, the-swaps, the-export, orders, payroll, hiring]
+order: [the-week, the-hours, the-swaps, orders, payroll, hiring]

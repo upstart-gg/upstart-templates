@@ -7,18 +7,17 @@ Covered is the marketing site of a work tool for people who stand all day. Its f
 - Every page shares the header (`parts/header.liquid`: the wordmark `parts/logo.liquid`, the links of `navigation` whose place is header, "Log in", the "Start free trial" button; a menu button below 1280 px) and the footer (`parts/footer.liquid`, on espresso: the address, the phone and its hours, the email, `navigation`'s columns and social links).
 - The product is drawn in the page from records: `parts/ui-week.liquid` from `shifts`, `ui-timesheets` from `timesheets`, `ui-swaps` from `swaps`, `ui-payroll` from `crew`, `ui-phone` (the first of `crew`, the first offered swap) and `ui-card` (the first approved swap). `parts/job-panel.liquid` picks one by a job's `panel`. Times are 24-hour in the records, shown by `parts/time.liquid`.
 - The tidy-up (`parts/tidy-up.liquid`, `scripts/tidy-up.js`) draws the paper from the same `shifts`: each record's `paper` says how it starts (in place, moved from `paper_from`, a sticky note's words in `paper_note`, or written beside the crossed-out `paper_struck`).
-- The lists: `jobs` (the home page's tabs, the product page's rail and chapters), `plans` (the home page and `/pricing`, with `pricing-compare`, `pricing-included`, `pricing-faq`), `stories` (the home page, `/customers` and a page per story), `help-articles` (`/help` and a page per article), `changes` (`/changelog`), `home-figures`, `customers-figures`, `crew-points`, `product-not`, `start-steps`, `home-faq`, `navigation`. `trials`, `demos`, `support` and `newsletter` collect the forms, answered by `fragments/trials-thanks.liquid`, `demos-thanks`, `support-thanks` and `newsletter-thanks`.
-- Every "Start your free trial" leads to `/start#trial` and every "Get a demo" to `/start#demo`. The proof line under each trial button is `parts/proof.liquid`.
+- Every "Start your free trial" leads to `/start#trial` and every "Get a demo" to `/start#demo`.
 
 ## When adapting
 
-- The product's name (Staff Meal) is in `parts/logo.liquid`, the footer's last line, every page's title and description, the hero, the product page's title, `parts/not-does.liquid`, the stories and the help articles. The company's address, phone ((816) 555-0134), hours (7 am to 10 pm Central) and email (hello@staffmeal.app) are in the footer, `parts/faq.liquid`, `parts/talk.liquid`, the start page's reassurances, the article page's last box and the fragments: they are facts, ask for them.
+- The product's name (Staff Meal) is in `parts/logo.liquid`, the footer's last line, every page's title and description, the hero, the product page's title, `parts/not-does.liquid`, the stories and the help articles. The company's address, phone ((816) 555-0134), hours (7 am to 10 pm Central) and email (hello@staffmeal.app) are in the footer, `parts/faq.liquid`, `data/contact-ways/`, `data/start-promises/`, the article page's last box and the fragments: they are facts, ask for them.
 - The figures (`home-figures`, `customers-figures`), the ratings and the four stories are invented and never stay: ask for real ones, or remove them (the figures row goes rather than keep a made-up number; see Customers for the stories).
-- Rewrite the demo week with the product's own example: `shifts`, `crew`, `timesheets` and `swaps`, the paper's three notes and the week's names, the labels in `parts/ui-week.liquid` ("Week of March 8", the days' dates, "Bramble & Bun · Waldo"), `parts/ui-phone.liquid` ("with Priya, Kenji, Dana") and the toast ("sent to 11 phones"). For another product, rewrite the parts themselves: bookings in a salon's day, jobs on a crew's board, rounds on a delivery map drawn as a list, never a map; keep each part a picture made of HTML from the theme.
+- Rewrite the demo week with the product's own example: `shifts`, `crew`, `timesheets` and `swaps`, the paper's three notes and the week's names, the labels in `parts/ui-week.liquid` ("Week of March 8", the draft's "Week of March 15" and "Copied from March 8", the days' dates, "Bramble & Bun · Waldo"), `parts/ui-phone.liquid` ("with Priya, Kenji, Dana") and the toast ("sent to 11 phones"). For another product, rewrite the parts themselves: bookings in a salon's day, jobs on a crew's board, rounds on a delivery map drawn as a list, never a map; keep each part a picture made of HTML from the theme.
 - `parts/time.liquid` shows "6a–2p": for a site in French, German or most of Europe, make it write the 24-hour time as it is ("06:00–14:00").
 - Prices, limits, the trial's length and the product's features are facts: ask for them once the page is built, or leave them out rather than guess.
 - "Log in" leads to `/help/logging-in`: point it at the product's real address once the maker gives it, never an invented one.
-- No logos (customers', press, integrations', payroll services'), no store badges, no review stars, no chat widget. Ask the maker for their privacy policy and terms and add them as pages then; never write them.
+- Ask the maker for their privacy policy and terms and add them as pages then; never write them.
 
 ## Pages
 
@@ -52,7 +51,7 @@ The four jobs as chapters under a sticky rail that marks the one in view, each w
 - **One page with the rail** (as built): four chapters, the rail marking the one in view. Nothing to change.
 - **A page per job**, for a product with much to say about each: move `parts/chapters.liquid`'s section into `pages/product/[jobs].liquid` (one job, `record`, with its panel, its small things and, for swaps, the crew's phone) and keep `pages/product.liquid` as `pages/product/index.liquid` with the rail and an overview; the rail's links (`parts/rail.liquid`) become `/product/{{ job.id }}` with `aria-current="page"` on the current one, and the home page's tabs link there (`parts/job-tabs.liquid`). Delete `scripts/tab-rail.js`.
 
-When removed: delete `pages/product.liquid`, `parts/rail.liquid`, `parts/chapters.liquid`, `parts/not-does.liquid`, `parts/crew-numbers.liquid`, `data/product-not/`, `scripts/tab-rail.js` and the `product` navigation record and its footer link. The home page's tabs keep their panels and lose their "More about…" link (`parts/job-tabs.liquid`); the tidy-up's "How the schedule works" link goes.
+When removed: delete `pages/product.liquid`, `parts/rail.liquid`, `parts/chapters.liquid`, `parts/not-does.liquid`, `parts/crew-numbers.liquid`, `data/product-not/`, `data/crew-privacy/`, `scripts/tab-rail.js` and the `product` navigation record and its footer link. The home page's tabs keep their panels and lose their "More about…" link (`parts/job-tabs.liquid`); the tidy-up's "How the schedule works" link goes.
 
 ### Pricing (`/pricing`)
 
@@ -77,9 +76,9 @@ Two ways to start side by side, a trial request and a demo request, their answer
 #### Who sets up the first week?
 
 - **A person, with them** (as built): the trial's answer offers to type it in from a photo of the paper, and the steps say so.
-- **They do it alone**: `data/start-steps/` becomes "Sign up", "Add your crew", "Post the week", "Your crew get the app"; drop "We set up your first week with you" from `parts/proof.liquid`, the offer from `fragments/trials-thanks.liquid`, "Your first week set up with you" from `data/pricing-included/`, and the photo line from `parts/talk.liquid`.
+- **They do it alone**: `data/start-steps/` becomes "Sign up", "Add your crew", "Post the week", "Your crew get the app"; drop "We set up your first week with you" from `parts/proof.liquid`, the offer from `fragments/trials-thanks.liquid`, "Your first week set up with you" from `data/pricing-included/`, and the photo card, `data/contact-ways/photo.md`.
 
-When removed: delete `pages/start.liquid`, `parts/trial-form.liquid`, `parts/demo-form.liquid`, `parts/start-steps.liquid`, `data/trials/`, `data/demos/`, `data/start-steps/`, `fragments/trials-thanks.liquid` and `fragments/demos-thanks.liquid`, and the footer's "Start a free trial" and "Get a demo" links. Point every trial button to the product's sign-up page (ask for it) and every "Get a demo" to the phone (`tel:`) or an email (`mailto:`).
+When removed: delete `pages/start.liquid`, `parts/trial-form.liquid`, `parts/demo-form.liquid`, `parts/start-steps.liquid`, `data/trials/`, `data/demos/`, `data/start-steps/`, `data/start-promises/`, `fragments/trials-thanks.liquid` and `fragments/demos-thanks.liquid`, and the footer's "Start a free trial" and "Get a demo" links. Point every trial button to the product's sign-up page (ask for it) and every "Get a demo" to the phone (`tel:`) or an email (`mailto:`).
 
 ### Customers (`/customers`)
 
@@ -102,7 +101,7 @@ The articles by topic, each a summary and a link to its page, three ways to talk
 - **Articles on this site** (as built).
 - **An outside help center**: ask for its address; "Help" in `data/navigation/help.md` and the footer's help column link to it. `/help` keeps `parts/talk.liquid` and `parts/support-form.liquid` under the title "Talk to us"; delete `pages/help/[help-articles].liquid`, `parts/help-topics.liquid` and `data/help-articles/`. "Log in" (`parts/header.liquid`) then points to the product's own address.
 
-When removed: delete `pages/help/`, `parts/help-topics.liquid`, `parts/talk.liquid`, `parts/support-form.liquid`, `data/help-articles/`, `data/support/`, `fragments/support-thanks.liquid` and the `help` navigation record and its footer column. The footer keeps the phone and the email; "Log in" points to the product's address, or goes.
+When removed: delete `pages/help/`, `parts/help-topics.liquid`, `parts/talk.liquid`, `parts/support-form.liquid`, `data/help-articles/`, `data/contact-ways/`, `data/support/`, `fragments/support-thanks.liquid` and the `help` navigation record and its footer column. The footer keeps the phone and the email; "Log in" points to the product's address, or goes.
 
 ### Changelog (`/changelog`)
 

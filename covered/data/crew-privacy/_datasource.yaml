@@ -1,0 +1,8 @@
+label: Your crew's numbers
+fields:
+  - name: title
+    kind: text
+    required: true
+  - name: text
+    kind: text
+order: [schedule-only, their-own, yours-to-take]
