@@ -16,4 +16,4 @@ fields:
   - name: before
     label: Before picture, for a before and after
     kind: image
-order: [counter, pass, pierogi, friday, back-room, snow]
+order: [counter, pass, friday, back-room, snow, sign]

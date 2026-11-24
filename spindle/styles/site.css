@@ -242,17 +242,29 @@
   }
 
   /* ---- The name and the dish ---------------------------------------------------
-     The name fills the width of its container on one line, whatever its length: --chars,
-     set on the hero, counts its letters, an I, a space, a period or an apostrophe as half of one. The plate shares its grid cell, in front. */
+     The name fills the width of its container: --name-em, set on the hero, is the width
+     of its longest line in ems (the sum of its letters' widths, in the design notes), and
+     --lines how many lines it takes. The plate shares its grid cell, in front, and starts
+     at the same part of the last line whatever the name's size. */
   .name-stage {
+    --name-size: min(40cqi, 99cqi / var(--name-em, 5.11));
+    --dish-drop: 0.62;
     container-type: inline-size;
   }
   .name {
-    font-size: calc(100cqi / (var(--chars, 7) * 0.74));
+    font-size: var(--name-size);
     line-height: 0.82;
     letter-spacing: -0.015em;
     text-transform: uppercase;
     white-space: nowrap;
+  }
+  .name-dish {
+    margin-top: calc(var(--name-size) * (var(--dish-drop) + 0.82 * (var(--lines, 1) - 1)));
+  }
+  @media (width >= 48rem) {
+    .name-stage {
+      --dish-drop: 0.31;
+    }
   }
   [data-dish],
   [data-cutout] {
@@ -283,6 +295,7 @@
     }
   }
   [data-rail] > li {
+    --beyond: calc(var(--missing, 0) * (100% + var(--gap)));
     position: relative;
     padding-top: calc(var(--rail-h) - var(--tuck));
   }
@@ -292,7 +305,7 @@
     z-index: 2;
     top: 0;
     left: calc(var(--gap) / -2);
-    right: calc(var(--gap) / -2);
+    right: calc(var(--gap) / -2 - var(--beyond));
     height: var(--rail-h);
     background: linear-gradient(
       var(--steel-light) 0 2px,
@@ -304,54 +317,73 @@
   }
   /* A small bracket at each end of a row's bar. */
   [data-rail] > li::after {
+    --bracket: linear-gradient(
+      color-mix(in oklch, var(--steel-light), transparent 45%) 0 2px,
+      color-mix(in oklch, var(--steel), var(--color-neutral) 38%) 2px
+    );
     content: "";
     position: absolute;
     z-index: 3;
     top: -0.3125rem;
-    width: 0.75rem;
+    left: calc(var(--gap) / -2);
+    right: calc(var(--gap) / -2 - var(--beyond));
     height: calc(var(--rail-h) + 0.625rem);
     border-radius: 2px;
-    background: color-mix(in oklch, var(--steel), var(--color-neutral) 38%);
-    box-shadow: inset 0 2px 0 color-mix(in oklch, var(--steel-light), transparent 45%);
-    display: none;
+    background:
+      var(--bracket) left / var(--left, 0px) 100% no-repeat,
+      var(--bracket) right / var(--right, 0px) 100% no-repeat;
     pointer-events: none;
   }
-  [data-rail] > li:nth-child(2n + 1)::after {
-    display: block;
-    left: calc(var(--gap) / -2);
+  /* A last row that is not full: its last ticket draws the bar to the row's end, and the bracket there. */
+  [data-rail] > li:last-child {
+    --right: 0.75rem;
   }
-  [data-rail] > li:nth-child(2n)::after {
-    display: block;
-    right: calc(var(--gap) / -2);
+  @media (width < 48rem) {
+    [data-rail] > li:nth-child(2n + 1) {
+      --left: 0.75rem;
+    }
+    [data-rail] > li:nth-child(2n) {
+      --right: 0.75rem;
+    }
+    [data-rail] > li:last-child:nth-child(2n + 1) {
+      --missing: 1;
+    }
   }
   @media (width >= 48rem) and (width < 80rem) {
-    [data-rail] > li:nth-child(n)::after {
-      display: none;
-      left: auto;
-      right: auto;
+    [data-rail] > li:nth-child(3n + 1) {
+      --left: 0.75rem;
     }
-    [data-rail] > li:nth-child(3n + 1)::after {
-      display: block;
-      left: calc(var(--gap) / -2);
+    [data-rail] > li:nth-child(3n) {
+      --right: 0.75rem;
     }
-    [data-rail] > li:nth-child(3n)::after {
-      display: block;
-      right: calc(var(--gap) / -2);
+    [data-rail] > li:last-child:nth-child(3n + 1) {
+      --missing: 2;
+    }
+    [data-rail] > li:last-child:nth-child(3n + 2) {
+      --missing: 1;
     }
   }
   @media (width >= 80rem) {
-    [data-rail] > li:nth-child(n)::after {
-      display: none;
-      left: auto;
-      right: auto;
+    [data-rail] > li:nth-child(6n + 1) {
+      --left: 0.75rem;
     }
-    [data-rail] > li:nth-child(6n + 1)::after {
-      display: block;
-      left: calc(var(--gap) / -2);
+    [data-rail] > li:nth-child(6n) {
+      --right: 0.75rem;
     }
-    [data-rail] > li:nth-child(6n)::after {
-      display: block;
-      right: calc(var(--gap) / -2);
+    [data-rail] > li:last-child:nth-child(6n + 1) {
+      --missing: 5;
+    }
+    [data-rail] > li:last-child:nth-child(6n + 2) {
+      --missing: 4;
+    }
+    [data-rail] > li:last-child:nth-child(6n + 3) {
+      --missing: 3;
+    }
+    [data-rail] > li:last-child:nth-child(6n + 4) {
+      --missing: 2;
+    }
+    [data-rail] > li:last-child:nth-child(6n + 5) {
+      --missing: 1;
     }
   }
 
@@ -528,5 +560,17 @@
     to {
       translate: 0 -12%;
     }
+  }
+}
+
+/* Upstart's "Image credits" link, lined up with the footer's container. */
+footer [data-up-credits] {
+  padding: 0 calc(max(0px, (100% - 90rem) / 2) + 1.25rem) 1.5rem;
+  font-size: 0.875rem;
+  opacity: 0.7;
+}
+@media (width >= 48rem) {
+  footer [data-up-credits] {
+    padding-inline: calc(max(0px, (100% - 90rem) / 2) + 2rem);
   }
 }

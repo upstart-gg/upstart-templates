@@ -1,12 +1,8 @@
 {
-  "alt": "A long wooden table laid for a dinner in a small private room",
-  "credit": {
-    "title": "TOCA, private dining room (cropped)",
-    "author": "Shaun Merritt",
-    "authorUrl": "https://www.flickr.com/photos/8429931@N07",
-    "license": "CC BY 2.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
-    "source": "Openverse (Flickr)",
-    "sourceUrl": "https://www.flickr.com/photos/8429931@N07/6083092414"
+  "alt": "A plain pine-paneled back room with a long table laid for a party",
+  "generated": {
+    "model": "gemini/gemini-nano-banana-2.1",
+    "prompt": "Documentary photograph of the plain back room of a 1960s neighborhood lunch counter in Milwaukee, laid for a family party of thirty: one long table under white paper-smooth tablecloths, plain bentwood chairs, heavy white diner plates with one turquoise band at the rim, paper napkins, water tumblers, small jars of carnations, varnished knotty-pine wainscot along the walls and cream paint above, simple round schoolhouse ceiling lamps, linoleum floor, a steel coat rack by the door. Warm evening lamplight, honest and modest, seen from the end of the table at standing height. Nobody in the room. No candles, no crystal, no wine wall, no steam, no chalkboard, no gingham, no text, letters, logos or pictures with writing anywhere.",
+    "date": "2026-11-24T14:00:22.516Z"
   }
 }
