@@ -299,17 +299,11 @@
     text-decoration: underline 1px;
     text-underline-offset: 3px;
   }
-  .text-link-ground {
-    color: var(--color-secondary);
-    text-decoration: underline 1px;
-    text-underline-offset: 3px;
-  }
-  .text-link-ink:hover,
-  .text-link-ground:hover {
+  .text-link-ink:hover {
     text-decoration-thickness: 2px;
   }
 
-  :where(a, button, summary, input, textarea, select):focus-visible {
+  :where(a, button, summary, input, textarea, select):not(.btn, .checkbox):focus-visible {
     outline: 2px solid currentColor;
     outline-offset: 2px;
   }
@@ -336,6 +330,7 @@
       color 150ms ease;
   }
   .index-row .model-name,
+  .index-row .model-title,
   .index-row .index-arrow {
     transition:
       color 150ms ease,
@@ -348,6 +343,8 @@
   }
   a.index-row:hover .model-name,
   a.index-row:focus-visible .model-name,
+  a.index-row:hover .model-title,
+  a.index-row:focus-visible .model-title,
   a.index-row:hover .index-arrow,
   a.index-row:focus-visible .index-arrow {
     color: var(--color-primary);
@@ -640,13 +637,15 @@
   }
 
   /* The license's full text: folded on a phone, open from 1024 px. */
-  @media (min-width: 64rem) {
-    .license-text::details-content {
-      content-visibility: visible;
-      block-size: auto;
-    }
-    .license-text > summary {
-      display: none;
+  @supports selector(::details-content) {
+    @media (min-width: 64rem) {
+      .license-text::details-content {
+        content-visibility: visible;
+        block-size: auto;
+      }
+      .license-text > summary {
+        display: none;
+      }
     }
   }
 
@@ -700,7 +699,6 @@
     scale: 1 0;
   }
 
-  .fieldset-legend,
   .field-label {
     font-size: 1rem;
     font-weight: 600;
@@ -714,11 +712,25 @@
     .btn,
     .index-row,
     .index-row .model-name,
+    .index-row .model-title,
     .index-row .index-arrow,
     .question .question-down {
       transition: none;
     }
   }
+}
+
+/* A focused button's or checkbox's ring takes the color of what is around it, not its own: ink on paper, paper on the ground. */
+.btn:focus-visible,
+.checkbox:focus-visible {
+  outline: 2px solid var(--color-base-content);
+  outline-offset: 2px;
+}
+.ground .btn:focus-visible {
+  outline-color: var(--color-neutral-content);
+}
+.ground .bg-base-200 .btn:focus-visible {
+  outline-color: var(--color-base-content);
 }
 
 /* Upstart's "Image credits" link, lined up with the footer's container. */

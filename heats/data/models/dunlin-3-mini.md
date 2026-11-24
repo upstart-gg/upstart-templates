@@ -12,7 +12,7 @@ memory:
   - "4-bit, 2 GB"
   - "8-bit, 3 GB"
   - "BF16, 5 GB"
-tokens: "9.4T"
+tokens: "9.4T tokens, 92% of them downloadable"
 cutoff: "June 2026"
 languages:
   - "English"

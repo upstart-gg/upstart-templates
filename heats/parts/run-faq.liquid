@@ -1,7 +1,7 @@
 <section class="border-t border-base-300 text-base-content">
   <div class="mx-auto max-w-[84rem] px-5 py-16 md:px-8 md:py-24">
     <h2 class="title-section">Questions about running it</h2>
-    {% assign topics = "Hardware,Files,Privacy" | split: "," %}
+    {% assign topics = data["run-faq"] | map: "topic" | compact | uniq %}
     <div class="mt-10 space-y-10">
       {% for topic in topics %}
       {% assign questions = data["run-faq"] | where: "topic", topic %}

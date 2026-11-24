@@ -14,4 +14,3 @@ fields:
   - name: sizes
     kind: list
     label: "The sizes you care about"
-    choices: [Mini, Small, 14B, Flock, Coder]

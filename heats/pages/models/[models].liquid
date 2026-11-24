@@ -46,7 +46,7 @@
         {% endfor %}
       </ul>
       <dl class="mt-8 space-y-3">
-        <div><dt class="spec text-base-content/75">Trained on</dt><dd>{{ record.tokens }} tokens, 92% of them downloadable</dd></div>
+        <div><dt class="spec text-base-content/75">Trained on</dt><dd>{{ record.tokens }}</dd></div>
         <div><dt class="spec text-base-content/75">Knowledge until</dt><dd>{{ record.cutoff }}</dd></div>
         <div><dt class="spec text-base-content/75">Languages</dt><dd>{{ record.languages | join: ", " }}</dd></div>
       </dl>

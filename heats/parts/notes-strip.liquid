@@ -13,11 +13,7 @@
       <fieldset class="mt-4">
         <legend class="field-label">The sizes you care about <span class="font-normal text-base-content/75">(all, if none)</span></legend>
         <div class="mt-2 flex flex-wrap gap-x-6 gap-y-2">
-          <label class="flex items-center gap-2"><input type="checkbox" name="sizes" value="Mini" class="checkbox checkbox-primary checkbox-sm bg-base-100">Mini</label>
-          <label class="flex items-center gap-2"><input type="checkbox" name="sizes" value="Small" class="checkbox checkbox-primary checkbox-sm bg-base-100">Small</label>
-          <label class="flex items-center gap-2"><input type="checkbox" name="sizes" value="14B" class="checkbox checkbox-primary checkbox-sm bg-base-100">14B</label>
-          <label class="flex items-center gap-2"><input type="checkbox" name="sizes" value="Flock" class="checkbox checkbox-primary checkbox-sm bg-base-100">Flock</label>
-          <label class="flex items-center gap-2"><input type="checkbox" name="sizes" value="Coder" class="checkbox checkbox-primary checkbox-sm bg-base-100">Coder</label>
+          {% for model in data.models %}<label class="flex items-center gap-2"><input type="checkbox" name="sizes" value="{{ model.name }}" class="checkbox checkbox-primary checkbox-sm bg-base-100">{{ model.name }}</label>{% endfor %}
         </div>
       </fieldset>
       <div id="newsletter-problems" class="mt-3"></div>

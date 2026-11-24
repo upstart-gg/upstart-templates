@@ -1,11 +1,8 @@
 {
-  "alt": "A graphics card on its own on a white ground, its black heat sink turned toward the light.",
-  "credit": {
-    "title": "ASUS NVIDIA GeForce 210 silent graphics card with HDMI",
-    "author": "Joydeep",
-    "license": "CC BY-SA 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "source": "Wikimedia Commons",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:ASUS_NVIDIA_GeForce_210_silent_graphics_card_with_HDMI.JPG"
+  "alt": "A graphics card with two fans on a white ground, seen at an angle.",
+  "generated": {
+    "model": "gemini/gemini-nano-banana-2.1",
+    "prompt": "Photograph on a seamless pure white background, soft even studio light, gentle contact shadow, product documentation style, sharp, muted neutral colors, black and dark gray metal. A modern dual-slot desktop graphics card with two large fans, lying at a three-quarter angle, plain matte black shroud, completely blank surfaces: no text, no letters, no numbers, no logo, no label, no stickers, no emblem in the fan hubs, plain solid fan hubs.",
+    "date": "2026-11-24T13:59:29.596Z"
   }
 }

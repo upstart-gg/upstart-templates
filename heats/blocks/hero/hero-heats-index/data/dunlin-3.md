@@ -12,7 +12,7 @@ memory:
   - "4-bit, 11 GB"
   - "8-bit, 18 GB"
   - "BF16, 32 GB"
-tokens: "9.4T"
+tokens: "9.4T tokens, 92% of them downloadable"
 cutoff: "June 2026"
 languages:
   - "English"
@@ -35,7 +35,7 @@ files:
     href: "https://huggingface.co/dunlin-project/dunlin-3-instruct-GGUF"
   - label: "BF16 · 28 GB"
     href: "https://huggingface.co/dunlin-project/dunlin-3-instruct"
-hardware: "/media/machine-card.jpg"
+hardware: "/media/machine-card.webp"
 featured: true
 released: 2027-03-04
 ---

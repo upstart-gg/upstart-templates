@@ -12,7 +12,7 @@ memory:
   - "4-bit, 42 GB"
   - "8-bit, 74 GB"
   - "BF16, 138 GB"
-tokens: "9.4T"
+tokens: "9.4T tokens, 92% of them downloadable"
 cutoff: "June 2026"
 languages:
   - "English"
@@ -35,7 +35,7 @@ files:
     href: "https://huggingface.co/dunlin-project/dunlin-3-flock-instruct-GGUF"
   - label: "BF16 · 124 GB"
     href: "https://huggingface.co/dunlin-project/dunlin-3-flock-instruct"
-hardware: "/media/machine-tower.jpg"
+hardware: "/media/machine-tower.webp"
 featured: false
 released: 2027-03-04
 ---

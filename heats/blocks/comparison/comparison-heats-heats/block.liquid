@@ -24,7 +24,7 @@
 {%- endfor -%}
 <article class="border-t border-base-content/50 pt-4" data-heat data-better="{{ heat.better | default: 'higher' }}">
   <h3 class="title-small">Heat {{ number }} · {{ heat.name }}</h3>
-  <p class="spec mt-1.5 text-base-content/75">{{ heat.benchmark }} · {{ heat.setting }} · {{ heat.unit }}{% if heat.better == "lower" %} · <span class="whitespace-nowrap">↓ lower is better</span>{% endif %}</p>
+  <p class="spec mt-1.5 text-base-content/75">{{ heat.benchmark }} · {{ heat.setting }} · {{ heat.unit }}{% if heat.better == "lower" %} · <span class="whitespace-nowrap">↓ lower is better</span>{% endif %}{% if heat.config %} · <a href="{{ heat.config }}" class="underline underline-offset-3 hover:text-primary" aria-label="Config of the {{ heat.name }} heat">config</a>{% endif %}</p>
   <div class="mt-4 space-y-3 md:space-y-2">
     <div class="lane" aria-hidden="true">
       <div class="lane-ticks mono">
