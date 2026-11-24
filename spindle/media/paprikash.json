@@ -1,0 +1,10 @@
+{
+  "alt": "Chicken paprikash over nokedli in a wide bowl",
+  "generated": {
+    "model": "gemini/gemini-nano-banana-2.1",
+    "prompt": "Chicken paprikash in a wide shallow bowl of the same china: two braised bone-in chicken pieces in a glossy brick-red paprika and sour cream sauce, over a bed of small irregular nokedli dumplings, with a little chopped parsley and a small swirl of sour cream, seen from the same low three-quarter angle as the reference, about 20 degrees above the table, so the china is a wide flat ellipse. The same heavy white diner china as the reference, with the same one plain solid turquoise band at its rim and the same neutral gray-white underside, the same soft daylight from the left, the same scale and style of studio food photograph. The dish alone, whole, centered, nothing cropped, with empty space all around. The ground is a perfectly flat, even, pure magenta chroma-key background (#FF00FF) filling the entire frame, with no shadow under the dish, no table, no horizon, no gradient and no reflection of magenta on the china. No hands, no people, no cutlery, no logo, no lettering, no flag, no toothpick, no tablecloth, no gingham, no steam.",
+    "date": "2026-11-24T12:39:55.098Z",
+    "references": ["/media/pierogi-plate.webp"],
+    "edited": "The magenta ground keyed out with sharp: a color-distance mask, a one-pixel feather, the magenta's spill taken out, then trimmed."
+  }
+}

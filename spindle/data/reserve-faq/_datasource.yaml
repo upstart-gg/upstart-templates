@@ -1,0 +1,9 @@
+label: Questions about booths
+body: answer
+fields:
+  - name: question
+    kind: text
+    required: true
+  - name: answer
+    kind: markdown
+order: [counter, fridays, seven, late, cake, time-limit]

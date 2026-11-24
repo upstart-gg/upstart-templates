@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>The menu — Halina’s, Milwaukee</title>
+<meta name="description" content="Halina’s lunch and supper menus side by side, today’s specials on the rail, and the Friday fish fry: pierogi, butter burgers, chicken paprikash, perch and rye.">
+<meta property="og:title" content="The menu — Halina’s, Milwaukee">
+<meta property="og:description" content="Halina’s lunch and supper menus side by side, today’s specials on the rail, and the Friday fish fry: pierogi, butter burgers, chicken paprikash, perch and rye.">
+</head>
+<body>
+{% render 'header', page: page %}
+<main>
+{% render 'page-title', title: "The menu", intro: "Two menus, one kitchen. Lunch is fast and at the counter; supper takes its time in the booths. The specials change every morning." %}
+{% render 'rail-short' %}
+{% render 'two-menus' %}
+{% render 'fish-fry' %}
+{% render 'allergies' %}
+{% render 'pickup-band' %}
+</main>
+{% render 'footer' %}
+</body>
+</html>

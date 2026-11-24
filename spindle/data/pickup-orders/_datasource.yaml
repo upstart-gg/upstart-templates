@@ -1,0 +1,37 @@
+label: Pickup orders
+collected: true
+answer: pickup-orders-thanks
+messages:
+  required: "{field} is required."
+  invalid: "{field} doesn’t look right. Please check it."
+  too_many: "Too many requests were sent from here. Please try again in a few minutes."
+  sent: "Thank you, we’ll text you the total and the time."
+body: order
+fields:
+  - name: name
+    label: Your name
+    kind: text
+    required: true
+  - name: phone
+    label: Your phone
+    kind: phone
+    required: true
+  - name: email
+    label: Your email
+    kind: email
+  - name: service
+    label: Lunch or supper
+    kind: choice
+    required: true
+    choices: [lunch, supper]
+  - name: time
+    label: When you’d like it
+    kind: text
+    required: true
+  - name: order
+    label: What you’d like
+    kind: markdown
+    required: true
+  - name: note
+    label: A note
+    kind: text

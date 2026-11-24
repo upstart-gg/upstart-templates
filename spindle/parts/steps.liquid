@@ -1,0 +1,20 @@
+{%- comment -%} Numbered steps on a line: pass items and title. {%- endcomment -%}
+<section class="bg-base-100 text-base-content">
+  <div class="mx-auto max-w-[90rem] px-5 pb-20 md:px-8 md:pb-24">
+    <h2 class="section-title">{{ title }}</h2>
+    <ol class="mt-12 grid gap-9 md:auto-cols-fr md:grid-flow-col md:gap-0">
+      {%- for step in items %}
+      <li class="flex gap-5 md:flex-col md:gap-6">
+        <div class="flex items-start md:items-center">
+          <span class="typed flex size-12 shrink-0 items-center justify-center border border-base-content text-[1.25rem] leading-none">{{ forloop.index }}</span>
+          {% unless forloop.last %}<span class="hidden h-0.5 flex-1 bg-primary md:block" aria-hidden="true"></span>{% endunless %}
+        </div>
+        <div class="md:pr-8">
+          <h3 class="text-[1.125rem] leading-snug font-bold font-body">{{ step.title }}</h3>
+          {% if step.text != blank %}<p class="body-copy mt-2">{{ step.text }}</p>{% endif %}
+        </div>
+      </li>
+      {%- endfor %}
+    </ol>
+  </div>
+</section>

@@ -1,0 +1,7 @@
+label: The two services
+fields:
+  - name: line
+    label: Line
+    kind: text
+    required: true
+order: [lunch, supper, friday]

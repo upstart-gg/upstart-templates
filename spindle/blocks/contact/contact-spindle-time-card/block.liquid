@@ -1,0 +1,40 @@
+<section class="bg-base-100 text-base-content">
+  <div class="mx-auto grid max-w-[84rem] gap-12 px-5 py-20 md:px-8 md:py-28 lg:grid-cols-12 lg:gap-10">
+    <div class="lg:col-span-5">
+      <p class="label-caps text-base-content/75">The week</p>
+      <h2 class="section-title mt-3">Two services, six days</h2>
+      <p class="body-copy mt-6 max-w-[40ch]">The kitchen takes its last order half an hour before close.</p>
+    </div>
+    <div class="lg:col-span-6 lg:col-start-7">
+<div data-time-card="small">
+  <div class="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1 bg-primary px-3 py-3 text-primary-content md:px-5">
+    <p class="font-heading text-[1.375rem] leading-none uppercase">Time card</p>
+    <p class="typed text-base">Halina&rsquo;s</p>
+  </div>
+  <table>
+    <caption class="sr-only">Lunch and supper, day by day</caption>
+    <thead>
+      <tr class="label-caps">
+        <th scope="col">Day</th>
+        <th scope="col" class="border-l border-primary">Lunch</th>
+        <th scope="col" class="border-l border-primary">Supper</th>
+      </tr>
+    </thead>
+    <tbody>
+      {%- for day in data.hours %}
+      <tr>
+        <th scope="row" class="font-semibold">{{ day.day }}</th>
+        {%- if day.lunch == blank and day.supper == blank %}
+        <td colspan="2"><span class="closed">Closed</span>{% if day.note != blank %} <span class="text-[0.9375rem]">· {{ day.note }}</span>{% endif %}</td>
+        {%- else %}
+        <td>{% if day.lunch != blank %}{{ day.lunch }}{% if day.supper == blank and day.note != blank %}<span class="time-note">{{ day.note }}</span>{% endif %}{% else %}<span class="closed">Closed</span>{% endif %}</td>
+        <td>{% if day.supper != blank %}{{ day.supper }}{% if day.note != blank %}<span class="time-note">{{ day.note }}</span>{% endif %}{% else %}<span class="closed">Closed</span>{% endif %}</td>
+        {%- endif %}
+      </tr>
+      {%- endfor %}
+    </tbody>
+  </table>
+</div>
+    </div>
+  </div>
+</section>

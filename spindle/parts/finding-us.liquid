@@ -1,0 +1,24 @@
+<section id="finding-us" class="bg-base-200 text-base-content">
+  <div class="mx-auto max-w-[90rem] px-5 py-20 md:px-8 md:py-24">
+    <div class="grid gap-10 lg:grid-cols-12 lg:items-center">
+      <div class="lg:col-span-6">
+        <h2 class="section-title">Finding us</h2>
+        <address class="mt-6 text-[1.25rem] leading-relaxed not-italic">14 Tamarack Court, at Lincoln Avenue<br>Milwaukee, WI&nbsp;53215</address>
+        <p class="body-copy mt-4 max-w-[46ch]">Four blocks from the dome of St. Josaphat&rsquo;s. Look for the turquoise sign.</p>
+        <div class="mt-7 flex flex-wrap gap-3">
+          <a href="https://www.openstreetmap.org/search?query=14%20Tamarack%20Court%2C%20Milwaukee%2C%20WI%2053215" class="btn btn-primary btn-lg whitespace-nowrap" rel="noopener" target="_blank">Get directions</a>
+          <a href="tel:+14145550163" class="btn btn-line btn-lg whitespace-nowrap">(414) 555-0163</a>
+        </div>
+      </div>
+      <div class="lg:col-span-6"><img src="/media/basilica.jpg" class="aspect-[4/3] w-full rounded-box object-cover" loading="lazy"></div>
+    </div>
+    <ul class="mt-14 grid gap-x-8 gap-y-9 sm:grid-cols-2 lg:grid-cols-4">
+      {%- for way in data["getting-here"] %}
+      <li class="border-t-2 border-base-content pt-5">
+        <h3 class="small-title">{{ way.title }}</h3>
+        <p class="body-copy mt-2.5">{{ way.text }}</p>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>

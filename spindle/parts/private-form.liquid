@@ -1,0 +1,57 @@
+<section id="request" class="bg-base-100 text-base-content">
+  <div class="mx-auto grid max-w-[90rem] gap-12 px-5 py-20 md:px-8 md:py-24 lg:grid-cols-12 lg:gap-10">
+    <div class="lg:col-span-4">
+      <h2 class="section-title">Ask about your date</h2>
+      <p class="body-copy mt-5 max-w-[38ch]">Pete calls you within two days. Nothing is held until the deposit is in.</p>
+      <p class="mt-5"><a href="tel:+14145550163" class="link-ink whitespace-nowrap">(414) 555-0163</a></p>
+    </div>
+    <form hx-post="/_data/private-hire" hx-target="this" hx-swap="outerHTML" hx-status:422="target:#private-form-problems swap:innerHTML" class="grid grid-cols-1 gap-x-5 gap-y-3 sm:grid-cols-2 lg:col-span-8">
+      <fieldset class="fieldset sm:col-span-2">
+        <legend class="fieldset-legend">What you&rsquo;d like to hire</legend>
+        <div class="grid gap-3 md:grid-cols-3">
+          <label class="pick-card"><input type="radio" name="room" value="back room" class="radio radio-sm mt-1" required checked><span><span class="block text-base font-bold">The back room</span><span class="hint">Up to 30, Tue&ndash;Sat evenings</span></span></label>
+          <label class="pick-card"><input type="radio" name="room" value="whole place" class="radio radio-sm mt-1"><span><span class="block text-base font-bold">The whole place</span><span class="hint">Up to 60, on a Monday</span></span></label>
+          <label class="pick-card"><input type="radio" name="room" value="counter" class="radio radio-sm mt-1"><span><span class="block text-base font-bold">The counter</span><span class="hint">Fourteen stools, at lunch</span></span></label>
+        </div>
+      </fieldset>
+      <fieldset class="fieldset">
+        <legend class="fieldset-legend">The date</legend>
+        <input name="date" type="date" class="input w-full" required>
+      </fieldset>
+      <fieldset class="fieldset">
+        <legend class="fieldset-legend">Guests</legend>
+        <input name="guests" type="number" class="input w-full" min="1" max="90" required>
+      </fieldset>
+      <fieldset class="fieldset">
+        <legend class="fieldset-legend">The occasion</legend>
+        <input name="occasion" type="text" class="input w-full" maxlength="200" placeholder="A christening, a retirement">
+      </fieldset>
+      <fieldset class="fieldset">
+        <legend class="fieldset-legend">The menu</legend>
+        <select name="menu" class="select w-full">
+          <option value="family style" selected>Family style</option>
+          <option value="fish fry">Fish fry for a crowd</option>
+          <option value="let's talk">Let&rsquo;s talk</option>
+        </select>
+      </fieldset>
+      <fieldset class="fieldset">
+        <legend class="fieldset-legend">Your name</legend>
+        <input name="name" type="text" class="input w-full" required maxlength="200" autocomplete="name">
+      </fieldset>
+      <fieldset class="fieldset">
+        <legend class="fieldset-legend">Your phone</legend>
+        <input name="phone" type="tel" class="input w-full" required maxlength="30" autocomplete="tel">
+      </fieldset>
+      <fieldset class="fieldset sm:col-span-2">
+        <legend class="fieldset-legend">Your email</legend>
+        <input name="email" type="email" class="input w-full" required maxlength="200" autocomplete="email">
+      </fieldset>
+      <fieldset class="fieldset sm:col-span-2">
+        <legend class="fieldset-legend">A note</legend>
+        <textarea name="message" class="textarea w-full" rows="4" maxlength="3000"></textarea>
+      </fieldset>
+      <div id="private-form-problems" class="sm:col-span-2"></div>
+      <div class="mt-2 sm:col-span-2"><button type="submit" class="btn btn-primary btn-lg">Ask about your date</button></div>
+    </form>
+  </div>
+</section>

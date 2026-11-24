@@ -1,0 +1,28 @@
+label: People
+fields:
+  - name: name
+    label: Name
+    kind: text
+    required: true
+  - name: role
+    label: Role
+    kind: text
+  - name: bio
+    label: Short bio
+    kind: text
+  - name: photo
+    label: Photo
+    kind: image
+  - name: email
+    label: E-mail
+    kind: email
+  - name: phone
+    label: Phone
+    kind: phone
+  - name: linkedin
+    label: LinkedIn page
+    kind: link
+  - name: instagram
+    label: Instagram page
+    kind: link
+order: [marisol-ortega, pete-kowalski, bernie-sobczak, andre-mitchell]

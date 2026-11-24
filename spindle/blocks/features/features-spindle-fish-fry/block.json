@@ -1,0 +1,22 @@
+{
+  "name": "Spindle fish fry",
+  "kind": "features",
+  "source": "upstart",
+  "description": "A weekly event's band on turquoise: a cut-out plate beside its name and hours, three plates with their prices, and a line on how guests sit.",
+  "tags": ["features", "weekly special", "fish fry", "restaurant", "event night"],
+  "mood": ["bold", "friendly", "colorful"],
+  "synonyms": [
+    "weekly special",
+    "fish fry",
+    "theme night",
+    "regular night",
+    "soirée de la semaine",
+    "soirée à thème",
+    "plat du vendredi",
+    "rendez-vous de la semaine"
+  ],
+  "data": {
+    "name": "fish-fry",
+    "family": "collection"
+  }
+}

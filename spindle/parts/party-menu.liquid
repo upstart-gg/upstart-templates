@@ -1,0 +1,21 @@
+<section class="bg-base-200 text-base-content">
+  <div class="mx-auto grid max-w-[90rem] gap-12 px-5 py-20 md:px-8 md:py-24 lg:grid-cols-12 lg:items-center lg:gap-10">
+    <div class="lg:col-span-7">
+      <p class="label-caps text-base-content/75">The party menu</p>
+      <h2 class="section-title mt-3">Family style, passed around</h2>
+      <ol class="mt-9 border-b border-base-content/25">
+        {%- for dish in data["private-tasting"] %}
+        <li class="border-t border-base-content/25 py-4">
+          <h3 class="font-body text-[1.125rem] font-bold">{{ dish.name }}</h3>
+          <p class="mt-1 text-[0.9375rem] italic">{{ dish.description }}</p>
+        </li>
+        {%- endfor %}
+      </ol>
+      <div class="mt-8 flex flex-wrap gap-x-12 gap-y-4">
+        <p><span class="font-heading text-[2rem] leading-none">$38</span> <span class="text-base-content/80">a guest, family style</span></p>
+        <p><span class="font-heading text-[2rem] leading-none">$30</span> <span class="text-base-content/80">a guest, fish fry for a crowd</span></p>
+      </div>
+    </div>
+    <div class="lg:col-span-5"><img src="/media/kolaczki.jpg" class="aspect-[4/3] w-full rounded-box object-cover lg:aspect-[4/5]" loading="lazy"></div>
+  </div>
+</section>

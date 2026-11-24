@@ -1,0 +1,18 @@
+{
+  "name": "Spindle name and dish hero",
+  "kind": "hero",
+  "source": "upstart",
+  "description": "The name across the width in a wood-type slab, cream on turquoise, a cut-out plate of food standing in front of its letters and over the field's edge, then a line, the two services' hours and two buttons under a heavy rule.",
+  "tags": ["hero", "giant type", "restaurant", "name", "cut-out dish", "diner"],
+  "mood": ["bold", "friendly", "warm"],
+  "synonyms": [
+    "hero",
+    "big name",
+    "giant restaurant name",
+    "cut-out plate",
+    "en-tête",
+    "grand nom",
+    "accroche restaurant",
+    "plat détouré"
+  ]
+}

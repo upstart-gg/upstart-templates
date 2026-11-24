@@ -1,0 +1,22 @@
+{
+  "name": "Spindle two menus",
+  "kind": "menu",
+  "source": "upstart",
+  "description": "Lunch and supper as two printed cards side by side, each with its hours and its dishes by course, dotted leaders to the prices in typewriter figures, descriptions in italic and diet marks.",
+  "tags": ["menu", "lunch menu", "dinner menu", "prices", "courses", "restaurant"],
+  "mood": ["warm", "friendly"],
+  "synonyms": [
+    "lunch and dinner menus",
+    "two menus",
+    "price list",
+    "menu card",
+    "carte du midi",
+    "carte du soir",
+    "menus",
+    "carte avec prix"
+  ],
+  "data": {
+    "name": "menu",
+    "family": "collection"
+  }
+}

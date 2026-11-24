@@ -1,0 +1,23 @@
+{%- comment -%} Questions by topic: pass items, in their topics' order, and title. {%- endcomment -%}
+<section class="bg-base-100 text-base-content">
+  <div class="mx-auto grid max-w-[90rem] gap-10 px-5 py-20 md:px-8 md:py-24 lg:grid-cols-12">
+    <div class="lg:col-span-4"><h2 class="section-title">{{ title }}</h2></div>
+    <div class="space-y-12 lg:col-span-8">
+      {%- assign topics = items | map: "topic" | uniq %}
+      {%- for topic in topics %}
+      <div>
+        <h3 class="small-title">{{ topic }}</h3>
+        <div class="mt-5">
+          {%- assign questions = items | where: "topic", topic %}
+          {%- for item in questions %}
+          <details class="question border-b border-base-300 {% if forloop.first %}border-t{% endif %}">
+            <summary class="flex items-start justify-between gap-6 py-5 text-[1.125rem] leading-snug font-bold">{{ item.question }}<span class="question-mark text-[1.5rem] leading-none font-normal" aria-hidden="true">+</span></summary>
+            <div class="body-copy answer max-w-[60ch] pb-6">{{ item.answer }}</div>
+          </details>
+          {%- endfor %}
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,41 @@
+label: Booth requests
+collected: true
+answer: bookings-thanks
+messages:
+  required: "{field} is required."
+  invalid: "{field} doesn’t look right. Please check it."
+  too_many: "Too many requests were sent from here. Please try again in a few minutes."
+  sent: "Thank you, we’ll text you by the afternoon to confirm."
+body: message
+fields:
+  - name: name
+    label: Your name
+    kind: text
+    required: true
+  - name: phone
+    label: Your phone
+    kind: phone
+    required: true
+  - name: email
+    label: Your email
+    kind: email
+  - name: date
+    label: Date
+    kind: date
+    required: true
+  - name: time
+    label: Time
+    kind: choice
+    required: true
+    choices: ["17:00", "17:30", "18:00", "18:30", "19:00", "19:30", "20:00", "20:30"]
+  - name: guests
+    label: Guests
+    kind: number
+    required: true
+  - name: seating
+    label: Where you’d like to sit
+    kind: choice
+    choices: [booth, counter, either]
+  - name: message
+    label: Anything we should know
+    kind: markdown

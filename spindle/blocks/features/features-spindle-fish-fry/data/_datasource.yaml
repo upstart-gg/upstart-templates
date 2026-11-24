@@ -1,0 +1,13 @@
+label: Fish fry
+fields:
+  - name: name
+    label: Plate
+    kind: text
+    required: true
+  - name: description
+    label: What comes with it
+    kind: text
+  - name: price
+    label: Price
+    kind: text
+order: [yellow-perch, cod, pierogi-and-potato-pancakes]

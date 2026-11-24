@@ -1,0 +1,27 @@
+label: Rooms
+fields:
+  - name: name
+    kind: text
+    required: true
+  - name: price
+    kind: text
+  - name: period
+    label: What the price is
+    kind: text
+  - name: description
+    kind: text
+  - name: features
+    kind: list
+  - name: cta
+    label: Button
+    kind: text
+  - name: href
+    label: Button link
+    kind: link
+  - name: featured
+    label: Highlighted
+    kind: boolean
+  - name: seats
+    label: Seats
+    kind: text
+order: [back-room, whole-place, counter-birthday]

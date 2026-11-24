@@ -1,0 +1,11 @@
+label: How seating works
+fields:
+  - name: title
+    kind: text
+    required: true
+  - name: text
+    kind: text
+  - name: icon
+    kind: choice
+    choices: [spark, bolt, shield, heart, clock, chat, leaf, star, chart, team, plug, sliders]
+order: [booths, counter, fridays, large-parties]

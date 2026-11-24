@@ -1,0 +1,25 @@
+{
+  "id": "spindle",
+  "version": "1.0.0",
+  "name": "Spindle",
+  "description": "A neighborhood restaurant read like its own counter: the name huge behind a cut-out plate, the day's specials typed on tickets that slide onto a steel rail, \"86\" when one is gone, and the week's lunch and supper as a staff time card.",
+  "category": "business",
+  "tags": [
+    "restaurant",
+    "diner",
+    "lunch counter",
+    "bistro",
+    "supper club",
+    "specials",
+    "menu",
+    "reservations",
+    "pickup",
+    "private hire"
+  ],
+  "author": {
+    "name": "Upstart",
+    "url": "https://upstart.gg"
+  },
+  "licence": "MIT",
+  "app": "0.2.0"
+}

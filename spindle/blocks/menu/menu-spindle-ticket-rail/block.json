@@ -1,0 +1,22 @@
+{
+  "name": "Spindle ticket rail",
+  "kind": "menu",
+  "source": "upstart",
+  "description": "The day's specials as typed paper tickets hanging from a steel rail on milk glass, sliding onto it one after another, each with its service and window, its dish, its price and, once it is gone, a paprika strip that says 86.",
+  "tags": ["menu", "specials", "tickets", "dishes of the day", "restaurant"],
+  "mood": ["friendly", "warm", "colorful"],
+  "synonyms": [
+    "today's specials",
+    "daily specials",
+    "specials board",
+    "kitchen tickets",
+    "plats du jour",
+    "suggestions du jour",
+    "ardoise",
+    "menu du jour"
+  ],
+  "data": {
+    "name": "specials",
+    "family": "collection"
+  }
+}

@@ -1,0 +1,37 @@
+<section class="bg-base-100 text-base-content">
+  <div class="mx-auto max-w-[90rem] px-5 py-20 md:px-8 md:py-24">
+    {%- assign courses = "starters,mains,sides,desserts,pastries,drinks" | split: "," %}
+    {%- assign services = "lunch,supper" | split: "," %}
+    <div class="grid items-start gap-8 lg:grid-cols-2" data-reveal="stagger">
+      {%- for service in services %}
+      <div id="{{ service }}" class="menu-card px-6 pt-8 pb-10 md:px-10 md:pt-10 md:pb-12">
+        <div class="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
+          <h2 class="section-title">{% if service == "lunch" %}Lunch{% else %}Supper{% endif %}</h2>
+          <p class="typed text-[0.9375rem]">{% if service == "lunch" %}Tue&ndash;Sun · 11&ndash;2:30 (Sun 10&ndash;2){% else %}Wed&ndash;Sat · 5&ndash;9:30 (Fri from 4:30){% endif %}</p>
+        </div>
+        {%- for course in courses %}
+        {%- assign all = data.menu | where: "course", course %}
+        {%- assign count = 0 %}
+        {%- for dish in all %}{% if dish.service == service or dish.service == "both" %}{% assign count = count | plus: 1 %}{% endif %}{% endfor %}
+        {%- if count > 0 %}
+        <h3 class="small-title mt-10">{% render 'course-name', course: course %}</h3>
+        <ul class="mt-5 space-y-5">
+          {%- for dish in all %}{% if dish.service == service or dish.service == "both" %}
+          <li>
+            <div class="flex items-end">
+              <h4 class="font-body text-[1.0625rem] leading-snug font-bold">{{ dish.name }}</h4>
+              <span class="leader" aria-hidden="true"></span>
+              <span class="typed text-[1rem] leading-snug whitespace-nowrap">{{ dish.price }}</span>
+            </div>
+            <p class="mt-1 max-w-[46ch] text-[0.9375rem] leading-relaxed"><span class="italic">{{ dish.description }}</span>{% for tag in dish.tags %} <span class="diet">{% case tag %}{% when "vegetarian" %}V{% when "vegan" %}VG{% when "gluten-free" %}GF{% else %}{{ tag }}{% endcase %}</span>{% endfor %}</p>
+          </li>
+          {% endif %}{%- endfor %}
+        </ul>
+        {%- endif %}
+        {%- endfor %}
+      </div>
+      {%- endfor %}
+    </div>
+    <p class="mt-8 text-[0.9375rem] text-base-content/80"><span class="diet">V</span> vegetarian · <span class="diet">VG</span> vegan · <span class="diet">GF</span> gluten-free</p>
+  </div>
+</section>

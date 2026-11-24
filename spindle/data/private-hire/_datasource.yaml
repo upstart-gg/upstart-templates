@@ -1,0 +1,45 @@
+label: Private hire requests
+collected: true
+answer: private-hire-thanks
+messages:
+  required: "{field} is required."
+  invalid: "{field} doesn’t look right. Please check it."
+  too_many: "Too many requests were sent from here. Please try again in a few minutes."
+  sent: "Thank you, Pete will call you within two days."
+body: message
+fields:
+  - name: name
+    label: Your name
+    kind: text
+    required: true
+  - name: email
+    label: Your email
+    kind: email
+    required: true
+  - name: phone
+    label: Your phone
+    kind: phone
+    required: true
+  - name: room
+    label: What you’d like to hire
+    kind: choice
+    required: true
+    choices: [back room, whole place, counter]
+  - name: date
+    label: The date
+    kind: date
+    required: true
+  - name: guests
+    label: Guests
+    kind: number
+    required: true
+  - name: occasion
+    label: The occasion
+    kind: text
+  - name: menu
+    label: The menu
+    kind: choice
+    choices: [family style, fish fry, "let's talk"]
+  - name: message
+    label: A note
+    kind: markdown

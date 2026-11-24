@@ -1,0 +1,5 @@
+{%- assign first = record.name | split: " " | first -%}
+<div class="border-t-2 border-base-content pt-6 lg:col-span-8" role="status">
+  <p class="small-title">Thank you, {{ first }}.</p>
+  <p class="mt-4 max-w-[46ch] text-[1.125rem] leading-relaxed">Pete will call you within two days about {{ record.date | date: "%A, %B %-d" }} for {{ record.guests }}. Nothing is held until the deposit is in.</p>
+</div>

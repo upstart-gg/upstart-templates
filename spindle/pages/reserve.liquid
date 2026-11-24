@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Reserve a booth — Halina’s, Milwaukee</title>
+<meta name="description" content="Ask for a booth at Halina’s for supper on Wednesday, Thursday or Saturday, for up to six. The counter and lunch are always walk-in, and Friday is fish fry.">
+<meta property="og:title" content="Reserve a booth — Halina’s, Milwaukee">
+<meta property="og:description" content="Ask for a booth at Halina’s for supper on Wednesday, Thursday or Saturday, for up to six. The counter and lunch are always walk-in, and Friday is fish fry.">
+</head>
+<body>
+{% render 'header', page: page %}
+<main>
+{% render 'page-title', title: "Reserve a booth", intro: "Eight booths take requests for supper on Wednesday, Thursday and Saturday, for up to six. The counter is always walk-in, and so is lunch. On Fridays, just come.", image: "/media/booth.jpg" %}
+{% render 'seating' %}
+{% render 'booth-form' %}
+{% render 'faq', items: data["reserve-faq"], title: "About the booths", columns: true %}
+</main>
+{% render 'footer' %}
+</body>
+</html>

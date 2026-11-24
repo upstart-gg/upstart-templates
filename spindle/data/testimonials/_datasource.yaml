@@ -1,0 +1,32 @@
+label: Regulars
+fields:
+  - name: name
+    label: First name
+    kind: text
+    required: true
+  - name: role
+    label: Role
+    kind: text
+  - name: quote
+    label: Quote
+    kind: text
+    required: true
+  - name: headline
+    label: Headline
+    kind: text
+  - name: rating
+    label: Rating (1 to 5)
+    kind: number
+  - name: photo
+    label: Photo
+    kind: image
+  - name: date
+    label: Date
+    kind: date
+  - name: stool
+    label: Stool
+    kind: number
+  - name: usual
+    label: Their usual
+    kind: text
+order: [walt, dolores, hector]

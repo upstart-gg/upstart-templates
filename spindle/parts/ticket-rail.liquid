@@ -1,0 +1,17 @@
+{%- comment -%} Today's specials as tickets on the rail: pass items (data.specials). {%- endcomment -%}
+<ul data-rail>
+  {%- for special in items %}
+  <li>
+    <div data-ticket {% if special.gone %}data-gone{% endif %}>
+      <p class="ticket-special">Special</p>
+      <p class="ticket-service ticket-fades">{{ special.service }}<br>{{ special.window }}</p>
+      <div class="ticket-rule" aria-hidden="true"></div>
+      <h3 class="ticket-dish typed">{{ special.dish }}</h3>
+      <p class="ticket-fades mt-2">{{ special.line }}</p>
+      <p class="ticket-fades mt-3 text-[1.125rem]">{{ special.price }}</p>
+      {% if special.note != blank %}<p class="ticket-fades mt-2">{{ special.note }}</p>{% endif %}
+      <p data-86>86 · All gone</p>
+    </div>
+  </li>
+  {%- endfor %}
+</ul>

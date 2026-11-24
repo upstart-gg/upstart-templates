@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Order pickup — Halina’s, Milwaukee</title>
+<meta name="description" content="Send your pickup order to Halina’s by 10:30 for lunch or 4 for supper. We text you the total and a time, and you pay at the side door on Tamarack Court.">
+<meta property="og:title" content="Order pickup — Halina’s, Milwaukee">
+<meta property="og:description" content="Send your pickup order to Halina’s by 10:30 for lunch or 4 for supper. We text you the total and a time, and you pay at the side door on Tamarack Court.">
+</head>
+<body>
+{% render 'header', page: page %}
+<main>
+{% render 'page-title', title: "Order pickup", intro: "Call it in or send it here. We’ll text you the total and when it’ll be on the shelf by the side door, and you pay when you pick it up." %}
+{% render 'steps', items: data["pickup-steps"], title: "How it works" %}
+{% render 'pickup-form' %}
+{% render 'faq', items: data["pickup-faq"], title: "About pickup" %}
+</main>
+{% render 'footer' %}
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Visit — Halina’s, Milwaukee</title>
+<meta name="description" content="Halina’s hours, lunch and supper day by day, and how to find us at 14 Tamarack Court and Lincoln Avenue, Milwaukee: the bus, parking, bikes and access.">
+<meta property="og:title" content="Visit — Halina’s, Milwaukee">
+<meta property="og:description" content="Halina’s hours, lunch and supper day by day, and how to find us at 14 Tamarack Court and Lincoln Avenue, Milwaukee: the bus, parking, bikes and access.">
+</head>
+<body>
+{% render 'header', page: page %}
+<main>
+{% render 'hours-large' %}
+{% render 'finding-us' %}
+{% render 'gift-cards' %}
+{% render 'faq-topics', items: data["visit-faq"], title: "Before you come" %}
+</main>
+{% render 'footer' %}
+</body>
+</html>

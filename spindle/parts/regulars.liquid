@@ -1,0 +1,25 @@
+<section class="bg-base-100 text-base-content">
+  <div class="mx-auto max-w-[90rem] px-5 py-20 md:px-8 md:py-28">
+    <div class="grid gap-12 lg:grid-cols-12 lg:items-center lg:gap-10">
+      <div class="lg:col-span-8">
+        <p class="label-caps text-base-content/75">At the counter</p>
+        <h2 class="section-title mt-3">The regulars</h2>
+        {%- for regular in data.testimonials limit: 1 %}
+        <figure class="mt-9" data-reveal>
+          <blockquote class="font-heading text-[clamp(1.625rem,2.2vw+0.75rem,2.75rem)] leading-[1.12] text-balance">&ldquo;{{ regular.quote }}&rdquo;</blockquote>
+          <figcaption class="typed mt-6 text-[0.9375rem] leading-relaxed">Stool {{ regular.stool }} · {{ regular.name }} · {{ regular.usual }}</figcaption>
+        </figure>
+        {%- endfor %}
+      </div>
+      <div class="lg:col-span-4"><img src="/media/coffee.jpg" class="aspect-[4/3] w-full rounded-box object-cover lg:aspect-[4/5]" loading="lazy"></div>
+    </div>
+    <div class="mt-14 grid gap-x-10 gap-y-10 md:grid-cols-2" data-reveal="stagger">
+      {%- for regular in data.testimonials offset: 1 %}
+      <figure class="border-t-2 border-base-content pt-6">
+        <blockquote class="text-[1.1875rem] leading-relaxed">&ldquo;{{ regular.quote }}&rdquo;</blockquote>
+        <figcaption class="typed mt-5 text-[0.9375rem] leading-relaxed">Stool {{ regular.stool }} · {{ regular.name }} · {{ regular.usual }}</figcaption>
+      </figure>
+      {%- endfor %}
+    </div>
+  </div>
+</section>

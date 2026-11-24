@@ -1,0 +1,59 @@
+label: Menu
+fields:
+  - name: name
+    label: Name
+    kind: text
+    required: true
+  - name: description
+    label: Description
+    kind: text
+  - name: price
+    label: Price
+    kind: text
+  - name: course
+    label: Course
+    kind: choice
+    required: true
+    choices: [starters, mains, sides, desserts, pastries, drinks]
+  - name: tags
+    label: Tags
+    kind: list
+    choices: [vegetarian, vegan, gluten-free, spicy]
+  - name: image
+    label: Image
+    kind: image
+  - name: service
+    label: Service
+    kind: choice
+    required: true
+    choices: [lunch, supper, both]
+  - name: featured
+    label: Order these first
+    kind: boolean
+order:
+  [
+    the-soup,
+    potato-pancakes,
+    cucumber-salad,
+    smoked-trout-toast,
+    pierogi-plate,
+    the-lincoln,
+    torta-de-milanesa,
+    kielbasa-on-rye,
+    grilled-cheese,
+    chicken-paprikash,
+    pork-shank,
+    half-chicken-mole,
+    trout-brown-butter,
+    stuffed-cabbage,
+    coleslaw,
+    red-cabbage,
+    home-fries,
+    rye-and-butter,
+    kolaczki,
+    rhubarb-kuchen,
+    old-fashioned,
+    lager,
+    horchata,
+    coffee,
+  ]

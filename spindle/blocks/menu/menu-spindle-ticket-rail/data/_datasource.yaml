@@ -1,0 +1,27 @@
+label: Specials
+fields:
+  - name: dish
+    label: Dish
+    kind: text
+    required: true
+  - name: line
+    label: What is in it
+    kind: text
+  - name: price
+    label: Price
+    kind: text
+  - name: service
+    label: Service
+    kind: choice
+    required: true
+    choices: [lunch, supper, all day]
+  - name: window
+    label: Service window
+    kind: text
+  - name: note
+    label: Note
+    kind: text
+  - name: gone
+    label: 86 (all gone)
+    kind: boolean
+order: [dill-pickle-soup, pierogi-of-the-day, torta-ahogada, chicken-paprikash, pork-chop, rhubarb-kuchen]

@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Private hire — Halina’s, Milwaukee</title>
+<meta name="description" content="Hire the back room at Halina’s for thirty, Tuesday to Saturday evenings, the counter for a birthday lunch, or the whole restaurant on a Monday for sixty.">
+<meta property="og:title" content="Private hire — Halina’s, Milwaukee">
+<meta property="og:description" content="Hire the back room at Halina’s for thirty, Tuesday to Saturday evenings, the counter for a birthday lunch, or the whole restaurant on a Monday for sixty.">
+</head>
+<body>
+{% render 'header', page: page %}
+<main>
+{% render 'page-title', title: "Private hire", intro: "The back room for thirty, Tuesday to Saturday evenings, or all of Halina’s on a Monday, when we’re otherwise closed.", image: "/media/old-fashioned.jpg" %}
+{% render 'rooms' %}
+{% render 'party-menu' %}
+<div class="bg-base-100 pt-20 md:pt-24">{% render 'steps', items: data["private-steps"], title: "How it goes" %}</div>
+<div class="border-t border-base-300">{% render 'private-form' %}</div>
+<div class="border-t border-base-300">{% render 'faq', items: data["private-faq"], title: "About parties" %}</div>
+</main>
+{% render 'footer' %}
+</body>
+</html>

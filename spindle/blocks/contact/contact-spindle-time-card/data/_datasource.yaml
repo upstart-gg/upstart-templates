@@ -1,0 +1,19 @@
+label: Opening hours
+fields:
+  - name: day
+    label: Day
+    kind: text
+    required: true
+  - name: hours
+    label: Hours, as one line
+    kind: text
+  - name: note
+    label: Note
+    kind: text
+  - name: lunch
+    label: Lunch (empty when closed)
+    kind: text
+  - name: supper
+    label: Supper (empty when closed)
+    kind: text
+order: [monday, tuesday, wednesday, thursday, friday, saturday, sunday]

@@ -1,0 +1,22 @@
+{
+  "name": "Spindle time card",
+  "kind": "contact",
+  "source": "upstart",
+  "description": "The week as a staff time card ruled in turquoise: a row a day, a lunch shift and a supper shift with their times typed, Closed in paprika where a service does not run.",
+  "tags": ["contact", "hours", "opening hours", "lunch and supper", "restaurant"],
+  "mood": ["friendly", "warm"],
+  "synonyms": [
+    "opening hours",
+    "hours table",
+    "lunch and dinner hours",
+    "week schedule",
+    "horaires",
+    "heures d'ouverture",
+    "horaires du midi et du soir",
+    "semaine"
+  ],
+  "data": {
+    "name": "hours",
+    "family": "collection"
+  }
+}

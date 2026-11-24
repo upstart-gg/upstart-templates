@@ -1,0 +1,21 @@
+:root {
+  --theme-color-primary: oklch(0.615 0.105 190);
+  --theme-color-primary-content: oklch(0.225 0.035 210);
+  --theme-color-secondary: oklch(0.88 0.06 190);
+  --theme-color-secondary-content: oklch(0.225 0.035 210);
+  --theme-color-accent: oklch(0.545 0.165 40);
+  --theme-color-accent-content: oklch(0.96 0.032 92);
+  --theme-color-neutral: oklch(0.31 0.05 205);
+  --theme-color-neutral-content: oklch(0.96 0.032 92);
+  --theme-color-surface: oklch(0.96 0.032 92);
+  --theme-color-surface-alt: oklch(0.915 0.04 88);
+  --theme-color-border: oklch(0.83 0.04 190);
+  --theme-color-text: oklch(0.225 0.035 210);
+  --theme-font-heading: "Alfa Slab One", Rockwell, "Roboto Slab", ui-serif, serif;
+  --theme-font-body: Karla, "Gill Sans", ui-sans-serif, system-ui, sans-serif;
+  --theme-radius: 0.5rem;
+  --theme-radius-field: 0.5rem;
+  --theme-depth: 0;
+  --theme-size: 0.28125rem;
+  --theme-border: 1px;
+}

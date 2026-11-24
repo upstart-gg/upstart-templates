@@ -1,0 +1,9 @@
+label: Questions about parties
+body: answer
+fields:
+  - name: question
+    kind: text
+    required: true
+  - name: answer
+    kind: markdown
+order: [room-fee, decorate, sound, monday-fish-fry, deposit]

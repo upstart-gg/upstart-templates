@@ -1,0 +1,53 @@
+<section id="order" class="bg-base-200 text-base-content">
+  <div class="mx-auto grid max-w-[90rem] gap-12 px-5 py-20 md:px-8 md:py-24 lg:grid-cols-12 lg:gap-10">
+    <div class="lg:order-2 lg:col-span-4 lg:col-start-9">
+      <div class="space-y-6 border-t-2 border-base-content pt-6 lg:sticky lg:top-28">
+        <p class="text-[1.125rem] leading-relaxed"><strong class="font-bold">Rather call?</strong><br><a href="tel:+14145550163" class="link-ink whitespace-nowrap">(414) 555-0163</a></p>
+        <p class="leading-relaxed"><strong class="font-bold">Friday fish fry to go:</strong> by phone only, from 3&nbsp;pm.</p>
+        <p class="leading-relaxed">The shelf is just inside the side door on Tamarack Court.</p>
+      </div>
+    </div>
+    <div class="lg:order-1 lg:col-span-7">
+      <h2 class="section-title">Your order</h2>
+      <form hx-post="/_data/pickup-orders" hx-target="this" hx-swap="outerHTML" hx-status:422="target:#pickup-form-problems swap:innerHTML" class="mt-8 grid grid-cols-1 gap-x-5 gap-y-3 sm:grid-cols-2">
+        <fieldset class="fieldset">
+          <legend class="fieldset-legend">Lunch or supper</legend>
+          <select name="service" class="select w-full" required>
+            <option value="lunch" selected>Lunch (send by 10:30 am)</option>
+            <option value="supper">Supper (send by 4 pm)</option>
+          </select>
+        </fieldset>
+        <fieldset class="fieldset">
+          <legend class="fieldset-legend">When you&rsquo;d like it</legend>
+          <input name="time" type="text" class="input w-full" required maxlength="60" placeholder="Today, 12:15">
+        </fieldset>
+        <fieldset class="fieldset sm:col-span-2">
+          <legend class="fieldset-legend">What you&rsquo;d like</legend>
+          <textarea name="order" class="textarea w-full" rows="5" required maxlength="3000" placeholder="Two Lincolns, one no onions; a bowl of the soup"></textarea>
+        </fieldset>
+        <fieldset class="fieldset">
+          <legend class="fieldset-legend">Your name</legend>
+          <input name="name" type="text" class="input w-full" required maxlength="200" autocomplete="name">
+        </fieldset>
+        <fieldset class="fieldset">
+          <legend class="fieldset-legend">Your phone</legend>
+          <input name="phone" type="tel" class="input w-full" required maxlength="30" autocomplete="tel">
+          <p class="hint">We text you the total</p>
+        </fieldset>
+        <fieldset class="fieldset">
+          <legend class="fieldset-legend">Your email</legend>
+          <input name="email" type="email" class="input w-full" maxlength="200" autocomplete="email">
+        </fieldset>
+        <fieldset class="fieldset">
+          <legend class="fieldset-legend">A note</legend>
+          <input name="note" type="text" class="input w-full" maxlength="500" placeholder="Allergies, extra napkins">
+        </fieldset>
+        <div id="pickup-form-problems" class="sm:col-span-2"></div>
+        <div class="mt-2 sm:col-span-2">
+          <button type="submit" class="btn btn-primary btn-lg">Send the order</button>
+          <p class="hint mt-4">Nothing is cooked until we&rsquo;ve texted you back. You pay at the side door, by card or cash.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

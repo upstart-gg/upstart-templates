@@ -1,0 +1,9 @@
+label: Questions about pickup
+body: answer
+fields:
+  - name: question
+    kind: text
+    required: true
+  - name: answer
+    kind: markdown
+order: [early, specials, deliver, pay-ahead, side-door]

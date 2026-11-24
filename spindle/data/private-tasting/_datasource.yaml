@@ -1,0 +1,14 @@
+label: Party menu
+fields:
+  - name: name
+    label: Name
+    kind: text
+    required: true
+  - name: description
+    label: Description
+    kind: text
+  - name: tags
+    label: Tags
+    kind: list
+    choices: [vegetarian, vegan, gluten-free, spicy]
+order: [pierogi-platters, lincoln-sliders, chicken-paprikash, stuffed-cabbage, kuchen]

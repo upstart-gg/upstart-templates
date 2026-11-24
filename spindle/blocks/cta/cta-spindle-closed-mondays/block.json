@@ -1,0 +1,18 @@
+{
+  "name": "Spindle closed Mondays",
+  "kind": "cta",
+  "source": "upstart",
+  "description": "The private hire band on deep teal: a large line, a sentence on the rooms and a button, beside a photo of a laid table.",
+  "tags": ["cta", "private hire", "party", "event room", "restaurant"],
+  "mood": ["warm", "dark"],
+  "synonyms": [
+    "call to action",
+    "private hire",
+    "book a party",
+    "private dining",
+    "appel à l'action",
+    "privatisation",
+    "réserver une fête",
+    "salle privée"
+  ]
+}

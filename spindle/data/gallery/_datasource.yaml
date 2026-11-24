@@ -1,0 +1,19 @@
+label: The counter’s year
+fields:
+  - name: title
+    label: Title
+    kind: text
+    required: true
+  - name: image
+    label: Picture
+    kind: image
+  - name: caption
+    label: Caption
+    kind: text
+  - name: category
+    label: Category
+    kind: text
+  - name: before
+    label: Before picture, for a before and after
+    kind: image
+order: [counter, pass, pierogi, friday, back-room, snow]

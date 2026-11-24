@@ -1,0 +1,30 @@
+<section id="rail" class="bg-secondary text-secondary-content">
+  <div class="mx-auto max-w-[90rem] px-5 py-20 md:px-8 md:py-28">
+    <div class="flex flex-wrap items-end justify-between gap-x-10 gap-y-4">
+      <div>
+        <p class="label-caps">Written up at ten</p>
+        <h2 class="section-title mt-3">On the rail today</h2>
+      </div>
+      <p class="max-w-[38ch] leading-relaxed">Lunch tickets come down at 2:30. When one says 86, it&rsquo;s gone.</p>
+    </div>
+    <div class="mt-12 md:mt-16">
+<ul data-rail>
+  {%- for special in data.specials %}
+  <li>
+    <div data-ticket {% if special.gone %}data-gone{% endif %}>
+      <p class="ticket-special">Special</p>
+      <p class="ticket-service ticket-fades">{{ special.service }}<br>{{ special.window }}</p>
+      <div class="ticket-rule" aria-hidden="true"></div>
+      <h3 class="ticket-dish typed">{{ special.dish }}</h3>
+      <p class="ticket-fades mt-2">{{ special.line }}</p>
+      <p class="ticket-fades mt-3 text-[1.125rem]">{{ special.price }}</p>
+      {% if special.note != blank %}<p class="ticket-fades mt-2">{{ special.note }}</p>{% endif %}
+      <p data-86>86 · All gone</p>
+    </div>
+  </li>
+  {%- endfor %}
+</ul>
+    </div>
+    <p class="mt-14"><a href="/menu" class="btn btn-line btn-lg whitespace-nowrap">The whole menu</a></p>
+  </div>
+</section>

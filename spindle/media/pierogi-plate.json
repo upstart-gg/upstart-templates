@@ -1,0 +1,9 @@
+{
+  "alt": "A heaped plate of pierogi with browned onions, sour cream and dill",
+  "generated": {
+    "model": "gemini/gemini-nano-banana-2.1",
+    "prompt": "Studio food photograph of one heaped diner plate of pierogi, seen from a low three-quarter angle, the camera about 20 degrees above the table, so the plate is a wide flat ellipse about three times as wide as it is tall, and the loose heap of food rises well above the plate's far rim. A generous natural, untidy heap of plump pan-fried half-moon pierogi with golden edges, tumbled over one another, not stacked like pancakes, topped with a big tangle of deeply browned onions, a spoonful of sour cream to one side, and torn dill. The plate is a heavy white diner plate with one plain solid turquoise band at its rim; the underside of the plate is neutral white and pale gray with no pink tint at all. Soft daylight from the left. The dish alone, whole, centered, nothing cropped, with empty space all around. The ground is a perfectly flat, even, pure magenta chroma-key background (#FF00FF) filling the entire frame, with no shadow under the plate, no table, no horizon, no gradient and no reflection of magenta on the plate. No hands, no people, no cutlery, no logo, no lettering, no tablecloth, no gingham, no steam.",
+    "date": "2026-11-24T12:39:22.832Z",
+    "edited": "The magenta ground keyed out with sharp: a color-distance mask, a one-pixel feather, the magenta's spill taken out, then trimmed."
+  }
+}
