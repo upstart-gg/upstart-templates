@@ -17,10 +17,14 @@
       </fieldset>
       <fieldset class="fieldset">
         <legend class="fieldset-legend">The size</legend>
-        <select name="size" class="select w-full" aria-label="The size">
+        <select name="size" class="select w-full" data-sizes-of="instrument" aria-label="The size">
           <option value="Not sure: measure me">Not sure: measure me</option>
-          {%- for size in data.violin-sizes %}
-          <option value="{{ size.size }}">{{ size.size }}</option>
+          {%- for rental in data.rentals %}
+          <optgroup label="{{ rental.name }}" data-for="{{ rental.id }}">
+            {%- for size in rental.size_options %}
+            <option value="{{ size }}">{{ size }}</option>
+            {%- endfor %}
+          </optgroup>
           {%- endfor %}
         </select>
       </fieldset>

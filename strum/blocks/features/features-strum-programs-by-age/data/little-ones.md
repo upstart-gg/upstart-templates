@@ -5,7 +5,7 @@ ages_short: "4–6"
 summary: "Clapping, singing and dancing in groups of eight, then a first instrument from five."
 holds: ["Group class", "First strings", "Private lessons from 5"]
 from_price: "From $195 a term"
-cover: "/media/little-ones.jpg"
+cover: "/media/room-12.webp"
 instruments: ["Violin, 1/16 and 1/8", "Piano", "Ukulele", "Voice"]
 lesson_note: "At five, thirty minutes a week is plenty, with a grown-up in the room who will practice along at home."
 ---

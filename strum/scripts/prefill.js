@@ -23,6 +23,7 @@ export function start(root) {
       undo.push(() => {
         select.selectedIndex = before;
       });
+      select.dispatchEvent(new Event("change", { bubbles: true }));
     }
   }
 }

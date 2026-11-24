@@ -1,7 +1,6 @@
 ---
 name: "Jonah Kessler"
 pronouns: "he/him"
-role: "Teacher"
 instruments: "Drums & the bands"
 ages: "Ages 7 and up"
 programs: ["kids", "teens", "grown-ups"]

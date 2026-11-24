@@ -3,7 +3,7 @@
   {% render 'portrait', member: member, class: 'w-full' %}
   <div class="min-w-0">
     <h3 class="plain-heading text-[1.375rem] leading-snug font-semibold">{{ member.name }}</h3>
-    {%- if full and member.pronouns %}<p class="text-[0.9375rem]">{{ member.pronouns }}</p>{% endif %}
+    {%- if full %}<p class="text-[0.9375rem] empty:hidden">{{ member.pronouns }}{% if member.pronouns and member.role %} · {% endif %}{{ member.role }}</p>{% endif %}
     <p class="mt-1 font-medium text-accent">{{ member.instruments }}</p>
     <p class="mt-1 text-[0.9375rem]">{{ member.ages }}</p>
   </div>

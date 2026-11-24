@@ -1,7 +1,6 @@
 ---
 name: "Walt Ferris"
 pronouns: "he/him"
-role: "Teacher"
 instruments: "Trumpet & saxophone"
 ages: "Ages 9 and up"
 programs: ["kids", "teens", "grown-ups"]

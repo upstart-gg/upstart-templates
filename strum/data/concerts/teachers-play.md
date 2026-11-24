@@ -9,6 +9,6 @@ cover: "/media/violin-hand.jpg"
 performers: "All fourteen teachers"
 running_order: ["String quartet · Nadia and friends", "Two boleros · Celia and Ray", "Trio · Jonah, Walt and Linh", "Conjunto set · Marisol and her band", "La Bamba · Everyone left standing"]
 ---
-Once a year the teachers play for the students instead of the other way round. Tickets are sold at the door, cash or card, and students come in free.
+Once a year the teachers play for the students instead of the other way around. Tickets are sold at the door, cash or card, and students come in free.
 
-Last year's concert paid for a term of lessons for nine people.
+Last year's concert paid for three little ones' term of music and movement.

@@ -6,5 +6,5 @@ description: "From about ten, and most grown-ups"
 features: ["$637 for the fall term's 13 weeks", "or four payments of $159.25"]
 cta: "Book a free first lesson"
 href: "/start#trial"
-featured: false
+programs: ["kids", "teens", "grown-ups"]
 ---

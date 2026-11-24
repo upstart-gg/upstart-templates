@@ -4,9 +4,10 @@
       {% for program in data.programs %}
       {% assign held = data.classes | where: "program", program.id %}
       <li>
-        {% render 'string', gauge: forloop.index %}
+        {% assign gauge = forloop.index | at_most: 4 %}
+        {% render 'string', gauge: gauge %}
         {% render 'program-row', program: program, classes: held %}
-        {% if forloop.last %}{% render 'string', gauge: forloop.index %}{% endif %}
+        {% if forloop.last %}{% render 'string', gauge: gauge %}{% endif %}
       </li>
       {% endfor %}
     </ul>

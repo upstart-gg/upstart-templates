@@ -11,6 +11,6 @@ lesson_note: "At seven, thirty minutes a week is plenty; most move to forty-five
 ---
 Between seven and twelve, most of the work happens at home, ten minutes at a time. So the lesson ends with the week written down in plain words: what to play, how slowly, and what it should sound like when it's done.
 
-The clubs are for the other half of it. Guitar club plays three chords together until they sound like one guitar. The Piano lab is six keyboards with headphones and one teacher walking round. The junior string orchestra takes anyone who can play a scale and wants company.
+The clubs are for the other half of it. Guitar club plays three chords together until they sound like one guitar. The Piano lab is six keyboards with headphones and one teacher walking around. The junior string orchestra takes anyone who can play a scale and wants company.
 
 Twice a year there's a recital in the Carport, and nobody has to play in it. Most ask to.

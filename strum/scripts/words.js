@@ -1,7 +1,8 @@
 // The hero's words (data-split="words" on its headline): Splitting cuts the headline into
 // words, and each lands like a downbeat: up 28 px and turned −3° to its place, 0.6 s with a
 // small overshoot, 70 ms apart, from 0.15 s after the page opens. Whole words, once. start
-// saves the headline's markup and stop puts it back. With no script, under reduced motion
+// saves the headline's markup and stop puts it back; force makes Splitting, which keeps
+// what it cut, cut the headline again. With no script, under reduced motion
 // and in edit mode the headline is whole and still.
 const reduced = () => matchMedia("(prefers-reduced-motion: reduce)").matches;
 const within = (root, selector) =>
@@ -16,7 +17,7 @@ export function start(root) {
   if (reduced()) return;
   for (const heading of within(root, '[data-split="words"]')) {
     const markup = heading.innerHTML;
-    Splitting({ target: heading, by: "words" });
+    Splitting({ target: heading, by: "words", force: true });
     const words = [...heading.querySelectorAll(".word")];
     for (const word of words) word.style.opacity = "0";
     const playing = words.map((word, i) =>

@@ -13,4 +13,4 @@ About a third of our students are grown-ups, and half of them had never touched 
 
 You learn faster than you think and practice less than you mean to. We plan for both: songs you chose, a page a week, and a group on a fixed evening so that somebody expects you.
 
-The grown-ups' recital is in January, for friends only, with a pot of posole after. You can play one verse, or turn pages for someone else.
+The grown-ups' recital is in January, in a friendly room, with a pot of posole after. You can play one verse, or turn pages for someone else.

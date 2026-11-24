@@ -12,6 +12,6 @@ sign_up_by: 2027-11-19
 photos:
   - /media/electric-guitar.jpg
   - /media/spotlight.jpg
-  - /media/snare.jpg
+  - /media/drummer.jpg
 ---
 The bands wrote their own set lists and their own names. Jonah mixes, the parents' association sells posole in the courtyard, and it's over by nine.

@@ -1,7 +1,6 @@
 ---
 name: "Linh Nguyễn"
 pronouns: "she/her"
-role: "Teacher"
 instruments: "Piano"
 ages: "Ages 5 and up"
 programs: ["little-ones", "kids", "teens", "grown-ups"]

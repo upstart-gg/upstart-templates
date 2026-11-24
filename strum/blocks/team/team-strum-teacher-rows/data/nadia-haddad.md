@@ -1,7 +1,6 @@
 ---
 name: "Nadia Haddad"
 pronouns: "she/her"
-role: "Teacher"
 instruments: "Cello & the junior string orchestra"
 ages: "Ages 7 and up"
 programs: ["kids", "teens", "grown-ups"]

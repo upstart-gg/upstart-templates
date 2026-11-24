@@ -10,6 +10,9 @@ fields:
   - name: sizes
     label: Sizes
     kind: text
+  - name: size_options
+    label: Sizes to choose from
+    kind: list
   - name: monthly
     label: Price a month, in dollars
     kind: number

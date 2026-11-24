@@ -22,7 +22,8 @@ fields:
   - name: href
     label: Button link
     kind: link
-  - name: featured
-    label: Highlighted
-    kind: boolean
+  - name: programs
+    label: Programs it suits
+    kind: list
+    choices: [little-ones, kids, teens, grown-ups]
 order: [thirty-minutes, forty-five-minutes, sixty-minutes]

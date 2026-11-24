@@ -367,6 +367,24 @@ html.lenis body {
   }
 }
 
+/* Upstart's "Image credits" link, lined up with the footer's container. */
+footer [data-up-credits] {
+  padding-inline: calc(max(0px, (100% - 80rem) / 2) + 1.25rem);
+  padding-bottom: 1.5rem;
+  font-size: 0.9375rem;
+  opacity: 0.75;
+}
+@media (width >= 48rem) {
+  footer [data-up-credits] {
+    padding-inline: calc(max(0px, (100% - 80rem) / 2) + 2rem);
+  }
+}
+
+/* On Upstart's credits page, a long author's name wraps rather than widen a phone's screen. */
+.link {
+  overflow-wrap: anywhere;
+}
+
 /* Outside the layers: Upstart gives every heading the theme's heading font there. */
 :is(h1, h2, h3, h4).plain-heading {
   font-family: var(--theme-font-body);

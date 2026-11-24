@@ -1,7 +1,6 @@
 ---
 name: "Celia Baca"
 pronouns: "she/her"
-role: "Teacher"
 instruments: "Voice & songwriting"
 ages: "Ages 8 and up"
 programs: ["kids", "teens", "grown-ups"]
