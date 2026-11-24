@@ -5,7 +5,7 @@ ages_short: "7–12"
 summary: "A private lesson a week, and a club on another evening that makes it stick."
 holds: ["Private lessons", "Guitar club", "Piano lab", "String orchestra"]
 from_price: "From $34 a lesson"
-cover: "/media/violin-group.jpg"
+cover: "/media/piano-hands.jpg"
 instruments: ["Violin", "Cello", "Guitar", "Piano", "Ukulele", "Drums", "Trumpet", "Voice"]
 lesson_note: "At seven, thirty minutes a week is plenty; most move to forty-five by ten."
 ---

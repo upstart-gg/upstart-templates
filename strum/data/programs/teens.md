@@ -5,7 +5,7 @@ ages_short: "13–18"
 summary: "Bands in the Carport, the mariachi, songs of their own, and audition pieces when it counts."
 holds: ["Bands", "Mariachi Ristra juniors", "Songwriting", "Audition preparation"]
 from_price: "From $34 a lesson"
-cover: "/media/mariachi-students.jpg"
+cover: "/media/bass-scroll.jpg"
 instruments: ["Electric guitar", "Bass", "Drums", "Voice", "Violin", "Cello", "Trumpet", "Alto saxophone"]
 lesson_note: "Forty-five minutes suits most; an hour in the months before an audition."
 ---
