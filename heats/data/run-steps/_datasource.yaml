@@ -1,0 +1,10 @@
+label: First answer
+fields:
+  - name: title
+    kind: text
+    required: true
+  - name: text
+    kind: text
+  - name: command
+    kind: text
+order: [install, pull, ask, serve]

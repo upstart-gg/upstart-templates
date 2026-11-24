@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>{{ record.name }} — Dunlin</title>
+<meta name="description" content="{{ record.line }}">
+<meta property="og:title" content="{{ record.name }} — Dunlin">
+<meta property="og:description" content="{{ record.line }}">
+</head>
+<body>
+{% render 'header' %}
+<main>
+{% assign number = 0 %}
+{% for model in data.models %}{% if model.id == record.id %}{% assign number = forloop.index %}{% endif %}{% endfor %}
+<section class="text-base-content">
+  <div class="mx-auto max-w-[84rem] px-5 pt-8 pb-16 md:px-8 md:pb-24">
+    <div class="spec flex flex-wrap justify-between gap-x-6 gap-y-1 border-b border-base-content/50 pb-3"><p><a href="/models" class="hover:text-primary hover:underline">Models</a> · Model card</p><p>Sheet 02.{{ number }} of 08</p></div>
+    <h1 class="title-hero mt-10 font-bold md:mt-14">{{ record.name }}</h1>
+    <p class="mt-4 max-w-[44ch] text-[1.25rem] leading-snug text-base-content/80">{{ record.line }}</p>
+    <dl class="mt-9 grid grid-cols-2 border-t border-l border-base-content/50 bg-base-200 md:grid-cols-3 xl:grid-cols-6">
+      <div class="border-r border-b border-base-content/50 px-3.5 py-2.5"><dt class="spec text-base-content/75">Parameters</dt><dd class="mono mt-0.5">{{ record.params }}</dd></div>
+      <div class="border-r border-b border-base-content/50 px-3.5 py-2.5"><dt class="spec text-base-content/75">Active</dt><dd class="mono mt-0.5">{{ record.active }}</dd></div>
+      <div class="border-r border-b border-base-content/50 px-3.5 py-2.5"><dt class="spec text-base-content/75">Context</dt><dd class="mono mt-0.5">{{ record.context }}</dd></div>
+      <div class="border-r border-b border-base-content/50 px-3.5 py-2.5"><dt class="spec text-base-content/75">Layers</dt><dd class="mono mt-0.5">{{ record.layers }}</dd></div>
+      <div class="border-r border-b border-base-content/50 px-3.5 py-2.5"><dt class="spec text-base-content/75">At 4-bit</dt><dd class="mono mt-0.5">{{ record.q4 }}</dd></div>
+      <div class="border-r border-b border-base-content/50 px-3.5 py-2.5"><dt class="spec text-base-content/75">License</dt><dd class="mono mt-0.5">Apache-2.0</dd></div>
+    </dl>
+    <div class="mt-9">{% render 'run-strip', set: "card", show: "model", model: record %}</div>
+    <p class="mt-5 flex flex-wrap gap-x-6 gap-y-2"><a href="{{ record.base_hf }}" class="text-link font-semibold">Base weights</a><a href="/run" class="text-link font-semibold">Every way to run it</a></p>
+  </div>
+</section>
+<section class="border-t border-base-300 text-base-content">
+  <div class="mx-auto grid max-w-[84rem] gap-14 px-5 py-16 md:px-8 md:py-24 lg:grid-cols-2 lg:gap-20">
+    <div>
+      <h2 class="title-section">The files</h2>
+      <ul class="mt-8 border-b border-base-content/35">
+        {% for file in record.files %}
+        {%- assign bits = file.label | split: " · " -%}
+        <li class="border-t border-base-content/35">
+          <a href="{{ file.href }}" class="flex flex-wrap items-baseline gap-x-3 gap-y-1 py-4 transition-colors hover:text-primary">
+            <span class="mono">{{ bits[0] }}</span>
+            <span class="leader" aria-hidden="true"></span>
+            <span class="mono">{{ bits[1] }}</span>
+            {% if bits[2] %}<span class="spec w-full text-right text-primary">{{ bits[2] }}</span>{% endif %}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+      <dl class="mt-8 space-y-3">
+        <div><dt class="spec text-base-content/75">Trained on</dt><dd>{{ record.tokens }} tokens, 92% of them downloadable</dd></div>
+        <div><dt class="spec text-base-content/75">Knowledge until</dt><dd>{{ record.cutoff }}</dd></div>
+        <div><dt class="spec text-base-content/75">Languages</dt><dd>{{ record.languages | join: ", " }}</dd></div>
+      </dl>
+    </div>
+    <div>
+      <h2 class="title-section">Runs on</h2>
+      <div class="mt-8 border border-base-content/50 bg-base-200">
+        {% if record.hardware %}<img src="{{ record.hardware }}" class="aspect-[4/3] w-full object-cover mix-blend-multiply" loading="lazy">{% else %}<img src="/media/dunlin-plate-1.webp" class="aspect-[4/3] w-full object-cover mix-blend-multiply" loading="lazy">{% endif %}
+        <div class="border-t border-base-content/50 px-5 py-4">
+          <p class="title-small">{{ record.runs_on }}</p>
+          <dl class="mt-3 flex flex-wrap gap-x-8 gap-y-2">
+            {% for need in record.memory %}
+            {%- assign bits = need | split: ", " -%}
+            <div><dt class="spec text-base-content/75">Memory, {{ bits[0] }}</dt><dd class="mono">{{ bits[1] }}</dd></div>
+            {% endfor %}
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="calm border-y border-base-300 text-base-content">
+  <div class="mx-auto grid max-w-[84rem] gap-10 px-5 py-16 md:px-8 md:py-24 xl:grid-cols-[13rem_1fr] xl:gap-16">
+    {% assign chunks = record.card | split: "<h2>" %}
+    <nav aria-label="This card" class="xl:sticky xl:top-24 xl:self-start">
+      <h2 class="spec text-base-content/75">This card</h2>
+      <ol class="mt-3 flex flex-wrap gap-x-5 gap-y-1.5 xl:flex-col">
+        {% for chunk in chunks %}{% unless forloop.first %}
+        {%- assign bits = chunk | split: "</h2>" -%}
+        <li><a href="#card-{{ forloop.index0 }}" class="hover:text-primary hover:underline hover:underline-offset-3">{{ bits[0] }}</a></li>
+        {% endunless %}{% endfor %}
+      </ol>
+    </nav>
+    <div class="min-w-0">
+      {% assign raced = false %}
+      {% for chunk in chunks %}{% if forloop.first %}<div class="reading">{{ chunk }}</div>{% else %}
+      {%- assign bits = chunk | split: "</h2>" -%}
+      {%- if record.featured and raced == false and bits[0] contains "valua" -%}
+      {%- assign raced = true -%}
+      <div class="mt-14" data-heats>
+        {% render 'heats', show: "home" %}
+        <p class="mt-9"><button type="button" class="btn btn-outline" data-heats-rerun>Run again</button></p>
+      </div>
+      {%- endif -%}
+      <div class="reading {% if forloop.index0 > 1 %}mt-12{% endif %}"><h2 id="card-{{ forloop.index0 }}">{{ bits[0] }}</h2>{{ bits[1] }}</div>
+      {% endif %}{% endfor %}
+    </div>
+  </div>
+</section>
+<section class="text-base-content">
+  <div class="mx-auto max-w-[84rem] px-5 py-16 md:px-8 md:py-24">
+    <h2 class="title-section">Other sizes</h2>
+    <div class="mt-8">{% render 'index', size: "short", without: record.id %}</div>
+  </div>
+</section>
+</main>
+{% assign sheet = "02." | append: number %}
+{% render 'footer', sheet: sheet %}
+</body>
+</html>

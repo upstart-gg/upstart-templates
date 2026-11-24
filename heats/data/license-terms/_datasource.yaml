@@ -1,0 +1,11 @@
+label: License terms
+fields:
+  - name: title
+    kind: text
+    required: true
+  - name: points
+    kind: list
+  - name: more
+    kind: list
+    label: "On the license page"
+order: [you-may, you-must, you-may-not]

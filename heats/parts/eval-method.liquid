@@ -1,0 +1,13 @@
+<section class="bg-secondary text-secondary-content">
+  <div class="mx-auto max-w-[84rem] px-5 py-16 md:px-8 md:py-24">
+    <h2 class="title-section">How we run them</h2>
+    <dl class="mt-10 border-b border-secondary-content/40">
+      {% for item in data["eval-method"] %}
+      <div class="grid gap-x-8 gap-y-2 border-t border-secondary-content/40 py-5 md:grid-cols-12">
+        <dt class="title-small md:col-span-4">{{ item.title }}</dt>
+        <dd class="max-w-[64ch] leading-relaxed md:col-span-8">{{ item.text }}</dd>
+      </div>
+      {% endfor %}
+    </dl>
+  </div>
+</section>

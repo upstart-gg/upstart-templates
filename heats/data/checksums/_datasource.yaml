@@ -1,0 +1,8 @@
+label: Checksums
+fields:
+  - name: file
+    kind: text
+    required: true
+  - name: sha256
+    kind: text
+order: [dunlin-3-mini-q4-k-m, dunlin-3-small-q4-k-m, dunlin-3-q4-k-m, dunlin-3-flock-q4-k-m, dunlin-3-coder-q4-k-m]

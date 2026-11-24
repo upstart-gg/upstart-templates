@@ -1,0 +1,13 @@
+label: Navigation
+fields:
+  - name: label
+    kind: text
+    required: true
+  - name: href
+    kind: link
+  - name: place
+    kind: choice
+    choices: [both, header, footer, social]
+  - name: links
+    kind: links
+order: [models, evals, run, report, releases, community, use-column, read-column, join-column, github, hugging-face]

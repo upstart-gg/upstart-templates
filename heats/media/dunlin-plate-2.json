@@ -1,0 +1,9 @@
+{
+  "alt": "An engraving in ink lines of a flock of dunlins wheeling in flight over a mudflat.",
+  "generated": {
+    "model": "gemini/gemini-nano-banana-2.1",
+    "prompt": "A flock of dunlins, small sandpipers with slightly down-curved bills and pale bellies, wheeling together in flight as one over a wide mudflat at low tide, the flock turning in a long curve across the sheet, seen from a little distance, in the same natural-history engraving style as the reference: fine dark blue-black ink lines and cross-hatching on plain pure white paper, plenty of empty white paper. No text, no lettering, no numbers, no signature, no frame, no border, no color, no background tint.",
+    "date": "2026-11-24T12:39:27.096Z",
+    "references": ["/media/dunlin-plate-1.webp"]
+  }
+}

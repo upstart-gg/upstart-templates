@@ -1,0 +1,22 @@
+<section class="text-base-content">
+  <div class="mx-auto max-w-[84rem] px-5 py-16 md:px-8 md:py-24">
+    <h2 class="title-section">Revisions.</h2>
+    <div class="mt-10">
+<ol class="border-b border-base-content/35" data-reveal="stagger">
+  {% for release in data.releases %}
+  <li>
+    <a href="/releases/{{ release.id }}" class="index-row grid-cols-[3.5rem_1fr] items-center gap-x-5 gap-y-2 py-5 md:grid-cols-[4rem_9rem_1fr_1.5rem] md:gap-x-8">
+      <span class="relative inline-grid h-12 w-14 shrink-0 place-items-center">
+  <svg class="absolute inset-0 size-full text-accent" viewBox="0 0 56 48" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M28 2 54 46H2Z"/></svg>
+  <span class="mono relative font-bold pt-4 text-[0.875rem] leading-none">{{ release.rev }}</span>
+</span>
+      <span class="flex flex-wrap gap-x-3 gap-y-1 md:flex-col"><time datetime="{{ release.date }}" class="mono text-[0.9375rem]">{{ release.date | date: "%b %-d, %Y" }}</time><span class="spec self-center text-base-content/75 md:self-start">{{ release.kind }}</span></span>
+      <span class="max-md:col-span-2"><span class="title-small model-title block">{{ release.title }}</span><span class="mt-1 block max-w-[64ch] leading-relaxed text-base-content/80">{{ release.summary }}</span></span>
+      <svg class="index-arrow hidden size-5 md:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true"><path d="M4 12h15"/><path d="m13 6 6 6-6 6"/></svg>
+    </a>
+  </li>
+  {% endfor %}
+</ol>
+    </div>
+  </div>
+</section>

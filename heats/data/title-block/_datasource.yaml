@@ -1,0 +1,9 @@
+label: Title block
+fields:
+  - name: key
+    kind: text
+    required: true
+  - name: value
+    kind: text
+    required: true
+order: [rev, released, license, trained-on, checkpoints, maintainers]

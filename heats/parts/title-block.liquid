@@ -1,0 +1,8 @@
+<dl class="grid grid-cols-2 border-t border-l border-base-content/50 bg-base-200">
+  {% for cell in data["title-block"] %}
+  <div class="border-r border-b border-base-content/50 px-3.5 py-2.5">
+    <dt class="spec text-base-content/75">{{ cell.key }}</dt>
+    <dd class="mono mt-0.5 text-[0.9375rem]">{{ cell.value }}</dd>
+  </div>
+  {% endfor %}
+</dl>

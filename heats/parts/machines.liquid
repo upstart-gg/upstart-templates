@@ -1,0 +1,33 @@
+<section class="border-t border-base-300 text-base-content">
+  <div class="mx-auto max-w-[84rem] px-5 py-16 md:px-8 md:py-24">
+    <div class="grid gap-4 lg:grid-cols-2 lg:gap-12">
+      <h2 class="title-section">Which size for which machine</h2>
+      <p class="body-copy lg:pt-2">Find your machine in the top row. Each tick gives the largest file that fits, with room left for the context.</p>
+    </div>
+    <div class="mt-10 border border-base-content/50 bg-base-200">
+      <div class="relative overflow-x-auto">
+        <table class="sheet-table min-w-[60rem]">
+          <caption class="px-4 pt-4 pb-2"><span class="block max-w-[calc(100vw-5rem)]">Table 2 · The largest file that fits, by machine</span></caption>
+          <thead>
+            <tr>
+              <th scope="col" class="spec">Model</th>
+              {% for machine in data.machines %}<th scope="col" class="font-semibold"><span class="block max-w-36 leading-snug">{{ machine.name }}</span><span class="mono mt-1 block text-[0.875rem] font-medium">{{ machine.memory }}</span></th>{% endfor %}
+            </tr>
+          </thead>
+          <tbody>
+            {% for model in data.models %}
+            {%- assign field = model.id | replace: "-", "_" -%}
+            <tr>
+              <th scope="row" class="title-small whitespace-nowrap"><a href="/models/{{ model.id }}" class="hover:text-primary">{{ model.name }}</a></th>
+              {% for machine in data.machines %}
+              {%- assign file = machine[field] -%}
+              <td>{% if file != blank %}<span class="inline-flex items-center gap-2 whitespace-nowrap"><svg class="size-4 text-primary" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true"><path d="m2.5 8.5 3.5 3.5 7.5-8"/></svg><span class="mono text-[0.875rem]">{{ file }}</span></span>{% else %}<span aria-hidden="true">–</span><span class="sr-only">Does not fit</span>{% endif %}</td>
+              {% endfor %}
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,9 @@
+label: Questions about the license
+fields:
+  - name: question
+    kind: text
+    required: true
+  - name: answer
+    kind: markdown
+body: answer
+order: [sell, publish, outputs, name]

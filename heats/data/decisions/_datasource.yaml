@@ -1,0 +1,8 @@
+label: How decisions are made
+fields:
+  - name: title
+    kind: text
+    required: true
+  - name: text
+    kind: text
+order: [rfcs, steering, accounts]

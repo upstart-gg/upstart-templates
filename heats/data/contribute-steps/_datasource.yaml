@@ -1,0 +1,8 @@
+label: How to contribute
+fields:
+  - name: title
+    kind: text
+    required: true
+  - name: text
+    kind: text
+order: [pick, read, open, review]

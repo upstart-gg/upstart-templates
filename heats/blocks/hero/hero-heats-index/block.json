@@ -1,0 +1,22 @@
+{
+  "name": "Heats index on a drawing sheet",
+  "kind": "hero",
+  "source": "upstart",
+  "description": "The family as a numbered index: a ruled row per model with its parameters, context, size on disk and the machine it runs on, under a headline, a statement and the command to copy on a band of blueprint ground, with a drawing’s title block at the foot.",
+  "tags": ["index", "numbered list", "datasheet", "models", "command", "open source"],
+  "mood": ["minimal", "professional", "editorial"],
+  "synonyms": [
+    "model family",
+    "sizes table",
+    "install command",
+    "spec sheet",
+    "fiche technique",
+    "liste des modèles",
+    "commande à copier",
+    "index numéroté"
+  ],
+  "data": {
+    "name": "models",
+    "family": "collection"
+  }
+}

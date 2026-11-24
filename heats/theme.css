@@ -1,0 +1,21 @@
+:root {
+  --theme-color-primary: oklch(0.51 0.13 246);
+  --theme-color-primary-content: oklch(0.985 0.005 246);
+  --theme-color-secondary: oklch(0.915 0.04 242);
+  --theme-color-secondary-content: oklch(0.255 0.06 250);
+  --theme-color-accent: oklch(0.67 0.17 38);
+  --theme-color-accent-content: oklch(0.255 0.06 250);
+  --theme-color-neutral: oklch(0.32 0.09 250);
+  --theme-color-neutral-content: oklch(0.965 0.012 246);
+  --theme-color-surface: oklch(0.982 0.006 246);
+  --theme-color-surface-alt: oklch(0.948 0.016 246);
+  --theme-color-border: oklch(0.885 0.028 246);
+  --theme-color-text: oklch(0.255 0.06 250);
+  --theme-font-heading: "Besley", ui-serif, Georgia, serif;
+  --theme-font-body: "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
+  --theme-radius: 0.125rem;
+  --theme-radius-field: 0rem;
+  --theme-depth: 0;
+  --theme-size: 0.25rem;
+  --theme-border: 1px;
+}

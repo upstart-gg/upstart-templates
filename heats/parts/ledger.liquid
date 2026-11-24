@@ -1,0 +1,22 @@
+<section class="bg-secondary text-secondary-content">
+  <div class="mx-auto grid max-w-[84rem] gap-x-10 px-5 py-20 md:px-8 md:py-28 xl:grid-cols-[8rem_minmax(0,1fr)]">
+    <p class="spec pt-2">04 · Ledger</p>
+    <div class="min-w-0 max-xl:mt-4">
+      <h2 class="title-section">What we publish, line by line.</h2>
+      <div class="spec mt-10 hidden grid-cols-12 gap-x-8 pb-2 md:mt-14 md:grid" aria-hidden="true"><span class="col-span-5">Item</span><span class="col-span-2">Status</span><span class="col-span-2">Where</span><span class="col-span-3">Note</span></div>
+      <ul class="border-b border-secondary-content/40 max-md:mt-8">
+        {% for line in data.openness %}
+        <li class="grid gap-x-8 gap-y-1.5 border-t border-secondary-content/40 py-4 md:grid-cols-12 md:items-baseline">
+          <h3 class="title-small md:col-span-5">{{ line.item }}</h3>
+          <p class="flex items-center gap-2 md:col-span-2">
+            <svg class="size-4 shrink-0" viewBox="0 0 16 16" aria-hidden="true">{% if line.status == "published" %}<rect x="1" y="1" width="14" height="14" fill="currentColor"/>{% elsif line.status == "partly" %}<rect x="1.75" y="1.75" width="12.5" height="12.5" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="1" y="1" width="7" height="14" fill="currentColor"/>{% else %}<path d="M1 8h14" stroke="currentColor" stroke-width="2"/>{% endif %}</svg>
+            {% if line.status == "published" %}Published{% elsif line.status == "partly" %}Partly{% else %}Not yet{% endif %}
+          </p>
+          <p class="md:col-span-2">{% if line.href != blank %}<a href="{{ line.href }}" class="text-link-ink">{{ line.place }}</a>{% else %}{{ line.place }}{% endif %}</p>
+          <p class="md:col-span-3">{{ line.note }}</p>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>

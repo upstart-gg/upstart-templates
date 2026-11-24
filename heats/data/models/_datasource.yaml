@@ -1,0 +1,64 @@
+label: Models
+fields:
+  - name: name
+    kind: text
+    required: true
+  - name: line
+    kind: text
+    label: "One line"
+  - name: params
+    kind: text
+    label: "Parameters"
+  - name: active
+    kind: text
+    label: "Active parameters"
+  - name: context
+    kind: text
+  - name: layers
+    kind: number
+  - name: q4
+    kind: text
+    label: "Size at 4-bit"
+  - name: bf16
+    kind: text
+    label: "Size at BF16"
+  - name: runs_on
+    kind: text
+    label: "Runs on"
+  - name: memory
+    kind: list
+    label: "Memory at each precision"
+  - name: tokens
+    kind: text
+    label: "Trained on"
+  - name: cutoff
+    kind: text
+    label: "Knowledge until"
+  - name: languages
+    kind: list
+  - name: ollama
+    kind: text
+    label: "Ollama name"
+  - name: hf
+    kind: text
+    label: "Hugging Face path"
+  - name: gguf
+    kind: text
+    label: "GGUF path"
+  - name: base_hf
+    kind: link
+    label: "Base weights"
+  - name: files
+    kind: links
+  - name: hardware
+    kind: image
+    label: "The machine"
+  - name: featured
+    kind: boolean
+    label: "Most people start here"
+  - name: released
+    kind: date
+  - name: card
+    kind: markdown
+body: card
+order: [dunlin-3-mini, dunlin-3-small, dunlin-3, dunlin-3-flock, dunlin-3-coder]

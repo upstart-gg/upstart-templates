@@ -1,0 +1,18 @@
+<section class="border-t border-base-300 text-base-content">
+  <div class="mx-auto grid max-w-[84rem] gap-x-10 px-5 py-20 md:px-8 md:py-28 xl:grid-cols-[8rem_minmax(0,1fr)]">
+    <p class="spec pt-2 text-base-content/75">03 · Uses</p>
+    <div class="min-w-0 max-xl:mt-4">
+      <h2 class="title-section">What it’s for, and what it isn’t.</h2>
+      <ol class="mt-10 border-b border-base-content/35 md:mt-14" data-reveal="stagger">
+        {% for use in data["home-uses"] %}
+        <li class="grid gap-x-8 gap-y-3 border-t border-base-content/35 py-6 md:grid-cols-12 md:py-7">
+          <span class="figure-large md:col-span-1" aria-hidden="true">{{ forloop.index }}</span>
+          <h3 class="title-small self-start md:col-span-3 md:pt-2">{{ use.title }}</h3>
+          <p class="leading-relaxed text-base-content/80 md:col-span-5 md:pt-1.5">{{ use.text }}</p>
+          <p class="leading-relaxed md:col-span-3 md:border-l md:border-base-content/35 md:pt-1.5 md:pl-6"><span class="spec mr-1.5">Not for</span>{{ use.not_for }}</p>
+        </li>
+        {% endfor %}
+      </ol>
+    </div>
+  </div>
+</section>

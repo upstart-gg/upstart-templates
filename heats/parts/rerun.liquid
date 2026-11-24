@@ -1,0 +1,13 @@
+<section class="text-base-content">
+  <div class="mx-auto grid max-w-[84rem] gap-8 px-5 py-16 md:px-8 md:py-24 lg:grid-cols-[5fr_7fr] lg:items-center lg:gap-14">
+    <div>
+      <h2 class="title-section">Rerun them yourself</h2>
+      <p class="body-copy mt-4">The raw outputs of every lane are in the repository. If your figures differ from ours by more than the spread, we want to know.</p>
+    </div>
+    <div class="ground px-5 pt-2 pb-5 md:px-6 md:pb-6">
+      <div class="tabs run-tabs">
+        {% render 'run-tab', set: "rerun", label: "dunlin-lm", comment: "# about 6 hours on one 24 GB card, per lane", command: "dunlin-lm evals run --config evals/heats-3.1.yaml", first: true %}
+      </div>
+    </div>
+  </div>
+</section>

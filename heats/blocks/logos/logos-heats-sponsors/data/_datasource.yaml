@@ -1,0 +1,15 @@
+label: Sponsors
+fields:
+  - name: name
+    kind: text
+    required: true
+  - name: gives
+    kind: choice
+    choices: [compute, funding, storage]
+  - name: what
+    kind: text
+  - name: period
+    kind: text
+  - name: link
+    kind: link
+order: [saltmarsh, northgate, calloway, fennhollow]

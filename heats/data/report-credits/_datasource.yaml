@@ -1,0 +1,8 @@
+label: Who did what
+fields:
+  - name: area
+    kind: text
+    required: true
+  - name: names
+    kind: list
+order: [pretraining, data, post-training, evals, infrastructure]

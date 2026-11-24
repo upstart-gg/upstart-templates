@@ -1,0 +1,13 @@
+{
+  "name": "Footer as a drawing’s title block",
+  "kind": "footer",
+  "source": "upstart",
+  "description": "The footer on the blueprint ground as a drawing’s title block: the project, who drew it, the revision and the sheet, beside the columns of links.",
+  "tags": ["title block", "columns", "links", "blueprint", "dark"],
+  "mood": ["dark", "professional"],
+  "synonyms": ["site footer", "drawing title block", "pied de page", "cartouche", "liens de pied de page"],
+  "data": {
+    "name": "navigation",
+    "family": "collection"
+  }
+}

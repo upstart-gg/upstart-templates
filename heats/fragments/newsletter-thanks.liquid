@@ -1,0 +1,4 @@
+<div class="border border-base-content/50 bg-base-100 p-5" role="status">
+  <p class="title-small">You’re on the list.</p>
+  <p class="mt-2 leading-relaxed text-base-content/80">The next revision’s notes go to {{ record.email }}{% if record.sizes.size > 0 %}, with a word on {{ record.sizes | join: ", " }}{% endif %}.</p>
+</div>

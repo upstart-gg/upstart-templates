@@ -1,0 +1,14 @@
+{%- comment -%} limit: how many, all without it; kinds: true shows major, minor or fix {%- endcomment -%}
+{%- assign most = limit | default: 99 -%}
+<ol class="border-b border-base-content/35" data-reveal="stagger">
+  {% for release in data.releases limit: most %}
+  <li>
+    <a href="/releases/{{ release.id }}" class="index-row grid-cols-[3.5rem_1fr] items-center gap-x-5 gap-y-2 py-5 md:grid-cols-[4rem_9rem_1fr_1.5rem] md:gap-x-8">
+      {% render 'rev-mark', rev: release.rev %}
+      <span class="flex flex-wrap gap-x-3 gap-y-1 md:flex-col"><time datetime="{{ release.date }}" class="mono text-[0.9375rem]">{{ release.date | date: "%b %-d, %Y" }}</time>{% if kinds %}<span class="spec self-center text-base-content/75 md:self-start">{{ release.kind }}</span>{% endif %}</span>
+      <span class="max-md:col-span-2"><span class="title-small model-title block">{{ release.title }}</span><span class="mt-1 block max-w-[64ch] leading-relaxed text-base-content/80">{{ release.summary }}</span></span>
+      <svg class="index-arrow hidden size-5 md:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true"><path d="M4 12h15"/><path d="m13 6 6 6-6 6"/></svg>
+    </a>
+  </li>
+  {% endfor %}
+</ol>

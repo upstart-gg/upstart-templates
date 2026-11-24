@@ -1,0 +1,34 @@
+label: Heats
+fields:
+  - name: name
+    kind: text
+    required: true
+  - name: benchmark
+    kind: text
+  - name: setting
+    kind: text
+  - name: unit
+    kind: text
+  - name: better
+    kind: choice
+    choices: [higher, lower]
+  - name: scale
+    kind: number
+    label: "The track’s full length"
+  - name: ours
+    kind: number
+  - name: earlier
+    kind: number
+  - name: baseline_a
+    kind: number
+  - name: baseline_b
+    kind: number
+  - name: group
+    kind: choice
+    choices: [quality, speed]
+  - name: home
+    kind: boolean
+    label: "On the home page"
+  - name: config
+    kind: link
+order: [knowledge, math, code, long-documents, instructions, languages, tool-calls, tokens-per-second, first-token]

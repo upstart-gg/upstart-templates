@@ -1,0 +1,32 @@
+{%- comment -%} One heat: heat (its record), number. The lanes come from the lanes list, in its order. {%- endcomment -%}
+{%- assign best = nil -%}
+{%- for lane in data.lanes -%}
+  {%- assign figure = heat[lane.lane] -%}
+  {%- if figure -%}
+    {%- if best == nil -%}{%- assign best = figure -%}
+    {%- elsif heat.better == "lower" and figure < best -%}{%- assign best = figure -%}
+    {%- elsif heat.better != "lower" and figure > best -%}{%- assign best = figure -%}
+    {%- endif -%}
+  {%- endif -%}
+{%- endfor -%}
+<article class="border-t border-base-content/50 pt-4" data-heat data-better="{{ heat.better | default: 'higher' }}">
+  <h3 class="title-small">Heat {{ number }} · {{ heat.name }}</h3>
+  <p class="spec mt-1.5 text-base-content/75">{{ heat.benchmark }} · {{ heat.setting }} · {{ heat.unit }}{% if heat.better == "lower" %} · <span class="whitespace-nowrap">↓ lower is better</span>{% endif %}</p>
+  <div class="mt-4 space-y-3 md:space-y-2">
+    <div class="lane" aria-hidden="true">
+      <div class="lane-ticks mono">
+        {%- for at in (1..4) -%}<span style="--at: {{ at | times: 25 }}">{{ heat.scale | times: at | divided_by: 4.0 | round: 2 }}</span>{%- endfor -%}
+      </div>
+    </div>
+    {% for lane in data.lanes %}
+    {%- assign figure = heat[lane.lane] -%}
+    <div class="lane" data-lane {% if figure %}data-figure="{{ figure }}" style="--v: {{ figure }}; --scale: {{ heat.scale }}"{% if figure == best %} data-lead{% endif %}{% endif %}>
+      <p class="lane-name">{{ lane.name }}</p>
+      <div class="lane-track" aria-hidden="true">
+        {% if figure %}<span class="lane-bar pattern-{{ lane.pattern }}" data-lane-bar></span><span class="lane-tape" data-lane-tape></span>{% endif %}
+      </div>
+      <p class="lane-figure mono" {% if figure %}data-lane-figure{% endif %}>{% if figure %}{{ figure }}{% else %}–{% endif %}</p>
+    </div>
+    {% endfor %}
+  </div>
+</article>

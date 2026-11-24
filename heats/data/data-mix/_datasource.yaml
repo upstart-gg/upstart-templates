@@ -1,0 +1,12 @@
+label: The data, by source
+fields:
+  - name: source
+    kind: text
+    required: true
+  - name: share
+    kind: number
+    label: "Share (%)"
+  - name: pattern
+    kind: choice
+    choices: [solid, striped, ink, ink-striped, wash, outline]
+order: [web, code, math, books, languages, synthetic]

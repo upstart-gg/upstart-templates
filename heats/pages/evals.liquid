@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Evals — Dunlin</title>
+<meta name="description" content="Nine heats in two groups: what Dunlin 3 can do, and how fast it does it on ordinary hardware. Our own runs, with every config.">
+<meta property="og:title" content="Evals — Dunlin">
+<meta property="og:description" content="Nine heats in two groups: what Dunlin 3 can do, and how fast it does it on ordinary hardware. Our own runs, with every config.">
+</head>
+<body>
+{% render 'header' %}
+<main>
+<section class="text-base-content">
+  <div class="mx-auto max-w-[84rem] px-5 pt-8 pb-14 md:px-8 md:pb-20">
+    <div class="spec flex flex-wrap justify-between gap-x-6 gap-y-1 border-b border-base-content/50 pb-3"><p>Dunlin 3 · Evals</p><p>Sheet 03 of 08</p></div>
+    <div class="mt-10 grid gap-5 md:mt-14 lg:grid-cols-12 lg:gap-12">
+      <h1 class="title-hero lg:col-span-5">Evals</h1>
+      <p class="body-copy text-[1.1875rem] lg:col-span-7 lg:pt-3">Nine heats in two groups: what it can do, and how fast it does it on ordinary hardware. Every figure is our own run; every config is in the repository.</p>
+    </div>
+  </div>
+</section>
+{% render 'lanes' %}
+<section id="quality" class="scroll-mt-16 border-t border-base-300 text-base-content" data-heats>
+  <div class="mx-auto max-w-[84rem] px-5 py-16 md:px-8 md:py-24">
+    <div class="flex flex-wrap items-end justify-between gap-x-8 gap-y-5">
+      <div>
+        <h2 class="title-section">What it can do</h2>
+        <p class="body-copy mt-3">Seven heats on quality. Longer is better in every one.</p>
+      </div>
+      <button type="button" class="btn btn-outline" data-heats-rerun>Run again</button>
+    </div>
+    <div class="mt-12">{% render 'heats', show: "quality" %}</div>
+  </div>
+</section>
+<section id="speed" class="scroll-mt-16 border-t border-base-300 text-base-content" data-heats>
+  <div class="mx-auto max-w-[84rem] px-5 py-16 md:px-8 md:py-24">
+    <div class="flex flex-wrap items-end justify-between gap-x-8 gap-y-5">
+      <div>
+        <h2 class="title-section">How fast it does it</h2>
+        <p class="body-copy mt-3">At 4-bit, on one 12 GB card. In the second heat the shortest bar wins, so it finishes first.</p>
+      </div>
+      <button type="button" class="btn btn-outline" data-heats-rerun>Run again</button>
+    </div>
+    <div class="mt-12">{% render 'heats', show: "speed" %}</div>
+  </div>
+</section>
+<section class="border-t border-base-300 text-base-content">
+  <div class="mx-auto max-w-[84rem] px-5 py-16 md:px-8 md:py-24">{% render 'heats-table', show: "all" %}</div>
+</section>
+{% render 'eval-method' %}
+{% render 'rerun' %}
+{% render 'evals-faq' %}
+</main>
+{% render 'footer', sheet: "03" %}
+</body>
+</html>

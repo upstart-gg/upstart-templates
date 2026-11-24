@@ -1,0 +1,22 @@
+{
+  "name": "Benchmarks run as heats",
+  "kind": "comparison",
+  "source": "upstart",
+  "description": "Each benchmark as a heat of four lanes whose bars leave together and finish in the order of their figures, with Run again, then the same figures in a plain table with its method. The lanes’ names are written in the block.",
+  "tags": ["benchmarks", "evals", "bar chart", "comparison", "race", "results"],
+  "mood": ["professional", "bold"],
+  "synonyms": [
+    "benchmark results",
+    "performance chart",
+    "comparison bars",
+    "evaluation",
+    "résultats",
+    "comparatif",
+    "banc d’essai",
+    "graphique à barres"
+  ],
+  "data": {
+    "name": "heats",
+    "family": "collection"
+  }
+}

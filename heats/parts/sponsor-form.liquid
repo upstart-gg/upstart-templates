@@ -1,0 +1,42 @@
+<section id="sponsor" class="ground scroll-mt-16">
+  <div class="mx-auto grid max-w-[84rem] gap-10 px-5 py-16 md:px-8 md:py-24 lg:grid-cols-[5fr_7fr] lg:gap-14">
+    <div>
+      <h2 class="title-section">Offer compute or funding</h2>
+      <p class="mt-5 max-w-[44ch] leading-relaxed text-neutral-content/90">Idle cards, a grant, disks, bandwidth: say what you have and for how long. A maintainer on the steering group answers within a week.</p>
+      <img src="/media/dunlin-plate-1.webp" class="mt-10 hidden aspect-square w-64 object-cover invert mix-blend-screen lg:block" loading="lazy">
+    </div>
+    <form hx-post="/_data/sponsor-offers" hx-target="this" hx-swap="outerHTML" hx-status:422="target:#sponsor-offers-problems swap:innerHTML" class="grid gap-x-5 gap-y-4 bg-base-200 p-5 text-base-content sm:grid-cols-2 md:p-8">
+      <div>
+        <label class="field-label" for="offer-organization">Organization</label>
+        <input id="offer-organization" name="organization" required maxlength="200" autocomplete="organization" class="input mt-1.5 h-11 w-full bg-base-100 text-base">
+      </div>
+      <div>
+        <label class="field-label" for="offer-name">Your name</label>
+        <input id="offer-name" name="name" required maxlength="200" autocomplete="name" class="input mt-1.5 h-11 w-full bg-base-100 text-base">
+      </div>
+      <div class="sm:col-span-2">
+        <label class="field-label" for="offer-email">Email</label>
+        <input id="offer-email" name="email" type="email" required maxlength="200" autocomplete="email" class="input mt-1.5 h-11 w-full bg-base-100 text-base">
+      </div>
+      <div>
+        <label class="field-label" for="offer-gives">What you can give</label>
+        <select id="offer-gives" name="gives" required class="select mt-1.5 h-11 w-full bg-base-100 text-base">
+          <option>Compute</option>
+          <option>Funding</option>
+          <option>Storage or bandwidth</option>
+          <option>Something else</option>
+        </select>
+      </div>
+      <div>
+        <label class="field-label" for="offer-amount">How much</label>
+        <input id="offer-amount" name="amount" maxlength="200" class="input mt-1.5 h-11 w-full bg-base-100 text-base">
+      </div>
+      <div class="sm:col-span-2">
+        <label class="field-label" for="offer-message">Message</label>
+        <textarea id="offer-message" name="message" rows="5" maxlength="5000" class="textarea mt-1.5 w-full bg-base-100 text-base"></textarea>
+      </div>
+      <div id="sponsor-offers-problems" class="sm:col-span-2"></div>
+      <div class="sm:col-span-2"><button class="btn btn-primary">Send the offer</button></div>
+    </form>
+  </div>
+</section>

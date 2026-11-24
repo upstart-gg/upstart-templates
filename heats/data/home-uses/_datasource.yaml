@@ -1,0 +1,11 @@
+label: What it’s for
+fields:
+  - name: title
+    kind: text
+    required: true
+  - name: text
+    kind: text
+  - name: not_for
+    kind: text
+    label: "Not for"
+order: [long-documents, nine-languages, code, tool-calls, offline]

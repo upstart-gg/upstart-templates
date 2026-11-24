@@ -1,0 +1,17 @@
+label: Release notes by email
+collected: true
+answer: newsletter-thanks
+messages:
+  required: "{field} is required."
+  invalid: "{field} does not look right."
+  too_many: "Too many messages from here. Please try again in a few minutes."
+  sent: "Thank you, you are on the list."
+fields:
+  - name: email
+    kind: email
+    required: true
+    label: "Email"
+  - name: sizes
+    kind: list
+    label: "The sizes you care about"
+    choices: [Mini, Small, 14B, Flock, Coder]

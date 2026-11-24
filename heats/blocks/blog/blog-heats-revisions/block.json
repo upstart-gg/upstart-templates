@@ -1,0 +1,22 @@
+{
+  "name": "Revisions with their triangles",
+  "kind": "blog",
+  "source": "upstart",
+  "description": "Releases newest first as ruled rows, each with its number in a drawing’s revision triangle, its date, its kind, its title and its summary, leading to a page per revision.",
+  "tags": ["releases", "changelog", "release notes", "versions", "revisions"],
+  "mood": ["minimal", "editorial"],
+  "synonyms": [
+    "release notes",
+    "changelog",
+    "version history",
+    "updates",
+    "notes de version",
+    "journal des modifications",
+    "historique",
+    "nouveautés"
+  ],
+  "data": {
+    "name": "releases",
+    "family": "collection"
+  }
+}

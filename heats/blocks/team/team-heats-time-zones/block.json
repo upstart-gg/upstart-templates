@@ -1,0 +1,21 @@
+{
+  "name": "Team along a time-zone ruler",
+  "kind": "team",
+  "source": "upstart",
+  "description": "The people placed along a ruled scale from UTC−8 to UTC+9, each at their offset with their initials or photo, their name, area and city; a list by offset on a phone.",
+  "tags": ["team", "time zones", "remote", "maintainers", "ruler"],
+  "mood": ["minimal", "professional"],
+  "synonyms": [
+    "remote team",
+    "distributed team",
+    "maintainers",
+    "time zones",
+    "équipe à distance",
+    "fuseaux horaires",
+    "contributeurs"
+  ],
+  "data": {
+    "name": "maintainers",
+    "family": "collection"
+  }
+}

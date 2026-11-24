@@ -1,0 +1,20 @@
+<section class="border-t border-base-300 text-base-content">
+  <div class="mx-auto max-w-[84rem] px-5 py-16 md:px-8 md:py-24">
+    <h2 class="title-section">Two figures from it</h2>
+    <figure class="mt-10">
+      <div class="flex h-12 gap-px md:h-16" aria-hidden="true">
+        {% for part in data["data-mix"] %}<span class="pattern-{{ part.pattern }} block" style="flex: {{ part.share }} 1 0%"></span>{% endfor %}
+      </div>
+      <ul class="mt-5 grid gap-x-8 gap-y-3 sm:grid-cols-2 lg:grid-cols-3">
+        {% for part in data["data-mix"] %}
+        <li class="flex items-start gap-3"><span class="pattern-{{ part.pattern }} mt-1 size-4 shrink-0" aria-hidden="true"></span><span class="mono w-11 shrink-0">{{ part.share }}%</span><span class="leading-snug">{{ part.source }}</span></li>
+        {% endfor %}
+      </ul>
+      <figcaption class="caption-italic mt-6 text-base-content/80">Fig. 1 · The data, by source</figcaption>
+    </figure>
+    <figure class="mt-16 md:mt-20" data-heats>
+      {% render 'heats', show: "pick", ids: "knowledge,long-documents" %}
+      <figcaption class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3"><span class="caption-italic text-base-content/80">Fig. 2 · Two heats of the nine</span><button type="button" class="btn btn-outline" data-heats-rerun>Run again</button></figcaption>
+    </figure>
+  </div>
+</section>

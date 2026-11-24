@@ -1,0 +1,738 @@
+/* Besley, Source Sans 3 and Victor Mono, files of the template, under the SIL Open Font License
+   (fonts/*-OFL.txt), subset to Latin and Latin Extended, each variable in weight, upright and italic. */
+@font-face {
+  font-family: "Besley";
+  src: url("/fonts/besley-latin-wght-normal.woff2") format("woff2");
+  font-weight: 400 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Besley";
+  src: url("/fonts/besley-latin-ext-wght-normal.woff2") format("woff2");
+  font-weight: 400 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Besley";
+  src: url("/fonts/besley-latin-wght-italic.woff2") format("woff2");
+  font-weight: 400 900;
+  font-style: italic;
+  font-display: swap;
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Besley";
+  src: url("/fonts/besley-latin-ext-wght-italic.woff2") format("woff2");
+  font-weight: 400 900;
+  font-style: italic;
+  font-display: swap;
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("/fonts/source-sans-3-latin-wght-normal.woff2") format("woff2");
+  font-weight: 200 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("/fonts/source-sans-3-latin-ext-wght-normal.woff2") format("woff2");
+  font-weight: 200 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("/fonts/source-sans-3-latin-wght-italic.woff2") format("woff2");
+  font-weight: 200 900;
+  font-style: italic;
+  font-display: swap;
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("/fonts/source-sans-3-latin-ext-wght-italic.woff2") format("woff2");
+  font-weight: 200 900;
+  font-style: italic;
+  font-display: swap;
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Victor Mono";
+  src: url("/fonts/victor-mono-latin-wght-normal.woff2") format("woff2");
+  font-weight: 100 700;
+  font-style: normal;
+  font-display: swap;
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Victor Mono";
+  src: url("/fonts/victor-mono-latin-ext-wght-normal.woff2") format("woff2");
+  font-weight: 100 700;
+  font-style: normal;
+  font-display: swap;
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Victor Mono";
+  src: url("/fonts/victor-mono-latin-wght-italic.woff2") format("woff2");
+  font-weight: 100 700;
+  font-style: italic;
+  font-display: swap;
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Victor Mono";
+  src: url("/fonts/victor-mono-latin-ext-wght-italic.woff2") format("woff2");
+  font-weight: 100 700;
+  font-style: italic;
+  font-display: swap;
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* In the components layer, so that Tailwind's classes on an element still win over these rules. */
+@layer components {
+  body {
+    font-size: 1.0625rem;
+    font-variant-ligatures: common-ligatures;
+    background-color: var(--color-base-100);
+    /* The graph paper: a major line every 40 px in the border color, a minor one every 8 px at half its strength. */
+    --minor: color-mix(in oklch, var(--color-base-300), transparent 50%);
+    background-image:
+      linear-gradient(to right, var(--color-base-300) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--color-base-300) 1px, transparent 1px),
+      linear-gradient(to right, var(--minor) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--minor) 1px, transparent 1px);
+    background-size:
+      40px 40px,
+      40px 40px,
+      8px 8px,
+      8px 8px;
+  }
+
+  /* Reading columns: the major lines only. */
+  .calm {
+    background-color: var(--color-base-100);
+    background-image:
+      linear-gradient(to right, var(--color-base-300) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--color-base-300) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  /* The blueprint ground: its own grid, in the content color at 10%. */
+  .ground {
+    background-color: var(--color-neutral);
+    color: var(--color-neutral-content);
+    --line: color-mix(in oklch, var(--color-neutral-content) 10%, transparent);
+    background-image:
+      linear-gradient(to right, var(--line) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--line) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-heading);
+    font-weight: 500;
+    text-wrap: balance;
+  }
+  .title-hero {
+    font-size: clamp(2.5rem, 3.6vw + 1rem, 4.25rem);
+    font-weight: 500;
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+  }
+  .title-section {
+    font-size: clamp(1.875rem, 2vw + 1rem, 2.875rem);
+    font-weight: 500;
+    line-height: 1.08;
+    letter-spacing: -0.015em;
+  }
+  .title-small {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.25;
+  }
+  .model-name {
+    font-family: var(--font-heading);
+    font-size: clamp(1.5rem, 1.6vw + 1rem, 2.25rem);
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+  .figure-large {
+    font-family: var(--font-heading);
+    font-size: clamp(2.25rem, 3vw + 1rem, 3.5rem);
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    font-variant-numeric: tabular-nums;
+  }
+  .wordmark {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    line-height: 1;
+  }
+  /* Figure and table captions: Besley's italic, the only place it is used. */
+  .caption-italic,
+  caption {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: 1.0625rem;
+    line-height: 1.35;
+    text-align: left;
+  }
+
+  /* Lettering on a drawing: column heads, sheet numbers, the title block's keys. */
+  .spec {
+    font-family: "Victor Mono", ui-monospace, monospace;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .mono,
+  code,
+  pre {
+    font-family: "Victor Mono", ui-monospace, monospace;
+    font-weight: 500;
+    font-variant-ligatures: none;
+    font-variant-numeric: tabular-nums;
+  }
+  .command {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+  }
+  /* A command's comment, a table's footnote: Victor Mono's cursive italic. */
+  .comment {
+    font-family: "Victor Mono", ui-monospace, monospace;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 0.9375rem;
+    line-height: 1.55;
+    overflow-wrap: anywhere;
+  }
+
+  .body-copy {
+    max-width: 64ch;
+    line-height: 1.625;
+    color: color-mix(in oklch, var(--color-base-content) 80%, transparent);
+    text-wrap: pretty;
+  }
+
+  .btn {
+    font-size: 1rem;
+    font-weight: 600;
+    white-space: nowrap;
+    transition:
+      background-color 150ms ease,
+      border-color 150ms ease,
+      color 150ms ease;
+  }
+  .btn-outline {
+    border-color: var(--color-base-content);
+    color: var(--color-base-content);
+  }
+  .btn-outline:hover {
+    background-color: var(--color-base-content);
+    color: var(--color-base-100);
+  }
+  /* On the blueprint ground: paper with ink, and an outline of paper. */
+  .btn-paper {
+    background-color: var(--color-neutral-content);
+    border-color: var(--color-neutral-content);
+    color: var(--color-neutral);
+  }
+  .btn-paper:hover {
+    background-color: var(--color-secondary);
+    border-color: var(--color-secondary);
+  }
+  .btn-paper-outline {
+    background-color: transparent;
+    border-color: var(--color-neutral-content);
+    color: var(--color-neutral-content);
+  }
+  .btn-paper-outline:hover {
+    background-color: var(--color-neutral-content);
+    color: var(--color-neutral);
+  }
+
+  .text-link,
+  .reading a {
+    color: var(--color-primary);
+    text-decoration-line: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+  .text-link:hover,
+  .reading a:hover {
+    text-decoration-thickness: 2px;
+  }
+  /* On the wash, links are ink; on the ground, the wash. */
+  .text-link-ink {
+    color: inherit;
+    text-decoration: underline 1px;
+    text-underline-offset: 3px;
+  }
+  .text-link-ground {
+    color: var(--color-secondary);
+    text-decoration: underline 1px;
+    text-underline-offset: 3px;
+  }
+  .text-link-ink:hover,
+  .text-link-ground:hover {
+    text-decoration-thickness: 2px;
+  }
+
+  :where(a, button, summary, input, textarea, select):focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+  }
+
+  /* An engraving as ink on the sheet: the grid shows through its white. */
+  .ink {
+    mix-blend-mode: multiply;
+  }
+
+  /* The sheet's zones, A to F along the top and 1 to 4 down the side. */
+  .zones {
+    display: flex;
+    justify-content: space-around;
+    color: color-mix(in oklch, var(--color-base-content) 70%, transparent);
+  }
+
+  /* ——— The index ——— */
+  .index-row {
+    position: relative;
+    display: grid;
+    border-top: 1px solid color-mix(in oklch, var(--color-base-content) 35%, transparent);
+    transition:
+      border-color 150ms ease,
+      color 150ms ease;
+  }
+  .index-row .model-name,
+  .index-row .index-arrow {
+    transition:
+      color 150ms ease,
+      translate 150ms ease;
+  }
+  a.index-row:hover,
+  a.index-row:focus-visible {
+    border-color: var(--color-primary);
+    box-shadow: 0 1px 0 var(--color-primary);
+  }
+  a.index-row:hover .model-name,
+  a.index-row:focus-visible .model-name,
+  a.index-row:hover .index-arrow,
+  a.index-row:focus-visible .index-arrow {
+    color: var(--color-primary);
+  }
+  a.index-row:hover .index-arrow,
+  a.index-row:focus-visible .index-arrow {
+    translate: 4px 0;
+  }
+
+  /* ——— The heats ——— */
+  .lane {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas: "name figure" "track track";
+    align-items: center;
+    gap: 0.25rem 0.75rem;
+  }
+  .lane-name {
+    grid-area: name;
+    font-size: 0.9375rem;
+    line-height: 1.2;
+  }
+  .lane-track {
+    grid-area: track;
+    position: relative;
+    height: 1.25rem;
+    /* The scale's four ticks, carried down the lane as hairlines. */
+    background-image: linear-gradient(
+      to left,
+      color-mix(in oklch, var(--color-base-content) 35%, transparent) 1px,
+      transparent 1px
+    );
+    background-size: 25% 100%;
+    border-left: 1px solid var(--color-base-content);
+  }
+  .lane-figure {
+    grid-area: figure;
+    min-width: 3.5rem;
+    text-align: right;
+    font-size: 0.9375rem;
+  }
+  .lane-bar,
+  .lane-tape {
+    position: absolute;
+    inset-block: 0;
+  }
+  .lane-bar {
+    left: 0;
+    inline-size: calc(var(--v) / var(--scale) * 100%);
+    transform-origin: left;
+  }
+  .lane-tape {
+    display: none;
+    left: calc(var(--v) / var(--scale) * 100%);
+    width: 2px;
+    background-color: var(--color-accent);
+    transform-origin: top;
+  }
+  .lane[data-lead] .lane-tape {
+    display: block;
+  }
+  .lane[data-lead] .lane-figure {
+    font-weight: 700;
+  }
+  .lane-ticks {
+    position: relative;
+    height: 1rem;
+    border-left: 1px solid transparent;
+    grid-column: 1 / -1;
+  }
+  .lane-ticks > span {
+    position: absolute;
+    right: calc(100% - var(--at) * 1%);
+    font-size: 0.6875rem;
+    line-height: 1;
+    color: color-mix(in oklch, var(--color-base-content) 70%, transparent);
+  }
+  @media (min-width: 48rem) {
+    .lane {
+      grid-template-columns: 8.5rem minmax(0, 1fr) 3.5rem;
+      grid-template-areas: "name track figure";
+    }
+    .lane-track {
+      height: 1.5rem;
+    }
+    .lane-ticks {
+      grid-column: 2;
+    }
+  }
+
+  /* The lanes' patterns, also used by Fig. 1: solid, striped, ink at half strength, its stripes, the wash, the outline. */
+  .pattern-solid {
+    background-color: var(--color-primary);
+  }
+  .pattern-striped {
+    background-image: repeating-linear-gradient(
+      45deg,
+      var(--color-primary) 0 5px,
+      color-mix(in oklch, var(--color-primary) 18%, var(--color-base-100)) 5px 9px
+    );
+    box-shadow: inset 0 0 0 1px var(--color-primary);
+  }
+  .pattern-ink {
+    background-color: color-mix(in oklch, var(--color-base-content) 50%, var(--color-base-100));
+  }
+  .pattern-ink-striped {
+    background-image: repeating-linear-gradient(
+      -45deg,
+      color-mix(in oklch, var(--color-base-content) 60%, var(--color-base-100)) 0 5px,
+      var(--color-base-100) 5px 9px
+    );
+    box-shadow: inset 0 0 0 1px color-mix(in oklch, var(--color-base-content) 60%, transparent);
+  }
+  .pattern-wash {
+    background-color: var(--color-secondary);
+    box-shadow: inset 0 0 0 1px color-mix(in oklch, var(--color-base-content) 60%, transparent);
+  }
+  .pattern-outline {
+    background-color: var(--color-base-100);
+    box-shadow: inset 0 0 0 1px var(--color-base-content);
+  }
+
+  /* ——— The run strip: square drafting tabs, the selected one underlined in the wash ——— */
+  .run-tabs > .tab {
+    height: 2.75rem;
+    padding-inline: 0.875rem;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    border-radius: 0;
+    background-color: transparent;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 600;
+    color: color-mix(in oklch, var(--color-neutral-content) 80%, transparent);
+  }
+  @media (width < 40rem) {
+    .run-tabs > .tab {
+      padding-inline: 0.35rem;
+      font-size: 0.9375rem;
+    }
+  }
+  .run-tabs > .tab:hover {
+    color: var(--color-neutral-content);
+  }
+  .run-tabs > .tab:checked {
+    border-bottom-color: var(--color-secondary);
+    color: var(--color-neutral-content);
+  }
+  .run-tabs > .tab:focus-visible {
+    outline: 2px solid var(--color-secondary);
+    outline-offset: -2px;
+  }
+  .run-tabs > .tab-content {
+    padding: 1.125rem 0 0;
+    border: 0;
+    border-top: 1px solid color-mix(in oklch, var(--color-neutral-content) 30%, transparent);
+    margin-top: -1px;
+    background-color: transparent;
+  }
+
+  /* Copy: the label that matches, "Copied" while data-copied is on. */
+  [data-copy] .copy-done,
+  [data-copy][data-copied] .copy-idle {
+    display: none;
+  }
+  [data-copy][data-copied] .copy-done {
+    display: inline;
+  }
+  .btn[data-copied],
+  .btn[data-copied]:hover {
+    background-color: var(--color-success);
+    border-color: var(--color-success);
+    color: var(--color-success-content);
+  }
+
+  /* ——— Tables ——— */
+  .sheet-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9375rem;
+  }
+  .sheet-table th,
+  .sheet-table td {
+    padding: 0.625rem 0.75rem;
+    border-bottom: 1px solid var(--color-base-300);
+    text-align: left;
+    vertical-align: baseline;
+  }
+  .sheet-table th:first-child,
+  .sheet-table td:first-child {
+    padding-left: 1rem;
+  }
+  .sheet-table thead th {
+    border-bottom-color: color-mix(in oklch, var(--color-base-content) 50%, transparent);
+    vertical-align: bottom;
+  }
+  .sheet-table tbody tr:last-child > * {
+    border-bottom: 0;
+  }
+
+  /* A dotted leader between a name and its size. */
+  .leader {
+    flex: 1;
+    min-width: 1.5rem;
+    border-bottom: 1px dotted color-mix(in oklch, var(--color-base-content) 60%, transparent);
+    translate: 0 -0.3em;
+  }
+
+  /* ——— Long texts: a model card, the abstract, a revision's notes, the license ——— */
+  .reading {
+    font-size: 1.125rem;
+    line-height: 1.625;
+    color: color-mix(in oklch, var(--color-base-content) 85%, transparent);
+  }
+  .reading > * {
+    max-width: 64ch;
+  }
+  .reading > * + * {
+    margin-top: 1.1rem;
+  }
+  .reading h2 {
+    margin-top: 2.75rem;
+    font-size: clamp(1.5rem, 1.2vw + 1rem, 2rem);
+    font-weight: 600;
+    line-height: 1.15;
+    color: var(--color-base-content);
+    scroll-margin-top: 6rem;
+  }
+  .reading > h2:first-child {
+    margin-top: 0;
+  }
+  .reading h3 {
+    margin-top: 2rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-base-content);
+  }
+  .reading strong {
+    font-weight: 600;
+    color: var(--color-base-content);
+  }
+  .reading ul {
+    list-style: square;
+    padding-left: 1.3rem;
+  }
+  .reading ol {
+    list-style: decimal;
+    padding-left: 1.5rem;
+  }
+  .reading li + li {
+    margin-top: 0.4rem;
+  }
+  .reading code {
+    font-size: 0.9em;
+    overflow-wrap: anywhere;
+  }
+  .reading pre {
+    max-width: 100%;
+    overflow-x: auto;
+    padding: 1rem 1.25rem;
+    background-color: var(--color-neutral);
+    color: var(--color-neutral-content);
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    white-space: pre-wrap;
+  }
+  .reading table {
+    display: block;
+    max-width: 100%;
+    width: fit-content;
+    overflow-x: auto;
+    border-collapse: collapse;
+    background-color: var(--color-base-200);
+    border: 1px solid var(--color-base-300);
+    font-size: 0.9375rem;
+  }
+  .reading th,
+  .reading td {
+    padding: 0.5rem 0.875rem;
+    border-bottom: 1px solid var(--color-base-300);
+    text-align: left;
+  }
+  .reading td:not(:first-child) {
+    font-family: "Victor Mono", ui-monospace, monospace;
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+  }
+  .reading tr:last-child td {
+    border-bottom: 0;
+  }
+
+  /* The license's full text: folded on a phone, open from 1024 px. */
+  @media (min-width: 64rem) {
+    .license-text::details-content {
+      content-visibility: visible;
+      block-size: auto;
+    }
+    .license-text > summary {
+      display: none;
+    }
+  }
+
+  /* ——— The time-zone ruler, from 1024 px ——— */
+  .ruler-line {
+    position: relative;
+    height: 2.25rem;
+    border-top: 2px solid var(--color-base-content);
+  }
+  .ruler-tick {
+    position: absolute;
+    top: 0;
+    left: calc(var(--at) * 100% / 17);
+    height: 0.625rem;
+    border-left: 1px solid var(--color-base-content);
+  }
+  .ruler-tick > span {
+    position: absolute;
+    top: 0.75rem;
+    left: 0;
+    translate: -50% 0;
+  }
+  .ruler-mark {
+    position: absolute;
+    left: calc(var(--at) * 100% / 17);
+    translate: -50% 0;
+    width: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .ruler-stem {
+    width: 1px;
+    height: 1.75rem;
+    background-color: var(--color-base-content);
+  }
+
+  /* Questions: ruled rows, a cross that turns into a dash. */
+  .question > summary {
+    list-style: none;
+    cursor: pointer;
+  }
+  .question > summary::-webkit-details-marker {
+    display: none;
+  }
+  .question .question-down {
+    transition: scale 150ms ease;
+  }
+  .question[open] .question-down {
+    scale: 1 0;
+  }
+
+  .fieldset-legend,
+  .field-label {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    /* Nothing to replay. */
+    [data-heats-rerun] {
+      display: none;
+    }
+    .btn,
+    .index-row,
+    .index-row .model-name,
+    .index-row .index-arrow,
+    .question .question-down {
+      transition: none;
+    }
+  }
+}
+
+/* Upstart's "Image credits" link, lined up with the footer's container. */
+footer [data-up-credits] {
+  padding: 0 calc(max(0px, (100% - 84rem) / 2) + 1.25rem) 2rem;
+}
+@media (width >= 48rem) {
+  footer [data-up-credits] {
+    padding-inline: calc(max(0px, (100% - 84rem) / 2) + 2rem);
+  }
+}
+
+/* Spec labels that are headings: Upstart's own rule gives headings the heading font, outside any layer. */
+h2.spec,
+h3.spec {
+  font-family: "Victor Mono", ui-monospace, monospace;
+}

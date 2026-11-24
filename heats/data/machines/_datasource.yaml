@@ -1,0 +1,23 @@
+label: Machines
+fields:
+  - name: name
+    kind: text
+    required: true
+  - name: memory
+    kind: text
+  - name: dunlin_3_mini
+    kind: text
+    label: "File for Dunlin 3 Mini"
+  - name: dunlin_3_small
+    kind: text
+    label: "File for Dunlin 3 Small"
+  - name: dunlin_3
+    kind: text
+    label: "File for Dunlin 3"
+  - name: dunlin_3_flock
+    kind: text
+    label: "File for Dunlin 3 Flock"
+  - name: dunlin_3_coder
+    kind: text
+    label: "File for Dunlin 3 Coder"
+order: [phone, laptop, card-8, card-12, card-24, workstation]

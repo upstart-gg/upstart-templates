@@ -1,0 +1,90 @@
+{%- assign names = "Dunlin 3 14B,Dunlin 2 14B,Baseline A 12B,Baseline B 15B" | split: "," -%}
+{%- assign fields = "ours,earlier,baseline_a,baseline_b" | split: "," -%}
+{%- assign patterns = "solid,striped,ink,ink" | split: "," -%}
+<section class="scroll-mt-16 border-t border-base-300 text-base-content" data-heats>
+  <div class="mx-auto grid max-w-[84rem] gap-x-10 px-5 py-20 md:px-8 md:py-28 xl:grid-cols-[8rem_minmax(0,1fr)]">
+    <p class="spec pt-2 text-base-content/75">Heats</p>
+    <div class="min-w-0 max-xl:mt-4">
+      <div class="grid gap-5 lg:grid-cols-2 lg:gap-12">
+        <h2 class="title-section">Four heats. Same lanes, same harness, our own runs.</h2>
+        <p class="body-copy lg:pt-2">Each heat is one benchmark, run the same way for every lane. Lane 1 is Dunlin 3. The figures are in the table below, and the configs are in the repository.</p>
+      </div>
+      <div class="mt-12 md:mt-16"><div class="grid gap-x-12 gap-y-10 lg:grid-cols-2 lg:gap-y-14">
+  {% for heat in data.heats %}{% if heat.home %}
+{%- assign number = forloop.index -%}
+{%- assign best = nil -%}
+{%- for lane in fields -%}
+  {%- assign figure = heat[lane] -%}
+  {%- if figure -%}
+    {%- if best == nil -%}{%- assign best = figure -%}
+    {%- elsif heat.better == "lower" and figure < best -%}{%- assign best = figure -%}
+    {%- elsif heat.better != "lower" and figure > best -%}{%- assign best = figure -%}
+    {%- endif -%}
+  {%- endif -%}
+{%- endfor -%}
+<article class="border-t border-base-content/50 pt-4" data-heat data-better="{{ heat.better | default: 'higher' }}">
+  <h3 class="title-small">Heat {{ number }} · {{ heat.name }}</h3>
+  <p class="spec mt-1.5 text-base-content/75">{{ heat.benchmark }} · {{ heat.setting }} · {{ heat.unit }}{% if heat.better == "lower" %} · <span class="whitespace-nowrap">↓ lower is better</span>{% endif %}</p>
+  <div class="mt-4 space-y-3 md:space-y-2">
+    <div class="lane" aria-hidden="true">
+      <div class="lane-ticks mono">
+        {%- for at in (1..4) -%}<span style="--at: {{ at | times: 25 }}">{{ heat.scale | times: at | divided_by: 4.0 | round: 2 }}</span>{%- endfor -%}
+      </div>
+    </div>
+    {% for lane in fields %}
+    {%- assign figure = heat[lane] -%}
+    <div class="lane" data-lane {% if figure %}data-figure="{{ figure }}" style="--v: {{ figure }}; --scale: {{ heat.scale }}"{% if figure == best %} data-lead{% endif %}{% endif %}>
+      <p class="lane-name">{{ names[forloop.index0] }}</p>
+      <div class="lane-track" aria-hidden="true">
+        {% if figure %}<span class="lane-bar pattern-{{ patterns[forloop.index0] }}" data-lane-bar></span><span class="lane-tape" data-lane-tape></span>{% endif %}
+      </div>
+      <p class="lane-figure mono" {% if figure %}data-lane-figure{% endif %}>{% if figure %}{{ figure }}{% else %}–{% endif %}</p>
+    </div>
+    {% endfor %}
+  </div>
+</article>
+  {% endif %}{% endfor %}
+</div></div>
+      <div class="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3">
+        <button type="button" class="btn btn-outline" data-heats-rerun>Run again</button>
+        <a href="/evals" class="text-link font-semibold">All nine heats</a>
+      </div>
+      <div class="mt-12"><div class="border border-base-content/50 bg-base-200">
+  <div class="relative overflow-x-auto">
+    <table class="sheet-table min-w-[44rem]">
+      <caption class="px-4 pt-4 pb-2"><span class="block max-w-[calc(100vw-5rem)]">Table 1 · The same figures</span></caption>
+      <thead>
+        <tr>
+          <th scope="col" class="spec">Heat</th>
+          {% for lane in fields %}<th scope="col" class="spec">{{ names[forloop.index0] }}</th>{% endfor %}
+        </tr>
+      </thead>
+      <tbody>
+        {% for heat in data.heats %}{% if heat.home %}
+        {%- assign best = nil -%}
+        {%- for lane in fields -%}
+          {%- assign figure = heat[lane] -%}
+          {%- if figure -%}
+            {%- if best == nil -%}{%- assign best = figure -%}
+            {%- elsif heat.better == "lower" and figure < best -%}{%- assign best = figure -%}
+            {%- elsif heat.better != "lower" and figure > best -%}{%- assign best = figure -%}
+            {%- endif -%}
+          {%- endif -%}
+        {%- endfor -%}
+        <tr>
+          <th scope="row" class="font-normal"><span class="font-semibold">{{ heat.name }}</span> <span class="text-base-content/75">{{ heat.benchmark }}, {{ heat.unit }}{% if heat.better == "lower" %}, lower is better{% endif %}</span></th>
+          {% for lane in fields %}
+          {%- assign figure = heat[lane] -%}
+          <td class="mono {% if figure and figure == best %}font-bold{% endif %}">{% if figure %}{{ figure }}{% else %}–{% endif %}</td>
+          {% endfor %}
+        </tr>
+        {% endif %}{% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+<p class="comment mt-3 max-w-[80ch] text-base-content/80">Our runs, February 26, 2027 · config evals/heats-3.1.yaml · greedy decoding · mean of three seeds. Baseline A and Baseline B are open models of similar size, run by us the same way.</p>
+</div>
+    </div>
+  </div>
+</section>

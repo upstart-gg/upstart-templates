@@ -1,0 +1,36 @@
+{%- comment -%} Table 1. show: "home" or "all" {%- endcomment -%}
+<div class="border border-base-content/50 bg-base-200">
+  <div class="relative overflow-x-auto">
+    <table class="sheet-table min-w-[44rem]">
+      <caption class="px-4 pt-4 pb-2"><span class="block max-w-[calc(100vw-5rem)]">Table 1 · The same figures</span></caption>
+      <thead>
+        <tr>
+          <th scope="col" class="spec">Heat</th>
+          {% for lane in data.lanes %}<th scope="col" class="spec">{{ lane.name }}</th>{% endfor %}
+        </tr>
+      </thead>
+      <tbody>
+        {% for heat in data.heats %}{% if show == "all" or heat.home %}
+        {%- assign best = nil -%}
+        {%- for lane in data.lanes -%}
+          {%- assign figure = heat[lane.lane] -%}
+          {%- if figure -%}
+            {%- if best == nil -%}{%- assign best = figure -%}
+            {%- elsif heat.better == "lower" and figure < best -%}{%- assign best = figure -%}
+            {%- elsif heat.better != "lower" and figure > best -%}{%- assign best = figure -%}
+            {%- endif -%}
+          {%- endif -%}
+        {%- endfor -%}
+        <tr>
+          <th scope="row" class="font-normal"><span class="font-semibold">{{ heat.name }}</span> <span class="text-base-content/75">{{ heat.benchmark }}, {{ heat.unit }}{% if heat.better == "lower" %}, lower is better{% endif %}</span></th>
+          {% for lane in data.lanes %}
+          {%- assign figure = heat[lane.lane] -%}
+          <td class="mono {% if figure and figure == best %}font-bold{% endif %}">{% if figure %}{{ figure }}{% else %}–{% endif %}</td>
+          {% endfor %}
+        </tr>
+        {% endif %}{% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+<p class="comment mt-3 max-w-[80ch] text-base-content/80">Our runs, February 26, 2027 · config evals/heats-3.1.yaml · greedy decoding · mean of three seeds. Baseline A and Baseline B are open models of similar size, run by us the same way.</p>

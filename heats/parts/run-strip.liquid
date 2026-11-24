@@ -1,0 +1,22 @@
+{%- comment -%} set: a name for the tabs, one per page; show: "home", "all" (with their notes) or "model" (with model) {%- endcomment -%}
+<div class="ground px-4 pt-2 pb-5 md:px-6 md:pb-6">
+  <div class="tabs run-tabs" data-run-tabs>
+    {% if show == "model" %}
+    {% assign size = model.ollama | split: ":" | last %}
+    {% capture comment %}# {{ model.q4 }} at 4-bit · {{ model.runs_on | slice: 0 | downcase }}{{ model.runs_on | slice: 1, 200 }}{% endcapture %}
+    {% capture ollama %}ollama run {{ model.ollama }}{% endcapture %}
+    {% capture python %}dunlin-lm chat --size {{ size }}{% endcapture %}
+    {% capture hf %}hf download {{ model.hf }}{% endcapture %}
+    {% capture gguf %}llama-cli -hf {{ model.gguf }}{% endcapture %}
+    {% render 'run-tab', set: set, label: "Ollama", comment: comment, command: ollama, first: true %}
+    {% render 'run-tab', set: set, label: "Python", comment: comment, command: python %}
+    {% capture full %}# {{ model.bf16 }} at BF16 · for fine-tuning{% endcapture %}
+    {% render 'run-tab', set: set, label: "Hugging Face", comment: full, command: hf %}
+    {% render 'run-tab', set: set, label: "llama.cpp", comment: comment, command: gguf %}
+    {% elsif show == "all" %}
+    {% for way in data.runtimes %}{% render 'run-tab', set: set, label: way.label, comment: way.comment, command: way.command, notes: way.notes, first: forloop.first %}{% endfor %}
+    {% else %}
+    {% for way in data.runtimes %}{% if way.home %}{% render 'run-tab', set: set, label: way.label, comment: way.comment, command: way.command, first: forloop.first %}{% endif %}{% endfor %}
+    {% endif %}
+  </div>
+</div>

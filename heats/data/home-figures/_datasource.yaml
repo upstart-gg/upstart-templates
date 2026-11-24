@@ -1,0 +1,8 @@
+label: Community figures
+fields:
+  - name: figure
+    kind: text
+    required: true
+  - name: label
+    kind: text
+order: [maintainers, contributors, forum, fine-tunes]

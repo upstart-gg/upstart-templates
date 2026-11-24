@@ -1,0 +1,18 @@
+<section class="border-t border-base-300 text-base-content">
+  <div class="mx-auto grid max-w-[84rem] gap-8 px-5 py-16 md:px-8 md:py-24 lg:grid-cols-12 lg:gap-12">
+    <div class="lg:col-span-4">
+      <h2 class="title-section lg:sticky lg:top-24">Where we talk</h2>
+    </div>
+    <ul class="border-b border-base-content/35 lg:col-span-8">
+      {% for channel in data.channels %}
+      <li class="grid gap-x-8 gap-y-2 border-t border-base-content/35 py-5 md:grid-cols-[1fr_auto] md:items-baseline">
+        <div>
+          <h3 class="title-small">{{ channel.title }}</h3>
+          <p class="mt-1.5 max-w-[56ch] leading-relaxed text-base-content/80">{{ channel.text }}</p>
+        </div>
+        <a href="{{ channel.href }}" class="text-link font-semibold whitespace-nowrap">{{ channel.link_label }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

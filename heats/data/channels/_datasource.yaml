@@ -1,0 +1,12 @@
+label: Where we talk
+fields:
+  - name: title
+    kind: text
+    required: true
+  - name: text
+    kind: text
+  - name: link_label
+    kind: text
+  - name: href
+    kind: link
+order: [forum, chat, discussions, mailing-list, office-hours]

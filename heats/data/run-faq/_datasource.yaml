@@ -1,0 +1,12 @@
+label: Questions about running it
+fields:
+  - name: question
+    kind: text
+    required: true
+  - name: topic
+    kind: choice
+    choices: [Hardware, Files, Privacy]
+  - name: answer
+    kind: markdown
+body: answer
+order: [mac, graphics-card, q4, where, send]

@@ -1,0 +1,13 @@
+<section class="bg-secondary text-secondary-content">
+  <div class="mx-auto max-w-[84rem] px-5 py-16 md:px-8 md:py-24">
+    <h2 class="title-section">Who did what</h2>
+    <dl class="mt-10 border-b border-secondary-content/40">
+      {% for credit in data["report-credits"] %}
+      <div class="grid gap-x-8 gap-y-1.5 border-t border-secondary-content/40 py-5 md:grid-cols-12">
+        <dt class="title-small md:col-span-4">{{ credit.area }}</dt>
+        <dd class="leading-relaxed md:col-span-8">{{ credit.names | join: ", " }}</dd>
+      </div>
+      {% endfor %}
+    </dl>
+  </div>
+</section>

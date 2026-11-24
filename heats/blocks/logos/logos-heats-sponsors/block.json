@@ -1,0 +1,13 @@
+{
+  "name": "Sponsors as a ledger",
+  "kind": "logos",
+  "source": "upstart",
+  "description": "The sponsors thanked by name in ruled rows, each with what it gave in figures and for how long, in place of a wall of logos.",
+  "tags": ["sponsors", "partners", "funding", "supporters", "thanks"],
+  "mood": ["minimal", "editorial"],
+  "synonyms": ["sponsors list", "funders", "backers", "donors", "mécènes", "soutiens", "partenaires", "donateurs"],
+  "data": {
+    "name": "sponsors",
+    "family": "collection"
+  }
+}

@@ -1,0 +1,7 @@
+<details class="question border-t border-base-content/35" {% if open %}open{% endif %}>
+  <summary class="flex items-baseline justify-between gap-6 py-5">
+    <span class="title-small">{{ question.question }}</span>
+    <svg class="size-4 shrink-0 self-center" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M1 8h14"/><path class="question-down origin-center" d="M8 1v14"/></svg>
+  </summary>
+  <div class="reading pb-6 text-[1.0625rem]!">{{ question.answer }}</div>
+</details>

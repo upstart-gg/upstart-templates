@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>{{ record.rev }}: {{ record.title }} — Dunlin</title>
+<meta name="description" content="{{ record.summary }}">
+<meta property="og:title" content="Dunlin {{ record.rev }}: {{ record.title }}">
+<meta property="og:description" content="{{ record.summary }}">
+</head>
+<body>
+{% render 'header' %}
+<main>
+{% assign place = 0 %}
+{% assign count = data.releases.size %}
+{% for release in data.releases %}{% if release.id == record.id %}{% assign place = forloop.index0 %}{% endif %}{% endfor %}
+{% assign number = count | minus: place %}
+<section class="text-base-content">
+  <div class="mx-auto max-w-[84rem] px-5 pt-8 pb-16 md:px-8 md:pb-24">
+    <div class="spec flex flex-wrap justify-between gap-x-6 gap-y-1 border-b border-base-content/50 pb-3"><p><a href="/releases" class="hover:text-primary hover:underline">Releases</a> · {{ record.kind }}</p><p>Sheet 06.{{ number }} of 08</p></div>
+    <div class="mt-10 flex flex-col gap-6 md:mt-14 md:flex-row md:items-end md:gap-10">
+      {% render 'rev-mark', rev: record.rev, size: "large" %}
+      <div>
+        <time datetime="{{ record.date }}" class="mono">{{ record.date | date: "%B %-d, %Y" }}</time>
+        <h1 class="title-hero mt-2">{{ record.title }}</h1>
+      </div>
+    </div>
+    <div class="mt-12 grid gap-10 lg:grid-cols-[7fr_5fr] lg:gap-14">
+      <div>
+        <h2 class="title-section">What changed</h2>
+        <ul class="mt-6 border-b border-base-content/35">
+          {% for change in record.changes %}<li class="border-t border-base-content/35 py-3.5 leading-relaxed">{{ change }}</li>{% endfor %}
+        </ul>
+      </div>
+      {% if record.upgrade != blank %}
+      <div class="lg:pt-16">
+        <div class="ground p-5 md:p-6" data-copy-from>
+          <p class="comment text-secondary"># upgrade</p>
+          <div class="mt-1.5 flex items-start justify-between gap-4"><code class="command min-w-0 select-all pt-1.5">{{ record.upgrade }}</code>{% render 'copy-button', on: "ground" %}</div>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+<section class="calm border-y border-base-300 text-base-content">
+  <div class="mx-auto grid max-w-[84rem] gap-6 px-5 py-16 md:px-8 md:py-24 lg:grid-cols-12 lg:gap-12">
+    <p class="spec pt-2 text-base-content/75 lg:col-span-3">Notes</p>
+    <div class="reading lg:col-span-9">{{ record.notes }}</div>
+  </div>
+</section>
+{% assign newer_place = place | minus: 1 %}
+{% assign older_place = place | plus: 1 %}
+<nav aria-label="Other revisions" class="text-base-content">
+  <div class="mx-auto grid max-w-[84rem] px-5 py-10 md:grid-cols-2 md:px-8 md:py-14">
+    <div class="max-md:pb-6">
+      {% if older_place < count %}{% assign older = data.releases[older_place] %}
+      <a href="/releases/{{ older.id }}" class="group block"><span class="spec text-base-content/75">Previous revision</span><span class="title-small mt-2 block group-hover:text-primary">{{ older.rev }} · {{ older.title }}</span></a>{% endif %}
+    </div>
+    <div class="border-base-content/35 max-md:border-t max-md:pt-6 md:border-l md:pl-10">
+      {% if newer_place >= 0 %}{% assign newer = data.releases[newer_place] %}
+      <a href="/releases/{{ newer.id }}" class="group block"><span class="spec text-base-content/75">Next revision</span><span class="title-small mt-2 block group-hover:text-primary">{{ newer.rev }} · {{ newer.title }}</span></a>{% else %}
+      <a href="/releases" class="group block"><span class="spec text-base-content/75">This is the latest</span><span class="title-small mt-2 block group-hover:text-primary">Every revision</span></a>{% endif %}
+    </div>
+  </div>
+</nav>
+</main>
+{% assign sheet = "06." | append: number %}
+{% render 'footer', sheet: sheet %}
+</body>
+</html>

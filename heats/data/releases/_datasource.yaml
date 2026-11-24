@@ -1,0 +1,26 @@
+label: Revisions
+fields:
+  - name: title
+    kind: text
+    required: true
+  - name: rev
+    kind: text
+    required: true
+    label: "Revision"
+  - name: date
+    kind: date
+  - name: kind
+    kind: choice
+    choices: [major, minor, fix]
+  - name: summary
+    kind: text
+  - name: changes
+    kind: list
+    label: "What changed"
+  - name: upgrade
+    kind: text
+    label: "Upgrade command"
+  - name: notes
+    kind: markdown
+body: notes
+sort: -date

@@ -1,0 +1,17 @@
+<section id="heats" class="scroll-mt-16 border-t border-base-300 text-base-content" data-heats>
+  <div class="mx-auto grid max-w-[84rem] gap-x-10 px-5 py-20 md:px-8 md:py-28 xl:grid-cols-[8rem_minmax(0,1fr)]">
+    <p class="spec pt-2 text-base-content/75">02 · Heats</p>
+    <div class="min-w-0 max-xl:mt-4">
+      <div class="grid gap-5 lg:grid-cols-2 lg:gap-12">
+        <h2 class="title-section">Four heats. Same lanes, same harness, our own runs.</h2>
+        <p class="body-copy lg:pt-2">Each heat is one benchmark, run the same way for every lane. Lane 1 is Dunlin 3. The figures are in the table below, and the configs are in the repository.</p>
+      </div>
+      <div class="mt-12 md:mt-16">{% render 'heats', show: "home" %}</div>
+      <div class="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3">
+        <button type="button" class="btn btn-outline" data-heats-rerun>Run again</button>
+        <a href="/evals" class="text-link font-semibold">All nine heats</a>
+      </div>
+      <div class="mt-12">{% render 'heats-table', show: "home" %}</div>
+    </div>
+  </div>
+</section>

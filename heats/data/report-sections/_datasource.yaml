@@ -1,0 +1,10 @@
+label: The report's sections
+fields:
+  - name: title
+    kind: text
+    required: true
+  - name: page
+    kind: number
+  - name: summary
+    kind: text
+order: [introduction, data, architecture, training, post-training, evals]

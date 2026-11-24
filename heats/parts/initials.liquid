@@ -1,0 +1,2 @@
+{%- assign words = person.name | split: " " -%}
+{% if person.photo %}<img src="{{ person.photo }}" class="size-12 shrink-0 object-cover">{% else %}<span class="grid size-12 shrink-0 place-items-center border border-base-content/50 bg-base-200 font-heading text-[1.0625rem] font-semibold" aria-hidden="true">{{ words.first | slice: 0 }}{{ words.last | slice: 0 }}</span>{% endif %}

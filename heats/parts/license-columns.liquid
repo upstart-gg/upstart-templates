@@ -1,0 +1,12 @@
+{%- comment -%} show: "more" adds the license page's longer points {%- endcomment -%}
+<div class="grid border-t border-base-content/50 md:grid-cols-3" data-reveal="stagger">
+  {% for column in data["license-terms"] %}
+  <div class="py-6 max-md:border-b max-md:border-base-content/35 md:px-7 md:py-8 {% if forloop.first %}md:pl-0{% else %}md:border-l md:border-base-content/35{% endif %} {% if forloop.last %}max-md:border-b-0{% endif %}">
+    <h3 class="title-small">{{ column.title }}</h3>
+    <ul class="mt-4 space-y-2.5 leading-relaxed text-base-content/80">
+      {% for point in column.points %}<li class="flex gap-3"><span class="mt-[0.7em] h-px w-3 shrink-0 bg-base-content" aria-hidden="true"></span><span>{{ point }}</span></li>{% endfor %}
+      {% if show == "more" %}{% for point in column.more %}<li class="flex gap-3"><span class="mt-[0.7em] h-px w-3 shrink-0 bg-base-content" aria-hidden="true"></span><span>{{ point }}</span></li>{% endfor %}{% endif %}
+    </ul>
+  </div>
+  {% endfor %}
+</div>

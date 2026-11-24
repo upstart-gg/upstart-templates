@@ -1,0 +1,42 @@
+<footer class="ground">
+  <div class="mx-auto max-w-[84rem] px-5 pt-14 pb-6 md:px-8 md:pt-20">
+    <div class="grid border border-neutral-content/40 lg:grid-cols-[1.3fr_2fr]">
+      <dl class="grid grid-cols-2 border-neutral-content/40 max-lg:border-b lg:border-r">
+        <div class="col-span-2 border-b border-neutral-content/40 p-5 md:p-6">
+          <dt class="spec text-neutral-content/80">Project</dt>
+          <dd class="wordmark mt-2 text-[2.25rem]">Dunlin</dd>
+        </div>
+        <div class="col-span-2 border-b border-neutral-content/40 p-5 md:px-6">
+          <dt class="spec text-neutral-content/80">Drawn by</dt>
+          <dd class="mt-1.5">The Dunlin maintainers and 212 contributors</dd>
+        </div>
+        <div class="border-r border-neutral-content/40 p-5 md:px-6">
+          <dt class="spec text-neutral-content/80">Rev</dt>
+          <dd class="mono mt-1.5">3.1</dd>
+        </div>
+        <div class="p-5 md:px-6">
+          <dt class="spec text-neutral-content/80">Sheet</dt>
+          <dd class="mono mt-1.5">{{ sheet }} of 08</dd>
+        </div>
+      </dl>
+      <div class="grid gap-8 p-5 sm:grid-cols-3 md:p-8">
+        {% for item in data.navigation %}{% if item.links.size > 0 %}
+        <nav aria-label="{{ item.label }}">
+          <h2 class="spec text-neutral-content/80">{{ item.label }}</h2>
+          <ul class="mt-4 space-y-2.5">
+            {% for link in item.links %}<li><a href="{{ link.href }}" class="hover:text-secondary hover:underline hover:underline-offset-3" {% if page.url == link.href %}aria-current="page"{% endif %}>{{ link.label }}</a></li>{% endfor %}
+          </ul>
+        </nav>
+        {% endif %}{% endfor %}
+      </div>
+    </div>
+    <div class="mt-8 flex flex-col gap-3 text-[0.9375rem] text-neutral-content/80 sm:flex-row sm:items-center sm:justify-between">
+      <p>© 2027 The Dunlin Project. Weights and code under Apache-2.0.</p>
+      <nav aria-label="Elsewhere" class="flex flex-wrap gap-x-6 gap-y-2">
+        {% for item in data.navigation %}{% if item.place == "social" %}
+        <a href="{{ item.href }}" class="hover:text-secondary hover:underline hover:underline-offset-3">{{ item.label }}</a>
+        {% endif %}{% endfor %}
+      </nav>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Revisions — Dunlin</title>
+<meta name="description" content="Every Dunlin release since 1.0, newest first, with its notes and its upgrade command. Old weights stay downloadable.">
+<meta property="og:title" content="Revisions — Dunlin">
+<meta property="og:description" content="Every Dunlin release since 1.0, newest first, with its notes and its upgrade command. Old weights stay downloadable.">
+</head>
+<body>
+{% render 'header' %}
+<main>
+<section class="text-base-content">
+  <div class="mx-auto max-w-[84rem] px-5 pt-8 pb-14 md:px-8 md:pb-20">
+    <div class="spec flex flex-wrap justify-between gap-x-6 gap-y-1 border-b border-base-content/50 pb-3"><p>Dunlin · Releases</p><p>Sheet 06 of 08</p></div>
+    <div class="mt-10 grid gap-5 md:mt-14 lg:grid-cols-12 lg:gap-12">
+      <h1 class="title-hero lg:col-span-5">Revisions</h1>
+      <p class="body-copy text-[1.1875rem] lg:col-span-7 lg:pt-3">Every release since 1.0, newest first. Old weights stay downloadable.</p>
+    </div>
+  </div>
+</section>
+<section class="text-base-content">
+  <div class="mx-auto max-w-[84rem] px-5 pb-20 md:px-8 md:pb-28">{% render 'revisions', kinds: true %}</div>
+</section>
+{% render 'notes-strip' %}
+</main>
+{% render 'footer', sheet: "06" %}
+</body>
+</html>

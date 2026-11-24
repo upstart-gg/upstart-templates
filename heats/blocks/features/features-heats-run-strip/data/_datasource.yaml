@@ -1,0 +1,15 @@
+label: Ways to run it
+fields:
+  - name: label
+    kind: text
+    required: true
+  - name: command
+    kind: text
+  - name: comment
+    kind: text
+  - name: notes
+    kind: text
+  - name: home
+    kind: boolean
+    label: "On the home page"
+order: [ollama, python, hugging-face, llama-cpp, lm-studio, server]

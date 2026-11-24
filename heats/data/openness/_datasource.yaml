@@ -1,0 +1,17 @@
+label: What we publish
+fields:
+  - name: item
+    kind: text
+    required: true
+  - name: status
+    kind: choice
+    choices: [published, partly, not yet]
+  - name: place
+    kind: text
+    label: "Where"
+  - name: href
+    kind: link
+  - name: note
+    kind: text
+order:
+  [weights, training-code, data-manifest, checkpoints, training-logs, eval-outputs, reward-model, undistributed-data]

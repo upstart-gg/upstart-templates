@@ -1,0 +1,14 @@
+<ul class="border-b border-base-content/35">
+  {% for sponsor in data.sponsors %}
+  <li class="grid gap-x-8 gap-y-1 border-t border-base-content/35 py-4 md:grid-cols-12 md:items-baseline">
+    <h3 class="title-small md:col-span-5"><a href="{{ sponsor.link }}" class="hover:text-primary hover:underline hover:decoration-1 hover:underline-offset-3">{{ sponsor.name }}</a></h3>
+    <p class="spec text-base-content/75 md:col-span-2">{{ sponsor.gives }}</p>
+    <p class="mono text-[0.9375rem] md:col-span-5">{{ sponsor.what }} · {{ sponsor.period }}</p>
+  </li>
+  {% endfor %}
+  <li class="grid gap-x-8 gap-y-1 border-t border-base-content/35 py-4 md:grid-cols-12 md:items-baseline">
+    <h3 class="title-small md:col-span-5">412 people</h3>
+    <p class="spec text-base-content/75 md:col-span-2">donors</p>
+    <p class="mono text-[0.9375rem] md:col-span-5">What they can, every month</p>
+  </li>
+</ul>

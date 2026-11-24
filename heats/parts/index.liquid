@@ -1,0 +1,38 @@
+{%- comment -%} size: "short" (six columns) or "full" (with layers and release date); without: a model's id to leave out {%- endcomment -%}
+{%- if size == "full" -%}
+{%- assign columns = "xl:grid-cols-[2.5rem_minmax(13rem,1.25fr)_5.5rem_4.5rem_3.5rem_4.5rem_7.5rem_minmax(11rem,1fr)_1.5rem]" -%}
+{%- assign only_full = "" -%}
+{%- else -%}
+{%- assign columns = "xl:grid-cols-[3rem_minmax(16rem,1.4fr)_7.5rem_6rem_6.5rem_minmax(14rem,1fr)_1.5rem]" -%}
+{%- assign only_full = "hidden" -%}
+{%- endif -%}
+<div class="{{ columns }} hidden gap-x-5 pb-2 text-base-content/75 xl:grid" aria-hidden="true">
+  <span class="spec">No.</span>
+  <span class="spec">Model</span>
+  <span class="spec">Parameters</span>
+  <span class="spec">Context</span>
+  <span class="spec {{ only_full }}">Layers</span>
+  <span class="spec">At 4-bit</span>
+  <span class="spec {{ only_full }}">Released</span>
+  <span class="spec">Runs on</span>
+</div>
+<ol class="border-b border-base-content/35" data-reveal="stagger" data-index>
+  {% for model in data.models %}{% unless model.id == without %}
+  <li>
+    <a href="/models/{{ model.id }}" class="index-row {{ columns }} grid-cols-[2.25rem_1fr_1fr] gap-x-4 gap-y-3 py-4 md:grid-cols-[3rem_repeat(4,1fr)] xl:items-center xl:gap-x-5 xl:gap-y-0 {% if size == 'full' %}xl:py-5{% else %}xl:py-3{% endif %}">
+      <span class="mono pt-1.5 text-[0.9375rem] text-base-content/75 xl:pt-0">{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span>
+      <span class="col-span-2 flex flex-wrap items-center gap-x-3 gap-y-1.5 md:col-span-4 xl:col-span-1">
+        <span class="model-name">{{ model.name }}</span>
+        {% if model.featured %}<span class="spec border border-primary px-1.5 py-px text-primary">Most people start here</span>{% endif %}
+      </span>
+      <span class="col-start-2 xl:col-start-auto"><span class="spec block text-base-content/75 xl:sr-only">Parameters</span><span class="mono">{{ model.params }}</span></span>
+      <span><span class="spec block text-base-content/75 xl:sr-only">Context</span><span class="mono">{{ model.context }}</span></span>
+      <span class="{{ only_full }} max-md:col-start-2"><span class="spec block text-base-content/75 xl:sr-only">Layers</span><span class="mono">{{ model.layers }}</span></span>
+      <span class="{% if size != 'full' %}max-md:col-start-2{% endif %}"><span class="spec block text-base-content/75 xl:sr-only">At 4-bit</span><span class="mono whitespace-nowrap">{{ model.q4 }}</span></span>
+      <span class="{{ only_full }} max-md:col-start-2 md:max-xl:col-start-2"><span class="spec block text-base-content/75 xl:sr-only">Released</span><span class="mono whitespace-nowrap">{{ model.released | date: "%b %-d, %Y" }}</span></span>
+      <span class="{% if size == 'full' %}max-md:col-span-2 max-md:col-start-2 md:max-xl:col-span-3{% endif %}"><span class="spec block text-base-content/75 xl:sr-only">Runs on</span>{{ model.runs_on }}</span>
+      <svg class="index-arrow hidden size-5 xl:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true"><path d="M4 12h15"/><path d="m13 6 6 6-6 6"/></svg>
+    </a>
+  </li>
+  {% endunless %}{% endfor %}
+</ol>

@@ -1,0 +1,19 @@
+<article class="text-base-content">
+  <div class="mx-auto max-w-[84rem] px-5 py-16 md:px-8 md:py-24">
+    <div class="flex flex-col gap-6 md:flex-row md:items-end md:gap-10">
+      <span class="relative inline-grid h-24 w-28 shrink-0 place-items-center">
+  <svg class="absolute inset-0 size-full text-accent" viewBox="0 0 56 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M28 2 54 46H2Z"/></svg>
+  <span class="mono relative font-bold pt-9 text-[1.75rem] leading-none">{{ record.rev }}</span>
+</span>
+      <div>
+        <time datetime="{{ record.date }}" class="mono">{{ record.date | date: "%B %-d, %Y" }}</time>
+        <h1 class="title-hero mt-2">{{ record.title }}</h1>
+      </div>
+    </div>
+    <h2 class="title-section mt-12">What changed</h2>
+    <ul class="mt-6 border-b border-base-content/35">
+      {% for change in record.changes %}<li class="border-t border-base-content/35 py-3.5 leading-relaxed">{{ change }}</li>{% endfor %}
+    </ul>
+    <div class="reading mt-12">{{ record.notes }}</div>
+  </div>
+</article>

@@ -1,0 +1,22 @@
+{
+  "name": "Command strip in tabs",
+  "kind": "features",
+  "source": "upstart",
+  "description": "The commands to copy on a band of blueprint ground, a tab per way to install or run, each with its comment in a cursive italic, its notes and a Copy button.",
+  "tags": ["command", "install", "tabs", "copy", "terminal", "developer"],
+  "mood": ["dark", "professional"],
+  "synonyms": [
+    "install command",
+    "code snippet",
+    "quick start",
+    "copy command",
+    "installation",
+    "ligne de commande",
+    "démarrage rapide",
+    "commande à copier"
+  ],
+  "data": {
+    "name": "runtimes",
+    "family": "collection"
+  }
+}

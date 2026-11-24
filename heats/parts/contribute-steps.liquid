@@ -1,0 +1,14 @@
+<section class="bg-secondary text-secondary-content">
+  <div class="mx-auto max-w-[84rem] px-5 py-16 md:px-8 md:py-24">
+    <h2 class="title-section">How to contribute</h2>
+    <ol class="mt-10 grid gap-x-10 gap-y-9 md:grid-cols-2 xl:grid-cols-4">
+      {% for step in data["contribute-steps"] %}
+      <li class="border-t border-secondary-content/50 pt-5">
+        <span class="figure-large" aria-hidden="true">{{ forloop.index }}</span>
+        <h3 class="title-small mt-4">{{ step.title }}</h3>
+        <p class="mt-2 leading-relaxed">{{ step.text }}</p>
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>

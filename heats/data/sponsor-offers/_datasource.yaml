@@ -1,0 +1,33 @@
+label: Compute and funding offers
+collected: true
+answer: sponsor-offers-thanks
+messages:
+  required: "{field} is required."
+  invalid: "{field} does not look right."
+  too_many: "Too many messages from here. Please try again in a few minutes."
+  sent: "Thank you, your offer is with the steering group."
+fields:
+  - name: organization
+    kind: text
+    required: true
+    label: "Organization"
+  - name: name
+    kind: text
+    required: true
+    label: "Your name"
+  - name: email
+    kind: email
+    required: true
+    label: "Email"
+  - name: gives
+    kind: choice
+    required: true
+    label: "What you can give"
+    choices: [Compute, Funding, Storage or bandwidth, Something else]
+  - name: amount
+    kind: text
+    label: "How much"
+  - name: message
+    kind: markdown
+    label: "Message"
+body: message

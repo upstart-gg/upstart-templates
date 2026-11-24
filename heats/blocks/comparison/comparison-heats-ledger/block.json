@@ -1,0 +1,21 @@
+{
+  "name": "Ledger of what is published",
+  "kind": "comparison",
+  "source": "upstart",
+  "description": "What a project publishes, line by line: each item Published, Partly or Not yet with its mark, where to get it and a note, on a pale wash.",
+  "tags": ["openness", "checklist", "status", "transparency", "open source"],
+  "mood": ["minimal", "professional"],
+  "synonyms": [
+    "what we publish",
+    "transparency list",
+    "status table",
+    "ce que nous publions",
+    "transparence",
+    "registre",
+    "liste de suivi"
+  ],
+  "data": {
+    "name": "openness",
+    "family": "collection"
+  }
+}

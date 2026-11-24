@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>The report — Dunlin</title>
+<meta name="description" content="Dunlin 3 Technical Report: the data, the training run, what went wrong at 6 trillion tokens and how it was fixed, and every eval.">
+<meta property="og:title" content="The report — Dunlin">
+<meta property="og:description" content="Dunlin 3 Technical Report: the data, the training run, what went wrong at 6 trillion tokens and how it was fixed, and every eval.">
+</head>
+<body>
+{% render 'header' %}
+<main>
+<section class="ground">
+  <div class="mx-auto max-w-[84rem] px-5 pt-8 pb-16 md:px-8 md:pb-24">
+    <div class="spec flex flex-wrap justify-between gap-x-6 gap-y-1 border-b border-neutral-content/40 pb-3"><p>Dunlin 3 · The report</p><p>Sheet 05 of 08</p></div>
+    <div class="mt-10 grid gap-12 md:mt-14 lg:grid-cols-[7fr_5fr] lg:items-center lg:gap-20">
+      <div>
+        <h1 class="title-hero">Dunlin 3 Technical Report</h1>
+        <p class="mt-6 text-[1.25rem] leading-snug">The Dunlin maintainers and 212 contributors</p>
+        <p class="mono mt-2 text-neutral-content/85">March 2027 · 41 pages · revision 3.1</p>
+        <div class="mt-9 flex flex-wrap gap-3">
+          <a href="https://github.com/dunlin-project/report/releases" class="btn btn-paper">Download the PDF (3.1 MB)</a>
+          <a href="https://arxiv.org/abs/2703.99999" class="btn btn-paper-outline">On arXiv</a>
+        </div>
+      </div>
+      {% render 'report-cover' %}
+    </div>
+  </div>
+</section>
+<section class="calm border-b border-base-300 text-base-content">
+  <div class="mx-auto grid max-w-[84rem] gap-6 px-5 py-16 md:px-8 md:py-24 lg:grid-cols-12 lg:gap-12">
+    <h2 class="title-section lg:col-span-4">Abstract</h2>
+    <div class="reading lg:col-span-8">
+      <p>We present Dunlin 3, a family of five open-weights language models from 1.6B to 62B parameters, trained on 9.4 trillion tokens of which 92% can be downloaded by anyone. We publish the weights, the training code, the manifest of the data, a checkpoint every 50 billion tokens, the training logs, and the configs and raw outputs of every evaluation.</p>
+      <p>We describe how the data was chosen and what was left out; a tokenizer shared by nine languages; a mixture of 64 experts that fits a 48 GB workstation; and a training run of 1.9 million GPU-hours that went wrong at 6 trillion tokens, for a reason that took nine days to find. On nine benchmarks run with the same settings for every model, Dunlin 3 14B improves on its predecessor in all nine.</p>
+      <p>We end with what the models do badly, which is the part we would read first.</p>
+    </div>
+  </div>
+</section>
+{% render 'report-contents' %}
+{% render 'report-figures' %}
+{% render 'report-credits' %}
+{% render 'cite' %}
+</main>
+{% render 'footer', sheet: "05" %}
+</body>
+</html>

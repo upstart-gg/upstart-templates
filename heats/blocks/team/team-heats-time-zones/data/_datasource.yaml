@@ -1,0 +1,17 @@
+label: Maintainers
+fields:
+  - name: name
+    kind: text
+    required: true
+  - name: pronouns
+    kind: text
+  - name: area
+    kind: text
+  - name: city
+    kind: text
+  - name: utc
+    kind: number
+    label: "Hours from UTC"
+  - name: photo
+    kind: image
+sort: utc

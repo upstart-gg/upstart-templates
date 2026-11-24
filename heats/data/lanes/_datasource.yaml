@@ -1,0 +1,15 @@
+label: Lanes
+fields:
+  - name: name
+    kind: text
+    required: true
+  - name: note
+    kind: text
+  - name: lane
+    kind: choice
+    label: "Its figures"
+    choices: [ours, earlier, baseline_a, baseline_b]
+  - name: pattern
+    kind: choice
+    choices: [solid, striped, ink]
+order: [ours, earlier, baseline-a, baseline-b]

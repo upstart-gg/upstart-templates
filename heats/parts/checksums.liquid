@@ -1,0 +1,19 @@
+<section class="border-t border-base-300 text-base-content">
+  <div class="mx-auto max-w-[84rem] px-5 py-16 md:px-8 md:py-24">
+    <div class="grid gap-6 lg:grid-cols-2 lg:items-end lg:gap-12">
+      <div>
+        <h2 class="title-section">Check your download</h2>
+        <p class="body-copy mt-4">Run this in the folder of the file and compare. If a line differs, delete the file and download it again.</p>
+      </div>
+      <div class="ground flex items-start justify-between gap-4 px-5 py-4" data-copy-from><code class="command min-w-0 select-all pt-1">shasum -a 256 dunlin-3-Q4_K_M.gguf</code>{% render 'copy-button', on: "ground" %}</div>
+    </div>
+    <ul class="mt-10 border-b border-base-content/35">
+      {% for sum in data.checksums %}
+      <li class="grid items-center gap-x-6 gap-y-1.5 border-t border-base-content/35 py-3.5 lg:grid-cols-[17rem_1fr]">
+        <span class="mono text-[0.9375rem]">{{ sum.file }}</span>
+        <span class="flex items-center justify-between gap-4" data-copy-from><code class="min-w-0 text-[0.875rem] break-all select-all">{{ sum.sha256 }}</code>{% render 'copy-button' %}</span>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
