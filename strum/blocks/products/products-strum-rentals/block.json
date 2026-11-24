@@ -1,0 +1,22 @@
+{
+  "name": "Strum rentals",
+  "kind": "products",
+  "source": "upstart",
+  "description": "The instruments to rent as strung rows, each with its picture on apricot, its name, its sizes and the ages it suits, a note, its price a month and what it costs to own, and a link to ask for it.",
+  "tags": ["products", "rentals", "instruments", "music school", "price list"],
+  "mood": ["friendly", "professional"],
+  "synonyms": [
+    "instrument rental",
+    "rent to own",
+    "rental prices",
+    "equipment hire",
+    "location d'instruments",
+    "louer un instrument",
+    "tarifs de location",
+    "matériel à louer"
+  ],
+  "data": {
+    "name": "rentals",
+    "family": "collection"
+  }
+}

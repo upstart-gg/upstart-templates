@@ -1,0 +1,22 @@
+{
+  "name": "Strum front desk footer",
+  "kind": "footer",
+  "source": "upstart",
+  "description": "A night blue footer with the school's slanted wordmark and its free first lesson button, the address with directions, the phone and email, the desk's hours day by day, and the pages.",
+  "tags": ["footer", "opening hours", "address", "links", "music school"],
+  "mood": ["bold", "dark"],
+  "synonyms": [
+    "footer",
+    "site footer",
+    "front desk",
+    "contact and hours",
+    "pied de page",
+    "bas de page",
+    "horaires d'accueil",
+    "coordonnées"
+  ],
+  "data": {
+    "name": "navigation",
+    "family": "collection"
+  }
+}

@@ -1,0 +1,102 @@
+<section id="trial" class="scroll-mt-20 bg-base-200 text-base-content">
+  <div class="mx-auto max-w-[80rem] px-5 py-20 md:px-8 md:py-28">
+    <h2 class="title-section">Book a free first lesson</h2>
+    <div class="mt-10 grid items-start gap-8 lg:grid-cols-12">
+      <form data-prefill hx-post="/_data/trial-lessons" hx-target="this" hx-swap="outerHTML" hx-status:422="target:#trial-problems swap:innerHTML" class="flex flex-col gap-12 rounded-box bg-base-100 p-6 md:p-10 lg:col-span-8">
+        <fieldset>
+          <legend class="flex items-center gap-4 text-[1.375rem] leading-snug font-semibold"><span class="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary text-[1.0625rem] text-primary-content">1</span>Who it's for</legend>
+          <div class="mt-5 grid gap-3 sm:grid-cols-3">
+            <label class="choice"><input type="radio" name="for" value="me" class="radio" required><span>Me</span></label>
+            <label class="choice"><input type="radio" name="for" value="my child" class="radio" required><span>My child</span></label>
+            <label class="choice"><input type="radio" name="for" value="someone else" class="radio" required><span>Someone else</span></label>
+          </div>
+          <div class="mt-3 grid gap-x-5 sm:grid-cols-[1fr_9rem]">
+            <fieldset class="fieldset">
+              <legend class="fieldset-legend">The student's first name <span class="required-mark" aria-hidden="true">*</span></legend>
+              <input name="student" type="text" class="input w-full" required maxlength="100" aria-label="The student's first name">
+            </fieldset>
+            <fieldset class="fieldset">
+              <legend class="fieldset-legend">Age <span class="required-mark" aria-hidden="true">*</span></legend>
+              <input name="age" type="number" min="3" max="110" class="input w-full" required aria-label="Their age">
+            </fieldset>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend class="flex items-center gap-4 text-[1.375rem] leading-snug font-semibold"><span class="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary text-[1.0625rem] text-primary-content">2</span>The instrument</legend>
+          <div class="mt-2 grid gap-x-5 sm:grid-cols-2">
+            <fieldset class="fieldset">
+              <legend class="fieldset-legend">To try <span class="required-mark" aria-hidden="true">*</span></legend>
+              <select name="instrument" class="select w-full" required aria-label="The instrument to try">
+                <option value="">Choose one</option>
+                <option value="Piano">Piano</option>
+                <option value="Guitar">Guitar</option>
+                <option value="Violin">Violin</option>
+                <option value="Cello">Cello</option>
+                <option value="Voice">Voice</option>
+                <option value="Drums">Drums</option>
+                <option value="Ukulele">Ukulele</option>
+                <option value="Trumpet">Trumpet</option>
+                <option value="Saxophone">Saxophone</option>
+                <option value="Not sure yet">Not sure yet</option>
+              </select>
+            </fieldset>
+            <fieldset class="fieldset">
+              <legend class="fieldset-legend">Played before?</legend>
+              <select name="experience" class="select w-full" aria-label="Played before?">
+                <option value="never">Never</option>
+                <option value="a little">A little</option>
+                <option value="coming back after years">Coming back after years</option>
+              </select>
+            </fieldset>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend class="flex items-center gap-4 text-[1.375rem] leading-snug font-semibold"><span class="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary text-[1.0625rem] text-primary-content">3</span>When, and with whom</legend>
+          <div class="mt-5 grid gap-3 sm:grid-cols-3">
+            <label class="choice"><input type="checkbox" name="times" value="Weekday afternoons" class="checkbox"><span>Weekday afternoons</span></label>
+            <label class="choice"><input type="checkbox" name="times" value="Weekday evenings" class="checkbox"><span>Weekday evenings</span></label>
+            <label class="choice"><input type="checkbox" name="times" value="Saturday mornings" class="checkbox"><span>Saturday mornings</span></label>
+          </div>
+          <fieldset class="fieldset mt-3">
+            <legend class="fieldset-legend">A teacher</legend>
+            <select name="teacher" class="select w-full" data-prefill-from="teacher" aria-label="A teacher">
+              <option value="">No preference</option>
+              {%- for member in data.team %}
+              <option value="{{ member.name }}" data-id="{{ member.id }}">{{ member.name }} · {{ member.instruments }}</option>
+              {%- endfor %}
+            </select>
+          </fieldset>
+        </fieldset>
+        <fieldset>
+          <legend class="flex items-center gap-4 text-[1.375rem] leading-snug font-semibold"><span class="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary text-[1.0625rem] text-primary-content">4</span>You</legend>
+          <div class="mt-2 grid gap-x-5 sm:grid-cols-2">
+            <fieldset class="fieldset sm:col-span-2">
+              <legend class="fieldset-legend">Your name <span class="required-mark" aria-hidden="true">*</span></legend>
+              <input name="name" type="text" class="input w-full" required maxlength="200" autocomplete="name" aria-label="Your name">
+            </fieldset>
+            <fieldset class="fieldset">
+              <legend class="fieldset-legend">Your email <span class="required-mark" aria-hidden="true">*</span></legend>
+              <input name="email" type="email" class="input w-full" required maxlength="200" autocomplete="email" aria-label="Your email">
+            </fieldset>
+            <fieldset class="fieldset">
+              <legend class="fieldset-legend">Your phone <span class="required-mark" aria-hidden="true">*</span></legend>
+              <input name="phone" type="tel" class="input w-full" required maxlength="30" autocomplete="tel" aria-label="Your phone">
+            </fieldset>
+            <fieldset class="fieldset sm:col-span-2">
+              <legend class="fieldset-legend">Anything we should know?</legend>
+              <textarea name="note" class="textarea w-full" rows="3" maxlength="1000" placeholder="He's shy. Arthritis in my left hand." aria-label="Anything we should know?"></textarea>
+            </fieldset>
+          </div>
+          <div id="trial-problems"></div>
+          <button class="btn btn-primary btn-lg mt-6 whitespace-nowrap">Book my free lesson</button>
+        </fieldset>
+      </form>
+      <aside class="rounded-box bg-secondary p-6 text-secondary-content md:p-8 lg:sticky lg:top-28 lg:col-span-4">
+        <p class="title-small display">We call within two school days</p>
+        <p class="mt-5 font-medium">Thirty minutes, free, no strings attached.</p>
+        <p class="mt-4">Bring nothing. The instrument's here, in the right size, and so is the teacher.</p>
+        <p class="mt-4">In a hurry? <a href="tel:+15055550164" class="text-link font-semibold whitespace-nowrap">(505) 555-0164</a></p>
+      </aside>
+    </div>
+  </div>
+</section>

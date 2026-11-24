@@ -1,0 +1,47 @@
+label: Concerts
+fields:
+  - name: title
+    label: Title
+    kind: text
+    required: true
+  - name: date
+    label: Date
+    kind: date
+  - name: ends
+    label: Last day, if more than one
+    kind: date
+  - name: time
+    label: Time
+    kind: text
+  - name: place
+    label: Place
+    kind: text
+  - name: price
+    label: Price
+    kind: text
+  - name: summary
+    label: Summary
+    kind: text
+  - name: cover
+    label: Cover
+    kind: image
+  - name: booking
+    label: Tickets page
+    kind: link
+  - name: performers
+    label: Who plays
+    kind: text
+  - name: running_order
+    label: Running order
+    kind: list
+  - name: sign_up_by
+    label: Tell your teacher by
+    kind: date
+  - name: photos
+    label: Photos from past years
+    kind: images
+  - name: body
+    label: Description
+    kind: markdown
+body: body
+sort: date

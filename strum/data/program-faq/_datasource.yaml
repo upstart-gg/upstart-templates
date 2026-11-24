@@ -1,0 +1,26 @@
+label: Program questions
+fields:
+  - name: question
+    label: Question
+    kind: text
+    required: true
+  - name: program
+    label: Program
+    kind: choice
+    choices: [little-ones, kids, teens, grown-ups]
+  - name: answer
+    label: Answer
+    kind: markdown
+body: answer
+order:
+  [
+    is-four-too-young,
+    do-i-stay-in-the-room,
+    how-much-practice,
+    which-instrument-first,
+    can-they-do-only-a-club,
+    no-band-yet,
+    auditions,
+    start-from-nothing,
+    travel,
+  ]

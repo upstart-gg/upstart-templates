@@ -1,0 +1,9 @@
+{
+  "alt": "A classical guitar lying on apricot paper, seen from above",
+  "generated": {
+    "model": "gemini/gemini-nano-banana-2.1",
+    "prompt": "Photograph in exactly the same style, paper, light and framing as the reference image: a single classical nylon-string guitar lying flat, its headstock at the top with a slotted headstock and three tuning machines on each side, exactly six strings, a round sound hole with a rosette, a spruce top, frets on the neck. The whole instrument in frame with a generous margin around it, centered, seen from straight above. Seamless pale apricot paper, soft natural window light from the left, a soft shadow to the right, realistic product photograph. No case, no hands, no person, no brand, no logo, no label, no text. (Then: the sound hole plain dark wood inside, no paper label.)",
+    "date": "2026-11-24T12:44:07.213Z",
+    "references": ["/media/rental-violin.webp"]
+  }
+}

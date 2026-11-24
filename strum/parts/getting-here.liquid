@@ -1,0 +1,14 @@
+<section class="bg-base-100 text-base-content">
+  <div class="mx-auto max-w-[80rem] px-5 py-20 md:px-8 md:py-28">
+    <h2 class="title-section" data-reveal>Finding us</h2>
+    <ul class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4" data-reveal="stagger">
+      {% for way in data.getting-here %}
+      <li class="rounded-box border border-base-300 p-6">
+        <h3 class="title-small">{{ way.title }}</h3>
+        <p class="body-copy mt-2">{{ way.text }}</p>
+      </li>
+      {% endfor %}
+    </ul>
+    <img src="/media/sandia.jpg" class="mt-12 aspect-[4/3] w-full rounded-box object-cover object-[50%_60%] md:aspect-[21/9]">
+  </div>
+</section>

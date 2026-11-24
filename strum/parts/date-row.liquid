@@ -1,0 +1,8 @@
+<div class="strung-row grid gap-x-8 gap-y-1 py-5 sm:grid-cols-[10rem_1fr_auto] sm:items-baseline">
+  <p class="font-semibold whitespace-nowrap">{% render 'date-span', starts: item.starts, ends: item.ends %}</p>
+  <div class="min-w-0">
+    <p class="text-[1.1875rem] leading-snug font-medium">{{ item.title }}</p>
+    {%- if item.note %}<p class="body-copy mt-0.5 max-w-[56ch]">{{ item.note }}</p>{% endif %}
+  </div>
+  <p class="flex flex-wrap items-center gap-2 empty:hidden sm:justify-end">{% if chips %}{% if item.kind == "break" or item.kind == "closed" %}<span class="chip">No lessons</span>{% endif %}{% endif %}<span data-when="now">{% if item.ends and item.ends != item.starts %}This week{% else %}Today{% endif %}</span><span data-when="next">Coming up</span></p>
+</div>

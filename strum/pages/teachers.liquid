@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Teachers — Ristra Music School</title>
+<meta name="description" content="Fourteen teachers of strings, guitar, piano, voice, drums and brass at Ristra Music School in Albuquerque, all of whom still play out.">
+<meta property="og:title" content="Teachers — Ristra Music School">
+<meta property="og:description" content="Fourteen teachers of strings, guitar, piano, voice, drums and brass at Ristra Music School in Albuquerque, all of whom still play out.">
+</head>
+<body>
+{% render 'header', page: page %}
+<main>
+{% render 'page-title', title: "Teachers", intro: "Fourteen teachers, eight of them here. All of them still play out, and all of them remember their own first lesson." %}
+{% render 'teacher-rows' %}
+<section class="bg-base-200 text-base-content">
+  <div class="mx-auto max-w-[80rem] px-5 py-16 md:px-8 md:py-20">
+    <ul data-strings>
+      <li>
+        {% render 'string' %}
+        <div class="strung-row grid gap-x-8 gap-y-2 py-7 lg:grid-cols-12 lg:items-baseline">
+          <h2 class="title-small lg:col-span-4">Teaching here</h2>
+          <p class="body-copy max-w-[60ch] lg:col-span-8">We hire twice a year, in May and November. Write to the desk with what you play and whom you've taught: <a href="mailto:desk@ristramusic.com" class="text-link">desk@ristramusic.com</a>.</p>
+        </div>
+        {% render 'string' %}
+      </li>
+    </ul>
+  </div>
+</section>
+</main>
+{% render 'footer' %}
+</body>
+</html>

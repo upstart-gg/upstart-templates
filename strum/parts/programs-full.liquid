@@ -1,0 +1,14 @@
+<section class="bg-base-100 text-base-content">
+  <div class="mx-auto max-w-[80rem] px-5 pb-20 md:px-8 md:pb-28">
+    <ul data-strings>
+      {% for program in data.programs %}
+      {% assign held = data.classes | where: "program", program.id %}
+      <li>
+        {% render 'string', gauge: forloop.index %}
+        {% render 'program-row', program: program, classes: held %}
+        {% if forloop.last %}{% render 'string', gauge: forloop.index %}{% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

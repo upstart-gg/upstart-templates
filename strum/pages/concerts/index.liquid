@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Recitals &amp; concerts — Ristra Music School</title>
+<meta name="description" content="Student recitals, band night, the winter concert by luminarias and the teachers' concert at Ristra Courts in Albuquerque. All free but one.">
+<meta property="og:title" content="Recitals &amp; concerts — Ristra Music School">
+<meta property="og:description" content="Student recitals, band night, the winter concert by luminarias and the teachers' concert at Ristra Courts in Albuquerque. All free but one.">
+</head>
+<body>
+{% render 'header', page: page %}
+<main>
+{% render 'page-title', title: "Recitals & concerts", intro: "Every student who wants to plays twice a year, in the Carport or the courtyard. Families, neighbors and anyone walking down Central are welcome." %}
+{% render 'concert-rows' %}
+{% render 'playing' %}
+{% render 'first-lesson-line' %}
+</main>
+{% render 'footer' %}
+</body>
+</html>

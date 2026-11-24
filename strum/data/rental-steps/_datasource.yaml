@@ -1,0 +1,10 @@
+label: How renting works
+fields:
+  - name: title
+    label: Title
+    kind: text
+    required: true
+  - name: text
+    label: Text
+    kind: text
+order: [ask, fitting, first-month, swap-or-return]

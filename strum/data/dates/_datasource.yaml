@@ -1,0 +1,27 @@
+label: Dates
+fields:
+  - name: title
+    label: What happens
+    kind: text
+    required: true
+  - name: starts
+    label: First day
+    kind: date
+  - name: ends
+    label: Last day
+    kind: date
+  - name: term
+    label: Term
+    kind: choice
+    choices: [fall-2027, spring-2028, summer-2028]
+  - name: kind
+    label: Kind
+    kind: choice
+    choices: [term, break, closed, make-up, enrollment, concert]
+  - name: note
+    label: Note
+    kind: text
+  - name: on_home
+    label: On the home page
+    kind: boolean
+sort: starts

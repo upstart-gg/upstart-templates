@@ -1,0 +1,21 @@
+<section class="bg-base-100 text-base-content">
+  <div class="mx-auto grid max-w-[80rem] gap-x-14 gap-y-10 px-5 py-20 md:px-8 md:py-28 lg:grid-cols-12">
+    <div class="lg:col-span-4" data-reveal>
+      <p class="eyebrow text-accent">Questions</p>
+      <h2 class="title-section mt-3">{{ title }}</h2>
+      <p class="body-copy mt-5 max-w-[34ch]">Anything else, call the desk at <a href="tel:+15055550164" class="text-link whitespace-nowrap">(505) 555-0164</a>.</p>
+    </div>
+    <ul class="lg:col-span-8" data-strings>
+      {% for item in items %}
+      <li>
+        {% render 'string' %}
+        <details class="question strung-row" {% if forloop.first %}open{% endif %}>
+          <summary class="flex items-start justify-between gap-6 py-6 text-[1.1875rem] leading-snug font-semibold">{{ item.question }}<span class="question-mark shrink-0 text-[1.5rem] leading-none font-normal" aria-hidden="true"></span></summary>
+          <div class="body-copy reading max-w-[60ch] pb-7">{{ item.answer }}</div>
+        </details>
+        {% if forloop.last %}{% render 'string' %}{% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

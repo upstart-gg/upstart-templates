@@ -1,0 +1,10 @@
+label: Getting here
+fields:
+  - name: title
+    label: Title
+    kind: text
+    required: true
+  - name: text
+    label: Text
+    kind: text
+order: [bus, parking, bikes, access]

@@ -1,0 +1,26 @@
+<div class="strung-row grid gap-x-8 gap-y-5 py-7 sm:grid-cols-[9rem_1fr] lg:grid-cols-12 lg:items-center lg:py-8">
+  <p class="display text-[clamp(3rem,3vw+2rem,4.5rem)] leading-none whitespace-nowrap lg:col-span-3"><a href="/programs/{{ program.id }}">{{ program.ages_short }}</a></p>
+  <div class="lg:col-span-5">
+    <h3 class="title-small"><a href="/programs/{{ program.id }}">{{ program.name }}</a></h3>
+    <p class="body-copy mt-2 max-w-[48ch]">{{ program.summary }}</p>
+    {%- if classes.size > 0 %}
+    <ul class="mt-4 space-y-1 text-[0.9375rem]">
+      {%- for class in classes %}
+      <li><span class="font-semibold">{{ class.name }}</span> · {% render 'day-name', day: class.day %}s, {{ class.time }}</li>
+      {%- endfor %}
+    </ul>
+    {%- endif %}
+    <ul class="mt-4 flex flex-wrap gap-2">
+      {%- for hold in program.holds %}
+      <li class="chip">{{ hold }}</li>
+      {%- endfor %}
+    </ul>
+  </div>
+  <div class="flex flex-wrap items-center justify-between gap-x-6 gap-y-3 sm:col-start-2 lg:col-span-2 lg:col-start-auto lg:block">
+    <p class="font-medium text-accent">{{ program.from_price }}</p>
+    <a href="/programs/{{ program.id }}" class="inline-flex items-center gap-2 font-semibold whitespace-nowrap lg:mt-3">{{ program.name }} {% render 'arrow' %}</a>
+  </div>
+  {%- if program.cover %}
+  <img src="{{ program.cover }}" class="hidden aspect-square w-full rounded-box object-cover lg:col-span-2 lg:block">
+  {%- endif %}
+</div>

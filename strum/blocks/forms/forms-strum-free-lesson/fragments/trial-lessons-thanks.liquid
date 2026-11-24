@@ -1,0 +1,5 @@
+<div class="rounded-box bg-base-100 p-6 md:p-10 lg:col-span-8" role="status">
+  <p class="plain-heading text-[1.875rem]">Thank you, {{ record.name }}.</p>
+  <p class="mt-4 max-w-[50ch] text-[1.1875rem]">We'll call you within two school days to set up {% if record.for == "me" %}your{% elsif record.student %}{{ record.student }}'s{% else %}the{% endif %} free {% if record.instrument and record.instrument != "Not sure yet" %}{{ record.instrument | downcase }} {% endif %}lesson.</p>
+  <p class="body-copy mt-3 max-w-[50ch]">It's thirty minutes, and there's nothing to bring.{% if record.teacher %} We'll ask for a time with {{ record.teacher }}.{% endif %}</p>
+</div>

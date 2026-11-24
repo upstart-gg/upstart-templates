@@ -1,0 +1,23 @@
+{
+  "name": "Strum start at four",
+  "kind": "hero",
+  "source": "upstart",
+  "description": "A music school's hero: a flat tangerine band with its eyebrow, a huge slanted headline whose words land one after another, three promises over plucked strings with their ticks, two buttons, and a photo of a lesson at the right.",
+  "tags": ["hero", "giant type", "music school", "strings", "promises", "lessons"],
+  "mood": ["bold", "playful", "friendly"],
+  "synonyms": [
+    "music school hero",
+    "big headline",
+    "three promises",
+    "lessons hero",
+    "tick list hero",
+    "en-tête école de musique",
+    "grand titre",
+    "promesses",
+    "accroche"
+  ],
+  "data": {
+    "name": "promises",
+    "family": "section"
+  }
+}

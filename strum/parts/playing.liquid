@@ -1,0 +1,20 @@
+<section class="bg-base-200 text-base-content">
+  <div class="mx-auto grid max-w-[80rem] gap-x-14 gap-y-10 px-5 py-20 md:px-8 md:py-28 lg:grid-cols-12">
+    <div class="lg:col-span-4" data-reveal>
+      <p class="eyebrow text-accent">For students</p>
+      <h2 class="title-section mt-3">Playing in a recital</h2>
+    </div>
+    <ol class="lg:col-span-8" data-strings>
+      {% for note in data.recital-notes %}
+      <li>
+        {% render 'string' %}
+        <div class="strung-row py-6">
+          <h3 class="text-[1.1875rem] leading-snug font-semibold plain-heading">{{ note.title }}</h3>
+          <p class="body-copy mt-1 max-w-[56ch]">{{ note.text }}</p>
+        </div>
+        {% if forloop.last %}{% render 'string' %}{% endif %}
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>

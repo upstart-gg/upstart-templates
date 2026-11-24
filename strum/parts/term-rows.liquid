@@ -1,0 +1,9 @@
+<ul class="lg:col-span-8" data-strings>
+  {% for item in rows %}
+  <li data-starts="{{ item.starts }}" data-ends="{{ item.ends }}">
+    {% render 'string' %}
+    {% render 'date-row', item: item, chips: true %}
+    {% if forloop.last %}{% render 'string' %}{% endif %}
+  </li>
+  {% endfor %}
+</ul>

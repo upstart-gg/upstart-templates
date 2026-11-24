@@ -1,0 +1,10 @@
+label: Playing in a recital
+fields:
+  - name: title
+    label: Title
+    kind: text
+    required: true
+  - name: text
+    label: Text
+    kind: text
+order: [tell-your-teacher, one-piece, run-through, what-to-wear, families-in-front]

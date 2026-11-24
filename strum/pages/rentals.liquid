@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Instrument rental — Ristra Music School</title>
+<meta name="description" content="Rent a violin, cello, guitar, trumpet, saxophone or digital piano in Albuquerque from $9 a month. Every month's rent counts toward buying it.">
+<meta property="og:title" content="Instrument rental — Ristra Music School">
+<meta property="og:description" content="Rent a violin, cello, guitar, trumpet, saxophone or digital piano in Albuquerque from $9 a month. Every month's rent counts toward buying it.">
+</head>
+<body>
+{% render 'header', page: page %}
+<main>
+{% render 'page-title', title: "Instrument rental", intro: "Rent before you buy. Every month's rent counts toward buying it, and children change sizes for free as they grow." %}
+{% render 'rental-rows' %}
+{% render 'violin-sizes' %}
+{% render 'renting-steps' %}
+{% render 'rental-form' %}
+{% render 'questions', items: data.rentals-faq, title: "Before you rent" %}
+</main>
+{% render 'footer' %}
+</body>
+</html>

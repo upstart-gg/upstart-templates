@@ -1,0 +1,21 @@
+<section class="bg-base-100 text-base-content">
+  <div class="mx-auto max-w-[80rem] px-5 py-20 md:px-8 md:py-28">
+    <div class="grid gap-x-14 gap-y-5 lg:grid-cols-12 lg:items-end" data-reveal="stagger">
+      <div class="lg:col-span-7">
+        <p class="eyebrow text-accent">Teachers</p>
+        <h2 class="title-section mt-3">Teachers who still play out</h2>
+      </div>
+      <p class="body-copy max-w-[44ch] lg:col-span-5">Every teacher here plays somewhere on a Friday night: a cumbia band, a jazz trio, a church choir, the mariachi.</p>
+    </div>
+    <ul class="mt-12" data-strings>
+      {% for member in data.team limit: 4 %}
+      <li>
+        {% render 'string' %}
+        {% render 'teacher-row', member: member %}
+        {% if forloop.last %}{% render 'string' %}{% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+    <p class="mt-10"><a href="/teachers" class="btn btn-outline whitespace-nowrap">Meet the teachers</a></p>
+  </div>
+</section>

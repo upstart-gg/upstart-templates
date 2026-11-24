@@ -1,0 +1,25 @@
+<section class="bg-base-100 text-base-content">
+  <div class="mx-auto max-w-[80rem] px-5 pb-20 md:px-8 md:pb-28">
+    <ul data-strings>
+      {% for rental in data.rentals %}
+      <li>
+        {% render 'string' %}
+        <div class="strung-row grid grid-cols-[6.5rem_1fr] gap-x-5 gap-y-3 py-6 sm:grid-cols-[9rem_1fr_auto] sm:items-center md:gap-x-8 lg:grid-cols-[11rem_1fr_12rem_auto]">
+          {% if rental.image %}<img src="{{ rental.image }}" class="aspect-square w-full rounded-box object-cover">{% endif %}
+          <div class="min-w-0">
+            <h3 class="title-small">{{ rental.name }}</h3>
+            <p class="mt-1.5 font-medium">{{ rental.sizes }} · {{ rental.ages }}</p>
+            <p class="body-copy mt-1 max-w-[44ch]">{{ rental.note }}</p>
+          </div>
+          <div class="col-start-2 sm:col-start-auto">
+            <p><span class="text-[1.75rem] leading-none font-semibold">${{ rental.monthly }}</span> a month</p>
+            <p class="mt-1 text-[0.9375rem] text-accent">{{ rental.to_own }}</p>
+          </div>
+          <a href="?instrument={{ rental.id }}#request" class="col-start-2 inline-flex items-center gap-2 font-semibold whitespace-nowrap lg:col-start-auto">Ask for this one {% render 'arrow', down: true %}</a>
+        </div>
+        {% if forloop.last %}{% render 'string' %}{% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

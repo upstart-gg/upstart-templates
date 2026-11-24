@@ -1,0 +1,9 @@
+{
+  "alt": "A digital piano on its stand before apricot paper",
+  "generated": {
+    "model": "gemini/gemini-nano-banana-2.1",
+    "prompt": "Photograph in exactly the same style, paper, light and framing as the reference image: a single black digital piano on its simple wooden stand with a bench pushed under it, before the same seamless apricot paper in the same light, seen straight from the front rather than from above, a full keyboard of white and black keys in the correct groups of two and three black keys, no screen. The whole instrument in frame with a generous margin around it, centered, seen from straight above. Seamless pale apricot paper, soft natural window light from the left, a soft shadow to the right, realistic product photograph. No case, no hands, no person, no brand, no logo, no label, no text.",
+    "date": "2026-11-24T12:42:50.633Z",
+    "references": ["/media/rental-violin.webp"]
+  }
+}

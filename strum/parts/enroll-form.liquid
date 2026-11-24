@@ -1,0 +1,91 @@
+<section id="enroll" class="scroll-mt-20 bg-base-100 text-base-content">
+  <div class="mx-auto grid max-w-[80rem] gap-x-14 gap-y-10 px-5 py-20 md:px-8 md:py-28 lg:grid-cols-12">
+    <div class="lg:col-span-4">
+      <h2 class="title-section">Enroll for spring</h2>
+      <p class="body-copy mt-5 max-w-[34ch]">January 10 to May 6, sixteen weeks. Nothing is charged until the desk has called you.</p>
+      <p class="body-copy mt-4 max-w-[34ch]">Current students keep their time until November 20.</p>
+    </div>
+    <form data-prefill hx-post="/_data/enrollments" hx-target="this" hx-swap="outerHTML" hx-status:422="target:#enroll-problems swap:innerHTML" class="grid gap-x-5 gap-y-2 rounded-box bg-base-200 p-6 sm:grid-cols-2 md:p-8 lg:col-span-8">
+      <fieldset class="fieldset">
+        <legend class="fieldset-legend">The student's name <span class="required-mark" aria-hidden="true">*</span></legend>
+        <input name="student" type="text" class="input w-full" required maxlength="200" aria-label="The student's name">
+      </fieldset>
+      <fieldset class="fieldset">
+        <legend class="fieldset-legend">Their age <span class="required-mark" aria-hidden="true">*</span></legend>
+        <input name="age" type="number" min="3" max="110" class="input w-full" required aria-label="Their age">
+      </fieldset>
+      <fieldset class="fieldset sm:col-span-2">
+        <legend class="fieldset-legend">The program <span class="required-mark" aria-hidden="true">*</span></legend>
+        <select name="program" class="select w-full" data-prefill-from="program" aria-label="The program" required>
+          <option value="">Choose one</option>
+          {%- for program in data.programs %}
+          <option value="{{ program.name }}" data-id="{{ program.id }}">{{ program.name }}, {{ program.ages }}</option>
+          {%- endfor %}
+        </select>
+      </fieldset>
+      <fieldset class="fieldset">
+        <legend class="fieldset-legend">A private lesson</legend>
+        <select name="lesson" class="select w-full" aria-label="A private lesson">
+          <option value="">None</option>
+          {%- for rate in data.lesson-rates %}
+          <option value="{{ rate.name }}">{{ rate.name }}, {{ rate.price }} {{ rate.period }}</option>
+          {%- endfor %}
+        </select>
+      </fieldset>
+      <fieldset class="fieldset">
+        <legend class="fieldset-legend">A class</legend>
+        <select name="class" class="select w-full" data-prefill-from="class" aria-label="A class">
+          <option value="">None</option>
+          {%- for class in data.classes %}
+          <option value="{{ class.name }}" data-id="{{ class.id }}">{{ class.name }}, {% render 'day-name', day: class.day %}s{% if class.seats_left == 0 %} (waitlist){% endif %}</option>
+          {%- endfor %}
+        </select>
+      </fieldset>
+      <fieldset class="fieldset sm:col-span-2">
+        <legend class="fieldset-legend">The teacher</legend>
+        <select name="teacher" class="select w-full" aria-label="The teacher">
+          <option value="">No preference</option>
+          {%- for member in data.team %}
+          <option value="{{ member.name }}">{{ member.name }} · {{ member.instruments }}</option>
+          {%- endfor %}
+        </select>
+      </fieldset>
+      <fieldset class="fieldset sm:col-span-2">
+        <legend class="fieldset-legend">Days that work</legend>
+        <div class="grid gap-3 sm:grid-cols-3">
+          <label class="choice"><input type="checkbox" name="days" value="Monday" class="checkbox"><span>Monday</span></label>
+          <label class="choice"><input type="checkbox" name="days" value="Tuesday" class="checkbox"><span>Tuesday</span></label>
+          <label class="choice"><input type="checkbox" name="days" value="Wednesday" class="checkbox"><span>Wednesday</span></label>
+          <label class="choice"><input type="checkbox" name="days" value="Thursday" class="checkbox"><span>Thursday</span></label>
+          <label class="choice"><input type="checkbox" name="days" value="Friday" class="checkbox"><span>Friday</span></label>
+          <label class="choice"><input type="checkbox" name="days" value="Saturday" class="checkbox"><span>Saturday</span></label>
+        </div>
+      </fieldset>
+      <fieldset class="fieldset sm:col-span-2">
+        <legend class="fieldset-legend">Paying</legend>
+        <div class="grid gap-3 sm:grid-cols-2">
+          <label class="choice"><input type="radio" name="payment" value="By the term" class="radio" checked><span>By the term</span></label>
+          <label class="choice"><input type="radio" name="payment" value="In four payments" class="radio"><span>In four payments</span></label>
+        </div>
+      </fieldset>
+      <div class="mt-2 grid gap-3 sm:col-span-2">
+        <label class="flex items-center gap-3 py-1"><input name="rental" type="checkbox" value="true" class="checkbox bg-base-100"><span>We'll need to rent an instrument</span></label>
+        <label class="flex items-center gap-3 py-1"><input name="fund" type="checkbox" value="true" class="checkbox bg-base-100"><span>I'd like to ask about the Courtyard Fund</span></label>
+      </div>
+      <fieldset class="fieldset mt-2 sm:col-span-2">
+        <legend class="fieldset-legend">Your name <span class="required-mark" aria-hidden="true">*</span></legend>
+        <input name="name" type="text" class="input w-full" required maxlength="200" autocomplete="name" aria-label="Your name">
+      </fieldset>
+      <fieldset class="fieldset">
+        <legend class="fieldset-legend">Your email <span class="required-mark" aria-hidden="true">*</span></legend>
+        <input name="email" type="email" class="input w-full" required maxlength="200" autocomplete="email" aria-label="Your email">
+      </fieldset>
+      <fieldset class="fieldset">
+        <legend class="fieldset-legend">Your phone <span class="required-mark" aria-hidden="true">*</span></legend>
+        <input name="phone" type="tel" class="input w-full" required maxlength="30" autocomplete="tel" aria-label="Your phone">
+      </fieldset>
+      <div id="enroll-problems" class="sm:col-span-2"></div>
+      <div class="mt-4 sm:col-span-2"><button class="btn btn-primary btn-lg whitespace-nowrap">Ask to enroll</button></div>
+    </form>
+  </div>
+</section>

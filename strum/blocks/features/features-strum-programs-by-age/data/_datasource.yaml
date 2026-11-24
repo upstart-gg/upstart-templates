@@ -1,0 +1,35 @@
+label: Programs
+fields:
+  - name: name
+    label: Name
+    kind: text
+    required: true
+  - name: ages
+    label: Ages, as a line
+    kind: text
+  - name: ages_short
+    label: Ages, for the big figure
+    kind: text
+  - name: summary
+    label: Summary
+    kind: text
+  - name: holds
+    label: What it holds
+    kind: list
+  - name: from_price
+    label: Price from
+    kind: text
+  - name: cover
+    label: Cover
+    kind: image
+  - name: instruments
+    label: First instruments
+    kind: list
+  - name: lesson_note
+    label: Note on private lessons
+    kind: text
+  - name: body
+    label: What it's like
+    kind: markdown
+body: body
+order: [little-ones, kids, teens, grown-ups]

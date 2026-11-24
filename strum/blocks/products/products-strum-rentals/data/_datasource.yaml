@@ -1,0 +1,25 @@
+label: Rentals
+fields:
+  - name: name
+    label: Instrument
+    kind: text
+    required: true
+  - name: image
+    label: Picture
+    kind: image
+  - name: sizes
+    label: Sizes
+    kind: text
+  - name: monthly
+    label: Price a month, in dollars
+    kind: number
+  - name: to_own
+    label: Yours after
+    kind: text
+  - name: ages
+    label: Ages
+    kind: text
+  - name: note
+    label: Note
+    kind: text
+order: [violin, cello, guitar, trumpet, digital-piano]

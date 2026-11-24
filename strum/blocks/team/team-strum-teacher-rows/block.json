@@ -1,0 +1,23 @@
+{
+  "name": "Strum teacher rows",
+  "kind": "team",
+  "source": "upstart",
+  "description": "The teachers as strung rows: a square portrait or initials on apricot, the name and pronouns, the instruments and ages taught, a short biography, what they play themselves, and an Ask for link that fills in the first lesson's form.",
+  "tags": ["team", "teachers", "instructors", "portraits", "music school"],
+  "mood": ["friendly", "warm"],
+  "synonyms": [
+    "teachers",
+    "instructors",
+    "faculty",
+    "staff list",
+    "ask for a teacher",
+    "professeurs",
+    "équipe pédagogique",
+    "enseignants",
+    "portraits"
+  ],
+  "data": {
+    "name": "team",
+    "family": "collection"
+  }
+}

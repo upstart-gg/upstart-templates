@@ -1,0 +1,2 @@
+{%- assign first_month = starts | date: "%b" -%}{%- assign last_month = ends | date: "%b" -%}
+{{ starts | date: "%b %-d" }}{% if ends and ends != starts %}–{% if first_month != last_month %}{{ ends | date: "%b %-d" }}{% else %}{{ ends | date: "%-d" }}{% endif %}{% endif %}

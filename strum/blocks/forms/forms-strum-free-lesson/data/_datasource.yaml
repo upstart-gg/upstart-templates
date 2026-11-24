@@ -1,0 +1,53 @@
+label: Free first lessons
+collected: true
+answer: trial-lessons-thanks
+messages:
+  required: "{field} is required."
+  invalid: "{field} does not look right."
+  too_many: "Too many requests from here. Please try again in a few minutes."
+  sent: "Thank you. We'll call you within two school days."
+fields:
+  - name: for
+    label: Who it's for
+    kind: choice
+    required: true
+    choices: [me, my child, someone else]
+  - name: student
+    label: The student's first name
+    kind: text
+    required: true
+  - name: age
+    label: Their age
+    kind: number
+    required: true
+  - name: instrument
+    label: Instrument
+    kind: choice
+    required: true
+    choices: [Piano, Guitar, Violin, Cello, Voice, Drums, Ukulele, Trumpet, Saxophone, Not sure yet]
+  - name: experience
+    label: Played before
+    kind: choice
+    choices: [never, a little, coming back after years]
+  - name: times
+    label: When
+    kind: list
+    choices: [Weekday afternoons, Weekday evenings, Saturday mornings]
+  - name: teacher
+    label: Teacher
+    kind: text
+  - name: name
+    label: Your name
+    kind: text
+    required: true
+  - name: email
+    label: Your email
+    kind: email
+    required: true
+  - name: phone
+    label: Your phone
+    kind: phone
+    required: true
+  - name: note
+    label: Anything we should know
+    kind: text

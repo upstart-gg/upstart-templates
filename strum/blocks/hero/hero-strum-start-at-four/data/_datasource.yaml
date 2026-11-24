@@ -1,0 +1,10 @@
+label: Promises
+fields:
+  - name: title
+    label: Promise
+    kind: text
+    required: true
+  - name: line
+    label: Line under it
+    kind: text
+order: [free-first-lesson, rent-one-here, after-school-and-work]

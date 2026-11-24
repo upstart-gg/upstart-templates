@@ -1,0 +1,5 @@
+[
+  { "name": "motion", "url": "https://cdn.jsdelivr.net/npm/motion@14.9.0/dist/motion.min.js", "licence": "MIT" },
+  { "name": "lenis", "url": "https://cdn.jsdelivr.net/npm/lenis@1.3.27/dist/lenis.min.js", "licence": "MIT" },
+  { "name": "splitting", "url": "https://cdn.jsdelivr.net/npm/splitting@1.1.0/dist/splitting.min.js", "licence": "MIT" }
+]

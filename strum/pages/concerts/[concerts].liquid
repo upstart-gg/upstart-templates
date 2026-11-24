@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>{{ record.title }} — Ristra Music School</title>
+<meta name="description" content="{{ record.summary }}">
+<meta property="og:title" content="{{ record.title }} — Ristra Music School">
+<meta property="og:description" content="{{ record.summary }}">
+</head>
+<body>
+{% render 'header', page: page %}
+<main>
+<section class="bg-neutral text-neutral-content">
+  <div class="mx-auto max-w-[80rem] px-5 pt-10 pb-28 md:px-8 md:pt-14 md:pb-44">
+    <p class="eyebrow"><a href="/concerts" class="text-link">Recitals &amp; concerts</a></p>
+    <div class="mt-8 grid gap-x-12 gap-y-8 lg:grid-cols-12 lg:items-end">
+      <p class="leading-none text-primary lg:col-span-3"><span class="display block text-[clamp(6rem,12vw,10rem)] leading-[0.85]">{{ record.date | date: "%-d" }}</span><span class="mt-4 block text-[1.1875rem] leading-snug font-medium">{{ record.date | date: "%A, %B %-d, %Y" }}</span></p>
+      <div class="lg:col-span-9">
+        <h1 class="title-page">{{ record.title }}</h1>
+        <p class="mt-5 text-[1.1875rem]">{{ record.time }} · {{ record.place }} · <span class="font-semibold">{{ record.price }}</span></p>
+        {% if record.booking %}<p class="mt-6"><a href="{{ record.booking }}" class="btn btn-primary whitespace-nowrap" rel="noopener" target="_blank">Tickets</a></p>{% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+<section class="bg-base-100 text-base-content">
+  <div class="mx-auto flow-root max-w-[80rem] px-5 pb-20 md:px-8 md:pb-28">
+    {% if record.cover %}<img src="{{ record.cover }}" class="relative -mt-20 aspect-[4/3] w-full rounded-box object-cover object-[50%_60%] md:-mt-32 md:aspect-[21/9]">{% endif %}
+    <div class="mt-14 grid gap-x-14 gap-y-14 md:mt-20 lg:grid-cols-12">
+      <div class="lg:col-span-5" data-reveal>
+        <p class="max-w-[32ch] text-[1.375rem] leading-snug font-medium">{{ record.summary }}</p>
+        <div class="body-copy reading mt-6 max-w-[52ch]">{{ record.body }}</div>
+        <dl class="mt-8 space-y-4">
+          {% if record.performers %}<div><dt class="eyebrow text-accent">Who plays</dt><dd class="mt-0.5 font-medium">{{ record.performers }}</dd></div>{% endif %}
+          {% if record.sign_up_by %}<div><dt class="eyebrow text-accent">Playing in it?</dt><dd class="mt-0.5 font-medium">Tell your teacher by {{ record.sign_up_by | date: "%B %-d" }}.</dd></div>{% endif %}
+          <div><dt class="eyebrow text-accent">Getting there</dt><dd class="mt-0.5 font-medium">Ristra Courts, 16 Oberlin Court SE, two blocks from the ART stop on Central. <a href="https://www.openstreetmap.org/search?query=16%20Oberlin%20Court%20SE%2C%20Albuquerque%2C%20NM%2087106" class="text-link whitespace-nowrap" rel="noopener" target="_blank">Get directions</a></dd></div>
+        </dl>
+      </div>
+      {% if record.running_order.size > 0 %}
+      <div class="lg:col-span-7">
+        <h2 class="title-section" data-reveal>The running order</h2>
+        <ol class="mt-8" data-strings>
+          {% for piece in record.running_order %}
+          <li>
+            {% render 'string' %}
+            <p class="strung-row py-5 text-[1.1875rem] font-medium">{{ piece }}</p>
+            {% if forloop.last %}{% render 'string' %}{% endif %}
+          </li>
+          {% endfor %}
+        </ol>
+      </div>
+      {% endif %}
+    </div>
+    {% if record.photos.size > 0 %}
+    <h2 class="title-section mt-20 md:mt-28" data-reveal>From past years</h2>
+    <div class="mt-10 columns-1 gap-6 sm:columns-2 lg:columns-3">
+      {% for photo in record.photos %}
+      <img src="{{ photo }}" class="mb-6 w-full break-inside-avoid rounded-box">
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</section>
+<section class="bg-base-200 text-base-content">
+  <div class="mx-auto max-w-[80rem] px-5 py-20 md:px-8 md:py-28">
+    <h2 class="title-section" data-reveal>The other concerts</h2>
+    <ul class="mt-10" data-strings data-term data-tz="America/Denver">
+      {% for concert in data.concerts %}{% unless concert.id == record.id %}
+      <li data-starts="{{ concert.date }}" data-ends="{{ concert.ends }}">
+        {% render 'string' %}
+        {% render 'concert-row', concert: concert %}
+      </li>
+      {% endunless %}{% endfor %}
+      <li>{% render 'string' %}</li>
+    </ul>
+  </div>
+</section>
+</main>
+{% render 'footer' %}
+</body>
+</html>

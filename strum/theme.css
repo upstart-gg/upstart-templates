@@ -1,0 +1,21 @@
+:root {
+  --theme-color-primary: oklch(0.745 0.175 58);
+  --theme-color-primary-content: oklch(0.245 0.03 255);
+  --theme-color-secondary: oklch(0.885 0.07 66);
+  --theme-color-secondary-content: oklch(0.245 0.03 255);
+  --theme-color-accent: oklch(0.52 0.125 52);
+  --theme-color-accent-content: oklch(0.985 0.006 80);
+  --theme-color-neutral: oklch(0.27 0.035 255);
+  --theme-color-neutral-content: oklch(0.985 0.006 80);
+  --theme-color-surface: oklch(0.985 0.006 80);
+  --theme-color-surface-alt: oklch(0.955 0.014 72);
+  --theme-color-border: oklch(0.885 0.016 70);
+  --theme-color-text: oklch(0.245 0.03 255);
+  --theme-font-heading: "Shrikhand", "Cooper Black", Georgia, serif;
+  --theme-font-body: "Lexend", "Trebuchet MS", ui-sans-serif, system-ui, sans-serif;
+  --theme-radius: 1rem;
+  --theme-radius-field: 9999px;
+  --theme-depth: 0;
+  --theme-size: 0.28125rem;
+  --theme-border: 1px;
+}

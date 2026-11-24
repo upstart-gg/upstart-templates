@@ -1,0 +1,6 @@
+{%- assign words = member.name | split: " " -%}
+{%- if member.photo -%}
+<img src="{{ member.photo }}" class="aspect-square rounded-box object-cover {{ class }}">
+{%- else -%}
+<div class="flex aspect-square items-center justify-center rounded-box bg-secondary text-secondary-content {{ class }}" aria-hidden="true"><span class="text-[2rem] font-semibold">{{ words.first | slice: 0 }}{% if words.size > 1 %}{{ words.last | slice: 0 }}{% endif %}</span></div>
+{%- endif -%}

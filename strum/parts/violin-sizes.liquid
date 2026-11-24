@@ -1,0 +1,22 @@
+<section class="bg-base-200 text-base-content">
+  <div class="mx-auto grid max-w-[80rem] gap-x-14 gap-y-10 px-5 py-20 md:px-8 md:py-28 lg:grid-cols-12">
+    <div class="lg:col-span-4" data-reveal>
+      <p class="eyebrow text-accent">Violins</p>
+      <h2 class="title-section mt-3">Which size?</h2>
+      <p class="body-copy mt-5 max-w-[34ch]">Stretch out the left arm and measure from the neck to the middle of the palm. Or don't: we measure at the desk, free.</p>
+    </div>
+    <ul class="lg:col-span-8" data-strings>
+      {% for size in data.violin-sizes %}
+      <li>
+        {% render 'string' %}
+        <div class="strung-row grid grid-cols-[5rem_1fr] items-baseline gap-x-6 py-4 sm:grid-cols-[7rem_1fr_auto]">
+          <p class="display text-[1.75rem] leading-none">{{ size.size }}</p>
+          <p class="font-medium">{{ size.ages }}</p>
+          <p class="col-start-2 sm:col-start-auto sm:text-right">{{ size.arm }}</p>
+        </div>
+        {% if forloop.last %}{% render 'string' %}{% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

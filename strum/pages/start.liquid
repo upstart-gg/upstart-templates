@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Start here — Ristra Music School</title>
+<meta name="description" content="Book a free first lesson at Ristra Music School in Albuquerque, or enroll again for the spring term. A short form, and the desk calls within two school days.">
+<meta property="og:title" content="Start here — Ristra Music School">
+<meta property="og:description" content="Book a free first lesson at Ristra Music School in Albuquerque, or enroll again for the spring term. A short form, and the desk calls within two school days.">
+</head>
+<body>
+{% render 'header', page: page %}
+<main>
+{% render 'page-title', title: "Start here", intro: "New to Ristra, or coming back for another term? Either way it starts with a short form and a call from the desk." %}
+<section class="bg-base-100 text-base-content">
+  <div class="mx-auto max-w-[80rem] px-5 pb-20 md:px-8 md:pb-28">
+    <ul data-strings>
+      <li>
+        {% render 'string', gauge: 2 %}
+        <div class="strung-row py-7 md:py-9">
+          <a href="#trial" class="grid items-baseline gap-x-8 gap-y-2 lg:grid-cols-12">
+            <span class="font-medium lg:col-span-3">New here?</span>
+            <span class="display title-section flex items-center justify-between gap-6 leading-[1.06] lg:col-span-9">Book a free first lesson {% render 'arrow', down: true, class: 'row-arrow-lg' %}</span>
+          </a>
+        </div>
+      </li>
+      <li>
+        {% render 'string', gauge: 3 %}
+        <div class="strung-row py-7 md:py-9">
+          <a href="#enroll" class="grid items-baseline gap-x-8 gap-y-2 lg:grid-cols-12">
+            <span class="font-medium lg:col-span-3">Coming back?</span>
+            <span class="display title-section flex items-center justify-between gap-6 leading-[1.06] lg:col-span-9">Enroll for spring {% render 'arrow', down: true, class: 'row-arrow-lg' %}</span>
+          </a>
+        </div>
+        {% render 'string', gauge: 3 %}
+      </li>
+    </ul>
+  </div>
+</section>
+{% render 'trial-form' %}
+{% render 'enroll-form' %}
+<section class="bg-base-200 text-base-content">
+  <div class="mx-auto max-w-[80rem] px-5 py-16 md:px-8 md:py-20">
+    <ul data-strings>
+      <li>
+        {% render 'string' %}
+        <div class="strung-row grid gap-x-8 gap-y-2 py-7 lg:grid-cols-12 lg:items-baseline">
+          <h2 class="title-small lg:col-span-4">Rather talk?</h2>
+          <p class="max-w-[60ch] lg:col-span-8">Call the desk at <a href="tel:+15055550164" class="text-link font-semibold whitespace-nowrap">(505) 555-0164</a>, Monday to Thursday from 1:30 to 8:30 pm, Friday from 1:30 to 7, Saturday from 8 to 3.</p>
+        </div>
+        {% render 'string' %}
+      </li>
+    </ul>
+  </div>
+</section>
+</main>
+{% render 'footer' %}
+</body>
+</html>

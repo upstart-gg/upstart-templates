@@ -1,0 +1,5 @@
+<div class="rounded-box bg-base-100 p-6 md:p-8 lg:col-span-8" role="status">
+  <p class="plain-heading text-[1.75rem]">Thank you, {{ record.name }}.</p>
+  <p class="mt-3 max-w-[52ch] text-[1.1875rem]">{% if record.size and record.size != "Not sure: measure me" %}A {{ record.size }} {{ record.instrument | downcase }}{% else %}Your {{ record.instrument | downcase }}{% endif %} will be waiting at the desk from Monday.</p>
+  <p class="body-copy mt-3 max-w-[52ch]">We'll fit it{% if record.player %} to {{ record.player }}{% endif %} when you come by, and take the first month then.</p>
+</div>

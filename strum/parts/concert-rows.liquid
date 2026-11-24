@@ -1,0 +1,13 @@
+<section class="bg-base-100 text-base-content">
+  <div class="mx-auto max-w-[80rem] px-5 pb-20 md:px-8 md:pb-28">
+    <ul data-strings data-term data-tz="America/Denver">
+      {% for concert in data.concerts %}
+      <li data-starts="{{ concert.date }}" data-ends="{{ concert.ends }}">
+        {% render 'string' %}
+        {% render 'concert-row', concert: concert, full: true %}
+        {% if forloop.last %}{% render 'string' %}{% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

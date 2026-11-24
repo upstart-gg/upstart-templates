@@ -1,0 +1,5 @@
+<div class="rounded-box bg-base-200 p-6 md:p-10 lg:col-span-8" role="status">
+  <p class="plain-heading text-[1.875rem]">Thank you, {{ record.name }}.</p>
+  <p class="mt-4 max-w-[50ch] text-[1.1875rem]">We've put {{ record.student }} down{% if record.class %} for {{ record.class }}{% elsif record.lesson %} for {{ record.lesson }} a week{% endif %}{% if record.teacher %} with {{ record.teacher }}{% endif %}.</p>
+  <p class="body-copy mt-3 max-w-[50ch]">We'll call within two school days to confirm it and settle the term.{% if record.fund %} Only the office director will see that you asked about the Fund.{% endif %}</p>
+</div>

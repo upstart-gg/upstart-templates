@@ -1,0 +1,22 @@
+{
+  "name": "Strum free first lesson",
+  "kind": "forms",
+  "source": "upstart",
+  "description": "The free first lesson asked for in four numbered parts: who it is for and their age, the instrument and whether they have played, the times and the teacher, then the parent's or student's name, email and phone; beside it, an apricot panel that says when the desk calls.",
+  "tags": ["forms", "free lesson", "trial lesson", "booking", "music school"],
+  "mood": ["friendly", "warm"],
+  "synonyms": [
+    "trial lesson",
+    "free first lesson",
+    "book a lesson",
+    "sign-up form",
+    "cours d'essai",
+    "premier cours gratuit",
+    "inscription",
+    "réserver un cours"
+  ],
+  "data": {
+    "name": "trial-lessons",
+    "family": "collection"
+  }
+}

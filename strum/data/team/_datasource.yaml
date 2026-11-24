@@ -1,0 +1,32 @@
+label: Teachers
+fields:
+  - name: name
+    label: Name
+    kind: text
+    required: true
+  - name: pronouns
+    label: Pronouns
+    kind: text
+  - name: role
+    label: Role
+    kind: text
+  - name: instruments
+    label: Instruments
+    kind: text
+  - name: ages
+    label: Ages taught, as a line
+    kind: text
+  - name: programs
+    label: Programs (little-ones, kids, teens, grown-ups)
+    kind: list
+  - name: bio
+    label: Short bio
+    kind: text
+  - name: plays
+    label: Where they play
+    kind: text
+  - name: photo
+    label: Portrait
+    kind: image
+order:
+  [marisol-archuleta, ray-gallegos, linh-nguyen, nadia-haddad, jonah-kessler, celia-baca, walt-ferris, sun-hee-park]

@@ -1,0 +1,9 @@
+{
+  "alt": "A viola lying on apricot paper, seen from above",
+  "generated": {
+    "model": "gemini/gemini-nano-banana-2.1",
+    "prompt": "Photograph in exactly the same style, paper, light and framing as the reference image: a single viola lying flat, its scroll at the top, a little larger and wider than the reference violin and of a darker reddish brown, exactly four strings from four pegs over the bridge to the tailpiece, two f-holes, a chin rest; no bow. The whole instrument in frame with a generous margin around it, centered, seen from straight above. Seamless pale apricot paper, soft natural window light from the left, a soft shadow to the right, realistic product photograph. No case, no hands, no person, no brand, no logo, no label, no text.",
+    "date": "2026-11-24T12:39:44.438Z",
+    "references": ["/media/rental-violin.webp"]
+  }
+}

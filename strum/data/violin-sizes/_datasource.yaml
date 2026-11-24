@@ -1,0 +1,13 @@
+label: Violin sizes
+fields:
+  - name: size
+    label: Size
+    kind: text
+    required: true
+  - name: ages
+    label: Ages
+    kind: text
+  - name: arm
+    label: Arm's length
+    kind: text
+order: [one-sixteenth, one-eighth, one-quarter, one-half, three-quarters, full-size]

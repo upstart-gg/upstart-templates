@@ -1,0 +1,55 @@
+<section id="request" class="scroll-mt-20 bg-base-200 text-base-content">
+  <div class="mx-auto grid max-w-[80rem] gap-x-14 gap-y-10 px-5 py-20 md:px-8 md:py-28 lg:grid-cols-12">
+    <div class="lg:col-span-4">
+      <p class="eyebrow text-accent">Rental request</p>
+      <h2 class="title-section mt-3">Ask for an instrument</h2>
+      <p class="body-copy mt-5 max-w-[34ch]">Nothing to pay now. We tune it, set it aside under your name, and take the first month when you come by.</p>
+    </div>
+    <form data-prefill hx-post="/_data/rental-requests" hx-target="this" hx-swap="outerHTML" hx-status:422="target:#rental-problems swap:innerHTML" class="grid gap-x-5 gap-y-2 rounded-box bg-base-100 p-6 sm:grid-cols-2 md:p-8 lg:col-span-8">
+      <fieldset class="fieldset">
+        <legend class="fieldset-legend">The instrument <span class="required-mark" aria-hidden="true">*</span></legend>
+        <select name="instrument" class="select w-full" data-prefill-from="instrument" aria-label="The instrument" required>
+          <option value="">Choose one</option>
+          {%- for rental in data.rentals %}
+          <option value="{{ rental.name }}" data-id="{{ rental.id }}">{{ rental.name }}</option>
+          {%- endfor %}
+        </select>
+      </fieldset>
+      <fieldset class="fieldset">
+        <legend class="fieldset-legend">The size</legend>
+        <select name="size" class="select w-full" aria-label="The size">
+          <option value="Not sure: measure me">Not sure: measure me</option>
+          {%- for size in data.violin-sizes %}
+          <option value="{{ size.size }}">{{ size.size }}</option>
+          {%- endfor %}
+        </select>
+      </fieldset>
+      <fieldset class="fieldset">
+        <legend class="fieldset-legend">The player's first name</legend>
+        <input name="player" type="text" class="input w-full" maxlength="100" aria-label="The player's first name">
+      </fieldset>
+      <fieldset class="fieldset">
+        <legend class="fieldset-legend">The player's age <span class="required-mark" aria-hidden="true">*</span></legend>
+        <input name="age" type="number" min="3" max="110" class="input w-full" required aria-label="The player's age">
+      </fieldset>
+      <fieldset class="fieldset sm:col-span-2">
+        <legend class="fieldset-legend">The week you'll come by <span class="required-mark" aria-hidden="true">*</span></legend>
+        <input name="week" type="text" class="input w-full" required maxlength="100" placeholder="Next week, after 4" aria-label="The week you'll come by">
+      </fieldset>
+      <fieldset class="fieldset sm:col-span-2">
+        <legend class="fieldset-legend">Your name <span class="required-mark" aria-hidden="true">*</span></legend>
+        <input name="name" type="text" class="input w-full" required maxlength="200" autocomplete="name" aria-label="Your name">
+      </fieldset>
+      <fieldset class="fieldset">
+        <legend class="fieldset-legend">Your email <span class="required-mark" aria-hidden="true">*</span></legend>
+        <input name="email" type="email" class="input w-full" required maxlength="200" autocomplete="email" aria-label="Your email">
+      </fieldset>
+      <fieldset class="fieldset">
+        <legend class="fieldset-legend">Your phone</legend>
+        <input name="phone" type="tel" class="input w-full" maxlength="30" autocomplete="tel" aria-label="Your phone">
+      </fieldset>
+      <div id="rental-problems" class="sm:col-span-2"></div>
+      <div class="mt-4 sm:col-span-2"><button class="btn btn-primary btn-lg whitespace-nowrap">Ask for an instrument</button></div>
+    </form>
+  </div>
+</section>

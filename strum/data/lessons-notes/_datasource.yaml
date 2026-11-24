@@ -1,0 +1,10 @@
+label: How paying works
+fields:
+  - name: title
+    label: Title
+    kind: text
+    required: true
+  - name: text
+    label: Text
+    kind: text
+order: [by-the-term, registration, siblings, make-ups, courtyard-fund]

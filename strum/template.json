@@ -1,0 +1,28 @@
+{
+  "id": "strum",
+  "version": "1.0.0",
+  "name": "Strum",
+  "description": "A music school in flat bands of tangerine whose ruled lists are strung: the rules pluck one after another as a list arrives, and again when the pointer crosses them, over programs by age, the week's classes, the term's dates and a free first lesson.",
+  "category": "business",
+  "tags": [
+    "music school",
+    "music lessons",
+    "lessons for children",
+    "classes",
+    "teachers",
+    "recitals",
+    "concerts",
+    "instrument rental",
+    "enrollment",
+    "community school"
+  ],
+  "author": {
+    "name": "Upstart",
+    "url": "https://upstart.gg"
+  },
+  "licence": "MIT",
+  "app": "0.2.0",
+  "shoot": {
+    "clock": "2027-11-10T16:30:00-07:00"
+  }
+}

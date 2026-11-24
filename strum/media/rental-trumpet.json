@@ -1,0 +1,9 @@
+{
+  "alt": "A trumpet lying on apricot paper, seen from above",
+  "generated": {
+    "model": "gemini/gemini-nano-banana-2.1",
+    "prompt": "Photograph in exactly the same style, paper, light and framing as the reference image: a single brass B-flat trumpet lying flat on its side, with exactly three piston valves, its bell to the right and its mouthpiece to the left, the lead pipe, tuning slide and valve slides correctly connected. The whole instrument in frame with a generous margin around it, centered, seen from straight above. Seamless pale apricot paper, soft natural window light from the left, a soft shadow to the right, realistic product photograph. No case, no hands, no person, no brand, no logo, no label, no text.",
+    "date": "2026-11-24T12:41:16.431Z",
+    "references": ["/media/rental-violin.webp"]
+  }
+}

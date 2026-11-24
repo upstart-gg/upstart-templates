@@ -1,0 +1,18 @@
+{
+  "name": "Strum term strip",
+  "kind": "banner",
+  "source": "upstart",
+  "description": "A thin night blue strip with the term's line and the free first lesson's link, for the top of any page.",
+  "tags": ["banner", "announcement", "term", "enrollment"],
+  "mood": ["bold", "minimal"],
+  "synonyms": [
+    "announcement bar",
+    "top strip",
+    "notice",
+    "enrolling now",
+    "bandeau d'annonce",
+    "barre d'information",
+    "inscriptions ouvertes",
+    "rentrée"
+  ]
+}

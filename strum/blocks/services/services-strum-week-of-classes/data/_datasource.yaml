@@ -1,0 +1,43 @@
+label: Classes
+fields:
+  - name: name
+    label: Name
+    kind: text
+    required: true
+  - name: program
+    label: Program
+    kind: choice
+    choices: [little-ones, kids, teens, grown-ups]
+  - name: kind
+    label: Kind
+    kind: choice
+    choices: [group class, ensemble]
+  - name: day
+    label: Day
+    kind: choice
+    choices: [mon, tue, wed, thu, fri, sat]
+  - name: time
+    label: Time
+    kind: text
+  - name: room
+    label: Room
+    kind: text
+  - name: ages
+    label: Ages
+    kind: text
+  - name: size
+    label: Size
+    kind: number
+  - name: seats_left
+    label: Seats left (0 for full)
+    kind: number
+  - name: price
+    label: Price
+    kind: text
+  - name: teacher
+    label: Teacher
+    kind: text
+  - name: summary
+    label: Summary
+    kind: text
+order: [guitar-from-scratch, music-and-movement, evening-choir, mariachi-juniors, teen-bands, first-strings]

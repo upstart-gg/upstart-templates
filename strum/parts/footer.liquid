@@ -1,0 +1,38 @@
+<footer class="bg-neutral text-neutral-content">
+  <div class="mx-auto max-w-[80rem] px-5 pt-20 pb-10 md:px-8 md:pt-24">
+    <div class="grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-12">
+      <div class="sm:col-span-2 lg:col-span-4">
+        {% render 'logo' %}
+        <p class="body-copy mt-5 max-w-[32ch]">Music lessons for every age, in twelve rooms of a 1948 motor court.</p>
+        <p class="mt-7"><a href="/start#trial" class="btn btn-primary whitespace-nowrap">Book a free first lesson</a></p>
+      </div>
+      <div class="lg:col-span-3">
+        <p class="eyebrow text-primary">The front desk</p>
+        <address class="mt-4 not-italic">16 Oberlin Court SE<br>Albuquerque, NM&nbsp;87106</address>
+        <p class="mt-3"><a href="https://www.openstreetmap.org/search?query=16%20Oberlin%20Court%20SE%2C%20Albuquerque%2C%20NM%2087106" class="text-link" rel="noopener" target="_blank">Get directions</a></p>
+        <p class="mt-3"><a href="tel:+15055550164" class="text-link whitespace-nowrap">(505) 555-0164</a></p>
+        <p class="mt-1.5"><a href="mailto:desk@ristramusic.com" class="text-link">desk@ristramusic.com</a></p>
+      </div>
+      <div class="lg:col-span-3">
+        <p class="eyebrow text-primary">The desk answers</p>
+        <ul class="mt-4 space-y-1">
+          {%- for day in data.hours %}
+          <li class="grid grid-cols-[6.5rem_1fr] gap-x-3"><span>{{ day.day }}</span><span class="text-neutral-content/80">{{ day.hours }}</span></li>
+          {%- endfor %}
+        </ul>
+      </div>
+      <nav aria-label="Footer" class="lg:col-span-2">
+        <p class="eyebrow text-primary">Ristra</p>
+        <ul class="mt-4 space-y-1">
+          {%- for item in data.navigation %}{% if item.place != "social" %}
+          <li><a href="{{ item.href }}" class="hover:underline">{{ item.label }}</a></li>
+          {%- endif %}{% endfor %}
+          {%- for item in data.navigation %}{% if item.place == "social" %}
+          <li><a href="{{ item.href }}" class="hover:underline" rel="noopener" target="_blank">{{ item.label }}</a></li>
+          {%- endif %}{% endfor %}
+        </ul>
+      </nav>
+    </div>
+    <p class="mt-16 text-[0.9375rem] text-neutral-content/70">Ristra Music School · Ristra Courts, Nob Hill, Albuquerque</p>
+  </div>
+</footer>

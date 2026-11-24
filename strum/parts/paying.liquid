@@ -1,0 +1,18 @@
+<section class="bg-base-200 text-base-content">
+  <div class="mx-auto max-w-[80rem] px-5 py-20 md:px-8 md:py-28">
+    <h2 class="title-section" data-reveal>How paying works</h2>
+    <ol class="mt-12" data-strings>
+      {% for note in data.lessons-notes %}
+      <li>
+        {% render 'string' %}
+        <div class="strung-row grid gap-x-8 gap-y-2 py-7 sm:grid-cols-[5rem_1fr] lg:grid-cols-12">
+          <span class="display text-[2.25rem] leading-none lg:col-span-2">{{ forloop.index | prepend: "0" }}</span>
+          <h3 class="title-small lg:col-span-5">{{ note.title }}</h3>
+          <p class="body-copy sm:col-start-2 lg:col-span-5 lg:col-start-auto">{{ note.text }}</p>
+        </div>
+        {% if forloop.last %}{% render 'string' %}{% endif %}
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>

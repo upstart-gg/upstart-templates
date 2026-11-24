@@ -1,0 +1,22 @@
+{
+  "name": "Strum programs by age",
+  "kind": "features",
+  "source": "upstart",
+  "description": "The programs as wide strung rows, the ages huge in the display face, each with its name, its summary, its chips, its price, its arrow and a photo; the strings between them thicken from thin to wound, and pluck as the list arrives and under the hand.",
+  "tags": ["features", "programs", "ages", "music school", "classes", "strings"],
+  "mood": ["bold", "friendly"],
+  "synonyms": [
+    "programs by age",
+    "age groups",
+    "courses by level",
+    "classes for kids and adults",
+    "programmes par âge",
+    "tranches d'âge",
+    "cours par niveau",
+    "formules"
+  ],
+  "data": {
+    "name": "programs",
+    "family": "collection"
+  }
+}

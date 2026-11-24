@@ -1,0 +1,56 @@
+label: Enrollments
+collected: true
+answer: enrollments-thanks
+messages:
+  required: "{field} is required."
+  invalid: "{field} does not look right."
+  too_many: "Too many requests from here. Please try again in a few minutes."
+  sent: "Thank you. We'll call you within two school days."
+fields:
+  - name: student
+    label: The student's name
+    kind: text
+    required: true
+  - name: age
+    label: Their age
+    kind: number
+    required: true
+  - name: program
+    label: Program
+    kind: text
+    required: true
+  - name: lesson
+    label: Private lesson
+    kind: text
+  - name: class
+    label: Class
+    kind: text
+  - name: teacher
+    label: Teacher
+    kind: text
+  - name: days
+    label: Days that work
+    kind: list
+    choices: [Monday, Tuesday, Wednesday, Thursday, Friday, Saturday]
+  - name: rental
+    label: We'll need to rent an instrument
+    kind: boolean
+  - name: payment
+    label: Payment
+    kind: choice
+    choices: [By the term, In four payments]
+  - name: fund
+    label: I'd like to ask about the Courtyard Fund
+    kind: boolean
+  - name: name
+    label: Your name
+    kind: text
+    required: true
+  - name: email
+    label: Your email
+    kind: email
+    required: true
+  - name: phone
+    label: Your phone
+    kind: phone
+    required: true

@@ -1,0 +1,38 @@
+label: Rental requests
+collected: true
+answer: rental-requests-thanks
+messages:
+  required: "{field} is required."
+  invalid: "{field} does not look right."
+  too_many: "Too many requests from here. Please try again in a few minutes."
+  sent: "Thank you. It will be waiting at the desk."
+fields:
+  - name: instrument
+    label: Instrument
+    kind: text
+    required: true
+  - name: size
+    label: Size
+    kind: text
+  - name: age
+    label: The player's age
+    kind: number
+    required: true
+  - name: player
+    label: The player's first name
+    kind: text
+  - name: week
+    label: The week you'll come by
+    kind: text
+    required: true
+  - name: name
+    label: Your name
+    kind: text
+    required: true
+  - name: email
+    label: Your email
+    kind: email
+    required: true
+  - name: phone
+    label: Your phone
+    kind: phone

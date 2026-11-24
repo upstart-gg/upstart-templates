@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Calendar — Ristra Music School</title>
+<meta name="description" content="The school year at Ristra Music School in Albuquerque: fall and spring terms, breaks, make-up Saturdays, recitals and summer camps, with the desk's hours.">
+<meta property="og:title" content="Calendar — Ristra Music School">
+<meta property="og:description" content="The school year at Ristra Music School in Albuquerque: fall and spring terms, breaks, make-up Saturdays, recitals and summer camps, with the desk's hours.">
+</head>
+<body>
+{% render 'header', page: page %}
+<main>
+{% render 'page-title', title: "Calendar", intro: "Two terms and a summer. When Albuquerque's public schools close for snow, so do we, and we text every family by 7 am." %}
+{% render 'school-year' %}
+{% render 'desk-hours', title: "When someone's there" %}
+</main>
+{% render 'footer' %}
+</body>
+</html>

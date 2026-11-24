@@ -1,0 +1,9 @@
+{
+  "alt": "A ukulele lying on apricot paper, seen from above",
+  "generated": {
+    "model": "gemini/gemini-nano-banana-2.1",
+    "prompt": "Photograph in exactly the same style, paper, light and framing as the reference image: a single small wooden ukulele lying flat, its headstock at the top with two tuning pegs on each side, exactly four strings, a round sound hole, frets on the neck, smaller in the frame than a guitar. The whole instrument in frame with a generous margin around it, centered, seen from straight above. Seamless pale apricot paper, soft natural window light from the left, a soft shadow to the right, realistic product photograph. No case, no hands, no person, no brand, no logo, no label, no text.",
+    "date": "2026-11-24T12:40:51.969Z",
+    "references": ["/media/rental-violin.webp"]
+  }
+}

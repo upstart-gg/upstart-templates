@@ -1,0 +1,21 @@
+<section class="bg-base-200 text-base-content">
+  <div class="mx-auto grid max-w-[80rem] gap-x-14 gap-y-10 px-5 py-20 md:px-8 md:py-28 lg:grid-cols-12">
+    <div class="lg:col-span-4" data-reveal>
+      <p class="eyebrow text-accent">Fall 2027</p>
+      <h2 class="title-section mt-3">This term at a glance</h2>
+      <p class="mt-6"><a href="/calendar" class="btn btn-outline whitespace-nowrap">The whole calendar</a></p>
+    </div>
+    <div class="lg:col-span-8">
+      <ul data-strings data-term data-tz="America/Denver">
+        {% assign shown = data.dates | where: "on_home", true %}
+        {% for item in shown %}
+        <li data-starts="{{ item.starts }}" data-ends="{{ item.ends }}">
+          {% render 'string' %}
+          {% render 'date-row', item: item %}
+          {% if forloop.last %}{% render 'string' %}{% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>

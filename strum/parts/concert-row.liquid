@@ -1,0 +1,16 @@
+<div class="strung-row grid grid-cols-[4.5rem_1fr] gap-x-5 gap-y-4 py-6 md:grid-cols-[6rem_1fr_auto] md:items-center md:gap-x-8 md:py-7">
+  <p class="leading-none {{ date_class }}"><span class="display block text-[3rem]">{{ concert.date | date: "%-d" }}</span><span class="eyebrow mt-1 block">{{ concert.date | date: "%B" }}</span></p>
+  <div class="min-w-0">
+    <p class="flex flex-wrap gap-2 empty:hidden"><span data-when="now">Today</span><span data-when="next">Coming up</span></p>
+    <h3 class="title-small mt-1"><a href="/concerts/{{ concert.id }}">{{ concert.title }}</a></h3>
+    <p class="mt-1.5">{{ concert.time }} · {{ concert.place }}</p>
+    {%- if full and concert.performers %}
+    <p class="body-copy mt-1">{{ concert.performers }}</p>
+    {%- endif %}
+  </div>
+  <div class="col-start-2 flex flex-wrap items-center gap-x-6 gap-y-2 md:col-start-auto md:justify-end">
+    {%- if concert.price %}<p class="font-semibold">{{ concert.price }}</p>{% endif %}
+    {%- if concert.booking %}<a href="{{ concert.booking }}" class="inline-flex items-center gap-2 font-semibold whitespace-nowrap" rel="noopener" target="_blank">Tickets {% render 'arrow' %}</a>{% endif %}
+    <a href="/concerts/{{ concert.id }}" class="inline-flex items-center gap-2 font-semibold whitespace-nowrap">Details {% render 'arrow' %}</a>
+  </div>
+</div>

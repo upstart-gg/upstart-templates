@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Lessons &amp; prices — Ristra Music School</title>
+<meta name="description" content="Private lessons of 30, 45 or 60 minutes at $34, $49 or $64, group classes from $195 a term and ensembles that meet once a week, in Nob Hill, Albuquerque.">
+<meta property="og:title" content="Lessons &amp; prices — Ristra Music School">
+<meta property="og:description" content="Private lessons of 30, 45 or 60 minutes at $34, $49 or $64, group classes from $195 a term and ensembles that meet once a week, in Nob Hill, Albuquerque.">
+</head>
+<body>
+{% render 'header', page: page %}
+<main>
+{% render 'page-title', title: "Lessons & prices", intro: "Private lessons for any instrument, group classes on a fixed evening, and ensembles that meet once a week. Billed by the term, or in four payments." %}
+{% render 'lesson-rates' %}
+{% render 'week-of-classes' %}
+{% render 'paying' %}
+{% render 'fund-band' %}
+{% render 'questions', items: data.lessons-faq, title: "Before you enroll" %}
+</main>
+{% render 'footer' %}
+</body>
+</html>

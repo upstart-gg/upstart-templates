@@ -1,0 +1,10 @@
+label: Rooms
+fields:
+  - name: name
+    label: Room
+    kind: text
+    required: true
+  - name: use
+    label: What it's for
+    kind: text
+order: [room-1, rooms-2-to-6, room-7, rooms-8-to-10, room-11, room-12, the-carport, the-courtyard]

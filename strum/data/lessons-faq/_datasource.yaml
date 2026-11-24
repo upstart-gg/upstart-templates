@@ -1,0 +1,11 @@
+label: Questions about lessons
+fields:
+  - name: question
+    label: Question
+    kind: text
+    required: true
+  - name: answer
+    label: Answer
+    kind: markdown
+body: answer
+order: [switch-teachers, stop-mid-term, how-much-practice, online, sit-in]

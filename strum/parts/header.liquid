@@ -1,0 +1,32 @@
+{% render 'term-strip' %}
+<header class="sticky top-0 z-40 border-b border-base-300 bg-base-100/95 text-base-content">
+  <div class="mx-auto flex h-[4.5rem] max-w-[90rem] items-center justify-between gap-6 px-5 md:px-8">
+    {% render 'logo' %}
+    <nav aria-label="Main" class="hidden min-[88rem]:block">
+      <ul class="flex items-center whitespace-nowrap text-[0.9375rem]">
+        {% for item in data.navigation %}{% if item.place == "both" or item.place == "header" %}
+        <li><a href="{{ item.href }}" class="rounded-field px-2.5 py-2 font-medium hover:bg-base-200 aria-[current=page]:bg-secondary aria-[current=page]:text-secondary-content" {% if page.url contains item.href %}aria-current="page"{% endif %}>{{ item.label }}</a></li>
+        {% endif %}{% endfor %}
+      </ul>
+    </nav>
+    <div class="flex items-center gap-2">
+      <a href="/start#trial" class="btn btn-primary hidden whitespace-nowrap sm:inline-flex">Free first lesson</a>
+      <details class="site-menu min-[88rem]:hidden">
+        <summary class="btn btn-ghost relative z-[60] px-3" aria-label="Menu">
+          <span class="menu-open inline-flex items-center gap-2"><svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg>Menu</span><span class="menu-close">Close</span>
+        </summary>
+        <nav aria-label="Main" class="fixed inset-0 z-50 flex flex-col justify-between overflow-y-auto bg-base-100 px-5 pt-28 pb-10 text-base-content">
+          <ul class="space-y-1">
+            {% for item in data.navigation %}{% if item.place == "both" or item.place == "header" %}
+            <li><a href="{{ item.href }}" class="display block py-1 text-[2.25rem] leading-[1.15]" {% if page.url contains item.href %}aria-current="page"{% endif %}>{{ item.label }}</a></li>
+            {% endif %}{% endfor %}
+          </ul>
+          <div class="mt-12 flex flex-col gap-4">
+            <a href="/start#trial" class="btn btn-primary btn-lg">Book a free first lesson</a>
+            <p class="body-copy">16 Oberlin Court SE · Nob Hill, Albuquerque</p>
+          </div>
+        </nav>
+      </details>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,31 @@
+<section class="bg-base-200 text-base-content">
+  <div class="mx-auto grid max-w-[80rem] gap-x-14 gap-y-10 px-5 py-20 md:px-8 md:py-28 lg:grid-cols-12">
+    <div class="lg:col-span-5" data-reveal>
+      <p class="eyebrow text-accent">Private lessons</p>
+      <h2 class="title-section mt-3">One teacher, one room, every week</h2>
+      <p class="body-copy mt-5 max-w-[42ch]">Any instrument we teach, at the same time each week of the term. The first thirty minutes are free.</p>
+      <p class="mt-7"><a href="/start#trial" class="btn btn-primary whitespace-nowrap">Book a free first lesson</a></p>
+      <img src="/media/trumpet-hand.jpg" class="mt-10 hidden aspect-[3/2] w-full rounded-box object-cover lg:block">
+    </div>
+    <div class="lg:col-span-7">
+      <ul data-strings>
+        {% for rate in data.lesson-rates %}
+        <li>
+          {% render 'string' %}
+          <div class="strung-row grid gap-x-8 gap-y-3 py-8 sm:grid-cols-[1fr_auto]">
+            <div>
+              <h3 class="title-small">{{ rate.name }}</h3>
+              <p class="body-copy mt-1.5">{{ rate.description }}</p>
+            </div>
+            <div class="sm:text-right">
+              <p><span class="text-[1.75rem] leading-none font-semibold">{{ rate.price }}</span> {{ rate.period }}</p>
+              {% for line in rate.features %}<p class="mt-1 text-[0.9375rem]">{{ line }}</p>{% endfor %}
+            </div>
+          </div>
+          {% if forloop.last %}{% render 'string' %}{% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>

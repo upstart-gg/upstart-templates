@@ -1,0 +1,28 @@
+label: Lesson rates
+fields:
+  - name: name
+    label: Length
+    kind: text
+    required: true
+  - name: price
+    label: Price
+    kind: text
+  - name: period
+    label: Period
+    kind: text
+  - name: description
+    label: Whom it suits
+    kind: text
+  - name: features
+    label: By the term
+    kind: list
+  - name: cta
+    label: Button
+    kind: text
+  - name: href
+    label: Button link
+    kind: link
+  - name: featured
+    label: Highlighted
+    kind: boolean
+order: [thirty-minutes, forty-five-minutes, sixty-minutes]

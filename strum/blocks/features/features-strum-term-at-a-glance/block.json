@@ -1,0 +1,22 @@
+{
+  "name": "Strum term at a glance",
+  "kind": "features",
+  "source": "upstart",
+  "description": "The term's dates as strung rows beside a heading: the first days, the breaks, the make-up Saturdays and the concerts, with This week, Today and Coming up marked in the school's time zone, past dates faded, and a button to the whole calendar.",
+  "tags": ["features", "calendar", "dates", "term", "school year"],
+  "mood": ["professional", "friendly"],
+  "synonyms": [
+    "term dates",
+    "school calendar",
+    "key dates",
+    "academic calendar",
+    "calendrier scolaire",
+    "dates du trimestre",
+    "vacances",
+    "dates clés"
+  ],
+  "data": {
+    "name": "dates",
+    "family": "collection"
+  }
+}
