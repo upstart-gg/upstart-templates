@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>The week — Artesian Yoga &amp; Pilates</title>
+<meta name="description" content="The usual week at Artesian in downtown Boise: thirty-eight yoga, mat Pilates and reformer classes, day by day. Book in the app.">
+<meta property="og:title" content="The week — Artesian Yoga &amp; Pilates">
+<meta property="og:description" content="The usual week at Artesian in downtown Boise: thirty-eight yoga, mat Pilates and reformer classes, day by day. Book in the app.">
+</head>
+<body>
+{% render 'header', page: page %}
+<main>
+{% render 'page-title', title: "The week", intro: "Thirty-eight classes, 6:15 am to 7:15 pm on weekdays, mornings at the weekend and Sunday at four. Book in the app; come fifteen minutes early the first time." %}
+{% render 'week-full' %}
+{% render 'before-you-come' %}
+{% render 'two-rooms' %}
+{% render 'faq-accordion', items: data.schedule-faq %}
+{% render 'dock' %}
+</main>
+{% render 'footer' %}
+</body>
+</html>

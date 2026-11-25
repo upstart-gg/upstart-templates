@@ -1,0 +1,13 @@
+{
+  "name": "Bolster teacher rows",
+  "kind": "team",
+  "source": "upstart",
+  "description": "The teachers, one ruled row each: a portrait or initials, the classes they teach as tone chips, a biography and their week.",
+  "tags": ["team", "teachers", "rows", "week"],
+  "mood": ["warm", "friendly", "elegant"],
+  "synonyms": ["teachers", "team", "instructors", "biographies", "professeurs", "équipe", "enseignants", "portraits"],
+  "data": {
+    "name": "team",
+    "family": "collection"
+  }
+}

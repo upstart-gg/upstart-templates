@@ -1,0 +1,11 @@
+{% assign foundations = data.classes | where: "id", "foundations" | first %}{% assign flow = data.classes | where: "id", "slow-flow" | first %}
+<section id="first-class" class="bg-base-200 text-base-content">
+  <div class="mx-auto max-w-[80rem] px-5 py-20 md:px-8 md:py-32">
+    <h2 class="title-section" data-rise>Which one first?</h2>
+    <ul data-mats class="mt-10 grid gap-x-5 gap-y-8 md:mt-14 lg:grid-cols-2">
+      <li class="flex flex-col"><p class="mb-4 text-[1.25rem]">If you've never done yoga, or not for years</p><div class="flex-1">{% render 'class-mat', class: foundations %}</div></li>
+      <li class="flex flex-col"><p class="mb-4 text-[1.25rem]">If you have</p><div class="flex-1">{% render 'class-mat', class: flow %}</div></li>
+    </ul>
+    <p class="body-copy mt-10">For Pilates, come to <a href="/workshops/your-first-reformer" class="text-link">Your first reformer</a> on a Saturday.</p>
+  </div>
+</section>

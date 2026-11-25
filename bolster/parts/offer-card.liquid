@@ -1,0 +1,15 @@
+{% for offer in data.offer limit: 1 %}
+<div data-offer class="rounded-box bg-secondary text-secondary-content {% if large %}p-7 md:p-10{% else %}p-6 md:p-8{% endif %}">
+  <p class="eyebrow">New here</p>
+  <p class="display mt-2 flex flex-wrap items-end gap-x-3 gap-y-1">
+    <span class="text-[2.25rem] leading-[0.95] font-[350]">{{ offer.name }} for</span>
+    <span class="text-[5rem] leading-[0.8] font-[300]">{{ offer.price }}</span>
+  </p>
+  <p class="mt-5 max-w-[34ch] leading-snug">{{ offer.summary }}</p>
+  {% if large %}<p class="facts mt-2 max-w-[40ch]">{{ offer.terms }}</p>{% endif %}
+  <p class="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3">
+    <a href="{{ offer.href }}" class="btn btn-primary whitespace-nowrap">{{ offer.cta }}</a>
+    {% unless large %}<a href="/new" class="text-link font-semibold whitespace-nowrap">How it works</a>{% endunless %}
+  </p>
+</div>
+{% endfor %}

@@ -1,0 +1,9 @@
+<section class="bg-base-100 text-base-content">
+  <div class="mx-auto grid max-w-[80rem] items-center gap-x-14 gap-y-10 px-5 py-20 md:px-8 md:py-32 lg:grid-cols-12">
+    <img src="/media/prop-shelf.webp" class="aspect-[4/5] w-full rounded-box object-cover object-[50%_60%] lg:col-span-4" data-rise>
+    <div class="lg:col-span-8">
+      <h2 class="title-section" data-rise>What to bring</h2>
+      {% render 'checklist', items: data.new-bring %}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Classes — Artesian Yoga &amp; Pilates</title>
+<meta name="description" content="Six kinds of class at Artesian in Boise: Foundations, Slow Flow, Warm Flow, Yin &amp; Restore, Mat Pilates and Reformer, with how each one feels and who it suits.">
+<meta property="og:title" content="Classes — Artesian Yoga &amp; Pilates">
+<meta property="og:description" content="Six kinds of class at Artesian in Boise: Foundations, Slow Flow, Warm Flow, Yin &amp; Restore, Mat Pilates and Reformer, with how each one feels and who it suits.">
+</head>
+<body>
+{% render 'header', page: page %}
+<main>
+{% render 'page-title', title: "Classes", intro: "Six kinds of hour. Start with Foundations or Slow Flow; every class says how it feels and who it suits." %}
+{% render 'floor' %}
+{% render 'pace' %}
+{% render 'faq-two-columns', items: data.classes-faq %}
+{% render 'dock' %}
+</main>
+{% render 'footer' %}
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "name": "Bolster two ways to pay",
+  "kind": "pricing",
+  "source": "upstart",
+  "description": "Memberships beside class packs on the aubergine field, with one line between them that settles which suits.",
+  "tags": ["pricing", "memberships", "class packs", "field"],
+  "mood": ["elegant", "dark", "professional"],
+  "synonyms": [
+    "pricing",
+    "memberships",
+    "class packs",
+    "two columns",
+    "tarifs",
+    "abonnements",
+    "cartes de cours",
+    "forfaits"
+  ],
+  "data": {
+    "name": "plans",
+    "family": "collection"
+  }
+}

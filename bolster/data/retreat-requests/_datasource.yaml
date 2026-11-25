@@ -1,0 +1,36 @@
+label: Retreat requests
+collected: true
+answer: retreat-requests-thanks
+messages:
+  required: "{field} is required."
+  invalid: "{field} does not look right."
+  too_many: "Too many requests from here. Please try again in a few minutes."
+  sent: "Thank you. We'll write within two days."
+fields:
+  - name: cabin
+    label: The cabin
+    kind: choice
+    required: true
+    choices: [shared, own]
+  - name: sharing
+    label: Who you'd share with
+    kind: text
+  - name: practice
+    label: How long you've practiced
+    kind: choice
+    choices: [a few months, a year or two, longer]
+  - name: food
+    label: Food you don't eat
+    kind: text
+  - name: name
+    label: Your name
+    kind: text
+    required: true
+  - name: email
+    label: Your email
+    kind: email
+    required: true
+  - name: phone
+    label: Your phone
+    kind: phone
+    required: true

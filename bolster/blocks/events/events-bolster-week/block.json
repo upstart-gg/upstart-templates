@@ -1,0 +1,22 @@
+{
+  "name": "Bolster week of mats",
+  "kind": "events",
+  "source": "upstart",
+  "description": "The week at a glance: a strip of days that opens on today, and the day's classes as mats that unroll, each with its time, its teacher and Book.",
+  "tags": ["timetable", "week", "classes", "booking"],
+  "mood": ["warm", "elegant", "friendly"],
+  "synonyms": [
+    "timetable",
+    "class schedule",
+    "weekly schedule",
+    "day strip",
+    "planning",
+    "emploi du temps",
+    "horaires des cours",
+    "réservation"
+  ],
+  "data": {
+    "name": "sessions",
+    "family": "collection"
+  }
+}

@@ -1,0 +1,10 @@
+label: Your first class
+fields:
+  - name: title
+    label: Title
+    kind: text
+    required: true
+  - name: text
+    label: Text
+    kind: text
+order: [buy, book, early, stay]

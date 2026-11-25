@@ -1,0 +1,13 @@
+label: Front desk hours
+fields:
+  - name: day
+    label: Day
+    kind: text
+    required: true
+  - name: hours
+    label: Open
+    kind: text
+  - name: note
+    label: Note
+    kind: text
+order: [monday, tuesday, wednesday, thursday, friday, saturday, sunday]

@@ -1,0 +1,27 @@
+label: Messages
+collected: true
+answer: messages-thanks
+body: message
+messages:
+  required: "{field} is required."
+  invalid: "{field} does not look right."
+  too_many: "Too many requests from here. Please try again in a few minutes."
+  sent: "Thank you. We'll write back within a day."
+fields:
+  - name: name
+    label: Your name
+    kind: text
+    required: true
+  - name: email
+    label: Your email
+    kind: email
+    required: true
+  - name: about
+    label: What about
+    kind: choice
+    required: true
+    choices: [private sessions, a class for your team, teaching here, something else]
+  - name: message
+    label: Your message
+    kind: markdown
+    required: true

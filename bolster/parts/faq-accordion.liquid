@@ -1,0 +1,8 @@
+<section class="bg-base-200 text-base-content">
+  <div class="mx-auto grid max-w-[80rem] gap-x-14 gap-y-8 px-5 py-20 md:px-8 md:py-32 lg:grid-cols-12">
+    <h2 class="title-section lg:col-span-4" data-rise>Questions</h2>
+    <div class="border-t border-base-300 lg:col-span-8">
+      {% for item in items %}{% render 'question', item: item %}{% endfor %}
+    </div>
+  </div>
+</section>

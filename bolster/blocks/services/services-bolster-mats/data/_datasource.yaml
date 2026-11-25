@@ -1,0 +1,47 @@
+label: Classes
+fields:
+  - name: name
+    label: Name
+    kind: text
+    required: true
+  - name: summary
+    label: In a line
+    kind: text
+  - name: tone
+    label: Mat
+    kind: choice
+    choices: [plum, night, chalk, cork, heather, pale]
+  - name: pace
+    label: Pace
+    kind: choice
+    choices: [gentle, steady, strong]
+  - name: kind
+    label: Kind
+    kind: choice
+    choices: [yoga, pilates, reformer]
+  - name: length
+    label: Minutes
+    kind: number
+  - name: room
+    label: Room
+    kind: text
+  - name: credits
+    label: Counts as
+    kind: number
+  - name: for_whom
+    label: Who it suits
+    kind: text
+  - name: bring
+    label: What to bring
+    kind: text
+  - name: cover
+    label: Cover
+    kind: image
+  - name: photos
+    label: More photos
+    kind: images
+  - name: body
+    label: What you'll do
+    kind: markdown
+body: body
+order: [foundations, slow-flow, warm-flow, yin-restore, mat-pilates, reformer]

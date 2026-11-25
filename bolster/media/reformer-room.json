@@ -1,0 +1,9 @@
+{
+  "alt": "The Reformer Room: eight wooden reformers with pale upholstery in a row under tall windows, in an old brick room",
+  "generated": {
+    "model": "gemini/gemini-nano-banana-2.1",
+    "prompt": "Eight wooden Pilates reformers in a row under tall windows in an old brick room, pale upholstery, morning light, no people",
+    "date": "2026-11-25T12:25:39.419Z",
+    "references": ["/media/long-room.webp"]
+  }
+}

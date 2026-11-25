@@ -1,0 +1,21 @@
+:root {
+  --theme-color-primary: oklch(0.33 0.09 345);
+  --theme-color-primary-content: oklch(0.972 0.008 345);
+  --theme-color-secondary: oklch(0.875 0.045 352);
+  --theme-color-secondary-content: oklch(0.25 0.045 345);
+  --theme-color-accent: oklch(0.775 0.072 70);
+  --theme-color-accent-content: oklch(0.25 0.045 345);
+  --theme-color-neutral: oklch(0.215 0.04 345);
+  --theme-color-neutral-content: oklch(0.955 0.012 350);
+  --theme-color-surface: oklch(0.972 0.008 345);
+  --theme-color-surface-alt: oklch(0.935 0.018 348);
+  --theme-color-border: oklch(0.885 0.014 345);
+  --theme-color-text: oklch(0.25 0.045 345);
+  --theme-font-heading: Imbue, "Bodoni 72", Didot, "Playfair Display", ui-serif, serif;
+  --theme-font-body: Afacad, "Gill Sans", "Trebuchet MS", ui-sans-serif, system-ui, sans-serif;
+  --theme-radius: 0.75rem;
+  --theme-radius-field: 9999px;
+  --theme-depth: 0;
+  --theme-size: 0.28125rem;
+  --theme-border: 1px;
+}

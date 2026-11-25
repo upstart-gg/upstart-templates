@@ -1,0 +1,698 @@
+/* Imbue and Afacad, files of the template, under the SIL Open Font License (fonts/*-OFL.txt). */
+@font-face {
+  font-family: "Imbue";
+  src: url("/fonts/imbue-latin.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Imbue";
+  src: url("/fonts/imbue-latin-ext.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Afacad";
+  src: url("/fonts/afacad-latin-normal.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Afacad";
+  src: url("/fonts/afacad-latin-ext-normal.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Afacad";
+  src: url("/fonts/afacad-latin-italic.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: italic;
+  font-display: swap;
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Afacad";
+  src: url("/fonts/afacad-latin-ext-italic.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: italic;
+  font-display: swap;
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@layer base {
+  html {
+    font-synthesis: none;
+  }
+  body {
+    font-size: 1.125rem;
+    line-height: 1.625;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-weight: 350;
+    font-optical-sizing: auto;
+    line-height: 1;
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  /* Anchors land under the sticky header. */
+  [id] {
+    scroll-margin-top: 6rem;
+  }
+  /* A focus ring that shows on every ground: the text's own color, aubergine on light
+     grounds, chalk white on the field and on night. */
+  :focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  .display {
+    font-family: var(--font-heading);
+    font-optical-sizing: auto;
+  }
+  .title-hero {
+    font-size: clamp(3.25rem, 6vw + 1.5rem, 7.5rem);
+    font-weight: 300;
+    line-height: 0.95;
+    letter-spacing: -0.01em;
+  }
+  .title-page {
+    font-size: clamp(3rem, 5vw + 1.5rem, 6rem);
+    font-weight: 300;
+    line-height: 0.95;
+    letter-spacing: -0.01em;
+  }
+  .title-section {
+    font-size: clamp(2.25rem, 3vw + 1.25rem, 4rem);
+    font-weight: 350;
+    line-height: 1;
+  }
+  .title-small {
+    font-size: 1.75rem;
+    font-weight: 400;
+    line-height: 1.1;
+  }
+  .eyebrow {
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: inherit;
+  }
+  /* A teacher's initials, where there is no portrait, at 38% of their ground's width. */
+  .initials-ground {
+    container-type: inline-size;
+  }
+  .initials {
+    font-size: 38cqi;
+    font-weight: 350;
+    line-height: 1;
+  }
+  .facts {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    line-height: 1.45;
+  }
+  .body-copy {
+    color: color-mix(in oklch, currentColor 80%, transparent);
+    line-height: 1.625;
+    max-width: 62ch;
+  }
+  .price {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    font-weight: 350;
+    line-height: 1;
+  }
+  .wordmark {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  /* What Markdown makes, in a reading column. */
+  .reading > * + * {
+    margin-top: 1em;
+  }
+  .reading a {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+  .reading em {
+    font-style: italic;
+  }
+
+  .btn {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  .btn-primary:focus-visible {
+    outline-color: var(--color-primary);
+  }
+  .btn-secondary:focus-visible {
+    outline-color: var(--color-secondary);
+  }
+  /* The other button: an outline in the text's color, on any ground. */
+  .btn-line {
+    border: 1px solid currentColor;
+    background-color: transparent;
+    color: inherit;
+    box-shadow: none;
+  }
+  .btn-line:focus-visible {
+    outline-color: currentColor;
+  }
+  .btn-line:hover {
+    background-color: color-mix(in oklch, currentColor 10%, transparent);
+  }
+  .text-link {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+  .text-link:hover {
+    text-decoration-thickness: 2px;
+  }
+  :is(.bg-primary, .bg-neutral) .text-link {
+    color: var(--color-secondary);
+  }
+  :is([data-mat], [data-tone], .bg-secondary) .text-link {
+    color: inherit;
+  }
+  .arrow-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+  }
+
+  /* Fields edged in ink at 60%, above the 3:1 an edge needs. */
+  .input,
+  .select,
+  .textarea {
+    border-color: color-mix(in oklch, var(--color-base-content) 60%, transparent);
+    background-color: var(--color-base-100);
+    font-size: 1rem;
+  }
+  .textarea {
+    border-radius: var(--radius-box);
+  }
+  .fieldset-legend {
+    font-size: 0.9375rem;
+    font-weight: 600;
+  }
+  .choice {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    min-height: 3rem;
+    padding: 0.625rem 1rem;
+    border: 1px solid color-mix(in oklch, var(--color-base-content) 60%, transparent);
+    border-radius: var(--radius-box);
+    background-color: var(--color-base-100);
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  .choice:has(:checked) {
+    background-color: var(--color-secondary);
+    color: var(--color-secondary-content);
+  }
+  .choice:has(:focus-visible) {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+  }
+
+  /* The menu below the width where all the header's links fit. */
+  .site-menu > summary {
+    list-style: none;
+  }
+  .site-menu > summary::-webkit-details-marker {
+    display: none;
+  }
+  .site-menu .menu-close,
+  .site-menu[open] .menu-open {
+    display: none;
+  }
+  .site-menu[open] .menu-close {
+    display: inline;
+  }
+
+  /* Questions as plain ruled details. */
+  .question > summary {
+    list-style: none;
+    cursor: pointer;
+  }
+  .question > summary::-webkit-details-marker {
+    display: none;
+  }
+  .question[open] .question-mark {
+    rotate: 45deg;
+  }
+
+  /* A class's tone as a small pill. */
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 9999px;
+    padding: 0.25rem 0.875rem;
+    background-color: var(--tone);
+    color: var(--tone-ink);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    line-height: 1.4;
+    white-space: nowrap;
+  }
+  /* "Reformer counts as two". */
+  .counts-mark {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 9999px;
+    padding: 0.125rem 0.75rem;
+    background-color: var(--color-accent);
+    color: var(--color-accent-content);
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+  /* A name left, a price right, dots between. */
+  .leader {
+    flex: 1 1 2rem;
+    min-width: 1.5rem;
+    border-bottom: 2px dotted color-mix(in oklch, currentColor 45%, transparent);
+    translate: 0 -0.3em;
+  }
+
+  /* ---- The tones -----------------------------------------------------------------
+     data-tone on a mat, a chip or a class's title band: --tone is its ground and
+     --tone-ink its text. Night and plum carry light text, the others ink. */
+  [data-tone] {
+    --tone: var(--color-base-200);
+    --tone-ink: var(--color-base-content);
+  }
+  [data-tone="plum"] {
+    --tone: var(--color-primary);
+    --tone-ink: var(--color-primary-content);
+  }
+  [data-tone="night"] {
+    --tone: var(--color-neutral);
+    --tone-ink: var(--color-neutral-content);
+  }
+  [data-tone="chalk"] {
+    --tone: var(--color-secondary);
+    --tone-ink: var(--color-secondary-content);
+  }
+  [data-tone="cork"] {
+    --tone: var(--color-accent);
+    --tone-ink: var(--color-accent-content);
+  }
+  [data-tone="heather"] {
+    --tone: color-mix(in oklch, var(--color-secondary), var(--color-primary) 30%);
+    --tone-ink: var(--color-base-content);
+  }
+  /* A pale mat or chip on the pale floor takes the page's white, so it shows. */
+  .bg-base-200 [data-tone="pale"] {
+    --tone: var(--color-base-100);
+  }
+  .tone-ground {
+    background-color: var(--tone);
+    color: var(--tone-ink);
+  }
+
+  /* ---- The mats ------------------------------------------------------------------
+     data-mats on a list, data-mat on the mat inside each of its items: a band of its
+     tone with a fine grip, and its thickness as an inner edge at the foot. */
+  [data-mats] > li {
+    position: relative;
+  }
+  [data-mat] {
+    display: block;
+    position: relative;
+    border-radius: var(--radius-box);
+    background-color: var(--tone);
+    background-image: radial-gradient(
+      circle at center,
+      color-mix(in oklch, currentColor 7%, transparent) 0.0625rem,
+      transparent 0.09375rem
+    );
+    background-size: 0.375rem 0.375rem;
+    color: var(--tone-ink);
+    box-shadow: inset 0 -2px 0 color-mix(in oklch, var(--tone), var(--color-neutral) 28%);
+  }
+  /* On night, the edge is lighter than the mat rather than darker. */
+  [data-mat][data-tone="night"] {
+    box-shadow: inset 0 -2px 0 color-mix(in oklch, var(--tone), var(--color-neutral-content) 22%);
+  }
+  .mat-name {
+    font-family: var(--font-heading);
+    font-size: clamp(2.25rem, 2.5vw + 1.25rem, 3.5rem);
+    font-weight: 400;
+    line-height: 0.95;
+  }
+  [data-mats="floor"] .mat-name {
+    font-size: clamp(2.25rem, 4vw + 1rem, 5rem);
+  }
+  [data-mat="style"] {
+    padding: 1.5rem;
+  }
+  /* On a mat or a chip the ring lies inside, in its own text's color. */
+  a[data-mat]:focus-visible {
+    outline-offset: -6px;
+  }
+  .chip:focus-visible {
+    outline-offset: -4px;
+  }
+  @media (width >= 48rem) {
+    [data-mat="style"] {
+      padding: 1.75rem 2rem;
+    }
+    /* Three times as wide as tall, or as tall as its content: the empty half of the one
+       cell holds the height, 3:1 with the padding taken off. */
+    a[data-mat="style"] {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+    }
+    a[data-mat="style"]::before {
+      content: "";
+      grid-area: 1 / 1;
+      padding-bottom: calc(100% / 3 - 2.1667rem);
+    }
+    .mat-in {
+      grid-area: 1 / 1;
+    }
+  }
+  @media (width >= 64rem) {
+    /* On the classes page the mats lie at slightly uneven offsets, as laid by hand. */
+    [data-mats="floor"] > li {
+      width: 92%;
+    }
+    [data-mats="floor"] .mat-in {
+      font-size: 1.375rem;
+    }
+    [data-mats="floor"] > li:nth-child(4n + 2) {
+      margin-inline-start: 6%;
+    }
+    [data-mats="floor"] > li:nth-child(4n + 3) {
+      margin-inline-start: 2%;
+    }
+    [data-mats="floor"] > li:nth-child(4n + 4) {
+      margin-inline-start: 8%;
+    }
+  }
+
+  /* A session: one class of the week, as a slim mat. */
+  [data-mat="row"] {
+    display: grid;
+    grid-template-columns: 4.75rem minmax(0, 1fr) auto;
+    column-gap: 1rem;
+    align-items: center;
+    min-height: 3.5rem;
+    padding: 0.5rem 0.5rem 0.5rem 0.75rem;
+  }
+  @media (width >= 48rem) {
+    [data-mat="row"] {
+      grid-template-columns: 5.5rem minmax(0, 1fr) auto;
+    }
+  }
+  .row-time {
+    text-align: right;
+    font-size: 1rem;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  .row-name {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 450;
+    line-height: 1.1;
+  }
+  .row-book {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.75rem;
+    padding: 0.25rem 1.25rem;
+    border: 1px solid color-mix(in oklch, currentColor 55%, transparent);
+    border-radius: 9999px;
+    font-size: 1rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .row-book:hover {
+    background-color: var(--tone-ink);
+    color: var(--tone);
+  }
+  [data-past] [data-mat] {
+    opacity: 0.55;
+  }
+
+  /* A row that only names a class and leads to it. */
+  [data-mat="row"].small-mat {
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    padding-inline: 1.25rem;
+  }
+  /* A class's own mat, on its title band: a step from the band's tone. */
+  .class-mat[data-mat] {
+    min-height: 9rem;
+    background-color: color-mix(in oklch, var(--tone), var(--tone-ink) 9%);
+  }
+
+  /* The roll a script sets beside a mat that unrolls: a cylinder of its tone, with its
+     shadow on the floor ahead of it. */
+  .mat-roll {
+    position: absolute;
+    z-index: 1;
+    border-radius: 0.375rem;
+    background: linear-gradient(
+      to right,
+      color-mix(in oklch, var(--tone), var(--color-neutral) 30%),
+      color-mix(in oklch, var(--tone), var(--color-base-100) 34%) 34%,
+      var(--tone) 58%,
+      color-mix(in oklch, var(--tone), var(--color-neutral) 48%)
+    );
+    box-shadow:
+      0.625rem 0.125rem 0.875rem -0.125rem color-mix(in oklch, var(--color-neutral) 38%, transparent),
+      0.1875rem 0 0.25rem color-mix(in oklch, var(--color-neutral) 30%, transparent);
+    pointer-events: none;
+  }
+
+  /* ---- The week ------------------------------------------------------------------
+     data-week on a section: its day radios show one day's list, its kind radios
+     keep one kind of class, all in CSS. */
+  .day-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.375rem;
+  }
+  .day-tab {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.75rem;
+    min-width: 3.25rem;
+    padding: 0.25rem 1rem;
+    border: 1px solid color-mix(in oklch, var(--color-base-content) 35%, transparent);
+    border-radius: 9999px;
+    font-size: 1rem;
+    font-weight: 600;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+  .day-tab:hover {
+    background-color: color-mix(in oklch, var(--color-base-content) 8%, transparent);
+  }
+  .day-tab:has(:checked) {
+    border-color: var(--color-primary);
+    background-color: var(--color-primary);
+    color: var(--color-primary-content);
+  }
+  .day-tab:has(:focus-visible) {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+  }
+  .day-tab:has([aria-current="date"])::after {
+    content: "";
+    width: 0.5rem;
+    height: 0.5rem;
+    margin-inline-start: 0.5rem;
+    border-radius: 9999px;
+    background-color: var(--color-accent);
+  }
+  /* On a phone the home page's seven days share one line, today's dot over its name. */
+  @media (width < 40rem) {
+    [data-week="today"] .day-strip {
+      flex-wrap: nowrap;
+      gap: 0.25rem;
+    }
+    [data-week="today"] .day-tab {
+      flex: 1 1 0;
+      min-width: 0;
+      padding-inline: 0;
+      font-size: 0.9375rem;
+    }
+    [data-week="today"] .day-tab:has([aria-current="date"])::after {
+      position: absolute;
+      top: 0.25rem;
+      width: 0.375rem;
+      height: 0.375rem;
+      margin: 0;
+    }
+  }
+  .day-name[aria-current="date"]::after {
+    content: "";
+    display: inline-block;
+    width: 0.625rem;
+    height: 0.625rem;
+    margin-inline-start: 0.75rem;
+    border-radius: 9999px;
+    background-color: var(--color-accent);
+    vertical-align: middle;
+  }
+  [data-week]:has(input[value="mon"]:checked) [data-day]:not([data-day="mon"]),
+  [data-week]:has(input[value="tue"]:checked) [data-day]:not([data-day="tue"]),
+  [data-week]:has(input[value="wed"]:checked) [data-day]:not([data-day="wed"]),
+  [data-week]:has(input[value="thu"]:checked) [data-day]:not([data-day="thu"]),
+  [data-week]:has(input[value="fri"]:checked) [data-day]:not([data-day="fri"]),
+  [data-week]:has(input[value="sat"]:checked) [data-day]:not([data-day="sat"]),
+  [data-week]:has(input[value="sun"]:checked) [data-day]:not([data-day="sun"]),
+  [data-week]:has(input[value="yoga"]:checked) [data-kind]:not([data-kind="yoga"]),
+  [data-week]:has(input[value="pilates"]:checked) [data-kind]:not([data-kind="pilates"]),
+  [data-week]:has(input[value="reformer"]:checked) [data-kind]:not([data-kind="reformer"]),
+  .none-left {
+    display: none;
+  }
+  [data-week]:has(input[value="yoga"]:checked) [data-day]:not(:has([data-kind="yoga"])) [data-none="yoga"],
+  [data-week]:has(input[value="pilates"]:checked) [data-day]:not(:has([data-kind="pilates"])) [data-none="pilates"],
+  [data-week]:has(input[value="reformer"]:checked) [data-day]:not(:has([data-kind="reformer"])) [data-none="reformer"] {
+    display: block;
+  }
+
+  /* ---- The dock ------------------------------------------------------------------
+     With no script, a slim band at the end of <main>; the script sets data-dock="on",
+     and it is a small card that keeps to the foot of the screen. */
+  .dock-in {
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+  }
+  @media (width >= 48rem) {
+    .dock-in {
+      padding-inline: 2rem;
+    }
+  }
+  [data-dock="on"] {
+    position: sticky;
+    z-index: 30;
+    bottom: 1rem;
+    width: fit-content;
+    max-width: calc(100% - 2rem);
+    margin: 1rem 1rem 1rem auto;
+    border-radius: var(--radius-box);
+    box-shadow: 0 0.75rem 2rem color-mix(in oklch, var(--color-neutral) 30%, transparent);
+  }
+  [data-dock="on"] .dock-in {
+    gap: 1rem;
+    padding: 0.625rem 0.5rem 0.625rem 1.25rem;
+  }
+  [data-dock="on"] .dock-lead,
+  [data-dock="on"] .dock-long,
+  .dock-short {
+    display: none;
+  }
+  [data-dock="on"] .dock-short {
+    display: inline;
+  }
+  html:has([data-dock="on"]) {
+    scroll-padding-bottom: 5rem;
+  }
+  @media (width < 48rem) {
+    [data-dock="on"] {
+      width: auto;
+      margin-inline: 1rem;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .btn,
+  .day-tab,
+  .row-book {
+    transition-duration: 150ms;
+  }
+  .question-mark {
+    transition: rotate 150ms ease-out;
+  }
+  /* view(0px): the whole screen, without the foot that scroll-padding keeps for the dock. */
+  [data-rise] {
+    animation: rise linear both;
+    animation-timeline: view(0px);
+    animation-range: entry 0% cover 30%;
+  }
+  @keyframes rise {
+    from {
+      opacity: 0;
+      translate: 0 24px;
+    }
+  }
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  a[data-mat="style"],
+  a[data-mat="style"] .mat-arrow {
+    transition: translate 200ms ease-out;
+  }
+  a[data-mat="style"]:hover {
+    translate: 0 -2px;
+  }
+  a[data-mat="style"]:hover .mat-arrow {
+    translate: 4px 0;
+  }
+}
+
+/* A small heading in the body font, over Upstart's rule that sets every heading in the other. */
+:is(h1, h2, h3, h4).eyebrow {
+  font-family: var(--theme-font-body);
+  font-weight: 600;
+}
+
+/* Upstart's "Image credits" link, lined up with the footer's container. */
+footer [data-up-credits] {
+  padding-inline: calc(max(0px, (100% - 80rem) / 2) + 1.25rem);
+  padding-bottom: 1.5rem;
+  font-size: 0.9375rem;
+  opacity: 0.75;
+}
+@media (width >= 48rem) {
+  footer [data-up-credits] {
+    padding-inline: calc(max(0px, (100% - 80rem) / 2) + 2rem);
+  }
+}
+
+/* On Upstart's credits page, a long author's name wraps rather than widen a phone's screen. */
+.link {
+  overflow-wrap: anywhere;
+}

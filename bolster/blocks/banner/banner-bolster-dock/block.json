@@ -1,0 +1,22 @@
+{
+  "name": "Bolster offer dock",
+  "kind": "banner",
+  "source": "upstart",
+  "description": "The offer for new students as a slim chalk-pink band that docks small at the foot of the screen, dismissed with its cross. Place it last in the page.",
+  "tags": ["offer", "dock", "sticky", "dismissible"],
+  "mood": ["warm", "minimal"],
+  "synonyms": [
+    "sticky offer",
+    "dock",
+    "intro offer",
+    "dismissible banner",
+    "bandeau",
+    "offre",
+    "bandeau flottant",
+    "à fermer"
+  ],
+  "data": {
+    "name": "offer",
+    "family": "collection"
+  }
+}

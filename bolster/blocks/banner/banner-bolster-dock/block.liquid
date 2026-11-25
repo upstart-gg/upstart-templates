@@ -1,0 +1,14 @@
+{% for offer in data.offer limit: 1 %}
+<section data-dock aria-label="The offer for new students" class="bg-secondary text-secondary-content has-[:checked]:hidden">
+  <div class="dock-in mx-auto flex max-w-[80rem] items-center justify-between">
+    <p class="min-w-0 leading-snug"><span class="dock-lead font-semibold">New here? </span><span class="display text-[1.5rem] leading-[1.05] font-[400]">{{ offer.title }}</span></p>
+    <div class="flex shrink-0 items-center gap-2">
+      <a href="{{ offer.href }}" class="btn btn-primary whitespace-nowrap" aria-label="{{ offer.cta }}"><span class="dock-long">{{ offer.cta }}</span><span class="dock-short">Start</span></a>
+      <label class="relative inline-flex size-11 cursor-pointer items-center justify-center rounded-field hover:bg-secondary-content/10 has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-primary" title="Hide this offer">
+        <input type="checkbox" class="sr-only" aria-label="Hide this offer">
+        <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </label>
+    </div>
+  </div>
+</section>
+{% endfor %}

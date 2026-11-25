@@ -1,0 +1,34 @@
+<section id="write" class="bg-base-200 text-base-content">
+  <div class="mx-auto grid max-w-[80rem] gap-x-14 gap-y-10 px-5 py-20 md:px-8 md:py-32 lg:grid-cols-12">
+    <div class="lg:col-span-4">
+      <h2 class="title-section">Write to us</h2>
+      <p class="body-copy mt-5 max-w-[34ch]">About private sessions, a class for your team, teaching here, or anything the app doesn't answer. Maite writes back within a day.</p>
+      <p class="mt-5"><a href="mailto:hello@artesianyoga.example" class="text-link">hello@artesianyoga.example</a></p>
+    </div>
+    <form hx-post="/_data/messages" hx-target="this" hx-swap="outerHTML" hx-status:422="target:#messages-problems swap:innerHTML" class="grid gap-x-5 gap-y-3 rounded-box bg-base-100 p-6 sm:grid-cols-2 md:p-10 lg:col-span-8">
+      <fieldset class="fieldset">
+        <legend class="fieldset-legend">Your name</legend>
+        <input name="name" type="text" class="input w-full" required maxlength="200" autocomplete="name" aria-label="Your name">
+      </fieldset>
+      <fieldset class="fieldset">
+        <legend class="fieldset-legend">Your email</legend>
+        <input name="email" type="email" class="input w-full" required maxlength="200" autocomplete="email" aria-label="Your email">
+      </fieldset>
+      <fieldset class="fieldset sm:col-span-2">
+        <legend class="fieldset-legend">What about</legend>
+        <select name="about" class="select w-full" required aria-label="What about">
+          <option value="private sessions">Private sessions</option>
+          <option value="a class for your team">A class for your team</option>
+          <option value="teaching here">Teaching here</option>
+          <option value="something else">Something else</option>
+        </select>
+      </fieldset>
+      <fieldset class="fieldset sm:col-span-2">
+        <legend class="fieldset-legend">Your message</legend>
+        <textarea name="message" class="textarea min-h-40 w-full" required maxlength="4000" aria-label="Your message"></textarea>
+      </fieldset>
+      <div id="messages-problems" class="sm:col-span-2"></div>
+      <p class="sm:col-span-2"><button class="btn btn-primary whitespace-nowrap">Send</button></p>
+    </form>
+  </div>
+</section>

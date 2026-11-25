@@ -1,0 +1,10 @@
+<section class="bg-base-100 text-base-content">
+  <div class="mx-auto max-w-[80rem] px-5 py-14 md:px-8 md:py-20">
+    <h2 class="sr-only">The six classes</h2>
+    <ul data-mats="floor" class="grid gap-5 md:gap-7">
+      {% for class in data.classes %}
+      <li>{% render 'class-mat', class: class, suits: true %}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

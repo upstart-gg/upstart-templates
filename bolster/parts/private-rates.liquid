@@ -1,0 +1,15 @@
+{% assign privates = data.plans | where: "family", "private" %}
+<section id="private" class="bg-base-100 text-base-content">
+  <div class="mx-auto grid max-w-[80rem] gap-x-14 gap-y-8 px-5 pt-20 pb-16 md:px-8 md:pt-32 lg:grid-cols-12">
+    <h2 class="title-section lg:col-span-4" data-rise>Private sessions</h2>
+    <ul class="space-y-8 lg:col-span-8">
+      {% for plan in privates %}
+      <li>
+        <div class="flex items-baseline gap-3"><h3 class="title-small min-w-0">{{ plan.name }}</h3><span class="leader" aria-hidden="true"></span><p class="display text-[1.75rem] leading-[1.1] font-[400]">{{ plan.price }}</p></div>
+        <p class="body-copy mt-1.5">{{ plan.description }} <span class="whitespace-nowrap">{{ plan.period | capitalize }}.</span></p>
+        <p class="mt-2"><a href="{{ plan.href }}" class="text-link" aria-label="{{ plan.cta }}: {{ plan.name }}">{{ plan.cta }}</a></p>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,13 @@
+<section class="bg-base-200 text-base-content">
+  <div class="mx-auto max-w-[80rem] px-5 py-20 md:px-8 md:py-32">
+    <h2 class="title-section" data-rise>People who started this way</h2>
+    <ul class="mt-12 grid gap-6 md:grid-cols-3">
+      {% for student in data.testimonials %}
+      <li class="flex flex-col justify-between gap-8 rounded-box bg-base-100 p-6 md:p-8" data-rise>
+        <blockquote class="display text-[1.75rem] leading-[1.15] font-[400]">{{ student.quote }}</blockquote>
+        <p class="facts"><span class="block font-semibold">{{ student.name }}</span>{{ student.now }}</p>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

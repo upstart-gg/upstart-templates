@@ -1,0 +1,46 @@
+label: Prices
+fields:
+  - name: name
+    label: Name
+    kind: text
+    required: true
+  - name: price
+    label: Price
+    kind: text
+  - name: period
+    label: Period
+    kind: text
+  - name: description
+    label: Description
+    kind: text
+  - name: features
+    label: What it holds
+    kind: list
+  - name: cta
+    label: Button
+    kind: text
+  - name: href
+    label: Button link
+    kind: link
+  - name: featured
+    label: Highlighted
+    kind: boolean
+  - name: family
+    label: Family
+    kind: choice
+    choices: [membership, pack, private]
+  - name: valid
+    label: Valid
+    kind: text
+order:
+  [
+    every-class,
+    eight-a-month,
+    four-a-month,
+    drop-in,
+    five-classes,
+    ten-classes,
+    private-yoga,
+    private-reformer,
+    reformer-duet,
+  ]

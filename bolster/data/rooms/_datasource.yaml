@@ -1,0 +1,19 @@
+label: Rooms
+fields:
+  - name: name
+    label: Name
+    kind: text
+    required: true
+  - name: facts
+    label: Facts
+    kind: text
+  - name: text
+    label: Text
+    kind: text
+  - name: booking
+    label: Booking it
+    kind: text
+  - name: photo
+    label: Photo
+    kind: image
+order: [long-room, reformer-room, corner-room, changing-rooms]

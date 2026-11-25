@@ -1,0 +1,25 @@
+<section class="bg-base-100 text-base-content">
+  <div class="mx-auto max-w-[80rem] px-5 py-14 md:px-8 md:py-20">
+    <ul class="divide-y divide-base-300">
+      {% for member in data.team %}{% assign first = member.name | split: " " | first %}{% assign held = data.sessions | where: "teacher", first %}
+      <li id="{{ member.id }}" class="grid gap-x-12 gap-y-6 py-12 md:py-16 lg:grid-cols-12">
+        <div class="max-w-72 lg:col-span-3" data-rise>{% render 'portrait', member: member, class: 'rounded-box' %}</div>
+        <div class="lg:col-span-5">
+          <h2 class="title-section">{{ member.name }}</h2>
+          <p class="facts mt-2">{{ member.pronouns }}{% if member.role %} · {{ member.role }}{% endif %} · Teaching here since {{ member.since }}</p>
+          <p class="mt-4 flex flex-wrap gap-2">{% for id in member.teaches %}{% assign class = data.classes | where: "id", id | first %}{% if class %}<a href="/classes/{{ class.id }}" class="chip" data-tone="{{ class.tone }}">{{ class.name }}</a>{% endif %}{% endfor %}</p>
+          <div class="reading body-copy mt-5">{{ member.bio }}</div>
+        </div>
+        {% if held.size > 0 %}
+        <div class="lg:col-span-4">
+          <h3 class="eyebrow">{{ first }}'s week</h3>
+          <ul class="facts mt-3 grid gap-1.5 sm:grid-cols-2 lg:grid-cols-1">
+            {% for session in held %}<li class="flex gap-2"><span class="w-10 shrink-0">{{ session.weekday | capitalize }}</span><span class="w-20 shrink-0 whitespace-nowrap tabular-nums">{% render 'time', start: session.start %}</span><span class="min-w-0">{{ session.class }}</span></li>{% endfor %}
+          </ul>
+        </div>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,19 @@
+{% for offer in data.offer limit: 1 %}
+<section class="bg-base-100 text-base-content">
+  <div class="mx-auto max-w-[80rem] px-5 py-14 md:px-8 md:py-20">
+    <div data-offer class="grid gap-x-14 gap-y-8 rounded-box bg-secondary p-7 text-secondary-content md:p-12 lg:grid-cols-12 lg:items-center">
+      <div class="lg:col-span-6">
+        <p class="eyebrow">New here</p>
+        <h2 class="display mt-3 flex flex-wrap items-end gap-x-4 gap-y-1"><span class="text-[2.75rem] leading-[0.95] font-[350]">{{ offer.name }} for</span><span class="text-[5rem] leading-[0.8] font-[300]">{{ offer.price }}</span></h2>
+        <p class="mt-7"><a href="{{ offer.href }}" class="btn btn-primary whitespace-nowrap">{{ offer.cta }}</a></p>
+      </div>
+      <div class="lg:col-span-6">
+        <ul class="divide-y divide-secondary-content/20 border-y border-secondary-content/20">
+          {% for feature in offer.features %}<li class="py-3">{{ feature }}</li>{% endfor %}
+        </ul>
+        <p class="facts mt-4">{{ offer.terms }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+{% endfor %}

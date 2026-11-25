@@ -1,0 +1,13 @@
+<section class="bg-base-100 text-base-content">
+  <div class="mx-auto max-w-[80rem] px-5 py-20 md:px-8 md:py-32">
+    <h2 class="title-section" data-rise>Questions</h2>
+    <dl class="mt-12 grid gap-x-14 gap-y-10 md:grid-cols-2">
+      {% for item in items %}
+      <div class="border-t border-base-300 pt-5">
+        <dt class="display text-[1.5rem] leading-[1.15] font-[450]">{{ item.question }}</dt>
+        <dd class="reading body-copy mt-3">{{ item.answer }}</dd>
+      </div>
+      {% endfor %}
+    </dl>
+  </div>
+</section>

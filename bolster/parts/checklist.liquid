@@ -1,0 +1,8 @@
+<ul class="mt-10 grid gap-x-10 gap-y-8 sm:grid-cols-2">
+  {% for item in items %}
+  <li class="flex gap-4">
+    <svg class="mt-1 size-6 shrink-0 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg>
+    <div class="min-w-0"><h3 class="display text-[1.5rem] leading-[1.1] font-[450]">{{ item.title }}</h3><p class="body-copy mt-1.5">{{ item.text }}</p></div>
+  </li>
+  {% endfor %}
+</ul>

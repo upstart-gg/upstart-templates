@@ -1,0 +1,42 @@
+{% assign memberships = data.plans | where: "family", "membership" %}{% assign packs = data.plans | where: "family", "pack" %}
+<section id="plans" class="bg-primary text-primary-content">
+  <div class="mx-auto max-w-[80rem] px-5 py-20 md:px-8 md:py-32">
+    <h2 class="title-section" data-rise>Every week, or when you can</h2>
+    <p class="display mt-5 text-[1.75rem] leading-[1.1] text-secondary">Coming twice a week or more? A membership costs less.</p>
+    <div class="mt-14 grid gap-x-16 gap-y-16 lg:grid-cols-2">
+      <div data-rise>
+        <h3 class="title-small text-secondary">By the month</h3>
+        <ul class="mt-5 divide-y divide-primary-content/25 border-y border-primary-content/25">
+          {% for plan in memberships %}
+          <li class="py-7">
+            <div class="flex items-baseline justify-between gap-6">
+              <h4 class="display text-[1.75rem] leading-[1.1] font-[400]">{{ plan.name }}</h4>
+              <p class="shrink-0 text-right"><span class="price">{{ plan.price }}</span> <span class="facts text-primary-content/80">{{ plan.period }}</span></p>
+            </div>
+            <ul class="facts mt-4 space-y-1 text-primary-content/85">
+              {% for feature in plan.features %}<li>{{ feature }}</li>{% endfor %}
+            </ul>
+            <p class="mt-5"><a href="{{ plan.href }}" class="btn {% if plan.featured %}btn-secondary{% else %}btn-line{% endif %} whitespace-nowrap" aria-label="{{ plan.cta }}: {{ plan.name }}">{{ plan.cta }}</a></p>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div data-rise>
+        <h3 class="title-small text-secondary">By the pack</h3>
+        <ul class="mt-5 divide-y divide-primary-content/25 border-y border-primary-content/25">
+          {% for plan in packs %}
+          <li class="py-7">
+            <div class="flex items-baseline justify-between gap-6">
+              <h4 class="display text-[1.75rem] leading-[1.1] font-[400]">{{ plan.name }}</h4>
+              <p class="price shrink-0">{{ plan.price }}</p>
+            </div>
+            <p class="facts mt-4 text-primary-content/85">{{ plan.description }} {{ plan.valid }}.</p>
+            <p class="mt-3"><span class="counts-mark">Reformer counts as two</span></p>
+            <p class="mt-5"><a href="{{ plan.href }}" class="btn btn-line whitespace-nowrap" aria-label="{{ plan.cta }}: {{ plan.name }}">{{ plan.cta }}</a></p>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,15 @@
+<a href="/classes/{{ class.id }}" data-mat="style" data-tone="{{ class.tone }}" class="h-full">
+  <span class="mat-in flex flex-col justify-between gap-6">
+    <span class="{% if suits %}grid gap-x-12 gap-y-4 lg:grid-cols-2{% else %}block{% endif %}">
+      <span class="block">
+        <span class="mat-name block">{{ class.name }}</span>
+        <span class="mt-2 block max-w-[46ch] leading-snug">{{ class.summary }}</span>
+      </span>
+      {% if suits and class.for_whom %}<span class="block max-w-[46ch] leading-snug lg:pt-2">{{ class.for_whom }}</span>{% endif %}
+    </span>
+    <span class="flex flex-wrap items-center justify-between gap-x-6 gap-y-2">
+      <span class="facts">{{ class.length }} min · {% render 'pace-name', pace: class.pace %} · {{ class.room }}{% if class.credits > 1 %} · counts as two{% endif %}</span>
+      <span class="arrow-link whitespace-nowrap">See the class {% render 'arrow', class: 'mat-arrow size-5' %}</span>
+    </span>
+  </span>
+</a>

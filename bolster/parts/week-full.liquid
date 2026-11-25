@@ -1,0 +1,42 @@
+{% assign days = "mon,tue,wed,thu,fri,sat,sun" | split: "," %}{% assign names = "Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday" | split: "," %}{% assign book = data.navigation | where: "place", "book" | first %}
+<section id="week" data-week data-tz="America/Boise" class="bg-base-200 text-base-content">
+  <div class="mx-auto max-w-[80rem] px-5 py-14 md:px-8 md:py-20">
+    <div class="flex flex-wrap items-end justify-between gap-x-10 gap-y-6">
+      <fieldset class="min-w-0">
+        <legend class="eyebrow mb-3">Day</legend>
+        <div class="day-strip">
+          <label class="day-tab"><input type="radio" name="day" value="all" class="sr-only" checked><span>All week</span></label>
+          {% for day in days %}
+          <label class="day-tab"><input type="radio" name="day" value="{{ day }}" class="sr-only" aria-label="{{ names[forloop.index0] }}"><span aria-hidden="true">{{ day | capitalize }}</span></label>
+          {% endfor %}
+        </div>
+      </fieldset>
+      <fieldset class="min-w-0">
+        <legend class="eyebrow mb-3">Class</legend>
+        <div class="day-strip">
+          <label class="day-tab"><input type="radio" name="kind" value="all" class="sr-only" checked><span>All</span></label>
+          <label class="day-tab"><input type="radio" name="kind" value="yoga" class="sr-only"><span>Yoga</span></label>
+          <label class="day-tab"><input type="radio" name="kind" value="pilates" class="sr-only"><span>Pilates</span></label>
+          <label class="day-tab"><input type="radio" name="kind" value="reformer" class="sr-only"><span>Reformer</span></label>
+        </div>
+      </fieldset>
+    </div>
+    {% for day in days %}{% assign held = data.sessions | where: "weekday", day | sort: "start" %}
+    <div data-day="{{ day }}" class="mt-14">
+      <h2 class="day-name title-small">{% render 'day-name', day: day %}</h2>
+      <ul data-mats class="mt-5 grid gap-2.5">
+        {% for session in held %}
+        <li data-kind="{{ session.kind }}" data-start="{{ session.start }}">{% render 'session-row', session: session, book: book.href %}</li>
+        {% endfor %}
+      </ul>
+      <p data-none="yoga" class="none-left body-copy">No yoga classes this day.</p>
+      <p data-none="pilates" class="none-left body-copy">No Pilates classes this day.</p>
+      <p data-none="reformer" class="none-left body-copy">No reformer classes this day.</p>
+    </div>
+    {% endfor %}
+    <div class="mt-14 flex flex-wrap items-center justify-between gap-x-10 gap-y-6">
+      <p class="body-copy">This is our usual week; subs and changes are in the app.</p>
+      <p><a href="{{ book.href }}" class="btn btn-primary whitespace-nowrap">Open the booking app</a></p>
+    </div>
+  </div>
+</section>

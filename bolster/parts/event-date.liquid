@@ -1,0 +1,1 @@
+{%- if event.ends -%}{{ event.date | date: "%B %-d" }}&ndash;{{ event.ends | date: "%-d, %Y" }}{%- else -%}{{ event.date | date: "%A, %B %-d, %Y" }}{%- endif -%}

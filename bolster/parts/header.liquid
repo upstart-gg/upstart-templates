@@ -1,0 +1,32 @@
+{% assign here = page.url | split: "/" %}{% capture section %}/{{ here[1] }}{% endcapture %}{% assign book = data.navigation | where: "place", "book" | first %}
+<header class="sticky top-0 z-40 border-b border-secondary/20 bg-primary text-primary-content">
+  <div class="mx-auto flex h-[4.5rem] max-w-[80rem] items-center justify-between gap-6 px-5 md:px-8">
+    {% render 'logo' %}
+    <nav aria-label="Main" class="hidden min-[75rem]:block">
+      <ul class="flex items-center gap-1 text-base whitespace-nowrap">
+        {% for item in data.navigation %}{% if item.place == "both" or item.place == "header" %}{% assign there = item.href | split: "#" | first | split: "/" %}{% capture target %}{{ there[0] }}/{{ there[1] }}{% endcapture %}
+        <li><a href="{{ item.href }}" class="block rounded-field px-3 py-2 font-medium decoration-secondary decoration-1 underline-offset-8 hover:bg-primary-content/10 aria-[current=page]:underline" {% if target == section %}aria-current="page"{% endif %}>{{ item.label }}</a></li>
+        {% endif %}{% endfor %}
+      </ul>
+    </nav>
+    <div class="flex items-center gap-2">
+      <a href="{{ book.href }}" class="btn btn-secondary hidden whitespace-nowrap sm:inline-flex">{{ book.label }}</a>
+      <details class="site-menu min-[75rem]:hidden">
+        <summary class="relative z-[60] inline-flex min-h-11 items-center rounded-field px-3 font-semibold" aria-label="Menu">
+          <span class="menu-open inline-flex items-center gap-2"><svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg>Menu</span><span class="menu-close">Close</span>
+        </summary>
+        <nav aria-label="Main" class="fixed inset-0 z-50 flex flex-col justify-between overflow-y-auto bg-primary px-5 pt-28 pb-10 text-primary-content">
+          <ul class="space-y-1">
+            {% for item in data.navigation %}{% unless item.place == "book" or item.place == "social" %}{% assign there = item.href | split: "#" | first | split: "/" %}{% capture target %}{{ there[0] }}/{{ there[1] }}{% endcapture %}
+            <li><a href="{{ item.href }}" class="display block py-1 text-[2.5rem] leading-[1.1] decoration-secondary decoration-1 underline-offset-8 aria-[current=page]:underline" {% if target == section %}aria-current="page"{% endif %}>{{ item.label }}</a></li>
+            {% endunless %}{% endfor %}
+          </ul>
+          <div class="mt-12 flex flex-col gap-4">
+            <a href="{{ book.href }}" class="btn btn-secondary btn-lg">{{ book.label }}</a>
+            <p class="facts">418 Larkin Lane, second floor · Downtown Boise</p>
+          </div>
+        </nav>
+      </details>
+    </div>
+  </div>
+</header>

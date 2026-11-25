@@ -1,0 +1,28 @@
+{% assign retreat = data.workshops | where: "kind", "retreat" | first %}{% assign saturdays = data.workshops | where: "kind", "workshop" %}
+<section class="bg-base-200 text-base-content">
+  <div class="mx-auto max-w-[80rem] px-5 py-20 md:px-8 md:py-32">
+    <h2 class="title-section" data-rise>Saturdays, and three days away</h2>
+    {% if retreat %}
+    <article class="mt-12 grid overflow-hidden rounded-box bg-base-100 lg:grid-cols-12" data-rise>
+      {% if retreat.cover %}<img src="{{ retreat.cover }}" class="aspect-[16/10] h-full w-full object-cover object-[78%_50%] lg:col-span-7">{% endif %}
+      <div class="flex flex-col justify-center gap-5 p-6 md:p-10 lg:col-span-5">
+        <p class="eyebrow">The retreat</p>
+        <h3 class="title-section"><a href="/workshops/{{ retreat.id }}" class="hover:underline hover:decoration-1 hover:underline-offset-8">{{ retreat.title }}</a></h3>
+        <p class="facts">{% render 'event-date', event: retreat %} · {{ retreat.places }}</p>
+        <p class="body-copy">{{ retreat.summary }}</p>
+        <p><a href="/workshops/{{ retreat.id }}" class="btn btn-primary whitespace-nowrap">See the three days</a></p>
+      </div>
+    </article>
+    {% endif %}
+    <ul class="mt-6 grid gap-6 md:grid-cols-3">
+      {% for event in saturdays limit: 3 %}
+      <li class="flex flex-col rounded-box bg-base-100 p-6" data-rise>
+        <p class="facts">{{ event.date | date: "%b %-d" }}</p>
+        <h3 class="title-small mt-2"><a href="/workshops/{{ event.id }}" class="hover:underline hover:decoration-1 hover:underline-offset-4">{{ event.title }}</a></h3>
+        <p class="body-copy mt-2">{{ event.summary }}</p>
+        <p class="facts mt-auto pt-5">{{ event.time }} · {{ event.price }}</p>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

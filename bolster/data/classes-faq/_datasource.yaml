@@ -1,0 +1,11 @@
+label: Class questions
+fields:
+  - name: question
+    label: Question
+    kind: text
+    required: true
+  - name: answer
+    label: Answer
+    kind: markdown
+body: answer
+order: [flexible, hot, pregnant, difference]

@@ -1,0 +1,11 @@
+label: Schedule questions
+fields:
+  - name: question
+    label: Question
+    kind: text
+    required: true
+  - name: answer
+    label: Answer
+    kind: markdown
+body: answer
+order: [full, late, away, parking]

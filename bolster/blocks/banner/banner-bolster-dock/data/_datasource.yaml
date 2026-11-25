@@ -1,0 +1,31 @@
+label: New students' offer
+fields:
+  - name: title
+    label: Title
+    kind: text
+    required: true
+  - name: name
+    label: What it is
+    kind: text
+  - name: price
+    label: Price
+    kind: text
+  - name: length
+    label: Length
+    kind: text
+  - name: summary
+    label: What it holds, in a line
+    kind: text
+  - name: features
+    label: What it holds
+    kind: list
+  - name: terms
+    label: Terms
+    kind: text
+  - name: cta
+    label: Button
+    kind: text
+  - name: href
+    label: Button link
+    kind: link
+order: [two-weeks]

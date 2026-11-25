@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Prices — Artesian Yoga &amp; Pilates</title>
+<meta name="description" content="Memberships by the month, class packs, private sessions, and two weeks for $49 for new students, at Artesian in downtown Boise.">
+<meta property="og:title" content="Prices — Artesian Yoga &amp; Pilates">
+<meta property="og:description" content="Memberships by the month, class packs, private sessions, and two weeks for $49 for new students, at Artesian in downtown Boise.">
+</head>
+<body>
+{% render 'header', page: page %}
+<main>
+{% render 'page-title', title: "Prices", intro: "Everything is bought in our booking app. Nothing renews without telling you first." %}
+{% render 'offer-plan' %}
+{% render 'two-ways-full' %}
+{% render 'private-rates' %}
+{% render 'for-less' %}
+{% render 'faq-numbered', items: data.prices-faq %}
+{% render 'dock' %}
+</main>
+{% render 'footer' %}
+</body>
+</html>

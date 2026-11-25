@@ -1,0 +1,26 @@
+label: Teachers
+fields:
+  - name: name
+    label: Name
+    kind: text
+    required: true
+  - name: pronouns
+    label: Pronouns
+    kind: text
+  - name: role
+    label: Role
+    kind: text
+  - name: teaches
+    label: Classes taught (their ids)
+    kind: list
+  - name: since
+    label: Teaching here since
+    kind: text
+  - name: bio
+    label: Bio
+    kind: markdown
+  - name: photo
+    label: Photo
+    kind: image
+body: bio
+order: [maite-goikoetxea, calvin-oduya, rosa-nakamura, ines-arrieta, theo-varga]

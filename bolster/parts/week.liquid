@@ -1,0 +1,35 @@
+{% assign days = "mon,tue,wed,thu,fri,sat,sun" | split: "," %}{% assign names = "Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday" | split: "," %}{% assign book = data.navigation | where: "place", "book" | first %}
+<section id="today" data-week="today" data-tz="America/Boise" class="bg-base-200 text-base-content">
+  <div class="mx-auto max-w-[80rem] px-5 py-20 md:px-8 md:py-28">
+    <div class="flex flex-wrap items-end justify-between gap-x-10 gap-y-6">
+      <h2 class="title-section" data-rise>This week on the floor</h2>
+      <fieldset class="w-full min-w-0 sm:w-auto">
+        <legend class="sr-only">Day</legend>
+        <div class="day-strip">
+          {% for day in days %}
+          <label class="day-tab"><input type="radio" name="day" value="{{ day }}" class="sr-only" aria-label="{{ names[forloop.index0] }}" {% if day == "mon" %}checked{% endif %}><span aria-hidden="true">{{ day | capitalize }}</span></label>
+          {% endfor %}
+        </div>
+      </fieldset>
+    </div>
+    <div class="mt-10">
+      {% for day in days %}{% assign held = data.sessions | where: "weekday", day | sort: "start" %}
+      <div data-day="{{ day }}">
+        <h3 class="day-name sr-only">{% render 'day-name', day: day %}</h3>
+        <ul data-mats class="grid gap-2.5">
+          {% for session in held %}
+          <li data-kind="{{ session.kind }}" data-start="{{ session.start }}">{% render 'session-row', session: session, book: book.href %}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="mt-10 flex flex-wrap items-center justify-between gap-x-10 gap-y-6">
+      <p class="body-copy">This is our usual week; subs and changes are in the app.</p>
+      <p class="flex flex-wrap gap-3">
+        <a href="/schedule" class="btn btn-primary whitespace-nowrap">See the whole week</a>
+        <a href="{{ book.href }}" class="btn btn-line whitespace-nowrap">Open the booking app</a>
+      </p>
+    </div>
+  </div>
+</section>

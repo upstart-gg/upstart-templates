@@ -1,0 +1,32 @@
+{% assign memberships = data.plans | where: "family", "membership" %}{% assign packs = data.plans | where: "family", "pack" %}
+<section class="bg-primary text-primary-content">
+  <div class="mx-auto max-w-[80rem] px-5 py-20 md:px-8 md:py-32">
+    <h2 class="title-section" data-rise>Every week, or when you can</h2>
+    <div class="mt-12 grid gap-x-12 gap-y-12 lg:grid-cols-[1fr_12rem_1fr]">
+      <div data-rise>
+        <h3 class="title-small text-secondary">By the month</h3>
+        <ul class="mt-5 divide-y divide-primary-content/25 border-y border-primary-content/25">
+          {% for plan in memberships %}
+          <li class="flex items-baseline justify-between gap-6 py-5">
+            <div class="min-w-0"><p class="text-[1.25rem] leading-snug font-semibold">{{ plan.name }}</p><p class="facts mt-1 text-primary-content/80">{{ plan.description }}</p></div>
+            <p class="shrink-0 text-right"><span class="price block">{{ plan.price }}</span><span class="facts text-primary-content/80">{{ plan.period }}</span></p>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <p class="display self-center text-[1.75rem] leading-[1.1] text-secondary lg:text-center">Coming twice a week or more? A membership costs less.</p>
+      <div data-rise>
+        <h3 class="title-small text-secondary">By the pack</h3>
+        <ul class="mt-5 divide-y divide-primary-content/25 border-y border-primary-content/25">
+          {% for plan in packs %}
+          <li class="flex items-baseline justify-between gap-6 py-5">
+            <div class="min-w-0"><p class="text-[1.25rem] leading-snug font-semibold">{{ plan.name }}</p><p class="facts mt-1 text-primary-content/80">{{ plan.valid }}</p><p class="mt-2"><span class="counts-mark">Reformer counts as two</span></p></div>
+            <p class="shrink-0 text-right"><span class="price block">{{ plan.price }}</span></p>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    <p class="mt-12"><a href="/prices" class="btn btn-secondary whitespace-nowrap">All prices</a></p>
+  </div>
+</section>

@@ -1,0 +1,10 @@
+label: What to bring
+fields:
+  - name: title
+    label: Title
+    kind: text
+    required: true
+  - name: text
+    label: Text
+    kind: text
+order: [clothes, water, socks, leave]

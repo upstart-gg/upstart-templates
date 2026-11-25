@@ -1,0 +1,13 @@
+<section class="bg-base-100 text-base-content">
+  <div class="mx-auto max-w-[80rem] px-5 py-20 md:px-8 md:py-32">
+    <div class="flex flex-wrap items-end justify-between gap-x-10 gap-y-4" data-rise>
+      <h2 class="title-section">Six ways to spend an hour</h2>
+      <p><a href="/new#first-class" class="text-link font-semibold">Which one first?</a></p>
+    </div>
+    <ul data-mats class="mt-10 grid gap-5 md:mt-14 lg:grid-cols-2">
+      {% for class in data.classes %}
+      <li>{% render 'class-mat', class: class %}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,22 @@
+{
+  "name": "Bolster offer hero",
+  "kind": "hero",
+  "source": "upstart",
+  "description": "The aubergine field, a tall thin headline, and the room's photo with the offer for new students on a chalk-pink card over its edge.",
+  "tags": ["overlap", "studio", "offer", "field"],
+  "mood": ["elegant", "warm", "dark"],
+  "synonyms": [
+    "hero",
+    "overlap hero",
+    "yoga studio hero",
+    "intro offer",
+    "bannière",
+    "offre découverte",
+    "studio de yoga",
+    "carte sur photo"
+  ],
+  "data": {
+    "name": "offer",
+    "family": "collection"
+  }
+}

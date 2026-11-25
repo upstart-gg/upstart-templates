@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Start with two weeks — Artesian Yoga &amp; Pilates</title>
+<meta name="description" content="New to Artesian? Fourteen days of every class for $49, the reformer twice, and how to make the most of them.">
+<meta property="og:title" content="Start with two weeks — Artesian Yoga &amp; Pilates">
+<meta property="og:description" content="New to Artesian? Fourteen days of every class for $49, the reformer twice, and how to make the most of them.">
+</head>
+<body>
+{% render 'header', page: page %}
+<main>
+{% render 'page-title', title: "Start with two weeks", intro: "Fourteen days of every class for $49, the reformer twice. Here's how to make the most of them." %}
+<section class="bg-primary text-primary-content">
+  <div class="mx-auto grid max-w-[80rem] px-5 pb-16 md:px-8 md:pb-24 lg:grid-cols-12 lg:gap-x-8">
+    <div class="lg:relative lg:col-span-7 lg:col-start-6 lg:row-start-1 lg:min-h-[34rem]"><img src="/media/class-from-behind.jpg" class="aspect-[4/3] w-full rounded-box object-cover object-[50%_30%] lg:absolute lg:inset-0 lg:aspect-auto lg:h-full"></div>
+    <div class="relative z-10 mx-4 -mt-16 lg:col-span-6 lg:col-start-1 lg:row-start-1 lg:mx-0 lg:mt-0 lg:self-center">
+      {% render 'offer-card', large: true %}
+    </div>
+  </div>
+</section>
+{% render 'first-class' %}
+{% render 'which-first' %}
+{% render 'what-to-bring' %}
+{% render 'testimonials' %}
+{% render 'faq-two-columns', items: data.new-faq %}
+</main>
+{% render 'footer' %}
+</body>
+</html>

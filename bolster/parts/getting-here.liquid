@@ -1,0 +1,16 @@
+<section class="bg-base-100 text-base-content">
+  <div class="mx-auto max-w-[80rem] px-5 py-20 md:px-8 md:py-32">
+    <h2 class="title-section" data-rise>Getting here</h2>
+    <div class="mt-10 grid gap-6 lg:grid-cols-12">
+      <div class="grid gap-4 sm:grid-cols-2 lg:col-span-5 lg:grid-cols-1" data-rise>
+        <img src="/media/basque-block.jpg" class="aspect-[16/9] h-full w-full rounded-box object-cover object-[40%_50%]">
+        <img src="/media/boise-river.jpg" class="aspect-[16/9] h-full w-full rounded-box object-cover object-[50%_60%]">
+      </div>
+      <ul class="grid gap-4 sm:grid-cols-2 lg:col-span-7">
+        {% for item in data.getting-here %}
+        <li class="rounded-box bg-base-200 p-6"><h3 class="title-small">{{ item.title }}</h3><p class="body-copy mt-2">{{ item.text }}</p></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,57 @@
+label: Workshops & retreats
+fields:
+  - name: title
+    label: Title
+    kind: text
+    required: true
+  - name: date
+    label: Date
+    kind: date
+  - name: ends
+    label: Last day
+    kind: date
+  - name: time
+    label: Time
+    kind: text
+  - name: place
+    label: Place
+    kind: text
+  - name: price
+    label: Price
+    kind: text
+  - name: summary
+    label: In a line
+    kind: text
+  - name: cover
+    label: Cover
+    kind: image
+  - name: booking
+    label: Booking link
+    kind: link
+  - name: teacher
+    label: Teacher
+    kind: text
+  - name: places
+    label: Places
+    kind: text
+  - name: kind
+    label: Kind
+    kind: choice
+    choices: [workshop, retreat]
+  - name: days
+    label: The days
+    kind: list
+  - name: included
+    label: What's included
+    kind: list
+  - name: cabins
+    label: Cabins and prices
+    kind: list
+  - name: photos
+    label: More photos
+    kind: images
+  - name: body
+    label: Description
+    kind: markdown
+body: body
+sort: date

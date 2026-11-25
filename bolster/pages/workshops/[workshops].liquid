@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>{{ record.title }} — Artesian Yoga &amp; Pilates</title>
+<meta name="description" content="{{ record.summary }}">
+<meta property="og:title" content="{{ record.title }} — Artesian Yoga &amp; Pilates">
+<meta property="og:description" content="{{ record.summary }}">
+</head>
+<body>
+{% render 'header', page: page %}
+<main>
+<section class="bg-primary text-primary-content">
+  <div class="mx-auto max-w-[80rem] px-5 pt-12 pb-28 md:px-8 md:pt-16 md:pb-44">
+    <p class="facts"><a href="/workshops" class="text-link">Workshops &amp; retreats</a></p>
+    <h1 class="title-page mt-5 max-w-[16ch]">{{ record.title }}</h1>
+    <p class="mt-6 max-w-[52ch] text-[1.1875rem] leading-relaxed text-primary-content/85">{{ record.summary }}</p>
+  </div>
+</section>
+<section class="bg-base-100 text-base-content">
+  <div class="mx-auto flow-root max-w-[80rem] px-5 pb-20 md:px-8 md:pb-32">
+    {% assign wide = false %}{% if record.kind == "retreat" or record.cover == blank %}{% assign wide = true %}{% endif %}
+    <div class="grid gap-x-14 lg:grid-cols-12">
+      {% if record.cover %}<img src="{{ record.cover }}" class="relative -mt-20 aspect-[4/3] w-full rounded-box object-cover object-[50%_30%] md:-mt-32 {% if wide %}md:aspect-[2/1] lg:col-span-12{% else %}lg:col-span-7 lg:row-start-1{% endif %}">{% endif %}
+      <dl class="mt-8 grid grid-cols-2 gap-x-8 border-b border-base-300 lg:col-span-12 lg:grid-cols-4">
+        <div class="py-6"><dt class="eyebrow">When</dt><dd class="mt-1 font-semibold">{% render 'event-date', event: record %}<br>{{ record.time }}</dd></div>
+        <div class="py-6"><dt class="eyebrow">Where</dt><dd class="mt-1 font-semibold">{{ record.place }}</dd></div>
+        <div class="py-6"><dt class="eyebrow">With</dt><dd class="mt-1 font-semibold">{{ record.teacher }}<br>{{ record.places }}</dd></div>
+        <div class="py-6"><dt class="eyebrow">Price</dt><dd class="display mt-1 text-[2.25rem] leading-none">{% if record.kind == "retreat" %}from {% endif %}{{ record.price }}</dd></div>
+      </dl>
+      <div class="{% if wide %}mt-14 md:mt-20 lg:col-span-8{% else %}mt-12 lg:col-span-5 lg:col-start-8 lg:row-start-1 lg:mt-14{% endif %}">
+        <div class="reading body-copy text-[1.1875rem]">{{ record.body }}</div>
+        <p class="mt-8">{% if record.kind == "retreat" %}<a href="#place" class="btn btn-primary btn-lg whitespace-nowrap">Ask for a place</a>{% elsif record.booking %}<a href="{{ record.booking }}" class="btn btn-primary btn-lg whitespace-nowrap">Book in the app</a>{% endif %}</p>
+      </div>
+    </div>
+    {% if record.photos.size > 0 %}
+    <div class="mt-14 grid gap-5 md:grid-cols-2">{% for photo in record.photos %}<img src="{{ photo }}" class="aspect-[3/2] w-full rounded-box object-cover" data-rise>{% endfor %}</div>
+    {% endif %}
+  </div>
+</section>
+{% if record.kind == "retreat" %}
+<section class="bg-base-100 text-base-content">
+  <div class="mx-auto max-w-[80rem] px-5 pb-20 md:px-8 md:pb-32">
+    <h2 class="title-section" data-rise>The three days</h2>
+    <ol class="mt-8 divide-y divide-base-300 border-y border-base-300">
+      {% for day in record.days %}<li class="grid grid-cols-[3.5rem_minmax(0,1fr)] gap-4 py-6 md:grid-cols-[6rem_minmax(0,1fr)]"><span class="display text-[3rem] leading-[0.85] font-[350] text-primary" aria-hidden="true">{{ forloop.index }}</span><p class="body-copy">{{ day }}</p></li>{% endfor %}
+    </ol>
+    <div class="mt-16 grid gap-x-14 gap-y-12 lg:grid-cols-2">
+      <div><h2 class="title-small">What's included</h2><ul class="mt-5 divide-y divide-base-300 border-y border-base-300">{% for item in record.included %}<li class="py-3">{{ item }}</li>{% endfor %}</ul></div>
+      <div><h2 class="title-small">The cabins</h2><ul class="mt-5 divide-y divide-base-300 border-y border-base-300">{% for item in record.cabins %}<li class="py-3">{{ item }}</li>{% endfor %}</ul></div>
+    </div>
+  </div>
+</section>
+{% render 'retreat-form' %}
+{% endif %}
+{% render 'dock' %}
+</main>
+{% render 'footer' %}
+</body>
+</html>

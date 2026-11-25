@@ -1,0 +1,80 @@
+label: The week
+fields:
+  - name: class
+    label: Class
+    kind: text
+    required: true
+  - name: weekday
+    label: Day
+    kind: choice
+    choices: [mon, tue, wed, thu, fri, sat, sun]
+  - name: start
+    label: Starts (06:15)
+    kind: text
+  - name: length
+    label: Minutes
+    kind: number
+  - name: class_id
+    label: Class's id
+    kind: text
+  - name: tone
+    label: Mat
+    kind: choice
+    choices: [plum, night, chalk, cork, heather, pale]
+  - name: kind
+    label: Kind
+    kind: choice
+    choices: [yoga, pilates, reformer]
+  - name: teacher
+    label: Teacher's first name
+    kind: text
+  - name: room
+    label: Room
+    kind: text
+  - name: book
+    label: Booking link
+    kind: link
+  - name: note
+    label: Note
+    kind: text
+order:
+  [
+    mon-0615-slow-flow,
+    mon-0730-reformer,
+    mon-0930-foundations,
+    mon-1210-mat-pilates,
+    mon-1745-warm-flow,
+    mon-1915-yin-restore,
+    tue-0615-slow-flow,
+    tue-0730-reformer,
+    tue-0930-foundations,
+    tue-1210-slow-flow,
+    tue-1745-reformer,
+    tue-1915-warm-flow,
+    wed-0615-slow-flow,
+    wed-0730-mat-pilates,
+    wed-0930-reformer,
+    wed-1210-slow-flow,
+    wed-1745-foundations,
+    wed-1915-yin-restore,
+    thu-0615-slow-flow,
+    thu-0730-reformer,
+    thu-0930-foundations,
+    thu-1210-mat-pilates,
+    thu-1745-warm-flow,
+    thu-1915-yin-restore,
+    fri-0615-slow-flow,
+    fri-0730-reformer,
+    fri-0930-slow-flow,
+    fri-1210-mat-pilates,
+    fri-1745-warm-flow,
+    fri-1915-yin-restore,
+    sat-0800-slow-flow,
+    sat-0915-foundations,
+    sat-1030-mat-pilates,
+    sat-1045-reformer,
+    sun-0830-reformer,
+    sun-0930-yin-restore,
+    sun-1100-slow-flow,
+    sun-1600-foundations,
+  ]

@@ -1,0 +1,47 @@
+<section id="place" class="bg-base-200 text-base-content">
+  <div class="mx-auto grid max-w-[80rem] gap-x-14 gap-y-10 px-5 py-20 md:px-8 md:py-32 lg:grid-cols-12">
+    <div class="lg:col-span-4">
+      <h2 class="title-section">Ask for a place</h2>
+      <p class="body-copy mt-5 max-w-[34ch]">We hold your place for a week while you pay the $300 deposit by the invoice we send.</p>
+    </div>
+    <form hx-post="/_data/retreat-requests" hx-target="this" hx-swap="outerHTML" hx-status:422="target:#retreat-requests-problems swap:innerHTML" class="grid gap-x-5 gap-y-3 rounded-box bg-base-100 p-6 sm:grid-cols-2 md:p-10 lg:col-span-8">
+      <fieldset class="fieldset sm:col-span-2">
+        <legend class="fieldset-legend">The cabin</legend>
+        <div class="grid gap-3 sm:grid-cols-2">
+          <label class="choice"><input type="radio" name="cabin" value="shared" class="radio radio-primary" checked><span>Shared, $1,180</span></label>
+          <label class="choice"><input type="radio" name="cabin" value="own" class="radio radio-primary"><span>Your own, $1,480</span></label>
+        </div>
+      </fieldset>
+      <fieldset class="fieldset">
+        <legend class="fieldset-legend">Who you'd share with, if you know</legend>
+        <input name="sharing" type="text" class="input w-full" maxlength="200" aria-label="Who you'd share with, if you know">
+      </fieldset>
+      <fieldset class="fieldset">
+        <legend class="fieldset-legend">How long you've practiced</legend>
+        <select name="practice" class="select w-full" aria-label="How long you've practiced">
+          <option value="a few months">A few months</option>
+          <option value="a year or two">A year or two</option>
+          <option value="longer">Longer</option>
+        </select>
+      </fieldset>
+      <fieldset class="fieldset sm:col-span-2">
+        <legend class="fieldset-legend">Food you don't eat</legend>
+        <input name="food" type="text" class="input w-full" maxlength="300" aria-label="Food you don't eat">
+      </fieldset>
+      <fieldset class="fieldset sm:col-span-2">
+        <legend class="fieldset-legend">Your name</legend>
+        <input name="name" type="text" class="input w-full" required maxlength="200" autocomplete="name" aria-label="Your name">
+      </fieldset>
+      <fieldset class="fieldset">
+        <legend class="fieldset-legend">Your email</legend>
+        <input name="email" type="email" class="input w-full" required maxlength="200" autocomplete="email" aria-label="Your email">
+      </fieldset>
+      <fieldset class="fieldset">
+        <legend class="fieldset-legend">Your phone</legend>
+        <input name="phone" type="tel" class="input w-full" required maxlength="40" autocomplete="tel" aria-label="Your phone">
+      </fieldset>
+      <div id="retreat-requests-problems" class="sm:col-span-2"></div>
+      <p class="sm:col-span-2"><button class="btn btn-primary whitespace-nowrap">Ask for a place</button></p>
+    </form>
+  </div>
+</section>

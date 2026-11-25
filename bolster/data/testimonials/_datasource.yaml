@@ -1,0 +1,13 @@
+label: What students say
+fields:
+  - name: quote
+    label: Quote
+    kind: text
+    required: true
+  - name: name
+    label: First name
+    kind: text
+  - name: now
+    label: What they come to now
+    kind: text
+order: [dana, wes, pilar]

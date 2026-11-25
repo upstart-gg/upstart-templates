@@ -1,0 +1,15 @@
+<section class="bg-base-200 text-base-content">
+  <div class="mx-auto max-w-[80rem] space-y-16 px-5 py-20 md:space-y-24 md:px-8 md:py-32">
+    <h2 class="title-section" data-rise>The rooms</h2>
+    {% for room in data.rooms %}
+    <article class="grid items-center gap-x-14 gap-y-6 lg:grid-cols-12" data-rise>
+      {% if room.photo %}<img src="{{ room.photo }}" class="aspect-[4/3] w-full rounded-box object-cover lg:col-span-7 {% cycle 'lg:order-none', 'lg:order-last' %}">{% endif %}
+      <div class="lg:col-span-5">
+        <h3 class="title-section">{{ room.name }}</h3>
+        <p class="facts mt-3">{{ room.facts }}</p>
+        <p class="body-copy mt-4">{{ room.text }}</p>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>

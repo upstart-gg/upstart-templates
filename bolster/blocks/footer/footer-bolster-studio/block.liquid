@@ -1,0 +1,41 @@
+{% assign book = data.navigation | where: "place", "book" | first %}
+<footer class="bg-neutral text-neutral-content">
+  <div class="mx-auto max-w-[80rem] px-5 pt-20 pb-10 md:px-8 md:pt-28">
+    <div class="grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-12">
+      <div class="sm:col-span-2 lg:col-span-4">
+        <p class="display title-section max-w-[10ch]">Artesian Yoga &amp; Pilates</p>
+        <p class="mt-8"><a href="{{ book.href }}" class="btn btn-secondary whitespace-nowrap">{{ book.label }}</a></p>
+      </div>
+      <div class="lg:col-span-3">
+        <h2 class="eyebrow text-neutral-content/70">Find us</h2>
+        <address class="mt-4 leading-relaxed not-italic">418 Larkin Lane<br>Boise, Idaho 83702</address>
+        <p class="mt-2 text-neutral-content/80">Second floor; elevator from the street door</p>
+        <p class="mt-4"><a href="https://www.openstreetmap.org/search?query=418%20Larkin%20Lane%2C%20Boise%2C%20ID%2083702" class="text-link" rel="noopener" target="_blank">Get directions</a></p>
+        <p class="mt-2"><a href="tel:+12085550163" class="text-link whitespace-nowrap">(208) 555-0163</a></p>
+        <p class="mt-2"><a href="mailto:hello@artesianyoga.example" class="text-link">hello@artesianyoga.example</a></p>
+      </div>
+      <div class="lg:col-span-3">
+        <h2 class="eyebrow text-neutral-content/70">The front desk</h2>
+        <dl class="facts mt-4 space-y-2">
+          {% for day in data.hours %}
+          <div class="flex gap-4"><dt class="w-24 shrink-0 text-neutral-content/80">{{ day.day }}</dt><dd class="min-w-0"><span class="block">{{ day.hours }}</span>{% if day.note %}<span class="block text-neutral-content/70">{{ day.note }}</span>{% endif %}</dd></div>
+          {% endfor %}
+        </dl>
+      </div>
+      <div class="lg:col-span-2">
+        <h2 class="eyebrow text-neutral-content/70">The site</h2>
+        <nav aria-label="Footer" class="mt-4">
+          <ul class="space-y-2">
+            {% for item in data.navigation %}{% unless item.place == "book" or item.place == "social" %}
+            <li><a href="{{ item.href }}" class="text-link">{{ item.label }}</a></li>
+            {% endunless %}{% endfor %}
+            {% for item in data.navigation %}{% if item.place == "social" %}
+            <li><a href="{{ item.href }}" class="text-link" rel="noopener" target="_blank">{{ item.label }}</a></li>
+            {% endif %}{% endfor %}
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <p class="facts mt-16 border-t border-neutral-content/20 pt-6 text-neutral-content/70">Artesian Yoga &amp; Pilates · Downtown Boise, upstairs since 2021</p>
+  </div>
+</footer>

@@ -1,0 +1,22 @@
+{
+  "name": "Bolster studio footer",
+  "kind": "footer",
+  "source": "upstart",
+  "description": "The footer on night: the name, a booking button, the address with directions, the front desk's hours and the site's links.",
+  "tags": ["footer", "address", "hours", "studio"],
+  "mood": ["dark", "elegant"],
+  "synonyms": [
+    "footer",
+    "studio footer",
+    "hours and address",
+    "site links",
+    "pied de page",
+    "bas de page",
+    "horaires et adresse",
+    "plan du site"
+  ],
+  "data": {
+    "name": "navigation",
+    "family": "collection"
+  }
+}

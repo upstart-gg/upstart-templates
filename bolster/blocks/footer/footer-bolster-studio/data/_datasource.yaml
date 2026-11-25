@@ -1,0 +1,14 @@
+label: Navigation
+fields:
+  - name: label
+    label: Label
+    kind: text
+    required: true
+  - name: href
+    label: Link
+    kind: link
+  - name: place
+    label: Place
+    kind: choice
+    choices: [both, header, footer, book, social]
+order: [schedule, classes, prices, teachers, workshops, studio, new, book, instagram]

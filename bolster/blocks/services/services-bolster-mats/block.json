@@ -1,0 +1,13 @@
+{
+  "name": "Bolster class mats",
+  "kind": "services",
+  "source": "upstart",
+  "description": "The class styles as wide mats in their own tones, each unrolling from its end, with its line, its length, its pace and its room.",
+  "tags": ["classes", "mats", "services", "list"],
+  "mood": ["warm", "elegant", "colorful"],
+  "synonyms": ["class styles", "services", "yoga classes", "mats", "cours", "types de cours", "prestations", "tapis"],
+  "data": {
+    "name": "classes",
+    "family": "collection"
+  }
+}

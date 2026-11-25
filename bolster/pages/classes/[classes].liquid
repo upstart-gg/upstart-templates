@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>{{ record.name }} — Artesian Yoga &amp; Pilates</title>
+<meta name="description" content="{{ record.summary }}">
+<meta property="og:title" content="{{ record.name }} — Artesian Yoga &amp; Pilates">
+<meta property="og:description" content="{{ record.summary }}">
+</head>
+<body>
+{% render 'header', page: page %}
+<main>
+<section data-tone="{{ record.tone }}" class="tone-ground">
+  <div class="mx-auto max-w-[80rem] px-5 pt-12 pb-14 md:px-8 md:pt-16 md:pb-20">
+    <p class="facts"><a href="/classes" class="text-link">Classes</a></p>
+    <h1 class="title-page mt-5">{{ record.name }}</h1>
+    <ul data-mats class="mt-8 md:mt-10">
+      <li><div data-mat="style" data-tone="{{ record.tone }}" class="class-mat flex items-center"><p class="max-w-[30ch] text-[1.375rem] leading-snug md:text-[1.75rem]">{{ record.summary }}</p></div></li>
+    </ul>
+  </div>
+</section>
+<section class="bg-base-100 text-base-content">
+  <div class="mx-auto max-w-[80rem] px-5 pb-20 md:px-8 md:pb-32">
+    <dl class="grid grid-cols-2 gap-x-8 border-b border-base-300 lg:grid-cols-4">
+      <div class="py-6"><dt class="eyebrow">Length</dt><dd class="display mt-1 text-[1.75rem] leading-[1.1]">{{ record.length }} min</dd></div>
+      <div class="py-6"><dt class="eyebrow">Pace</dt><dd class="display mt-1 text-[1.75rem] leading-[1.1]">{% render 'pace-name', pace: record.pace %}</dd></div>
+      <div class="py-6"><dt class="eyebrow">Room</dt><dd class="display mt-1 text-[1.75rem] leading-[1.1]">{{ record.room }}</dd></div>
+      <div class="py-6"><dt class="eyebrow">Counts as</dt><dd class="display mt-1 text-[1.75rem] leading-[1.1]">{% if record.credits > 1 %}Two classes{% else %}One class{% endif %}</dd></div>
+    </dl>
+    <div class="mt-14 grid gap-x-14 gap-y-12 md:mt-20 lg:grid-cols-12">
+      <div class="space-y-5 lg:col-span-6">
+        {% if record.cover %}<img src="{{ record.cover }}" class="aspect-[4/3] w-full rounded-box object-cover" data-rise>{% endif %}
+        {% for photo in record.photos %}<img src="{{ photo }}" class="aspect-[4/3] w-full rounded-box object-cover" data-rise>{% endfor %}
+      </div>
+      <div class="lg:col-span-6">
+        <h2 class="title-section">What you'll do</h2>
+        <div class="reading body-copy mt-6">{{ record.body }}</div>
+        {% if record.for_whom %}<h3 class="title-small mt-10">Who it suits</h3><p class="body-copy mt-2">{{ record.for_whom }}</p>{% endif %}
+        {% if record.bring %}<h3 class="title-small mt-8">What to bring</h3><p class="body-copy mt-2">{{ record.bring }}</p>{% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+{% assign days = "mon,tue,wed,thu,fri,sat,sun" | split: "," %}{% assign held = data.sessions | where: "class_id", record.id %}{% assign book = data.navigation | where: "place", "book" | first %}
+{% if held.size > 0 %}
+<section class="bg-base-200 text-base-content">
+  <div class="mx-auto max-w-[80rem] px-5 py-20 md:px-8 md:py-28">
+    <h2 class="title-section" data-rise>When it runs</h2>
+    <ul data-mats class="mt-10 grid gap-2.5">
+      {% for day in days %}{% assign today = held | where: "weekday", day | sort: "start" %}{% for session in today %}
+      <li>{% render 'session-row', session: session, book: book.href, show_day: true %}</li>
+      {% endfor %}{% endfor %}
+    </ul>
+    <p class="body-copy mt-8">This is our usual week; subs and changes are in the app.</p>
+    {% assign names = held | map: "teacher" | uniq %}
+    <h2 class="title-small mt-16">Who teaches it</h2>
+    <ul class="mt-6 flex flex-wrap gap-x-10 gap-y-6">
+      {% for member in data.team %}{% assign first = member.name | split: " " | first %}{% if names contains first %}
+      <li class="flex items-center gap-4"><div class="w-16 shrink-0">{% render 'portrait', member: member, class: 'rounded-full bg-base-100' %}</div><a href="/teachers#{{ member.id }}" class="text-link">{{ member.name }}</a></li>
+      {% endif %}{% endfor %}
+    </ul>
+  </div>
+</section>
+{% endif %}
+{% render 'start-band' %}
+<section class="bg-base-100 text-base-content">
+  <div class="mx-auto max-w-[80rem] px-5 py-20 md:px-8 md:py-28">
+    <h2 class="title-section" data-rise>The other classes</h2>
+    <ul data-mats class="mt-10 grid gap-2.5">
+      {% for class in data.classes %}{% unless class.id == record.id %}
+      <li><a href="/classes/{{ class.id }}" data-mat="row" data-tone="{{ class.tone }}" class="small-mat"><span class="row-name">{{ class.name }}</span><span class="facts">{{ class.length }} min · {% render 'pace-name', pace: class.pace %}</span>{% render 'arrow' %}</a></li>
+      {% endunless %}{% endfor %}
+    </ul>
+  </div>
+</section>
+{% render 'dock' %}
+</main>
+{% render 'footer' %}
+</body>
+</html>

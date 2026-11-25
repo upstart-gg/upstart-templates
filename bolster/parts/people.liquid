@@ -1,0 +1,17 @@
+<section class="bg-base-100 text-base-content">
+  <div class="mx-auto max-w-[80rem] px-5 py-20 md:px-8 md:py-32">
+    <div class="flex flex-wrap items-end justify-between gap-x-10 gap-y-4" data-rise>
+      <h2 class="title-section max-w-[18ch]">The people at the front of the room</h2>
+      <p><a href="/teachers" class="text-link font-semibold">Meet the teachers</a></p>
+    </div>
+    <ul class="mt-12 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-5">
+      {% for member in data.team %}
+      <li data-rise>
+        <div class="max-w-40">{% render 'portrait', member: member, class: 'rounded-full' %}</div>
+        <h3 class="title-small mt-5">{{ member.name }}</h3>
+        <p class="facts mt-1.5">{% for id in member.teaches %}{% assign class = data.classes | where: "id", id | first %}{% if class %}{% unless forloop.first %} · {% endunless %}{{ class.name }}{% endif %}{% endfor %}</p>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

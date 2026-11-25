@@ -1,0 +1,1 @@
+{%- assign clock = start | split: ":" -%}{%- assign hour = clock[0] | plus: 0 -%}{%- assign shown = hour | modulo: 12 -%}{%- if shown == 0 -%}{%- assign shown = 12 -%}{%- endif -%}<time datetime="{{ start }}">{{ shown }}:{{ clock[1] }} {% if hour >= 12 %}pm{% else %}am{% endif %}</time>
