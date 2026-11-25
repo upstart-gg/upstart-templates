@@ -23,7 +23,7 @@ A floor seen from above on drawing paper: fine graphite lines, prices and facts 
 - `--lit`, a lit room, is 45% of the primary over the paper; a pointed or focused room takes the primary itself. Both are made from the theme in `styles/site.css`, so the Theme tab relights everything. `--furniture` is the ink at 55% over the paper.
 - Corners 0.25 rem everywhere, no shadow, no gradient, no texture; the rules between rows are 1 px, the plan's outer walls 1.5 px. Field edges are ink at 60%; `.choice` is a radio or checkbox as a card, lit when chosen.
 - Main button: `btn-primary`, with an ink edge; `btn-neutral` on cyan and maple; `btn-outline` for the second one, which fills with ink on hover.
-- `.ticks` is a list whose marks are small lit windows; `.plan-row-featured` the lit row of the plan most asked for, said in plain type, never a badge.
+- A small window has the front's two mullions, 1 px: `.picker-lamp` (11 by 16 px) before each plan of the picker, unlit, filled with paper on the cyan of the plan picked; `.ticks` is a list whose marks are such windows (7 by 10 px), always lit in cyan; `.plan-row-featured` the lit row of the plan most asked for, said in plain type, never a badge.
 - Focus rings are 2 px in the current color, 3 px off (ink around a button, paper on the night); 2 px inside a row that is full width.
 - Photos are rectangles with `rounded-box`, in daylight, on brick, wood and paper tones, no filter; no person but the team. Those of the rooms show one floor: generated ones are made with `media/river-room.webp` as their reference.
 - The rhythm of a section: `mx-auto max-w-[84rem]`, `px-5 py-20 md:px-8 md:py-28`. The header is 4.5 rem high, sticky, paper at 95%: a section a link leads to has `scroll-mt-24`.

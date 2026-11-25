@@ -456,6 +456,14 @@ html.lenis body {
     margin-top: 0.4375rem;
     border: 1px solid currentColor;
     background-color: var(--color-primary);
+    background-image: linear-gradient(currentColor, currentColor), linear-gradient(currentColor, currentColor);
+    background-position:
+      50% 0,
+      0 46%;
+    background-size:
+      1px 100%,
+      100% 1px;
+    background-repeat: no-repeat;
   }
   .plan-row {
     display: grid;
@@ -736,11 +744,20 @@ html.lenis body {
     outline: 2px solid var(--color-base-content);
     outline-offset: 2px;
   }
+  /* A window like the front's, with its mullions. */
   .picker-lamp {
     flex-shrink: 0;
     width: 0.6875rem;
     height: 1rem;
     border: 1px solid currentColor;
+    background-image: linear-gradient(currentColor, currentColor), linear-gradient(currentColor, currentColor);
+    background-position:
+      50% 0,
+      0 46%;
+    background-size:
+      1px 100%,
+      100% 1px;
+    background-repeat: no-repeat;
   }
   .picker-option:has(:checked) .picker-lamp {
     background-color: var(--color-base-100);
