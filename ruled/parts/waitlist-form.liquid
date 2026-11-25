@@ -1,0 +1,41 @@
+<section id="next" class="bg-base-100 text-base-content">
+  <div class="mx-auto max-w-[80rem] px-5 pb-24 md:px-8 md:pb-36">
+    <div class="grid gap-10 border-t border-base-content pt-6 lg:grid-cols-12">
+      <div class="lg:col-span-4">
+        <h2 class="title-section">The waitlist</h2>
+        <p class="body-copy mt-4 max-w-[38ch]">One email per cohort, on the day its enrollment opens. Nothing else.</p>
+      </div>
+      <div class="lg:col-span-7 lg:col-start-6">
+      <form hx-post="/_data/waitlist" hx-target="this" hx-swap="outerHTML" hx-status:422="target:#waitlist-problems swap:innerHTML">
+        <div class="grid gap-x-5 sm:grid-cols-2">
+          <fieldset class="fieldset">
+            <label class="fieldset-legend" for="waitlist-name">First name</label>
+            <input id="waitlist-name" name="name" type="text" class="input w-full" maxlength="100" autocomplete="given-name">
+          </fieldset>
+          <fieldset class="fieldset">
+            <label class="fieldset-legend" for="waitlist-email">Email</label>
+            <input id="waitlist-email" name="email" type="email" class="input w-full" required maxlength="200" autocomplete="email">
+          </fieldset>
+        </div>
+        <fieldset class="mt-5">
+          <legend class="text-[0.9375rem] font-bold">Which cohorts?</legend>
+          <div class="mt-2 grid gap-3 sm:grid-cols-2">
+            {%- assign first = true -%}
+            {% for cohort in data.cohorts %}{% if cohort.status == "waitlist" or cohort.status == "later" or cohort.status == "full" %}
+            <label class="choice">
+              <input type="checkbox" name="cohorts" value="{{ cohort.name }}" class="checkbox checkbox-neutral"{% if first %} checked{% assign first = false %}{% endif %}>
+              <span>
+                <span class="block font-bold">{{ cohort.name }}</span>
+                <span class="small block text-base-content/80">{% render 'date', on: cohort.starts, form: "long" %} to {% render 'date', on: cohort.ends, form: "long" %}{% if cohort.opens %} · enrollment opens {% render 'date', on: cohort.opens, form: "long" %}{% endif %}</span>
+              </span>
+            </label>
+            {% endif %}{% endfor %}
+          </div>
+        </fieldset>
+        <div id="waitlist-problems" class="mt-4"></div>
+        <button class="btn btn-primary mt-6">Join the waitlist</button>
+      </form>
+      </div>
+    </div>
+  </div>
+</section>

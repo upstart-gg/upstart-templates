@@ -1,0 +1,5 @@
+{%- comment -%} A cohort's status in a plain word: pass cohort. {%- endcomment -%}
+{%- if cohort.status == "full" or cohort.places_left == 0 -%}<span class="inline-block rounded-field bg-neutral px-2 text-neutral-content">Full</span>
+{%- elsif cohort.status == "enrolling" -%}Enrolling{% if cohort.closes %} until {% render 'date', on: cohort.closes, form: "short" %}{% endif %}
+{%- elsif cohort.status == "waitlist" -%}Waitlist{% if cohort.opens %}, opens {% render 'date', on: cohort.opens, form: "short" %}{% endif %}
+{%- else -%}Later{%- endif -%}

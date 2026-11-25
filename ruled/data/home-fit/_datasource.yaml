@@ -1,0 +1,9 @@
+label: Who it’s for
+fields:
+  - name: text
+    kind: text
+    required: true
+  - name: side
+    kind: choice
+    choices: [for, not]
+order: [a-story, readers, three-hours, book-proposal, recordings-only, quick-tips]

@@ -1,0 +1,23 @@
+label: Past cohorts’ essays
+fields:
+  - name: title
+    kind: text
+    required: true
+  - name: writer
+    kind: text
+  - name: who
+    label: Who they are
+    kind: text
+  - name: cohort
+    kind: text
+  - name: first_line
+    label: First line
+    kind: text
+    required: true
+  - name: said
+    label: What they said about the course
+    kind: text
+  - name: became
+    label: What became of it
+    kind: text
+order: [tide-tables, auction-day, tourtiere, adult-lap-swim]

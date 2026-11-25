@@ -1,0 +1,19 @@
+label: Waitlist
+collected: true
+answer: waitlist-thanks
+messages:
+  required: "{field} is required."
+  invalid: "{field} doesn’t look right. Please check it."
+  too_many: "Too many requests were sent from here. Please try again in a few minutes."
+  sent: "Thank you. You’re on the list."
+fields:
+  - name: name
+    label: First name
+    kind: text
+  - name: email
+    label: Email
+    kind: email
+    required: true
+  - name: cohorts
+    label: Cohorts
+    kind: list

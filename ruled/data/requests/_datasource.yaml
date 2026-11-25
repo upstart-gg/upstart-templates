@@ -1,0 +1,37 @@
+label: Requests for a place
+collected: true
+answer: requests-thanks
+messages:
+  required: "{field} is required."
+  invalid: "{field} doesn’t look right. Please check it."
+  too_many: "Too many requests were sent from here. Please try again in a few minutes."
+  sent: "Thank you. Hollis will write to you within two days."
+fields:
+  - name: name
+    label: Your name
+    kind: text
+    required: true
+  - name: email
+    label: Your email
+    kind: email
+    required: true
+  - name: cohort
+    label: Cohort
+    kind: text
+    required: true
+  - name: experience
+    label: Have you written essays before?
+    kind: choice
+    choices: [Never, A few, Many]
+  - name: hoping
+    label: What you’re hoping to write about
+    kind: text
+  - name: payment
+    label: How you’d like to pay
+    kind: choice
+    required: true
+    choices: [In full, In two payments, A pay-what-you-can place]
+  - name: notes
+    label: Anything Hollis should know
+    kind: markdown
+body: notes

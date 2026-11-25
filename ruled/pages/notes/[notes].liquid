@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>{{ record.title }}: The Slow Draft</title>
+<meta name="description" content="{{ record.summary }}">
+<meta property="og:title" content="{{ record.title }}: The Slow Draft">
+<meta property="og:description" content="{{ record.summary }}">
+<meta property="og:image" content="{% if record.cover %}{{ record.cover }}{% else %}/media/desk.jpg{% endif %}">
+</head>
+<body>
+{% render 'header', page: page %}
+<main>
+<article class="bg-base-100 text-base-content">
+  <div class="mx-auto max-w-[56rem] px-5 pt-16 md:px-8 md:pt-24">
+    {% if record.date %}<p class="pencil-label"><time datetime="{{ record.date }}">{% render 'date', on: record.date, form: "long-year" %}</time></p>{% endif %}
+    <h1 class="title-page mt-3">{{ record.title }}</h1>
+    {% if record.summary %}<p class="second-voice mt-5 text-base-content/80">{{ record.summary }}</p>{% endif %}
+    {% if record.cover %}<img src="{{ record.cover }}" class="mt-10 aspect-[16/9] w-full rounded-box object-cover">{% endif %}
+    <div class="prose-ruled marked-links measure mx-auto mt-12 text-[1.125rem] leading-[1.75]">{{ record.body }}</div>
+  </div>
+  <div class="mx-auto max-w-[56rem] px-5 pt-24 pb-16 md:px-8">
+    <h2 class="title-section">More notes</h2>
+    <div class="mt-8">{% render 'note-rows', but: record.id %}</div>
+  </div>
+</article>
+<section class="border-t border-base-300 bg-base-100 text-base-content">
+  <div class="mx-auto flex max-w-[56rem] flex-col gap-8 px-5 py-16 md:px-8 lg:flex-row lg:items-start lg:justify-between">
+    <p class="first-line max-w-[22ch]">The course is these letters, with company.</p>
+    {% render 'waitlist-strip', id: "note-waitlist" %}
+  </div>
+</section>
+</main>
+{% render 'footer', page: page %}
+</body>
+</html>

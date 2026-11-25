@@ -1,0 +1,22 @@
+{
+  "name": "Ruled request for a place",
+  "kind": "forms",
+  "source": "upstart",
+  "description": "The request for a place in three numbered parts under ink rules (the cohort, you, paying), beside a panel on the second sheet with the price, what it includes, the refunds and the phone.",
+  "tags": ["forms", "enrollment", "application", "course"],
+  "mood": ["minimal", "editorial"],
+  "synonyms": [
+    "enrollment form",
+    "ask for a place",
+    "course registration",
+    "application",
+    "formulaire d'inscription",
+    "demande de place",
+    "inscription à une formation",
+    "candidature"
+  ],
+  "data": {
+    "name": "requests",
+    "family": "collection"
+  }
+}

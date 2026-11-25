@@ -1,0 +1,6 @@
+{%- comment -%} An inner page's top: pass title, and line (in Gelasio italic) or text (in Mulish). {%- endcomment -%}
+<div class="mx-auto max-w-[80rem] px-5 pt-16 md:px-8 md:pt-24">
+  <h1 class="title-page max-w-[18ch]">{{ title }}</h1>
+  {%- if line %}<p class="second-voice mt-5 max-w-[60ch] text-balance text-base-content/80">{{ line }}</p>{% endif %}
+  {%- if text %}<p class="body-copy mt-5 max-w-[60ch] text-[1.1875rem]">{{ text }}</p>{% endif %}
+</div>

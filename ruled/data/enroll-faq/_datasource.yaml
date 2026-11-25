@@ -1,0 +1,9 @@
+label: Questions about enrolling
+fields:
+  - name: question
+    kind: text
+    required: true
+  - name: answer
+    kind: markdown
+body: answer
+order: [employer, receipt, time-zone, captions, next-cohort]

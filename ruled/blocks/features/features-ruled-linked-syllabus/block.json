@@ -1,0 +1,22 @@
+{
+  "name": "Ruled linked syllabus",
+  "kind": "features",
+  "source": "upstart",
+  "description": "The numbered weeks of a course as ruled rows with their dates, beside the cohort's calendar; pointing at a week lights its evenings in highlighter, and pointing at an evening lights its week.",
+  "tags": ["features", "syllabus", "program", "calendar", "course"],
+  "mood": ["editorial", "minimal"],
+  "synonyms": [
+    "syllabus",
+    "curriculum",
+    "course calendar",
+    "weeks and dates",
+    "programme de formation",
+    "calendrier des séances",
+    "semaines",
+    "emploi du temps"
+  ],
+  "data": {
+    "name": "weeks",
+    "family": "collection"
+  }
+}

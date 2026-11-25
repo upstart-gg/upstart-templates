@@ -1,0 +1,11 @@
+{%- comment -%} A date in words, in the site's language: pass on (a date) and form. Every date of the site is written here. {%- endcomment -%}
+{%- assign noon = on | append: "T12:00:00" -%}
+{%- case form -%}
+{%- when "day" -%}{{ noon | date: "%a %b %-d" }}
+{%- when "short" -%}{{ noon | date: "%b %-d" }}
+{%- when "short-year" -%}{{ noon | date: "%b %-d, %Y" }}
+{%- when "long" -%}{{ noon | date: "%B %-d" }}
+{%- when "long-year" -%}{{ noon | date: "%B %-d, %Y" }}
+{%- when "weekday" -%}{{ noon | date: "%A, %B %-d" }}
+{%- when "month" -%}{{ noon | date: "%b" }}
+{%- endcase -%}

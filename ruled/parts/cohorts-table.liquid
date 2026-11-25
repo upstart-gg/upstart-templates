@@ -1,0 +1,27 @@
+<section class="bg-base-100 text-base-content">
+  <div class="mx-auto max-w-[80rem] px-5 pt-14 pb-20 md:px-8 md:pt-20 md:pb-28">
+    <table class="cohorts w-full border-y border-base-content">
+      <caption class="sr-only">The next cohorts</caption>
+      <thead>
+        <tr class="pencil-label text-left">
+          <th scope="col" class="py-3 pr-4 font-semibold">Cohort</th>
+          <th scope="col" class="py-3 pr-4 font-semibold">Dates</th>
+          <th scope="col" class="hidden py-3 pr-4 font-semibold lg:table-cell">Days and time</th>
+          <th scope="col" class="hidden py-3 pr-4 font-semibold md:table-cell">Places</th>
+          <th scope="col" class="hidden py-3 font-semibold sm:table-cell">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for cohort in data.cohorts %}
+        <tr class="border-t border-base-300 align-baseline">
+          <td class="py-5 pr-4"><a href="{% if cohort.status == "enrolling" and cohort.places_left != 0 %}#ask{% else %}#next{% endif %}" class="title-small"><span class="link-mark">{{ cohort.name }}</span></a></td>
+          <td class="py-5 pr-4">{% if cohort.starts %}<span class="whitespace-nowrap">{% render 'date', on: cohort.starts, form: "short" %} – {% render 'date', on: cohort.ends, form: "short" %}</span>{% endif %}<span class="small mt-1 block text-base-content/80 sm:hidden">{% render 'cohort-status', cohort: cohort %}</span></td>
+          <td class="hidden py-5 pr-4 lg:table-cell">{{ cohort.days }}{% if cohort.time %}, {{ cohort.time }} {{ cohort.zone }}{% endif %}</td>
+          <td class="hidden py-5 pr-4 md:table-cell">{% if cohort.places_left %}{{ cohort.places_left }} of {{ cohort.size }} left{% else %}{{ cohort.size }}{% endif %}</td>
+          <td class="hidden py-5 font-semibold sm:table-cell">{% render 'cohort-status', cohort: cohort %}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>

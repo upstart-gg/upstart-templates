@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Syllabus: The Slow Draft</title>
+<meta name="description" content="Six weeks and twelve evenings, week by week: the talks, the workshops, what to read, what to write, and when the two drafts are due.">
+<meta property="og:title" content="Syllabus: The Slow Draft">
+<meta property="og:description" content="Six weeks and twelve evenings, week by week: the talks, the workshops, what to read, what to write, and when the two drafts are due.">
+<meta property="og:image" content="/media/desk.jpg">
+</head>
+<body>
+{% render 'header', page: page %}
+<main>
+{%- assign cohort = data.cohorts | where: "status", "enrolling" | first -%}{%- unless cohort %}{% assign cohort = data.cohorts | first %}{% endunless -%}
+{%- capture line %}{{ cohort.name }}{% if cohort.starts %} · {% render 'date', on: cohort.starts, form: "long" %} to {% render 'date', on: cohort.ends, form: "long" %}{% endif %}{% if cohort.schedule %} · {{ cohort.schedule }}{% endif %}{% endcapture %}
+{% render 'page-title', title: "Syllabus", line: line %}
+{% render 'whole-syllabus' %}
+{% render 'week-figures' %}
+{% render 'between-sessions' %}
+{% render 'needs' %}
+{% render 'closing' %}
+</main>
+{% render 'footer', page: page %}
+</body>
+</html>

@@ -1,0 +1,27 @@
+{%- assign open = data.cohorts | where: "status", "enrolling" | first -%}
+{%- assign next = data.cohorts | where: "status", "waitlist" | first -%}
+<section class="bg-secondary text-secondary-content">
+  <div class="mx-auto max-w-[80rem] px-5 py-20 md:px-8 md:py-28">
+    <div class="mx-auto max-w-[60rem] text-center">
+      <h2 class="title-section">Can&rsquo;t make {% if open %}{{ open.name }}{% else %}this one{% endif %}? <br class="hidden sm:inline">{% if next %}{{ next.name }} runs {% render 'date', on: next.starts, form: "long" %} to {% render 'date', on: next.ends, form: "long" %}.{% else %}Hear when the next one opens.{% endif %}</h2>
+      <div class="mx-auto mt-10 max-w-[48rem] text-left">
+      <form hx-post="/_data/waitlist" hx-target="this" hx-swap="outerHTML" hx-status:422="target:#join-next-problems swap:innerHTML">
+        {% if next %}<input type="hidden" name="cohorts" value="{{ next.name }}">{% endif %}
+        <div class="grid items-end gap-4 sm:grid-cols-[1fr_1.3fr_auto]">
+          <fieldset class="fieldset">
+            <label class="fieldset-legend" for="join-next-name">First name</label>
+            <input id="join-next-name" name="name" type="text" class="input w-full" maxlength="100" autocomplete="given-name">
+          </fieldset>
+          <fieldset class="fieldset">
+            <label class="fieldset-legend" for="join-next-email">Email</label>
+            <input id="join-next-email" name="email" type="email" class="input w-full" required maxlength="200" autocomplete="email">
+          </fieldset>
+          <button class="btn btn-primary mb-1">Join the waitlist</button>
+        </div>
+        <div id="join-next-problems" class="mt-3"></div>
+      </form>
+      </div>
+      <p class="mt-4">One email{% if next.opens %}, on {% render 'date', on: next.opens, form: "long" %},{% endif %} when enrollment opens. Nothing else.</p>
+    </div>
+  </div>
+</section>

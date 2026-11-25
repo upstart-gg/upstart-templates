@@ -1,0 +1,42 @@
+label: Weeks
+fields:
+  - name: title
+    kind: text
+    required: true
+  - name: number
+    kind: number
+    required: true
+  - name: line
+    label: In a line
+    kind: text
+  - name: summary
+    kind: markdown
+  - name: writing
+    label: This week's writing
+    kind: text
+  - name: readings
+    label: Readings by title
+    kind: list
+  - name: time
+    label: Time in the calendar
+    kind: text
+  - name: first_date
+    label: First session's date
+    kind: date
+  - name: first_title
+    label: First session
+    kind: text
+  - name: second_date
+    label: Second session's date
+    kind: date
+  - name: second_title
+    label: Second session
+    kind: text
+  - name: due_date
+    label: Date something is due
+    kind: date
+  - name: due_title
+    label: What is due
+    kind: text
+body: summary
+sort: number

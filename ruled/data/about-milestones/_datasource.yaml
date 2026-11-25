@@ -1,0 +1,10 @@
+label: The course so far
+fields:
+  - name: title
+    kind: text
+    required: true
+  - name: year
+    kind: text
+  - name: text
+    kind: text
+order: [leaves-the-paper, first-cohort, the-lower-falls, pay-what-you-can, north-street, fifteenth-cohort]

@@ -1,0 +1,49 @@
+label: Cohorts
+fields:
+  - name: name
+    kind: text
+    required: true
+  - name: status
+    kind: choice
+    choices: [enrolling, waitlist, full, later]
+  - name: starts
+    label: First day
+    kind: date
+  - name: ends
+    label: Last day
+    kind: date
+  - name: sessions
+    label: Live sessions
+    kind: number
+  - name: days
+    label: Days, in short
+    kind: text
+  - name: schedule
+    label: Days and time, in full
+    kind: text
+  - name: time
+    kind: text
+  - name: zone
+    label: Time zone
+    kind: text
+  - name: format
+    kind: text
+  - name: size
+    label: Places in the cohort
+    kind: number
+  - name: places_left
+    label: Places left
+    kind: number
+  - name: closes
+    label: Enrollment closes
+    kind: date
+  - name: opens
+    label: Enrollment opens
+    kind: date
+  - name: tuition
+    label: Tuition in dollars
+    kind: number
+  - name: plan
+    label: Other ways to pay
+    kind: text
+sort: starts

@@ -1,0 +1,22 @@
+{
+  "name": "Ruled next cohort",
+  "kind": "newsletter",
+  "source": "upstart",
+  "description": "The next cohort's waitlist on the palest highlighter: its dates as the heading, a first name and an email on one line with the button, and the promise of one email when enrollment opens.",
+  "tags": ["newsletter", "waitlist", "email capture", "cohort"],
+  "mood": ["minimal", "warm"],
+  "synonyms": [
+    "waitlist",
+    "join the list",
+    "notify me",
+    "next session",
+    "liste d'attente",
+    "prévenez-moi",
+    "prochaine session",
+    "inscription par e-mail"
+  ],
+  "data": {
+    "name": "waitlist",
+    "family": "collection"
+  }
+}

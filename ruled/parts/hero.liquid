@@ -1,0 +1,31 @@
+{%- comment -%} The picture, then every word under it, read from the first cohort that is enrolling (or else the first one listed). {%- endcomment -%}
+{%- assign cohort = data.cohorts | where: "status", "enrolling" | first -%}
+{%- unless cohort %}{% assign cohort = data.cohorts | first %}{% endunless -%}
+{%- assign full = false -%}
+{%- if cohort.status == "full" or cohort.places_left == 0 %}{% assign full = true %}{% endif -%}
+<section class="bg-base-100 text-base-content">
+  <img src="/media/desk.jpg" class="aspect-[4/3] w-full object-cover object-[50%_100%] md:aspect-[21/9] md:max-h-[56svh]">
+  <div class="mx-auto max-w-[80rem] px-5 md:px-8">
+    <p class="pencil-label pt-3 font-normal">Hollis&rsquo;s desk on North Street, Burlington, in January light</p>
+    <p class="pencil-label mt-8 md:mt-9">A live course in the personal essay · {{ cohort.name }}</p>
+    <h1 class="title-hero mt-3 max-w-[17ch]">Write one essay slowly, and <span class="mark">finish it</span>.</h1>
+    <p class="body-copy measure mt-7 text-[1.1875rem]">Twelve evenings on Zoom with thirteen other writers, two letters on your drafts, and by the end of February an essay ready to send out. Taught from a desk in Burlington, Vermont.</p>
+    <div class="mt-10 flex flex-col gap-6 border-y border-base-300 py-6 lg:flex-row lg:items-center lg:justify-between">
+      <p class="facts">
+        {%- assign before = false -%}
+        {%- if cohort.sessions %}<span class="whitespace-nowrap">{{ cohort.sessions }} live sessions</span>{% assign before = true %}{% endif %}
+        {%- if cohort.starts and cohort.ends %}{% if before %} · {% endif %}<span class="whitespace-nowrap">{% render 'date', on: cohort.starts, form: "short" %} – {% render 'date', on: cohort.ends, form: "short-year" %}</span>{% assign before = true %}{% endif %}
+        {%- if cohort.days %}{% if before %} · {% endif %}<span class="whitespace-nowrap">{{ cohort.days }}{% if cohort.time %}, {{ cohort.time }} {{ cohort.zone }}{% endif %}</span>{% assign before = true %}{% endif %}
+        {%- if cohort.format %}{% if before %} · {% endif %}<span class="whitespace-nowrap">{{ cohort.format }}{% if cohort.size %}, {{ cohort.size }} writers{% endif %}</span>{% endif %}</p>
+      {% if full %}<a href="#next" class="btn btn-primary shrink-0 self-start lg:self-auto">Join the waitlist</a>{% else %}<a href="/enroll#ask" class="btn btn-primary shrink-0 self-start lg:self-auto">Ask for a place</a>{% endif %}
+    </div>
+    <p class="small pt-4 text-base-content/80">
+      {%- assign before = false -%}
+      {%- if full %}This cohort is full{% assign before = true %}
+      {%- else %}
+      {%- if cohort.places_left %}<span class="whitespace-nowrap">{{ cohort.places_left }} of {{ cohort.size }} places left</span>{% assign before = true %}{% endif %}
+      {%- if cohort.closes %}{% if before %} · {% endif %}<span class="whitespace-nowrap">Enrollment closes {% render 'date', on: cohort.closes, form: "weekday" %}</span>{% assign before = true %}{% endif %}
+      {%- endif %}
+      {%- if cohort.tuition %}{% if before %} · {% endif %}${{ cohort.tuition }}{% if cohort.plan %}, {{ cohort.plan }}{% endif %}{% endif %}</p>
+  </div>
+</section>

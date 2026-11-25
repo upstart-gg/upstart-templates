@@ -1,0 +1,8 @@
+label: How Hollis teaches
+fields:
+  - name: title
+    kind: text
+    required: true
+  - name: text
+    kind: text
+order: [read-it-aloud, mark-what-is-alive, cut-it-by-half, finish-it]

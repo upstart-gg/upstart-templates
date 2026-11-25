@@ -1,0 +1,8 @@
+label: Between sessions
+fields:
+  - name: title
+    kind: text
+    required: true
+  - name: text
+    kind: text
+order: [pods, letters, call, folder]

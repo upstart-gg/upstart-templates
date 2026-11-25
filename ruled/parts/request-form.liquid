@@ -1,0 +1,81 @@
+{%- comment -%} The request for a place, in three parts, beside what it costs. Its cohorts are the ones enrolling; a full one is shown but cannot be chosen. {%- endcomment -%}
+{%- assign priced = data.cohorts | where: "status", "enrolling" | first -%}
+{%- unless priced %}{% assign priced = data.cohorts | first %}{% endunless -%}
+<section id="ask" class="bg-base-100 text-base-content">
+  <div class="mx-auto grid max-w-[80rem] items-start gap-12 px-5 pb-24 md:px-8 md:pb-36 lg:grid-cols-12">
+    <form hx-post="/_data/requests" hx-target="this" hx-swap="outerHTML" hx-status:422="target:#request-problems swap:innerHTML" class="lg:col-span-8">
+      <fieldset class="border-t border-base-content pt-6">
+        <legend class="sr-only">1. The cohort</legend>
+        <p class="title-section flex items-baseline gap-4" aria-hidden="true"><span class="figures w-8 text-accent">1</span><span class="serif">The cohort</span></p>
+        <div class="mt-6 grid gap-3 sm:grid-cols-2">
+          {%- assign chosen = false -%}
+          {% for cohort in data.cohorts %}{% if cohort.status == "enrolling" or cohort.status == "full" %}{% assign full = false %}{% if cohort.status == "full" or cohort.places_left == 0 %}{% assign full = true %}{% endif %}
+          <label class="choice sm:only:col-span-2">
+            <input type="radio" name="cohort" value="{{ cohort.name }}" class="radio radio-neutral" required{% if full %} disabled{% elsif chosen == false %} checked{% assign chosen = true %}{% endif %}>
+            <span>
+              <span class="block font-bold">{{ cohort.name }}</span>
+              <span class="small block text-base-content/80">{% render 'date', on: cohort.starts, form: "short" %} – {% render 'date', on: cohort.ends, form: "short-year" %} · <span class="whitespace-nowrap">{{ cohort.days }}{% if cohort.time %}, {{ cohort.time }} {{ cohort.zone }}{% endif %}</span></span>
+              <span class="small block text-base-content/80">{% render 'cohort-status', cohort: cohort %}</span>
+            </span>
+          </label>
+          {% endif %}{% endfor %}
+        </div>
+        {% if chosen == false %}<p class="body-copy mt-4">No cohort is enrolling just now. <a href="#next" class="link-mark">Join the waitlist</a>, and you&rsquo;ll hear when one opens.</p>{% endif %}
+      </fieldset>
+      <fieldset class="mt-14 border-t border-base-content pt-6">
+        <legend class="sr-only">2. You</legend>
+        <p class="title-section flex items-baseline gap-4" aria-hidden="true"><span class="figures w-8 text-accent">2</span><span class="serif">You</span></p>
+        <div class="mt-4 grid gap-x-5 sm:grid-cols-2">
+          <fieldset class="fieldset">
+            <label class="fieldset-legend" for="request-name">Your name</label>
+            <input id="request-name" name="name" type="text" class="input w-full" required maxlength="200" autocomplete="name">
+          </fieldset>
+          <fieldset class="fieldset">
+            <label class="fieldset-legend" for="request-email">Your email</label>
+            <input id="request-email" name="email" type="email" class="input w-full" required maxlength="200" autocomplete="email">
+          </fieldset>
+        </div>
+        <fieldset class="mt-5">
+          <legend class="text-[0.9375rem] font-bold">Have you written essays before?</legend>
+          <div class="mt-2 grid gap-3 sm:grid-cols-3">
+            <label class="choice"><input type="radio" name="experience" value="Never" class="radio radio-neutral"><span>Never</span></label>
+            <label class="choice"><input type="radio" name="experience" value="A few" class="radio radio-neutral"><span>A few</span></label>
+            <label class="choice"><input type="radio" name="experience" value="Many" class="radio radio-neutral"><span>Many</span></label>
+          </div>
+        </fieldset>
+        <fieldset class="fieldset mt-3">
+          <label class="fieldset-legend" for="request-hoping">What are you hoping to write about? <span class="font-normal text-base-content/80">(optional, a line)</span></label>
+          <input id="request-hoping" name="hoping" type="text" class="input w-full" maxlength="300">
+        </fieldset>
+      </fieldset>
+      <fieldset class="mt-14 border-t border-base-content pt-6">
+        <legend class="sr-only">3. Paying</legend>
+        <p class="title-section flex items-baseline gap-4" aria-hidden="true"><span class="figures w-8 text-accent">3</span><span class="serif">Paying</span></p>
+        <div class="mt-6 grid gap-3 sm:grid-cols-3">
+          <label class="choice"><input type="radio" name="payment" value="In full" class="radio radio-neutral" required checked><span><span class="block font-bold">In full</span>{% if priced.tuition %}<span class="small block text-base-content/80">${{ priced.tuition }}</span>{% endif %}</span></label>
+          <label class="choice"><input type="radio" name="payment" value="In two payments" class="radio radio-neutral" required><span><span class="block font-bold">In two payments</span>{% if priced.tuition %}<span class="small block text-base-content/80">${{ priced.tuition | divided_by: 2 }} each</span>{% endif %}</span></label>
+          <label class="choice"><input type="radio" name="payment" value="A pay-what-you-can place" class="radio radio-neutral" required><span><span class="block font-bold">Pay what you can</span><span class="small block text-base-content/80">From $200, no reasons asked</span></span></label>
+        </div>
+        <fieldset class="fieldset mt-3">
+          <label class="fieldset-legend" for="request-notes">Anything Hollis should know? <span class="font-normal text-base-content/80">(optional)</span></label>
+          <textarea id="request-notes" name="notes" class="textarea w-full" rows="4" maxlength="2000" placeholder="Access needs, a time zone far away"></textarea>
+        </fieldset>
+      </fieldset>
+      <div id="request-problems" class="mt-4"></div>
+      <button class="btn btn-primary mt-8">Ask for a place</button>
+    </form>
+    <aside class="rounded-box bg-base-200 p-6 md:p-8 lg:sticky lg:top-8 lg:col-span-4">
+      {% if priced.tuition %}<p class="figures text-[3rem] leading-none font-medium">${{ priced.tuition }}</p>{% endif %}
+      {% if priced.plan %}<p class="mt-2">{{ priced.plan }}</p>{% endif %}
+      <ul class="ruled mt-6">
+        {% for item in data.home-included %}
+        <li class="small py-2.5">{{ item.text }}</li>
+        {% endfor %}
+      </ul>
+      <h2 class="pencil-label sans mt-6">Refunds</h2>
+      <p class="small mt-1 text-base-content/80">In full until the first evening. Half until the end of week one. After that there is no refund, but a place can move to the next cohort, once.</p>
+      <h2 class="pencil-label sans mt-6">Rather talk it through?</h2>
+      <p class="mt-1"><a href="tel:+18025550163" class="link-mark whitespace-nowrap">(802) 555-0163</a>, Mondays, 10 to noon</p>
+    </aside>
+  </div>
+</section>

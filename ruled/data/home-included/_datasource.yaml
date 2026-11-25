@@ -1,0 +1,6 @@
+label: What the tuition includes
+fields:
+  - name: text
+    kind: text
+    required: true
+order: [evenings, letters, call, pod, reading-list, reading-night]

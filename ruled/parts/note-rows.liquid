@@ -1,0 +1,11 @@
+{%- comment -%} Notes on ruled lines, newest first: pass but (the id of the note to leave out), or nothing. {%- endcomment -%}
+<ul class="ruled">
+  {% for note in data.notes %}{% unless note.id == but %}
+  <li>
+    <a href="/notes/{{ note.id }}" class="flex flex-col gap-1 py-5 sm:flex-row sm:items-baseline sm:gap-8">
+      {% if note.date %}<time datetime="{{ note.date }}" class="small shrink-0 text-accent sm:w-44">{% render 'date', on: note.date, form: "long-year" %}</time>{% endif %}
+      <span class="title-small flex-1 font-medium"><span class="link-mark">{{ note.title }}</span></span>
+    </a>
+  </li>
+  {% endunless %}{% endfor %}
+</ul>

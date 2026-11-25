@@ -1,0 +1,26 @@
+{%- comment -%} The readings, grouped under their weeks' numbers and titles. {%- endcomment -%}
+<section class="bg-base-100 text-base-content">
+  <div class="mx-auto max-w-[56rem] px-5 pt-14 pb-24 md:px-8 md:pt-20">
+    {% for week in data.weeks %}
+    {%- assign texts = data.readings | where: "week", week.number -%}
+    {% if texts.size > 0 %}
+    <div id="week-{{ week.number }}" class="mt-16 first:mt-0">
+      <h2 class="flex items-baseline gap-4 border-y border-base-content py-3 text-[1.625rem] leading-snug"><span class="numeral text-[2rem]" aria-hidden="true">{{ week.number }}</span><span><span class="sr-only">Week {{ week.number }}: </span>{{ week.title }}</span></h2>
+      <ul class="mt-6 space-y-7">
+        {% for text in texts %}
+        <li>
+          <div class="flex items-end">
+            <h3 class="title-small">&ldquo;{{ text.title }}&rdquo;</h3>
+            <span class="leader mx-3" aria-hidden="true"></span>
+            {% if text.year %}<span class="figures text-[1.25rem] leading-[1.35]">{{ text.year }}</span>{% endif %}
+          </div>
+          <p class="mt-1">{{ text.author }}{% if text.collected_in %} · collected in <i class="serif">{{ text.collected_in }}</i>{% endif %}</p>
+          {% if text.why %}<p class="body-copy mt-1">{{ text.why }}</p>{% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+    {% endfor %}
+  </div>
+</section>

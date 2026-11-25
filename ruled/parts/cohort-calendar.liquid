@@ -1,0 +1,40 @@
+{%- comment -%} The cohort's calendar: pass weeks. A row a week, Monday first, from the Monday on or before the first date to the Sunday after the last, worked out from the weeks' records. A session's word is what its title says before the colon. slots names the dates a week can hold, in pairs of fields (first_date with first_title): add third to fifth for a course that meets more often. {%- endcomment -%}
+{%- assign slots = "first,second,due" | split: "," -%}
+{%- assign heads = "Mon,Tue,Wed,Thu,Fri,Sat,Sun" | split: "," -%}
+{%- assign start = 0 -%}{%- assign end = 0 -%}
+{%- for week in weeks %}{% for slot in slots %}{% capture key %}{{ slot }}_date{% endcapture %}{% if week[key] %}{% assign at = week[key] | append: "T12:00:00" | date: "%s" | plus: 0 %}{% if start == 0 or at < start %}{% assign start = at %}{% endif %}{% if at > end %}{% assign end = at %}{% endif %}{% endif %}{% endfor %}{% endfor -%}
+{%- if start > 0 -%}
+{%- assign back = start | date: "%u" | minus: 1 | times: 86400 -%}
+{%- assign day = start | minus: back -%}
+{%- assign rows = end | minus: day | divided_by: 604800 | floor | plus: 1 -%}
+<figure>
+  <table class="calendar">
+    <caption class="pencil-label pb-4 text-left">The winter cohort&rsquo;s calendar</caption>
+    <thead><tr>{% for head in heads %}<th scope="col">{{ head }}</th>{% endfor %}</tr></thead>
+    <tbody>
+      {%- for row in (1..rows) %}
+      <tr>
+        {%- for column in (1..7) %}
+        {%- assign iso = day | date: "%Y-%m-%d" %}{% assign number = day | date: "%-d" %}{% assign month = "" %}
+        {%- if number == "1" %}{% assign month = "shown" %}{% elsif row == 1 and column == 1 %}{% assign month = "shown" %}{% endif %}
+        {%- assign taken = false %}
+        <td>
+          {%- for week in weeks %}{% for slot in slots %}{% capture date_key %}{{ slot }}_date{% endcapture %}{% capture title_key %}{{ slot }}_title{% endcapture %}{% if week[date_key] == iso %}{% assign taken = true %}
+          <a href="#week-{{ week.number }}" data-week="{{ week.number }}" class="day{% unless slot == "due" %} session{% endunless %}">
+            <span class="sr-only">{% render 'date', on: iso, form: "weekday" %}: {{ week[title_key] | split: ":" | first }}, {{ week.title }}, week {{ week.number }}</span>
+            <span class="day-figure" aria-hidden="true">{{ number }}{% if month == "shown" %} <span class="day-month">{% render 'date', on: iso, form: "month" %}</span>{% endif %}{% if slot == "due" %}<svg class="ml-1 inline size-4 align-[-0.125em]" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2.5 8.5 3.5 4 7.5-9.5"/></svg>{% endif %}</span>
+            <span class="day-word" aria-hidden="true">{{ week[title_key] | split: ":" | first }}</span>
+            {%- unless slot == "due" %}{% if week.time %}<span class="day-time" aria-hidden="true">{{ week.time }}</span>{% endif %}{% endunless %}
+          </a>
+          {%- endif %}{% endfor %}{% endfor %}
+          {%- unless taken %}<span class="day"><span class="day-figure">{{ number }}{% if month == "shown" %} <span class="day-month">{% render 'date', on: iso, form: "month" %}</span>{% endif %}</span></span>{% endunless -%}
+        </td>
+        {%- assign day = day | plus: 86400 %}
+        {%- endfor %}
+      </tr>
+      {%- endfor %}
+    </tbody>
+  </table>
+  <figcaption class="small pt-4 text-accent">7 pm Eastern is 4 pm in California and midnight in London.</figcaption>
+</figure>
+{%- endif -%}

@@ -1,0 +1,17 @@
+{%- assign cohort = data.cohorts | where: "status", "enrolling" | first -%}
+<section class="bg-base-100 text-base-content">
+  <div class="mx-auto max-w-[80rem] px-5 md:px-8">
+  <div class="flex flex-col items-center border-t border-base-content py-24 text-center md:py-36">
+    {% if cohort and cohort.places_left > 0 %}
+    <p class="pencil-label">{{ cohort.name }}</p>
+    <h2 class="title-page mt-4">{{ cohort.size }} places. <span class="mark">{{ cohort.places_left }} left</span>.</h2>
+    {% else %}
+    <h2 class="title-page">The evenings are <span class="mark">on paper</span>.</h2>
+    {% endif %}
+    <div class="mt-10 flex flex-col gap-4 sm:flex-row">
+      <a href="/enroll#ask" class="btn btn-primary">Ask for a place</a>
+      <a href="/enroll#questions" class="btn btn-outline">Read the questions</a>
+    </div>
+  </div>
+  </div>
+</section>

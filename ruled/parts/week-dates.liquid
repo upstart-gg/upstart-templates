@@ -1,0 +1,4 @@
+{%- comment -%} A week's dates on one line: pass week. {%- endcomment -%}
+{%- if week.first_date %}<span class="whitespace-nowrap">{% render 'date', on: week.first_date, form: "day" %}</span>{% endif -%}
+{%- if week.second_date %}{% if week.first_date %} · {% endif %}<span class="whitespace-nowrap">{% render 'date', on: week.second_date, form: "day" %}</span>{% endif -%}
+{%- if week.due_date %} · <span class="whitespace-nowrap">{{ week.due_title }} {% render 'date', on: week.due_date, form: "day" %}</span>{% endif -%}

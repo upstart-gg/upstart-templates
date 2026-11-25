@@ -1,0 +1,18 @@
+label: Readings
+fields:
+  - name: title
+    kind: text
+    required: true
+  - name: author
+    kind: text
+  - name: year
+    kind: number
+  - name: week
+    kind: number
+  - name: collected_in
+    label: Collected in
+    kind: text
+  - name: why
+    label: Why we read it
+    kind: text
+sort: week

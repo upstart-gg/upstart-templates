@@ -1,0 +1,38 @@
+<footer class="bg-base-200 text-base-content">
+  <div class="mx-auto max-w-[80rem] px-5 pt-20 pb-8 md:px-8">
+    <div class="grid gap-12 lg:grid-cols-12">
+      <div class="lg:col-span-5">
+        <p class="wordmark">The Slow Draft</p>
+        <p class="body-copy mt-3 max-w-[38ch]">A live course in the personal essay, taught from Burlington, Vermont, three times a year.</p>
+        <div class="mt-8">{% render 'waitlist-strip', id: "footer-block-waitlist" %}</div>
+      </div>
+      <div class="lg:col-span-4">
+        <p class="pencil-label">Next cohorts</p>
+        <ul class="ruled mt-3">
+          {% for cohort in data.cohorts limit: 3 %}
+          <li class="py-3">
+            <p class="flex flex-wrap justify-between gap-x-4"><span class="font-semibold">{{ cohort.name }}</span><span class="whitespace-nowrap">{% render 'date', on: cohort.starts, form: "short" %} – {% render 'date', on: cohort.ends, form: "short" %}</span></p>
+            <p class="small text-base-content/70">{% render 'cohort-status', cohort: cohort %}</p>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="lg:col-span-3 lg:pl-6">
+        <nav aria-label="Footer">
+          <ul class="space-y-2">
+            {%- for item in data.navigation %}{% if item.place == "both" or item.place == "footer" %}
+            <li><a href="{{ item.href }}" class="link-mark">{{ item.label }}</a></li>
+            {%- endif %}{% endfor %}
+            {%- for item in data.navigation %}{% if item.place == "social" %}
+            <li><a href="{{ item.href }}" class="link-mark" rel="noopener" target="_blank">{{ item.label }}</a></li>
+            {%- endif %}{% endfor %}
+          </ul>
+        </nav>
+        <p class="mt-8"><a href="mailto:hollis@theslowdraft.com" class="link-mark break-words">hollis@theslowdraft.com</a></p>
+        <p class="mt-2"><a href="tel:+18025550163" class="link-mark whitespace-nowrap">(802) 555-0163</a></p>
+        <p class="small mt-1 text-base-content/70">Mondays, 10 to noon, if you&rsquo;d rather talk it through</p>
+      </div>
+    </div>
+    <p class="small mt-16 border-t border-base-300 pt-6 text-base-content/70">The Slow Draft · North Street, Burlington, Vermont</p>
+  </div>
+</footer>

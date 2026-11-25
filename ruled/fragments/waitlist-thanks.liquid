@@ -1,0 +1,6 @@
+{%- assign names = "" -%}{%- assign opens = "" -%}{%- assign count = 0 -%}
+{%- for cohort in data.cohorts %}{% if record.cohorts contains cohort.name %}{% assign count = count | plus: 1 %}{% if names != "" %}{% assign names = names | append: " and " %}{% endif %}{% assign names = names | append: cohort.name %}{% if count == 1 and cohort.opens %}{% assign opens = cohort.opens %}{% endif %}{% endif %}{% endfor -%}
+<div class="rounded-box border border-base-content bg-base-100 p-6 text-left text-base-content" role="status">
+  <p class="title-small">{% if record.name %}{{ record.name }}, you&rsquo;re on the list{% else %}You&rsquo;re on the list{% endif %}{% if names != "" %} for {{ names }}{% endif %}.</p>
+  <p class="mt-1">{% if count > 1 %}One email for each, on the day its enrollment opens.{% elsif opens != "" %}One email, on {% render 'date', on: opens, form: "long" %}, when enrollment opens.{% else %}One email when enrollment opens.{% endif %}</p>
+</div>

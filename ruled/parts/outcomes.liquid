@@ -1,0 +1,18 @@
+{%- assign cohort = data.cohorts | where: "status", "enrolling" | first -%}
+{%- unless cohort %}{% assign cohort = data.cohorts | first %}{% endunless -%}
+<section class="bg-base-100 text-base-content">
+  <div class="mx-auto grid max-w-[80rem] gap-10 px-5 py-24 md:px-8 md:py-36 lg:grid-cols-12">
+    <h2 class="title-section lg:col-span-4">On {% render 'date', on: cohort.ends, form: "long" %}, you&rsquo;ll have</h2>
+    <ol class="ruled lg:col-span-7 lg:col-start-6">
+      {% for item in data.home-outcomes %}
+      <li class="grid grid-cols-[3.5rem_1fr] items-baseline gap-x-4 py-6 md:grid-cols-[5rem_1fr]">
+        <span class="numeral" aria-hidden="true">{{ forloop.index }}</span>
+        <div>
+          <h3 class="title-small">{{ item.title }}</h3>
+          <p class="body-copy mt-1">{{ item.text }}</p>
+        </div>
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>

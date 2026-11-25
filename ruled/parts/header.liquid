@@ -1,0 +1,27 @@
+{% assign here = page.url | split: "/" %}{% capture section %}/{{ here[1] }}{% endcapture %}
+<header class="relative z-40 border-b border-base-300 bg-base-100 text-base-content">
+  <div class="mx-auto flex min-h-[4.5rem] max-w-[80rem] items-center justify-between gap-6 px-5 py-2 md:px-8">
+    <a href="/" class="wordmark min-w-0">The Slow Draft</a>
+    <nav aria-label="Main" class="hidden lg:block">
+      <ul class="flex items-center gap-1 whitespace-nowrap">
+        {% for item in data.navigation %}{% if item.place == "both" or item.place == "header" %}{% assign there = item.href | split: "#" | first | split: "/" %}{% capture target %}/{{ there[1] }}{% endcapture %}
+        <li><a href="{{ item.href }}" class="nav-link inline-block px-3 py-2 font-semibold" {% if target == section %}aria-current="page"{% endif %}><span>{{ item.label }}</span></a></li>
+        {% endif %}{% endfor %}
+      </ul>
+    </nav>
+    <div class="flex shrink-0 items-center gap-2">
+      <a href="/enroll#ask" class="btn btn-primary hidden sm:inline-flex">Ask for a place</a>
+      <details class="site-menu lg:hidden">
+        <summary class="btn btn-outline px-4"><span class="menu-open">Menu</span><span class="menu-close">Close</span></summary>
+        <nav aria-label="Main" class="absolute inset-x-0 top-full border-b border-base-content bg-base-100 px-5 pt-2 pb-8 md:px-8">
+          <ul class="ruled">
+            {% for item in data.navigation %}{% if item.place == "both" or item.place == "header" %}{% assign there = item.href | split: "#" | first | split: "/" %}{% capture target %}/{{ there[1] }}{% endcapture %}
+            <li><a href="{{ item.href }}" class="nav-link serif block py-3 text-[1.5rem] leading-snug" {% if target == section %}aria-current="page"{% endif %}><span>{{ item.label }}</span></a></li>
+            {% endif %}{% endfor %}
+          </ul>
+          <a href="/enroll#ask" class="btn btn-primary mt-6 w-full sm:hidden">Ask for a place</a>
+        </nav>
+      </details>
+    </div>
+  </div>
+</header>

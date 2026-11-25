@@ -1,0 +1,11 @@
+label: An evening
+fields:
+  - name: title
+    kind: text
+    required: true
+  - name: time
+    kind: text
+  - name: line
+    kind: markdown
+body: line
+order: [a-page-aloud, the-talk, twenty-minutes, pairs, one-page]

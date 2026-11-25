@@ -1,0 +1,10 @@
+{
+  "id": "ruled",
+  "version": "1.0.0",
+  "name": "Ruled",
+  "description": "A cohort course read like its syllabus: a wide picture of the desk, the facts on one line beside the button, and numbered weeks that light their evenings on the calendar in highlighter. Nothing moves but what you point at.",
+  "category": "launch",
+  "tags": ["course", "cohort", "workshop", "writing", "teacher", "syllabus", "enrollment", "waitlist", "online class"],
+  "author": { "name": "Upstart", "url": "https://upstart.gg" },
+  "licence": "MIT"
+}

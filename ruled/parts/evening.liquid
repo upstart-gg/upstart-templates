@@ -1,0 +1,21 @@
+<section class="bg-base-100 text-base-content">
+  <div class="mx-auto max-w-[80rem] px-5 pb-24 md:px-8 md:pb-36">
+    <div class="grid gap-10 border-t border-base-content pt-6 lg:grid-cols-12">
+      <div class="lg:col-span-4">
+        <p class="pencil-label">Seven to half past eight</p>
+        <h2 class="title-section mt-2">What an evening looks like</h2>
+      </div>
+      <ol class="lg:col-span-7 lg:col-start-6">
+        {% for step in data.home-evening %}
+        <li class="grid grid-cols-[4.25rem_1fr] md:grid-cols-[6rem_1fr]">
+          <p class="serif figures pt-0.5 pb-10 text-[1.375rem] leading-[1.25] text-accent">{{ step.time }}</p>
+          <div class="border-l border-base-content pl-5 md:pl-8{% unless forloop.last %} pb-10{% endunless %}">
+            <h3 class="title-small">{{ step.title }}</h3>
+            <div class="marks body-copy measure mt-1.5">{{ step.line }}</div>
+          </div>
+        </li>
+        {% endfor %}
+      </ol>
+    </div>
+  </div>
+</section>

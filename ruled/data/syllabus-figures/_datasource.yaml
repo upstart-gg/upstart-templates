@@ -1,0 +1,11 @@
+label: What a week asks
+fields:
+  - name: label
+    kind: text
+    required: true
+  - name: value
+    kind: text
+    required: true
+  - name: note
+    kind: text
+order: [evenings, hours, page, grades]

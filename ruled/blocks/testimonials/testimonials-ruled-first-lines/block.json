@@ -1,0 +1,22 @@
+{
+  "name": "Ruled first lines",
+  "kind": "testimonials",
+  "source": "upstart",
+  "description": "What past students wrote, shown by its first lines: one opening sentence large in italic, three smaller under a fine rule, each with its title, the writer, the cohort, what became of it and a sentence about the course.",
+  "tags": ["testimonials", "students' work", "quotes", "course"],
+  "mood": ["editorial", "elegant"],
+  "synonyms": [
+    "student work",
+    "first lines",
+    "testimonials",
+    "what they wrote",
+    "témoignages",
+    "travaux d'élèves",
+    "premières phrases",
+    "citations"
+  ],
+  "data": {
+    "name": "essays",
+    "family": "collection"
+  }
+}

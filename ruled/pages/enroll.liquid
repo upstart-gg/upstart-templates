@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Ask for a place: The Slow Draft</title>
+<meta name="description" content="The next cohorts of The Slow Draft, what it costs, and the form to ask for a place. Nothing is charged until Hollis has held one for you.">
+<meta property="og:title" content="Ask for a place: The Slow Draft">
+<meta property="og:description" content="The next cohorts of The Slow Draft, what it costs, and the form to ask for a place. Nothing is charged until Hollis has held one for you.">
+<meta property="og:image" content="/media/desk.jpg">
+</head>
+<body>
+{% render 'header', page: page %}
+<main>
+{% render 'page-title', title: "Ask for a place", text: "Send this, and Hollis writes back within two days with a payment link. She holds your place for three days. Nothing is charged until you have one." %}
+{% render 'cohorts-table' %}
+{% render 'request-form' %}
+{% render 'pay-what-you-can' %}
+{% render 'waitlist-form' %}
+{% render 'enroll-questions' %}
+</main>
+{% render 'footer', page: page %}
+</body>
+</html>

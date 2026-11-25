@@ -1,0 +1,5 @@
+<div class="border-y border-base-content py-12 lg:col-span-8" role="status">
+  <p class="title-section serif">Thank you, {{ record.name }}.</p>
+  <p class="mt-4 max-w-[52ch] text-[1.1875rem]">Hollis will write to you within two days with a payment link{% if record.payment == "A pay-what-you-can place" %} for what you can pay{% endif %}{% if record.cohort %}, for {{ record.cohort }}{% endif %}. Your place is held for three days from then.</p>
+  <p class="body-copy mt-3">Nothing has been charged.</p>
+</div>

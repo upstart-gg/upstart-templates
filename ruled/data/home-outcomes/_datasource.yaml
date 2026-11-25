@@ -1,0 +1,8 @@
+label: What you’ll leave with
+fields:
+  - name: title
+    kind: text
+    required: true
+  - name: text
+    kind: text
+order: [one-essay, two-letters, three-places]

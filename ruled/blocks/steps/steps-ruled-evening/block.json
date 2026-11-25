@@ -1,0 +1,22 @@
+{
+  "name": "Ruled evening",
+  "kind": "steps",
+  "source": "upstart",
+  "description": "An evening of the course as times along an upright ink rule, each with what happens then and one phrase in highlighter, beside the section's heading.",
+  "tags": ["steps", "timeline", "schedule", "course"],
+  "mood": ["editorial", "minimal"],
+  "synonyms": [
+    "timeline",
+    "schedule of a session",
+    "how an evening goes",
+    "run of the day",
+    "déroulé",
+    "chronologie",
+    "emploi du temps d'une séance",
+    "étapes"
+  ],
+  "data": {
+    "name": "home-evening",
+    "family": "section"
+  }
+}

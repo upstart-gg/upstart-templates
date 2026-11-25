@@ -1,0 +1,22 @@
+{
+  "name": "Ruled tuition",
+  "kind": "pricing",
+  "source": "upstart",
+  "description": "One wide card for one price: what the course includes as a two-column ruled list on paper, and beside it on the second sheet the price, the payments, the pay-what-you-can line in highlighter and the button.",
+  "tags": ["pricing", "tuition", "single price", "course"],
+  "mood": ["minimal", "editorial"],
+  "synonyms": [
+    "single price",
+    "tuition",
+    "course fee",
+    "what is included",
+    "tarif unique",
+    "frais d'inscription",
+    "prix de la formation",
+    "ce qui est compris"
+  ],
+  "data": {
+    "name": "home-included",
+    "family": "section"
+  }
+}

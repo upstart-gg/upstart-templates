@@ -1,0 +1,34 @@
+<section class="bg-base-100 text-base-content">
+  <div class="mx-auto max-w-[80rem] px-5 pb-24 md:px-8 md:pb-36">
+    <div class="border-t border-base-content pt-6">
+      <p class="pencil-label">From past cohorts</p>
+      <h2 class="title-section mt-2">What they wrote</h2>
+    </div>
+    {% for essay in data.essays limit: 1 %}
+    <figure class="mt-12 grid gap-8 lg:grid-cols-12">
+      <blockquote class="lg:col-span-8"><p class="first-line text-[clamp(1.875rem,2.6vw+1rem,3.25rem)] leading-[1.18]">{{ essay.first_line }}</p></blockquote>
+      <figcaption class="lg:col-span-4">
+        <p class="title-small">&ldquo;{{ essay.title }}&rdquo;</p>
+        <p class="mt-1">{{ essay.writer }}{% if essay.who %}, {{ essay.who }}{% endif %}</p>
+        <p class="small mt-1 text-accent">{{ essay.cohort }}{% if essay.became %} · {{ essay.became }}{% endif %}</p>
+        {% if essay.said %}<p class="body-copy mt-4">&ldquo;{{ essay.said }}&rdquo;</p>{% endif %}
+      </figcaption>
+    </figure>
+    {% endfor %}
+    {% if data.essays.size > 1 %}
+    <div class="mt-16 grid gap-x-10 border-t border-base-300 md:grid-cols-2 lg:grid-cols-3">
+      {% for essay in data.essays offset: 1 %}
+      <figure class="pt-8 pb-4">
+        <blockquote><p class="first-line">{{ essay.first_line }}</p></blockquote>
+        <figcaption class="mt-5">
+          <p class="title-small text-[1.1875rem]">&ldquo;{{ essay.title }}&rdquo;</p>
+          <p class="mt-1">{{ essay.writer }}{% if essay.who %}, {{ essay.who }}{% endif %}</p>
+          <p class="small mt-1 text-accent">{{ essay.cohort }}{% if essay.became %} · {{ essay.became }}{% endif %}</p>
+          {% if essay.said %}<p class="body-copy mt-3">&ldquo;{{ essay.said }}&rdquo;</p>{% endif %}
+        </figcaption>
+      </figure>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</section>

@@ -1,0 +1,33 @@
+{%- comment -%} The linked syllabus, whole: each week as a section, the calendar sticky beside them on a desktop. {%- endcomment -%}
+<section data-syllabus class="bg-base-100 text-base-content">
+  <div class="mx-auto grid max-w-[80rem] items-start gap-12 px-5 pt-14 pb-24 md:px-8 md:pt-20 md:pb-36 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-10 xl:grid-cols-12">
+    <div class="ruled xl:col-span-7">
+      {% for week in data.weeks %}
+      <section id="week-{{ week.number }}" data-week="{{ week.number }}" class="grid grid-cols-[3rem_1fr] gap-x-4 py-10 md:grid-cols-[4rem_1fr] md:py-14" aria-labelledby="week-{{ week.number }}-title">
+        <span class="numeral week-number pt-0.5 text-right" aria-hidden="true">{{ week.number }}</span>
+        <div class="week-body pl-5 md:pl-6">
+          <h2 id="week-{{ week.number }}-title" class="text-[1.75rem] leading-tight"><span class="sr-only">Week {{ week.number }}: </span><span class="week-name">{{ week.title }}</span></h2>
+          <p class="small mt-2 text-accent">{% render 'week-dates', week: week %}</p>
+          <ul class="ruled mt-6">
+            {% if week.first_title %}<li class="py-3">{% if week.first_date %}<span class="font-semibold whitespace-nowrap">{% render 'date', on: week.first_date, form: "day" %}</span> · {% endif %}{{ week.first_title }}</li>{% endif %}
+            {% if week.second_title %}<li class="py-3">{% if week.second_date %}<span class="font-semibold whitespace-nowrap">{% render 'date', on: week.second_date, form: "day" %}</span> · {% endif %}{{ week.second_title }}</li>{% endif %}
+          </ul>
+          {% if week.summary %}<div class="marked-links body-copy measure mt-6 space-y-3">{{ week.summary }}</div>{% endif %}
+          {% if week.readings.size > 0 %}
+          <h3 class="pencil-label sans mt-6">To read</h3>
+          <p class="mt-1">{% for title in week.readings %}<a href="/readings#week-{{ week.number }}" class="link-mark">{{ title }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}</p>
+          {% endif %}
+          {% if week.writing %}
+          <h3 class="pencil-label sans mt-5">This week&rsquo;s writing</h3>
+          <p class="serif mt-1 text-[1.25rem] leading-snug">{{ week.writing }}</p>
+          {% endif %}
+          {% if week.due_date %}<p class="mt-5 font-semibold">{{ week.due_title }} {% render 'date', on: week.due_date, form: "day" %}</p>{% endif %}
+        </div>
+      </section>
+      {% endfor %}
+    </div>
+    <div class="hidden md:block md:max-lg:order-first lg:sticky lg:top-8 xl:col-span-5">
+      {% render 'cohort-calendar', weeks: data.weeks %}
+    </div>
+  </div>
+</section>

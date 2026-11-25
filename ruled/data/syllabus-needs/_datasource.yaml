@@ -1,0 +1,6 @@
+label: What you’ll need
+fields:
+  - name: text
+    kind: text
+    required: true
+order: [computer, quiet-hour, printer, highlighter]

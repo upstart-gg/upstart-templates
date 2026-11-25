@@ -1,0 +1,20 @@
+label: Notes
+fields:
+  - name: title
+    label: Title
+    kind: text
+    required: true
+  - name: date
+    label: Date
+    kind: date
+  - name: summary
+    label: Summary
+    kind: text
+  - name: cover
+    label: Cover picture
+    kind: image
+  - name: body
+    label: Text
+    kind: markdown
+body: body
+sort: -date
