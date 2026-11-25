@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Come by — Sample Floor</title>
+<meta name="description" content="Where we are, how to get here, the hours, access, and a form for tours, groups and offices.">
+<meta property="og:title" content="Come by — Sample Floor">
+<meta property="og:description" content="Where we are, how to get here, the hours, access, and a form for tours, groups and offices.">
+</head>
+<body>
+{% render 'header', page: page %}
+<main>
+{% render 'page-title', title: "Come by", intro: "One or two of you? Just come up before 11 and pay at the front table. Three or more, a tour, or an office for your team: tell us when." %}
+{% render 'visit-form' %}
+{% render 'getting-here' %}
+{% render 'hours-table' %}
+{% render 'access' %}
+{% render 'questions-by-topic' %}
+</main>
+{% render 'footer' %}
+</body>
+</html>

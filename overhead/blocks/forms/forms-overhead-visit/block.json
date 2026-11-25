@@ -1,0 +1,22 @@
+{
+  "name": "Overhead visit request",
+  "kind": "forms",
+  "source": "upstart",
+  "description": "A request for a tour, a day, a plan or an office, with the day and the part of the day, beside the facts a newcomer needs: the day pass, the address, the door and the bus.",
+  "tags": ["forms", "visit", "tour", "booking", "contact"],
+  "mood": ["professional", "friendly"],
+  "synonyms": [
+    "book a tour",
+    "visit request",
+    "come for a day",
+    "contact form",
+    "demande de visite",
+    "prendre rendez-vous",
+    "formulaire de visite",
+    "venir une journée"
+  ],
+  "data": {
+    "name": "visits",
+    "family": "collection"
+  }
+}

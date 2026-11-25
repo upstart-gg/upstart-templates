@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>{{ record.title }} — Sample Floor</title>
+<meta name="description" content="{{ record.summary }}">
+<meta property="og:title" content="{{ record.title }} — Sample Floor">
+<meta property="og:description" content="{{ record.summary }}">
+</head>
+<body>
+{% render 'header', page: page %}
+<main>
+<section class="bg-base-100 text-base-content">
+  <div class="mx-auto max-w-[84rem] px-5 pt-10 pb-12 md:px-8 md:pt-14">
+    <p><a href="/events" class="text-link">Events &amp; the floor</a></p>
+    <div class="mt-8 grid gap-x-12 gap-y-6 lg:grid-cols-12 lg:items-end">
+      <h1 class="title-page lg:col-span-8">{{ record.title }}</h1>
+      <dl class="mono space-y-1 text-[0.9375rem] lg:col-span-4">
+        <div><dt class="sr-only">Date</dt><dd>{{ record.date | date: "%A, %B %-d, %Y" }}</dd></div>
+        {% if record.time %}<div><dt class="sr-only">Time</dt><dd>{{ record.time }}</dd></div>{% endif %}
+        {% if record.place %}<div><dt class="sr-only">Place</dt><dd>{{ record.place }}</dd></div>{% endif %}
+        <div><dt class="sr-only">Who it's for</dt><dd>{% if record.open == "everyone" %}Open to all{% else %}Members{% endif %}{% if record.price %} · {{ record.price }}{% endif %}</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+<section class="bg-base-100 text-base-content">
+  <div class="mx-auto max-w-[84rem] px-5 pb-20 md:px-8 md:pb-28">
+    {% if record.cover %}<img src="{{ record.cover }}" class="aspect-[4/3] w-full rounded-box object-cover md:aspect-[21/9]">{% endif %}
+    <div class="mt-12 grid items-start gap-x-14 gap-y-12 lg:grid-cols-12">
+      <div class="lg:col-span-7">
+        <p class="max-w-[46ch] text-[1.3125rem] leading-snug">{{ record.summary }}</p>
+        <div class="body-copy reading mt-6 max-w-[62ch]">{{ record.body }}</div>
+        {% if record.booking %}<p class="mt-8"><a href="{{ record.booking }}" class="btn btn-primary btn-lg whitespace-nowrap" rel="noopener" target="_blank">Get tickets</a></p>{% endif %}
+      </div>
+      {% if record.open == "everyone" and record.booking == blank %}
+      <div class="lg:col-span-5">{% render 'rsvp', event: record %}</div>
+      {% elsif record.open == "members" %}
+      <p class="rounded-box bg-base-200 p-7 lg:col-span-5">This one is for members and their families. Just come, with your dish.</p>
+      {% endif %}
+    </div>
+  </div>
+</section>
+<section class="bg-base-200 text-base-content">
+  <div class="mx-auto max-w-[84rem] px-5 py-20 md:px-8 md:py-28">
+    <h2 class="title-section">Also on the floor</h2>
+    <ul class="mt-10 border-t border-base-content/40">
+      {% assign shown = 0 %}
+      {% for event in data.events %}{% if event.id != record.id and shown < 2 %}{% assign shown = shown | plus: 1 %}
+      <li class="border-b border-base-content/40">
+        {% render 'event-row', event: event %}
+      </li>
+      {% endif %}{% endfor %}
+    </ul>
+  </div>
+</section>
+</main>
+{% render 'footer' %}
+</body>
+</html>

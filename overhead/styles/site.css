@@ -1,0 +1,1009 @@
+/* Overhead: plan paper, graphite lines, and one color, a window cyan, kept for light. */
+@font-face {
+  font-family: "Castoro";
+  src: url("/fonts/castoro-latin-ext-wght-normal.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F,
+    U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Castoro";
+  src: url("/fonts/castoro-latin-wght-normal.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC,
+    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Castoro";
+  src: url("/fonts/castoro-latin-ext-wght-italic.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: italic;
+  font-display: swap;
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F,
+    U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Castoro";
+  src: url("/fonts/castoro-latin-wght-italic.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: italic;
+  font-display: swap;
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC,
+    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Reddit Sans";
+  src: url("/fonts/reddit-sans-vietnamese-wght-normal.woff2") format("woff2");
+  font-weight: 200 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range:
+    U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309,
+    U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: "Reddit Sans";
+  src: url("/fonts/reddit-sans-latin-ext-wght-normal.woff2") format("woff2");
+  font-weight: 200 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F,
+    U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Reddit Sans";
+  src: url("/fonts/reddit-sans-latin-wght-normal.woff2") format("woff2");
+  font-weight: 200 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC,
+    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Reddit Sans";
+  src: url("/fonts/reddit-sans-vietnamese-wght-italic.woff2") format("woff2");
+  font-weight: 200 900;
+  font-style: italic;
+  font-display: swap;
+  unicode-range:
+    U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309,
+    U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: "Reddit Sans";
+  src: url("/fonts/reddit-sans-latin-ext-wght-italic.woff2") format("woff2");
+  font-weight: 200 900;
+  font-style: italic;
+  font-display: swap;
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F,
+    U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Reddit Sans";
+  src: url("/fonts/reddit-sans-latin-wght-italic.woff2") format("woff2");
+  font-weight: 200 900;
+  font-style: italic;
+  font-display: swap;
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC,
+    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Reddit Mono";
+  src: url("/fonts/reddit-mono-vietnamese-wght-normal.woff2") format("woff2");
+  font-weight: 200 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range:
+    U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309,
+    U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: "Reddit Mono";
+  src: url("/fonts/reddit-mono-latin-ext-wght-normal.woff2") format("woff2");
+  font-weight: 200 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F,
+    U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Reddit Mono";
+  src: url("/fonts/reddit-mono-latin-wght-normal.woff2") format("woff2");
+  font-weight: 200 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC,
+    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Lenis (MIT) */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis:not(.lenis-autoToggle).lenis-stopped {
+  overflow: clip;
+}
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+@layer base {
+  :root {
+    /* A lit room: the light over the paper. A pointed room takes the light itself. */
+    --lit: color-mix(in oklab, var(--color-primary) 45%, var(--color-base-100));
+    --furniture: color-mix(in oklab, var(--color-base-content) 55%, var(--color-base-100));
+    --font-mono-facts: "Reddit Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  }
+  body {
+    font-size: 1.0625rem;
+    line-height: 1.625;
+    overflow-x: clip;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+    overflow-wrap: break-word;
+  }
+  /* A ring in the text's own color shows on paper, board, maple, cyan and the dark band. */
+  :focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  .heading,
+  .wordmark {
+    font-family: var(--theme-font-heading);
+  }
+  .title-hero {
+    font-size: clamp(2.75rem, 4.6vw + 1rem, 5.5rem);
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+  }
+  .title-page {
+    font-size: clamp(2.5rem, 3.4vw + 1rem, 4.25rem);
+    line-height: 1.04;
+    letter-spacing: -0.02em;
+  }
+  .title-section {
+    font-size: clamp(2rem, 2.6vw + 1rem, 3.25rem);
+    line-height: 1.08;
+    letter-spacing: -0.015em;
+  }
+  .title-small {
+    font-family: var(--theme-font-heading);
+    font-size: 1.375rem;
+    font-weight: 500;
+    line-height: 1.22;
+    letter-spacing: -0.005em;
+  }
+  /* Prices and days in Castoro, whose own figures are old-style. */
+  .figures,
+  .wordmark,
+  .title-small {
+    font-variant-numeric: lining-nums;
+  }
+  .figures {
+    font-family: var(--theme-font-heading);
+    letter-spacing: -0.01em;
+  }
+  .quote {
+    font-family: var(--theme-font-heading);
+    font-style: italic;
+    text-wrap: pretty;
+  }
+  .mono {
+    font-family: var(--font-mono-facts);
+  }
+  .body-copy {
+    color: color-mix(in oklch, currentColor 80%, transparent);
+  }
+  .reading > * + * {
+    margin-top: 1rem;
+  }
+  .reading ul {
+    list-style: disc;
+    padding-left: 1.25rem;
+  }
+  .reading a {
+    text-decoration: underline;
+    text-decoration-color: var(--color-primary);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+  }
+  /* A person's name, as a heading: Castoro has no Vietnamese. */
+  .person-name {
+    font-family: var(--theme-font-body);
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 1.3;
+  }
+
+  .wordmark {
+    display: inline-flex;
+    min-width: 0;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+  .logo-light {
+    fill: var(--color-primary);
+  }
+  .logo-lines {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.5;
+  }
+  .nav-link {
+    display: block;
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--radius-field);
+    font-weight: 500;
+  }
+  .nav-link:hover {
+    background-color: var(--color-base-200);
+  }
+  .nav-link[aria-current="page"] {
+    text-decoration: underline;
+    text-decoration-color: var(--color-primary);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 6px;
+  }
+  .foot-label {
+    font-weight: 600;
+  }
+  .foot-link:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--color-primary);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+  }
+
+  .btn {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  .btn-lg {
+    padding-inline: 1.5rem;
+    font-size: 1.0625rem;
+  }
+  .btn-primary {
+    border-color: var(--color-base-content);
+  }
+  .btn-primary:hover {
+    background-color: color-mix(in oklch, var(--color-primary) 86%, var(--color-base-content));
+  }
+  .btn-outline {
+    border-color: currentColor;
+  }
+  .btn-outline:hover {
+    border-color: var(--color-base-content);
+    background-color: var(--color-base-content);
+    color: var(--color-base-100);
+  }
+  .btn:focus-visible {
+    outline: 2px solid var(--color-base-content);
+    outline-offset: 3px;
+  }
+  .bg-neutral .btn:focus-visible {
+    outline-color: var(--color-neutral-content);
+  }
+  .text-link {
+    text-decoration: underline;
+    text-decoration-color: var(--color-primary);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+  }
+  .text-link:hover {
+    background-color: var(--color-primary);
+    color: var(--color-primary-content);
+  }
+  /* The only raspberry besides the elevator's dot. */
+  .tag-waitlist {
+    display: inline-block;
+    border-radius: var(--radius-box);
+    background-color: var(--color-accent);
+    color: var(--color-accent-content);
+    padding: 0.0625rem 0.375rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    line-height: 1.35;
+  }
+
+  .input,
+  .select,
+  .textarea,
+  .checkbox,
+  .radio {
+    border-color: color-mix(in oklch, var(--color-base-content) 60%, transparent);
+  }
+  .input,
+  .select,
+  .textarea {
+    background-color: var(--color-base-100);
+    font-size: 1rem;
+  }
+  .fieldset-legend {
+    font-size: 0.9375rem;
+    font-weight: 600;
+  }
+  .form-part {
+    font-family: var(--theme-font-heading);
+    font-size: 1.375rem;
+    font-weight: 500;
+    line-height: 1.22;
+  }
+  .choice {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    gap: 0.75rem;
+    min-height: 3.25rem;
+    border: 1px solid color-mix(in oklch, var(--color-base-content) 60%, transparent);
+    border-radius: var(--radius-box);
+    padding: 0.625rem 1rem;
+    line-height: 1.35;
+  }
+  .choice:has(:checked) {
+    border-color: var(--color-base-content);
+    background-color: var(--lit);
+  }
+  .radio:checked,
+  .checkbox:checked {
+    border-color: var(--color-base-content);
+    background-color: var(--color-base-100);
+    color: var(--color-base-content);
+  }
+
+  .site-menu > summary,
+  .room-line > summary,
+  .question > summary {
+    list-style: none;
+  }
+  .site-menu > summary::-webkit-details-marker,
+  .room-line > summary::-webkit-details-marker,
+  .question > summary::-webkit-details-marker {
+    display: none;
+  }
+  .site-menu .menu-close,
+  .site-menu[open] .menu-open {
+    display: none;
+  }
+  .site-menu[open] .menu-close {
+    display: inline;
+  }
+  .room-line > summary,
+  .question > summary {
+    display: flex;
+    cursor: pointer;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 0.875rem 0.75rem;
+  }
+  .question > summary {
+    padding-block: 1.125rem;
+    font-weight: 600;
+    line-height: 1.35;
+  }
+  .question {
+    border-bottom: 1px solid color-mix(in oklch, var(--color-base-content) 25%, transparent);
+  }
+  .room-line > summary:focus-visible,
+  .question > summary:focus-visible {
+    outline-offset: -2px;
+  }
+  .room-line[data-active] > summary {
+    background-color: var(--color-primary);
+    color: var(--color-primary-content);
+  }
+  .room-price {
+    color: color-mix(in oklch, var(--color-base-content) 80%, transparent);
+  }
+  .room-line[data-active] .room-price {
+    color: inherit;
+  }
+  .room-mark {
+    flex-shrink: 0;
+    font-family: var(--font-mono-facts);
+  }
+  .room-mark::before {
+    content: "+";
+  }
+  [open] > summary .room-mark::before {
+    content: "–";
+  }
+
+  .ticks {
+    display: grid;
+    align-content: start;
+    gap: 0.375rem 1.5rem;
+  }
+  .ticks > li {
+    display: grid;
+    grid-template-columns: 1.125rem minmax(0, 1fr);
+    line-height: 1.45;
+  }
+  /* A small lit window before each line. */
+  .ticks > li::before {
+    content: "";
+    align-self: start;
+    width: 0.4375rem;
+    height: 0.625rem;
+    margin-top: 0.4375rem;
+    border: 1px solid currentColor;
+    background-color: var(--color-primary);
+  }
+  .plan-row {
+    display: grid;
+    gap: 1.5rem 2.5rem;
+    border-bottom: 1px solid color-mix(in oklch, var(--color-base-content) 25%, transparent);
+    padding-block: 2.25rem;
+  }
+  @media (width >= 64rem) {
+    .plan-row {
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      align-items: center;
+    }
+  }
+  .plan-row-featured {
+    margin-inline: -1.25rem;
+    padding-inline: 1.25rem;
+    background-color: var(--lit);
+  }
+  .rates {
+    display: grid;
+    min-width: 11rem;
+    font-family: var(--font-mono-facts);
+    font-size: 0.9375rem;
+    font-variant-numeric: tabular-nums;
+  }
+  .rates > div {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+    border-bottom: 1px solid var(--color-base-300);
+    padding-block: 0.4375rem;
+  }
+  .rates > div:last-child {
+    border-bottom: 0;
+  }
+  .agenda-row {
+    display: grid;
+    gap: 0.375rem 2rem;
+    padding: 1.375rem 0.75rem;
+  }
+  .agenda-row:hover {
+    background-color: color-mix(in oklch, var(--color-secondary-content) 8%, transparent);
+  }
+  .agenda-row:focus-visible {
+    outline-offset: -2px;
+  }
+  @media (width >= 64rem) {
+    .agenda-row {
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      align-items: baseline;
+    }
+  }
+  .date-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-box);
+    background-color: var(--color-secondary);
+    color: var(--color-secondary-content);
+    padding-block: 0.875rem 0.75rem;
+  }
+  .step {
+    border-top: 1px solid var(--color-base-content);
+    padding-top: 1.25rem;
+  }
+  .directory-line {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    padding-block: 0.875rem;
+    line-height: 1.4;
+  }
+  .directory-dots {
+    min-width: 1rem;
+    flex: 1;
+    border-bottom: 2px dotted color-mix(in oklch, var(--color-base-content) 55%, transparent);
+  }
+
+  /* The plan's drawing: walls, partitions, furniture, all fine at every size. */
+  .plan {
+    position: relative;
+    container-type: inline-size;
+    color: var(--color-base-content);
+  }
+  .plan-wide:not(.plan-only) {
+    display: none;
+  }
+  .plan-tall {
+    margin-inline: auto;
+    max-width: 26rem;
+  }
+  @media (width >= 40rem) {
+    .plan-wide:not(.plan-only) {
+      display: block;
+    }
+    .plan-tall {
+      display: none;
+    }
+  }
+  .plan :is(path, rect, circle) {
+    vector-effect: non-scaling-stroke;
+  }
+  .plan-wall,
+  .plan-partition,
+  .plan-core,
+  .plan-swing,
+  .plan-door,
+  .plan-window,
+  .plan-gap,
+  .plan-window-gap {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1px;
+  }
+  .plan-wall {
+    stroke-width: 1.5px;
+  }
+  .plan-door {
+    stroke-width: 2px;
+  }
+  .plan-gap {
+    stroke: var(--color-base-100);
+    stroke-width: 3px;
+  }
+  .plan-swing {
+    stroke: var(--furniture);
+    stroke-width: 0.75px;
+  }
+  .plan-window-gap {
+    stroke-width: 5px;
+  }
+  .plan-window {
+    stroke: var(--color-base-100);
+    stroke-width: 3px;
+  }
+  .plan-only .plan-window-gap {
+    stroke-width: 3.5px;
+  }
+  .plan-only .plan-window {
+    stroke-width: 1.5px;
+  }
+  .plan-furniture {
+    fill: none;
+    stroke: var(--furniture);
+    stroke-width: 0.75px;
+  }
+  .plan-column {
+    fill: var(--color-base-100);
+    stroke: currentColor;
+    stroke-width: 1px;
+  }
+  .plan-entrance {
+    fill: var(--color-accent);
+  }
+  .plan-labels {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    font-family: var(--font-mono-facts);
+    font-size: 0.75rem;
+    font-weight: 500;
+    line-height: 1.25;
+  }
+  .plan-label {
+    position: absolute;
+    padding: 0.4375rem 0.1875rem 0.25rem 0.4375rem;
+  }
+  .plan-label > span {
+    display: block;
+  }
+  .plan-come-in {
+    position: absolute;
+    max-width: 10ch;
+  }
+  @container (max-width: 50rem) {
+    .plan-label {
+      padding: 0.25rem 0.125rem 0.125rem 0.25rem;
+    }
+    .plan-label-narrow .plan-label-price,
+    .plan-label-low .plan-label-price {
+      display: none;
+    }
+  }
+  @container (max-width: 44rem) {
+    .plan-labels {
+      font-size: 0.6875rem;
+    }
+  }
+  .plan-label-low .plan-label-price {
+    display: none;
+  }
+
+  /* The rooms a plan opens are lit: which ones, by the place of the plan picked (eight at most).
+     Within :where(), so that pointing at a lit room still counts more. */
+  .zone-light,
+  .zone-hit {
+    fill: transparent;
+  }
+  .zone-on .zone-light {
+    fill: var(--color-primary);
+  }
+  @supports selector(:has(*)) {
+    [data-plan]:has(:where([data-plan-picker] > :nth-child(1) :checked)) [data-plans~="1"] .zone-light,
+    [data-plan]:has(:where([data-plan-picker] > :nth-child(2) :checked)) [data-plans~="2"] .zone-light,
+    [data-plan]:has(:where([data-plan-picker] > :nth-child(3) :checked)) [data-plans~="3"] .zone-light,
+    [data-plan]:has(:where([data-plan-picker] > :nth-child(4) :checked)) [data-plans~="4"] .zone-light,
+    [data-plan]:has(:where([data-plan-picker] > :nth-child(5) :checked)) [data-plans~="5"] .zone-light,
+    [data-plan]:has(:where([data-plan-picker] > :nth-child(6) :checked)) [data-plans~="6"] .zone-light,
+    [data-plan]:has(:where([data-plan-picker] > :nth-child(7) :checked)) [data-plans~="7"] .zone-light,
+    [data-plan]:has(:where([data-plan-picker] > :nth-child(8) :checked)) [data-plans~="8"] .zone-light {
+      --fade: 0s;
+      fill: var(--lit);
+    }
+    [data-plan-details] > * {
+      display: none;
+    }
+    [data-plan]:has([data-plan-picker] > :nth-child(1) :checked) [data-plan-details] > :nth-child(1),
+    [data-plan]:has([data-plan-picker] > :nth-child(2) :checked) [data-plan-details] > :nth-child(2),
+    [data-plan]:has([data-plan-picker] > :nth-child(3) :checked) [data-plan-details] > :nth-child(3),
+    [data-plan]:has([data-plan-picker] > :nth-child(4) :checked) [data-plan-details] > :nth-child(4),
+    [data-plan]:has([data-plan-picker] > :nth-child(5) :checked) [data-plan-details] > :nth-child(5),
+    [data-plan]:has([data-plan-picker] > :nth-child(6) :checked) [data-plan-details] > :nth-child(6),
+    [data-plan]:has([data-plan-picker] > :nth-child(7) :checked) [data-plan-details] > :nth-child(7),
+    [data-plan]:has([data-plan-picker] > :nth-child(8) :checked) [data-plan-details] > :nth-child(8) {
+      display: block;
+    }
+  }
+  @supports not selector(:has(*)) {
+    [data-plan-details] > * + * {
+      margin-top: 1.25rem;
+      border-top: 1px solid color-mix(in oklch, var(--color-base-content) 30%, transparent);
+      padding-top: 1.25rem;
+    }
+  }
+  [data-plan] [data-zone][data-active] .zone-light {
+    fill: var(--color-primary);
+  }
+  @media (hover: hover) {
+    [data-plan] [data-zone]:hover .zone-light {
+      fill: var(--color-primary);
+    }
+    [data-plan] [data-zone] {
+      cursor: pointer;
+    }
+  }
+
+  .picker-option {
+    position: relative;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    gap: 0.75rem;
+    min-height: 3.25rem;
+    border: 1px solid color-mix(in oklch, var(--color-base-content) 22%, transparent);
+    border-radius: var(--radius-box);
+    padding: 0.5rem 0.75rem;
+  }
+  .picker {
+    display: grid;
+    gap: 0.5rem;
+  }
+  .picker-option:hover {
+    background-color: var(--color-base-100);
+  }
+  .picker-option:has(:checked) {
+    border-color: var(--color-base-content);
+    background-color: var(--color-primary);
+    color: var(--color-primary-content);
+  }
+  .picker-aside {
+    color: color-mix(in oklch, var(--color-base-content) 75%, transparent);
+  }
+  .picker-option:has(:checked) .picker-aside {
+    color: inherit;
+  }
+  .picker-option:has(:focus-visible) {
+    outline: 2px solid var(--color-base-content);
+    outline-offset: 2px;
+  }
+  .picker-lamp {
+    flex-shrink: 0;
+    width: 0.6875rem;
+    height: 1rem;
+    border: 1px solid currentColor;
+  }
+  .picker-option:has(:checked) .picker-lamp {
+    background-color: var(--color-base-100);
+  }
+
+  /* The walk: a row that snaps; with its script on, Embla moves it. */
+  .walk-viewport {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+  .walk-viewport[data-carousel-on] {
+    overflow: hidden;
+    scroll-snap-type: none;
+    cursor: grab;
+  }
+  .walk-viewport[data-carousel-on]:active {
+    cursor: grabbing;
+  }
+  .walk-track {
+    display: flex;
+    margin-left: -1.5rem;
+    touch-action: pan-y pinch-zoom;
+  }
+  .walk-slide {
+    flex: 0 0 86%;
+    min-width: 0;
+    padding-left: 1.5rem;
+    scroll-snap-align: start;
+  }
+  @media (width >= 40rem) {
+    .walk-slide {
+      flex-basis: 52%;
+    }
+  }
+  @media (width >= 64rem) {
+    .walk-slide {
+      flex-basis: 40%;
+    }
+  }
+  [data-off] {
+    opacity: 0.4;
+  }
+
+  /* The front: the building from the street, a floor a row, the facts beside their floors. */
+  .front {
+    --floor: 4.75rem;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    color: var(--color-base-content);
+  }
+  .front-top,
+  .front-floor,
+  .front-curb {
+    grid-column: 1;
+    display: flex;
+  }
+  .front-top {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .front-cornice {
+    height: 0.75rem;
+    margin-inline: -0.5rem;
+    border: 1px solid currentColor;
+  }
+  .front-dentils {
+    height: 0.875rem;
+    border: 1px solid currentColor;
+    border-block-width: 0 1px;
+    background-image: repeating-linear-gradient(90deg, currentColor 0 1px, transparent 1px 0.75rem);
+  }
+  .front-floor {
+    height: var(--floor);
+    gap: 4%;
+    border-inline: 1px solid currentColor;
+    border-bottom: 1px solid currentColor;
+    padding: 0.625rem 5% 0.75rem;
+  }
+  .front-window {
+    position: relative;
+    flex: 1 1 0;
+    border: 1px solid currentColor;
+    border-bottom-width: 3px;
+    background-image: linear-gradient(currentColor, currentColor), linear-gradient(currentColor, currentColor);
+    background-position:
+      50% 0,
+      0 46%;
+    background-size:
+      1px 100%,
+      100% 1px;
+    background-repeat: no-repeat;
+  }
+  .front-ours .front-window {
+    background-color: var(--color-primary);
+  }
+  .front-street {
+    height: calc(var(--floor) * 1.15);
+    align-items: flex-end;
+    padding-bottom: 0;
+  }
+  .front-street .front-window {
+    height: 78%;
+    align-self: center;
+    background-size:
+      0 0,
+      100% 1px;
+    background-position:
+      0 0,
+      0 24%;
+  }
+  .front-door {
+    flex: 1 1 0;
+    height: 92%;
+    border: 1px solid currentColor;
+    border-bottom: 0;
+    background-image: linear-gradient(currentColor, currentColor), linear-gradient(currentColor, currentColor);
+    background-position:
+      0 22%,
+      50% 100%;
+    background-size:
+      100% 1px,
+      1px 78%;
+    background-repeat: no-repeat;
+  }
+  .front-curb {
+    height: 0.75rem;
+    margin-inline: -1rem;
+    border-bottom: 1px solid currentColor;
+  }
+  .front-storefront .front-top,
+  .front-modern .front-top {
+    border-bottom: 1px solid currentColor;
+  }
+  .front-modern .front-floor:not(.front-street) {
+    padding: 0.75rem 0 1.5rem;
+  }
+  .front-band {
+    border-inline: 0;
+    border-bottom-width: 1px;
+    background-image: repeating-linear-gradient(90deg, currentColor 0 1px, transparent 1px 16.66%);
+    background-position: 0 0;
+    background-size: 100% 100%;
+  }
+  .front-storefront .front-floor {
+    height: calc(var(--floor) * 2.4);
+    padding-block: 1.5rem 0;
+  }
+  .front-storefront .front-shop {
+    flex: 4 1 0;
+    height: 80%;
+    align-self: flex-start;
+    background-size:
+      1px 100%,
+      100% 1px;
+    background-position:
+      66% 0,
+      0 18%;
+  }
+  .front-night {
+    --floor: 5.25rem;
+    color: color-mix(in oklch, var(--color-neutral-content) 50%, transparent);
+  }
+  /* On a phone the facts stand under the drawing, top floor first. */
+  .front-fact {
+    grid-column: 1;
+    border-bottom: 1px solid var(--color-base-300);
+    padding-block: 0.875rem;
+  }
+  .front-fact-ours {
+    margin-top: 1rem;
+  }
+  @media (width >= 40rem) {
+    .front-with-facts {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 18.25rem);
+      column-gap: 1.75rem;
+      margin-left: 0.5rem;
+    }
+    .front-fact {
+      position: relative;
+      grid-column: 2;
+      grid-row: var(--row);
+      align-self: start;
+      margin: 0;
+      border-bottom: 0;
+      border-top: 1px solid currentColor;
+      padding-block: 0.625rem 0;
+    }
+    /* Each fact's line reaches the floor it belongs to. */
+    .front-fact::before {
+      content: "";
+      position: absolute;
+      top: -1px;
+      right: 100%;
+      width: 1.75rem;
+      border-top: 1px solid currentColor;
+    }
+    .front-fact-ours {
+      grid-row: var(--row) / span 2;
+    }
+    .front-curb {
+      height: auto;
+      min-height: 4rem;
+      border-bottom: 0;
+      border-top: 1px solid currentColor;
+      margin-top: -1px;
+    }
+    .front-fact-curb {
+      margin-top: -1px;
+    }
+  }
+  @media (width >= 64rem) {
+    .front:not(.front-night) {
+      --floor: 6.25rem;
+    }
+  }
+}
+
+/* Upstart's "Image credits" link, lined up with the footer's container. */
+footer [data-up-credits] {
+  padding-inline: calc(max(0px, (100% - 84rem) / 2) + 1.25rem);
+  padding-bottom: 1.5rem;
+  font-size: 0.9375rem;
+  opacity: 0.75;
+}
+@media (width >= 48rem) {
+  footer [data-up-credits] {
+    padding-inline: calc(max(0px, (100% - 84rem) / 2) + 2rem);
+  }
+}
+
+/* On Upstart's credits page, a long author's name wraps rather than widen a phone's screen. */
+.link {
+  overflow-wrap: anywhere;
+}
+
+/* Outside the layers: Upstart gives every heading the theme's heading font there. */
+:is(h1, h2, h3, h4).person-name {
+  font-family: var(--theme-font-body);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* A room going dark fades; one coming on is the script's, or at once; a pointed one takes 150 ms. */
+  .zone-light {
+    transition: fill var(--fade, 0.2s) ease-out;
+  }
+  [data-plan] [data-zone][data-active] .zone-light,
+  [data-plan] [data-zone]:hover .zone-light {
+    transition-duration: 0.15s;
+  }
+  .nav-link,
+  .picker-option,
+  .choice,
+  .agenda-row,
+  .room-line > summary {
+    transition: background-color 0.15s ease-out;
+  }
+  /* The front's floor switches on, window after window, as the page opens. */
+  [data-front] .front-ours .front-window {
+    animation: switch-on 0.3s ease-out calc(0.4s + var(--i) * 90ms) backwards;
+  }
+  @keyframes switch-on {
+    from {
+      background-color: transparent;
+    }
+  }
+}

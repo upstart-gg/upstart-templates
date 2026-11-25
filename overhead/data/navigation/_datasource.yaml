@@ -1,0 +1,11 @@
+label: Navigation
+fields:
+  - name: label
+    kind: text
+    required: true
+  - name: href
+    kind: link
+  - name: place
+    kind: choice
+    choices: [both, header, footer, social]
+order: [plans, rooms, events, visit, about, instagram]

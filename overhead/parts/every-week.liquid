@@ -1,0 +1,19 @@
+<section class="bg-base-100 text-base-content">
+  <div class="mx-auto grid max-w-[84rem] gap-x-14 gap-y-10 px-5 pb-20 md:px-8 md:pb-28 lg:grid-cols-12">
+    <div class="lg:col-span-5">
+      <h2 class="title-section">Every week</h2>
+      <figure class="mt-8">
+        <img src="/media/river-winter.jpg" class="aspect-[4/3] w-full rounded-box object-cover">
+        <figcaption class="mono mt-3 text-[0.8125rem] text-base-content/80">The Grand River in January</figcaption>
+      </figure>
+    </div>
+    <ul class="self-end border-t border-base-300 lg:col-span-7">
+      {%- for item in data.floor-week %}
+      <li class="border-b border-base-300 py-6">
+        <h3 class="title-small">{{ item.title }}</h3>
+        <p class="body-copy mt-2">{{ item.text }}</p>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>

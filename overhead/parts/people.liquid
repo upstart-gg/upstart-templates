@@ -1,0 +1,17 @@
+<section class="bg-base-200 text-base-content">
+  <div class="mx-auto max-w-[84rem] px-5 py-20 md:px-8 md:py-28">
+    <h2 class="title-section">The people</h2>
+    <ul class="mt-10 grid gap-x-14 border-t border-base-content lg:grid-cols-2">
+      {%- for person in data.team %}{% assign words = person.name | split: " " %}
+      <li class="flex gap-6 border-b border-base-content/30 py-8 sm:gap-8">
+        {% if person.photo %}<img src="{{ person.photo }}" class="size-24 shrink-0 rounded-box object-cover sm:size-32">{% else %}<span class="heading flex size-24 shrink-0 items-center justify-center rounded-box bg-secondary text-[2.25rem] text-secondary-content sm:size-32 sm:text-[2.75rem]" aria-hidden="true">{{ words.first | slice: 0 }}{% if words.size > 1 %}{{ words.last | slice: 0 }}{% endif %}</span>{% endif %}
+        <div class="min-w-0">
+          <h3 class="person-name">{{ person.name }}</h3>
+          <p class="mono mt-1 text-[0.875rem]">{{ person.role }}</p>
+          <p class="body-copy mt-3">{{ person.line }}</p>
+        </div>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>

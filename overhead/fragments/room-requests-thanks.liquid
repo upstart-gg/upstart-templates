@@ -1,0 +1,4 @@
+<div class="rounded-box bg-base-200 p-7 md:p-10 lg:col-span-8" role="status">
+  <p class="title-small text-[1.75rem]">Thank you, {{ record.name }}.</p>
+  <p class="mt-4 max-w-[50ch] text-[1.1875rem]">We've got your request for {{ record.room | replace_first: "The ", "the " }}{% if record.date %} on {{ record.date | date: "%A, %B %-d" }}{% endif %}, and we'll confirm by email within a working day.</p>
+</div>

@@ -1,0 +1,13 @@
+<section class="bg-base-100 text-base-content">
+  <div class="mx-auto grid max-w-[84rem] gap-x-14 gap-y-10 px-5 py-20 md:px-8 md:py-28 lg:grid-cols-12">
+    <h2 class="title-section lg:col-span-4">How the floor works</h2>
+    <ul class="border-t border-base-300 lg:col-span-8">
+      {%- for rule in data.floor-rules %}
+      <li class="grid gap-x-8 gap-y-1 border-b border-base-300 py-6 sm:grid-cols-[14rem_minmax(0,1fr)] sm:items-baseline">
+        <h3 class="title-small">{{ rule.title }}</h3>
+        <p class="body-copy">{{ rule.text }}</p>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>

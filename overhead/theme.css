@@ -1,0 +1,21 @@
+:root {
+  --theme-color-primary: oklch(0.775 0.13 214);
+  --theme-color-primary-content: oklch(0.255 0.012 70);
+  --theme-color-secondary: oklch(0.87 0.048 70);
+  --theme-color-secondary-content: oklch(0.255 0.012 70);
+  --theme-color-accent: oklch(0.555 0.19 4);
+  --theme-color-accent-content: oklch(0.975 0.01 84);
+  --theme-color-neutral: oklch(0.235 0.012 70);
+  --theme-color-neutral-content: oklch(0.955 0.014 84);
+  --theme-color-surface: oklch(0.962 0.017 84);
+  --theme-color-surface-alt: oklch(0.925 0.022 82);
+  --theme-color-border: oklch(0.855 0.018 80);
+  --theme-color-text: oklch(0.255 0.012 70);
+  --theme-font-heading: "Castoro", "Iowan Old Style", Georgia, serif;
+  --theme-font-body: "Reddit Sans", "Avenir Next", ui-sans-serif, system-ui, sans-serif;
+  --theme-radius: 0.25rem;
+  --theme-radius-field: 0.25rem;
+  --theme-depth: 0;
+  --theme-size: 0.28125rem;
+  --theme-border: 1px;
+}

@@ -1,0 +1,9 @@
+{
+  "alt": "A round wooden table with five chairs in a small room with a glass wall",
+  "generated": {
+    "model": "gemini/gemini-nano-banana-2.1",
+    "prompt": "A small meeting room for five standing in the MIDDLE of the floor, away from every outer wall, with no window of its own: one wall is slim black steel-framed clear glass looking out on the open maple floor, a cast-iron column and, far away, the tall windows; the other walls are plain white painted boards. A round refinished wooden table with five different vintage wooden chairs, a low oak cabinet, a small dark switched-off screen on the board wall. Seen from inside the room. Same building and same light as the reference photograph: the same white-painted brick, worn refinished maple floorboards, off-white cast-iron columns, dark timber ceiling, the same clear bright morning daylight and true colors. Natural architectural interior photograph, straight and level lines, realistic. No people, no computers, no content on any screen, no signs, no logos, no text, no letters, no numbers, no plants, no neon, no posters.",
+    "date": "2026-11-25T12:28:08.117Z",
+    "references": ["/media/river-room.webp"]
+  }
+}

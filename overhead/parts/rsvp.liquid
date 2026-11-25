@@ -1,0 +1,10 @@
+<form hx-post="/_data/rsvps" hx-target="this" hx-swap="outerHTML" hx-status:422="target:#rsvp-problems swap:innerHTML" class="rounded-box bg-base-200 p-7 md:p-9">
+  <h2 class="title-small">Save a seat</h2>
+  <p class="body-copy mt-2">So we know how many chairs to put out.</p>
+  <input type="hidden" name="event" value="{{ event.title }}">
+  <fieldset class="fieldset mt-3"><legend class="fieldset-legend">Name</legend><input name="name" type="text" class="input w-full" required maxlength="200" autocomplete="name" aria-label="Name"></fieldset>
+  <fieldset class="fieldset"><legend class="fieldset-legend">Email</legend><input name="email" type="email" class="input w-full" required maxlength="200" autocomplete="email" aria-label="Email"></fieldset>
+  <fieldset class="fieldset"><legend class="fieldset-legend">How many of you</legend><input name="people" type="number" min="1" max="10" class="input w-full" required aria-label="How many of you"></fieldset>
+  <div id="rsvp-problems" class="empty:hidden"></div>
+  <button class="btn btn-primary mt-4">Save me a seat</button>
+</form>

@@ -1,0 +1,9 @@
+{
+  "alt": "A long wooden table with twelve chairs in front of a kitchen counter with shelves of white mugs",
+  "generated": {
+    "model": "gemini/gemini-nano-banana-2.1",
+    "prompt": "The kitchen of the same floor: a long communal wooden table for twelve with twelve different wooden chairs, behind it a simple counter along a white brick wall with a plain steel sink, open wooden shelves of white mugs and stacked plates, a plain kettle and a glass coffee maker without any brand. A bowl of apples on the table. Seen from the end of the table. Same building, same floor and same light as the reference photograph: the same white-painted brick, the same worn refinished maple floorboards, the same off-white cast-iron columns, dark timber ceiling and tall many-paned windows with pale sky and bare treetops, the same clear bright morning daylight and true colors. Natural architectural interior photograph, straight and level lines, realistic. No people, no computers, no content on any screen, no signs, no logos, no text, no letters, no numbers, no plants, no neon, no posters.",
+    "date": "2026-11-25T12:26:18.558Z",
+    "references": ["/media/river-room.webp"]
+  }
+}

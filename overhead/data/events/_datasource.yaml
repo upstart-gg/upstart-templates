@@ -1,0 +1,37 @@
+label: Events
+fields:
+  - name: title
+    label: Title
+    kind: text
+    required: true
+  - name: date
+    label: Date
+    kind: date
+    required: true
+  - name: time
+    label: Time
+    kind: text
+  - name: place
+    label: Place
+    kind: text
+  - name: open
+    label: Who it's for
+    kind: choice
+    choices: [everyone, members]
+  - name: price
+    label: Price
+    kind: text
+  - name: summary
+    label: In a sentence
+    kind: text
+  - name: cover
+    label: Cover
+    kind: image
+  - name: booking
+    label: Tickets on another site
+    kind: link
+  - name: body
+    label: The story
+    kind: markdown
+body: body
+sort: date

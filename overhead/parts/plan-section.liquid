@@ -1,0 +1,63 @@
+<section id="plan" class="scroll-mt-24 bg-base-100 text-base-content" data-plan>
+  <div class="mx-auto max-w-[84rem] px-5 {% if large %}pt-6 pb-20 md:pb-28{% else %}py-20 md:py-28{% endif %} md:px-8">
+    <div class="grid gap-x-14 gap-y-4 lg:grid-cols-12 lg:items-end">
+      <h2 class="title-section lg:col-span-6">Every plan, drawn on the floor</h2>
+      <p class="body-copy max-w-[48ch] lg:col-span-6">Pick a plan and the rooms it opens light up. Point at a room to see what's in it and what it costs.</p>
+    </div>
+    <div class="mt-10 grid gap-x-12 gap-y-10 {% unless large %}xl:grid-cols-[23rem_minmax(0,1fr)] xl:items-start{% endunless %}">
+      <div class="rounded-box bg-base-200 p-3">
+        <fieldset>
+          <legend class="sr-only">Pick a plan</legend>
+          <div class="picker sm:grid-cols-2 lg:grid-cols-3 {% unless large %}xl:grid-cols-1{% endunless %}" data-plan-picker>
+            {%- for plan in data.plans %}
+            <label class="picker-option">
+              <input type="radio" name="plan-{{ uid }}" value="{{ plan.id }}" data-id="{{ plan.id }}" class="sr-only" {% if forloop.first %}checked{% endif %}>
+              <span class="picker-lamp" aria-hidden="true"></span>
+              <span class="min-w-0 flex-1"><span class="block leading-snug font-semibold">{{ plan.name }}</span>{% if plan.featured %}<span class="picker-aside block text-[0.875rem] leading-snug">Most asked for</span>{% endif %}</span>
+              <span class="mono shrink-0 text-right text-[0.875rem] leading-snug tabular-nums">{{ plan.price }} <span class="picker-aside">{{ plan.period }}</span></span>
+            </label>
+            {%- endfor %}
+          </div>
+        </fieldset>
+        <div class="px-3 pt-5 pb-3" data-plan-details>
+          {%- for plan in data.plans %}
+          <div data-plan-detail>
+            <div class="grid gap-x-12 gap-y-4 {% if large %}lg:grid-cols-12 lg:items-start{% endif %}">
+              <p class="{% if large %}lg:col-span-4{% endif %}">{{ plan.description }}</p>
+              <dl class="mono space-y-1 text-[0.875rem] leading-snug {% if large %}lg:col-span-3 lg:pt-1{% endif %}">
+                {% if plan.hours %}<div><dt class="sr-only">Hours</dt><dd>{{ plan.hours }}</dd></div>{% endif %}
+                {% if plan.meeting_hours %}<div><dt class="sr-only">Meeting rooms</dt><dd>{{ plan.meeting_hours }}</dd></div>{% endif %}
+              </dl>
+              {% if large %}<ul class="ticks lg:col-span-3">{% for feature in plan.features %}<li>{{ feature }}</li>{% endfor %}</ul>{% endif %}
+              {% if plan.href %}<p class="{% if large %}lg:col-span-2 lg:text-right{% endif %}">{% if large %}<a href="{{ plan.href }}" class="btn btn-primary whitespace-nowrap">Ask about this plan</a>{% else %}<a href="{{ plan.href }}" class="text-link font-semibold">{{ plan.cta }}</a>{% endif %}</p>{% endif %}
+            </div>
+          </div>
+          {%- endfor %}
+        </div>
+      </div>
+      <figure class="min-w-0">
+        {% render 'plan', uid: uid %}
+        <figcaption class="mono mt-6 max-w-[78ch] text-[0.8125rem] leading-relaxed text-base-content/80"><strong class="font-semibold text-base-content">Offices as of Monday, November 16.</strong> We don't count desks live: hot desks are first come, and on a full Tuesday the long table takes the overflow. An office whose door is drawn open is free, or soon will be.</figcaption>
+      </figure>
+    </div>
+    <h3 class="sr-only">The rooms</h3>
+    <ul class="mt-12 grid items-start gap-x-8 border-t border-base-300 sm:grid-cols-2 xl:grid-cols-3">
+      {%- for zone in data.zones %}
+      <li class="border-b border-base-300">
+        <details class="room-line" data-zone-row="{{ zone.id }}">
+          <summary>
+            <span class="min-w-0 flex-1 leading-snug"><span class="font-semibold">{{ zone.name }}</span> {% if zone.price %}<span class="room-price mono text-[0.875rem]">· {{ zone.price }}</span>{% endif %}{% if zone.state == "waitlist" %} <span class="tag-waitlist">Waitlist</span>{% endif %}</span>
+            <span class="room-mark" aria-hidden="true"></span>
+          </summary>
+          <div class="pr-3 pb-6 pl-3">
+            {% if zone.image %}<img src="{{ zone.image }}" class="mb-4 aspect-[3/2] w-full rounded-box object-cover" loading="lazy">{% endif %}
+            <ul class="space-y-1.5">{% for item in zone.includes %}<li class="body-copy leading-snug">{{ item }}</li>{% endfor %}</ul>
+            {% if zone.state_note %}<p class="mono mt-3 text-[0.875rem]">{{ zone.state_note }}</p>{% endif %}
+          </div>
+        </details>
+      </li>
+      {%- endfor %}
+    </ul>
+    {% unless large %}<p class="mt-10"><a href="/plans" class="btn btn-outline whitespace-nowrap">Every plan, side by side</a></p>{% endunless %}
+  </div>
+</section>

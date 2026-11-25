@@ -1,0 +1,65 @@
+label: Rooms
+fields:
+  - name: name
+    label: Name
+    kind: text
+    required: true
+  - name: order
+    label: Place in the list
+    kind: number
+  - name: kind
+    label: Kind
+    kind: choice
+    choices: [hot desks, fixed desks, office, meeting room, phone booths, kitchen]
+    required: true
+  - name: x
+    label: Feet from the west wall
+    kind: number
+    required: true
+  - name: y
+    label: Feet from the north wall
+    kind: number
+    required: true
+  - name: w
+    label: Width, west to east, in feet
+    kind: number
+    required: true
+  - name: h
+    label: Depth, north to south, in feet
+    kind: number
+    required: true
+  - name: seats
+    label: Seats
+    kind: number
+  - name: price
+    label: Price line
+    kind: text
+  - name: includes
+    label: What it holds and includes
+    kind: list
+  - name: state
+    label: State
+    kind: choice
+    choices: [first come, free, free from, few left, taken, waitlist]
+  - name: state_note
+    label: State in words
+    kind: text
+  - name: image
+    label: Photo
+    kind: image
+  - name: summary
+    label: The room in a sentence (meeting rooms)
+    kind: text
+  - name: hour
+    label: An hour (meeting rooms)
+    kind: text
+  - name: half_day
+    label: A half day (meeting rooms)
+    kind: text
+  - name: day_rate
+    label: A day (meeting rooms)
+    kind: text
+  - name: equipment
+    label: Equipment (meeting rooms)
+    kind: list
+sort: order

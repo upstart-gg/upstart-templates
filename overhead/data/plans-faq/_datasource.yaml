@@ -1,0 +1,11 @@
+label: Questions about plans
+fields:
+  - name: question
+    label: Question
+    kind: text
+    required: true
+  - name: answer
+    label: Answer
+    kind: markdown
+body: answer
+order: [try-a-day, pause, address, share, parking, contract]

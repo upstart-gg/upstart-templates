@@ -1,0 +1,10 @@
+label: How the floor works
+fields:
+  - name: title
+    label: Title
+    kind: text
+    required: true
+  - name: text
+    label: Text
+    kind: text
+order: [quiet, calls, dishes, guests, dogs]

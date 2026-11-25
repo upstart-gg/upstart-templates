@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Events & the floor — Sample Floor</title>
+<meta name="description" content="Coffee on Mondays, a walk on Wednesdays, show and tell on Thursdays, and a few evenings a month open to anyone.">
+<meta property="og:title" content="Events & the floor — Sample Floor">
+<meta property="og:description" content="Coffee on Mondays, a walk on Wednesdays, show and tell on Thursdays, and a few evenings a month open to anyone.">
+</head>
+<body>
+{% render 'header', page: page %}
+<main>
+{% render 'page-title', title: "Events & the floor", intro: "Most of what happens here is small and regular: coffee, a walk, five-minute show and tells. A few evenings a month are open to anyone." %}
+{% render 'every-week' %}
+{% render 'coming-up' %}
+{% render 'directory' %}
+{% render 'hire-band' %}
+</main>
+{% render 'footer' %}
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Meeting rooms — Sample Floor</title>
+<meta name="description" content="Two meeting rooms by the hour, for 14 and for 5, and the whole floor on evenings and Saturdays, a block from the Grand River.">
+<meta property="og:title" content="Meeting rooms — Sample Floor">
+<meta property="og:description" content="Two meeting rooms by the hour, for 14 and for 5, and the whole floor on evenings and Saturdays, a block from the Grand River.">
+</head>
+<body>
+{% render 'header', page: page %}
+<main>
+{% render 'page-title', title: "Meeting rooms", intro: "Two rooms by the hour, for members and anyone else. And the whole floor after 6 for workshops, launches and the odd rehearsal dinner." %}
+{% render 'room-rows' %}
+{% render 'whole-floor' %}
+{% render 'room-request' %}
+{% render 'questions', items: data.rooms-faq, columns: 1 %}
+</main>
+{% render 'footer' %}
+</body>
+</html>

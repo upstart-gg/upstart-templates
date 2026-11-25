@@ -1,0 +1,22 @@
+{
+  "name": "Overhead directory",
+  "kind": "about",
+  "source": "upstart",
+  "description": "Who's on the floor, as an old lobby directory: each member's name and trade, a dotted line, and where they sit.",
+  "tags": ["about", "members", "directory", "community", "tenants"],
+  "mood": ["professional", "editorial"],
+  "synonyms": [
+    "member directory",
+    "tenant list",
+    "who is here",
+    "lobby directory",
+    "annuaire",
+    "membres",
+    "résidents",
+    "qui est là"
+  ],
+  "data": {
+    "name": "members",
+    "family": "collection"
+  }
+}

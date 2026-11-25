@@ -1,0 +1,22 @@
+{
+  "name": "Overhead footer",
+  "kind": "footer",
+  "source": "upstart",
+  "description": "A dark footer with the name, the address and directions, the bus, the phone and email, the hours and the links.",
+  "tags": ["footer", "address", "hours", "links", "contact"],
+  "mood": ["dark", "professional"],
+  "synonyms": [
+    "footer with hours",
+    "address footer",
+    "contact footer",
+    "site footer",
+    "pied de page",
+    "adresse et horaires",
+    "coordonnées",
+    "bas de page"
+  ],
+  "data": {
+    "name": "navigation",
+    "family": "collection"
+  }
+}

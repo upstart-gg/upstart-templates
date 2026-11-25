@@ -1,0 +1,4 @@
+<div class="rounded-box bg-base-200 p-7 md:p-10 lg:col-span-8" role="status">
+  <p class="title-small text-[1.75rem]">Thank you, {{ record.name }}.</p>
+  <p class="mt-4 max-w-[50ch] text-[1.1875rem]">We'll see you {% if record.day %}{{ record.day | date: "%A" }} {% endif %}{{ record.part }}{% if record.day %}, {{ record.day | date: "%B %-d" }}{% endif %}: ask for Rosa at the front table. If anything changes, we'll write.</p>
+</div>

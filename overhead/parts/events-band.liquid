@@ -1,0 +1,19 @@
+<section class="bg-secondary text-secondary-content">
+  <div class="mx-auto max-w-[84rem] px-5 py-20 md:px-8 md:py-28" data-reveal>
+    <div class="flex flex-wrap items-end justify-between gap-x-10 gap-y-6">
+      <h2 class="title-section">Next on the floor</h2>
+      <a href="/events" class="btn btn-outline whitespace-nowrap">All events</a>
+    </div>
+    <ul class="mt-10 border-t border-secondary-content/40">
+      {%- for event in data.events limit: 4 %}
+      <li class="border-b border-secondary-content/40">
+        <a href="/events/{{ event.id }}" class="agenda-row">
+          <span class="mono text-[0.875rem] tabular-nums lg:col-span-3"><span class="block">{{ event.date | date: "%A, %B %-d" }}</span><span class="block">{{ event.time }}</span></span>
+          <span class="heading text-[1.375rem] leading-tight font-medium lg:col-span-7">{{ event.title }}</span>
+          <span class="mono text-[0.875rem] lg:col-span-2 lg:text-right">{% if event.open == "everyone" %}Open to all{% else %}Members{% endif %}</span>
+        </a>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>

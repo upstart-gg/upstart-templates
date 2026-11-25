@@ -1,0 +1,9 @@
+<div class="grid grid-cols-[5.5rem_minmax(0,1fr)] gap-x-6 gap-y-4 py-7 md:grid-cols-[6rem_minmax(0,1fr)_auto] md:items-center md:gap-x-10">
+  <p class="date-block self-start md:self-center"><span class="figures text-[2.5rem] leading-none">{{ event.date | date: "%-d" }}</span><span class="mono mt-1 text-[0.8125rem]">{{ event.date | date: "%b" }}</span></p>
+  <div class="min-w-0">
+    <h3 class="title-small">{{ event.title }}</h3>
+    <p class="mono mt-2 flex flex-wrap gap-x-5 text-[0.875rem] leading-normal"><span>{{ event.date | date: "%A" }}{% if event.time %}, {{ event.time }}{% endif %}</span>{% if event.price %}<span>{{ event.price }}</span>{% endif %}<span>{% if event.open == "everyone" %}Open to all{% else %}Members{% endif %}</span></p>
+    <p class="body-copy mt-2 max-w-[60ch]">{{ event.summary }}</p>
+  </div>
+  <p class="col-start-2 flex flex-wrap gap-3 md:col-start-3"><a href="/events/{{ event.id }}" class="btn btn-outline whitespace-nowrap" aria-label="Details of {{ event.title }}">Details</a>{% if event.booking %}<a href="{{ event.booking }}" class="btn btn-primary whitespace-nowrap" rel="noopener" target="_blank">Get tickets</a>{% endif %}</p>
+</div>

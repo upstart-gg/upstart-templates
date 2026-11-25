@@ -1,0 +1,26 @@
+<section class="bg-base-200 text-base-content" id="side-by-side">
+  <div class="mx-auto max-w-[84rem] px-5 py-20 md:px-8 md:py-28">
+    <h2 class="title-section">Every plan, side by side</h2>
+    <ul class="mt-10 border-t border-base-content">
+      {%- for plan in data.plans %}
+      <li class="plan-row{% if plan.featured %} plan-row-featured{% endif %}">
+        <div class="lg:col-span-3">
+          <h3 class="title-small">{{ plan.name }}</h3>
+          {% if plan.featured %}<p class="mt-1 text-[0.9375rem]">Most asked for</p>{% endif %}
+          <p class="body-copy mt-2 max-w-[38ch]">{{ plan.description }}</p>
+        </div>
+        <ul class="ticks lg:col-span-4">
+          {%- for feature in plan.features %}
+          <li>{{ feature }}</li>
+          {%- endfor %}
+          {% if plan.hours %}<li>{{ plan.hours }}</li>{% endif %}
+        </ul>
+        <div class="flex flex-wrap items-center justify-between gap-x-6 gap-y-4 lg:col-span-5 lg:justify-end">
+          <p class="whitespace-nowrap"><span class="figures text-[2.5rem] leading-none font-medium">{{ plan.price }}</span> <span class="text-base-content/80">{{ plan.period }}</span></p>
+          {% if plan.href %}<a href="{{ plan.href }}" class="btn {% if plan.featured %}btn-primary{% else %}btn-outline{% endif %} whitespace-nowrap">{{ plan.cta }}</a>{% endif %}
+        </div>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>

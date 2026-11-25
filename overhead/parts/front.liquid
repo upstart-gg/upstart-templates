@@ -1,0 +1,45 @@
+{%- comment -%}
+The building's street front, in ink lines from the theme, our floor lit. `facts: true` sets the facts
+beside their floors (on a phone, under it, top floor first); `night: true` draws it after hours, still.
+
+The building. Change these for another one: how many floors, which is ours (from the street), how many
+windows across, and its look: old (a cornice and tall windows), storefront (one floor, a wide shop
+window) or modern (bands of glass).
+{%- endcomment -%}
+{%- assign floors = 5 -%}
+{%- assign our_floor = 4 -%}
+{%- assign bays = 6 -%}
+{%- assign look = "old" -%}
+{%- if look == "storefront" -%}{%- assign floors = 1 -%}{%- assign our_floor = 1 -%}{%- endif -%}
+{%- assign rows = floors | plus: 2 -%}
+<div class="front front-{{ look }}{% if night %} front-night{% endif %}{% if facts %} front-with-facts{% endif %}"{% unless night %} data-front{% endunless %}>
+  <div class="front-top" style="grid-row: 1" aria-hidden="true">{% if look == "old" %}<span class="front-cornice"></span><span class="front-dentils"></span>{% endif %}</div>
+  {%- for i in (1..floors) -%}
+  {%- assign level = floors | minus: i | plus: 1 -%}
+  <div class="front-floor{% if level == 1 %} front-street{% endif %}{% if level == our_floor %} front-ours{% endif %}" style="grid-row: {{ i | plus: 1 }}" aria-hidden="true">
+    {%- if look == "modern" and level > 1 -%}<span class="front-window front-band" style="--i: 0"></span>
+    {%- elsif look == "storefront" -%}<span class="front-window front-shop" style="--i: 0"></span><span class="front-door"></span>
+    {%- else -%}
+    {%- for b in (1..bays) -%}
+    {%- if level == 1 and b == bays -%}<span class="front-door"></span>
+    {%- else -%}<span class="front-window{% if b > 4 and level > 1 %} max-sm:hidden{% elsif b > 3 and level == 1 and b < bays %} max-sm:hidden{% endif %}" style="--i: {{ b | minus: 1 }}"></span>{%- endif -%}
+    {%- endfor -%}
+    {%- endif -%}
+  </div>
+  {%- endfor -%}
+  <div class="front-curb" style="grid-row: {{ rows }}" aria-hidden="true"></div>
+  {%- if facts -%}
+  {%- assign our_row = floors | minus: our_floor | plus: 2 -%}
+  <div class="front-fact front-fact-ours" style="--row: {{ our_row }}">
+    <p class="figures text-[2.25rem] leading-none font-medium xl:text-[2.75rem]">Day pass $25</p>
+    <p class="mono mt-2 text-[0.875rem] leading-snug">8 am to 6 pm, Monday to Friday<span class="max-sm:hidden"><br></span><span class="sm:hidden"> · </span>Members any hour, with their fob</p>
+  {%- comment -%} At street level the address stands under our floor's own facts. {%- endcomment -%}
+  {% if our_floor > 1 %}</div>
+  <div class="front-fact front-fact-street" style="--row: {{ floors | plus: 1 }}">{% endif %}
+    <p class="mono text-[0.875rem] leading-snug {% if our_floor == 1 %}mt-4{% endif %}"><span class="font-semibold">61 Tailrace Street NW</span><br>River door, step-free, elevator to&nbsp;4</p>
+  </div>
+  <div class="front-fact front-fact-curb" style="--row: {{ rows }}">
+    <p class="mono text-[0.875rem] leading-snug">Laker Line, Pew Campus stop, 4&nbsp;minutes'&nbsp;walk<br>Bike room inside the door</p>
+  </div>
+  {%- endif -%}
+</div>

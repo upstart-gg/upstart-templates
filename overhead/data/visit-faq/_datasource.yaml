@@ -1,0 +1,15 @@
+label: Questions about visiting
+fields:
+  - name: question
+    label: Question
+    kind: text
+    required: true
+  - name: topic
+    label: Topic
+    kind: choice
+    choices: [Getting here, The day pass, Access]
+  - name: answer
+    label: Answer
+    kind: markdown
+body: answer
+order: [weekends, book, leave, elevator, dog]

@@ -1,0 +1,42 @@
+label: Visits
+collected: true
+answer: visits-thanks
+messages:
+  required: "{field} is required."
+  invalid: "{field} does not look right."
+  too_many: "Too many requests from here. Please try again in a few minutes."
+  sent: "Thank you. We'll write within a working day."
+fields:
+  - name: for
+    label: What for
+    kind: choice
+    required: true
+    choices: [a tour, a day pass, to join a plan, an office for a team]
+  - name: plan
+    label: Plan
+    kind: text
+  - name: day
+    label: Day
+    kind: date
+    required: true
+  - name: part
+    label: Part of the day
+    kind: choice
+    choices: [morning, afternoon]
+  - name: people
+    label: How many of you
+    kind: number
+  - name: name
+    label: Your name
+    kind: text
+    required: true
+  - name: email
+    label: Your email
+    kind: email
+    required: true
+  - name: phone
+    label: Your phone
+    kind: phone
+  - name: note
+    label: Anything we should know
+    kind: text

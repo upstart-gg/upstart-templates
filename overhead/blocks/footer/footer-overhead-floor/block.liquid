@@ -1,0 +1,38 @@
+<footer class="bg-neutral text-neutral-content">
+  <div class="mx-auto max-w-[84rem] px-5 pt-20 pb-10 md:px-8 md:pt-24">
+    <div class="grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-12">
+      <div class="sm:col-span-2 lg:col-span-4">
+        {% render 'logo' %}
+        <p class="mt-4">4th floor, the Holloway works</p>
+        <p class="mt-7"><a href="/visit#visit" class="btn btn-primary whitespace-nowrap">Come for a day</a></p>
+      </div>
+      <div class="lg:col-span-3">
+        <p class="foot-label">Find us</p>
+        <address class="mt-3 not-italic">61 Tailrace Street NW<br>Grand Rapids, MI&nbsp;49504</address>
+        <p class="mt-2"><a href="https://www.openstreetmap.org/search?query=61%20Tailrace%20Street%20NW%2C%20Grand%20Rapids%2C%20MI%2049504" class="text-link" rel="noopener" target="_blank">Get directions</a></p>
+        <p class="mt-2">Laker Line, Pew Campus stop</p>
+        <p class="mt-4"><a href="tel:+16165550162" class="text-link whitespace-nowrap">(616) 555-0162</a></p>
+        <p class="mt-2"><a href="mailto:hello@samplefloor.com" class="text-link break-words">hello@samplefloor.com</a></p>
+      </div>
+      <div class="lg:col-span-3">
+        <p class="foot-label">Hours</p>
+        <ul class="mt-3 space-y-2">
+          {%- for line in data.hours %}
+          <li class="leading-snug">{{ line.day }}<br><span class="text-neutral-content/70">{{ line.hours }}</span></li>
+          {%- endfor %}
+        </ul>
+      </div>
+      <nav aria-label="Footer" class="lg:col-span-2">
+        <p class="foot-label">The floor</p>
+        <ul class="mt-3 space-y-2">
+          {%- for item in data.navigation %}{% if item.place != "social" and item.place != "header" %}
+          <li><a href="{{ item.href }}" class="foot-link">{{ item.label }}</a></li>
+          {%- endif %}{% endfor %}
+          {%- for item in data.navigation %}{% if item.place == "social" %}
+          <li><a href="{{ item.href }}" class="foot-link" rel="noopener" target="_blank">{{ item.label }}</a></li>
+          {%- endif %}{% endfor %}
+        </ul>
+      </nav>
+    </div>
+  </div>
+</footer>

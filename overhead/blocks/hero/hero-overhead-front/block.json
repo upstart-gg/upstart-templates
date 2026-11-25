@@ -1,0 +1,18 @@
+{
+  "name": "Overhead front",
+  "kind": "hero",
+  "source": "upstart",
+  "description": "A coworking space's hero: the headline and two buttons beside the building's street front drawn in ink lines, its floor lit window by window, with the day pass, the address and the bus stop set at their floors.",
+  "tags": ["hero", "local details", "building", "coworking", "address", "day pass"],
+  "mood": ["professional", "warm"],
+  "synonyms": [
+    "coworking hero",
+    "building front",
+    "address and hours hero",
+    "facade",
+    "façade",
+    "en-tête coworking",
+    "adresse et horaires",
+    "immeuble"
+  ]
+}

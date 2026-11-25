@@ -1,0 +1,86 @@
+{%- comment -%}
+A room's furniture, laid out in its box (x, y, w, h in feet, as drawn) from its kind and its seats:
+desks 5 by 2.5 feet with a chair, in as many rows as fit; a table and its chairs; booths 4 by 4 feet
+with a seat; the kitchen's counter and long table. The label's place is left free: at the top of the
+box, or at its foot for fixed desks, which stand along the wall.
+{%- endcomment -%}
+{%- assign n = zone.seats | plus: 0 -%}
+{%- if n > 0 -%}
+{%- case zone.kind -%}
+{%- when "fixed desks" -%}
+{%- if w >= h -%}
+{%- assign cell = w | times: 1.0 | divided_by: n -%}{%- assign long = cell | minus: 0.7 | at_most: 5 -%}
+{%- assign last = n | minus: 1 -%}
+{%- for i in (0..last) -%}{%- assign cx = i | plus: 0.5 | times: cell | plus: x -%}
+<rect class="plan-furniture" x="{{ long | divided_by: -2 | plus: cx }}" y="{{ y | plus: 0.8 }}" width="{{ long }}" height="2.5"/><rect class="plan-furniture" x="{{ cx | minus: 0.8 }}" y="{{ y | plus: 3.9 }}" width="1.6" height="1.3" rx="0.4"/>
+{%- endfor -%}
+{%- else -%}
+{%- assign cell = h | minus: 9 | times: 1.0 | divided_by: n -%}{%- assign long = cell | minus: 0.6 | at_most: 5 -%}
+{%- assign last = n | minus: 1 -%}
+{%- for i in (0..last) -%}{%- assign cy = i | plus: 0.5 | times: cell | plus: y -%}
+<rect class="plan-furniture" x="{{ x | plus: 0.8 }}" y="{{ long | divided_by: -2 | plus: cy }}" width="2.5" height="{{ long }}"/><rect class="plan-furniture" x="{{ x | plus: 3.9 }}" y="{{ cy | minus: 0.8 }}" width="1.3" height="1.6" rx="0.4"/>
+{%- endfor -%}
+{%- endif -%}
+{%- when "hot desks", "office" -%}
+{%- assign least = 5.6 -%}{%- if zone.kind == "hot desks" -%}{%- assign least = 8.5 -%}{%- endif -%}
+{%- assign top = 6.2 -%}{%- if w < 15 -%}{%- assign top = 7.8 -%}{%- endif -%}
+{%- assign room = h | minus: top -%}
+{%- assign cols = w | divided_by: least | floor | at_least: 1 | at_most: n -%}
+{%- if zone.kind == "office" and n > 2 -%}{%- assign half = n | divided_by: 2 | ceil -%}{%- assign cols = cols | at_most: half -%}{%- endif -%}
+{%- assign rows = n | times: 1.0 | divided_by: cols | ceil -%}
+{%- assign cw = w | times: 1.0 | divided_by: cols -%}{%- assign ch = room | times: 1.0 | divided_by: rows -%}
+{%- assign long = cw | minus: 0.8 | at_most: 5 -%}{%- assign deep = ch | times: 0.42 | at_most: 2.5 -%}
+{%- assign last = n | minus: 1 -%}
+{%- for i in (0..last) -%}
+{%- assign col = i | modulo: cols -%}{%- assign row = i | divided_by: cols | floor -%}
+{%- assign cx = col | plus: 0.5 | times: cw | plus: x -%}{%- assign cy = row | times: ch | plus: y | plus: top -%}
+<rect class="plan-furniture" x="{{ long | divided_by: -2 | plus: cx }}" y="{{ cy }}" width="{{ long }}" height="{{ deep }}"/><rect class="plan-furniture" x="{{ cx | minus: 0.8 }}" y="{{ cy | plus: deep | plus: 0.35 }}" width="1.6" height="1.2" rx="0.4"/>
+{%- endfor -%}
+{%- when "meeting room" -%}
+{%- assign top = 6.2 -%}{%- if w < 14 -%}{%- assign top = 8.8 -%}{%- elsif h < 14 -%}{%- assign top = 5.6 -%}{%- endif -%}
+{%- assign room = h | minus: top -%}
+{%- assign ends = n | modulo: 2 -%}{%- if n > 6 -%}{%- assign ends = ends | plus: 2 -%}{%- endif -%}
+{%- assign side = n | minus: ends | divided_by: 2 | floor -%}
+{%- assign mx = w | divided_by: 2.0 | plus: x -%}{%- assign my = room | divided_by: 2.0 | plus: y | plus: top | minus: 0.3 -%}
+{%- assign long = side | times: 2.3 | at_least: 4 -%}{%- assign most = w | minus: 5 -%}{%- assign long = long | at_most: most -%}
+{%- assign deep = room | minus: 4.8 | at_most: 4 | at_least: 1.6 -%}
+{%- assign left = long | divided_by: -2 | plus: mx -%}{%- assign up = deep | divided_by: -2 | plus: my -%}{%- assign down = up | plus: deep -%}
+<rect class="plan-furniture" x="{{ left }}" y="{{ up }}" width="{{ long }}" height="{{ deep }}" rx="0.3"/>
+{%- if side > 0 -%}{%- assign step = long | divided_by: side -%}{%- assign last = side | minus: 1 -%}
+{%- for i in (0..last) -%}{%- assign cx = i | plus: 0.5 | times: step | plus: left -%}
+<rect class="plan-furniture" x="{{ cx | minus: 0.7 }}" y="{{ up | minus: 1.6 }}" width="1.4" height="1.2" rx="0.4"/><rect class="plan-furniture" x="{{ cx | minus: 0.7 }}" y="{{ down | plus: 0.4 }}" width="1.4" height="1.2" rx="0.4"/>
+{%- endfor -%}{%- endif -%}
+{%- if ends > 0 -%}<rect class="plan-furniture" x="{{ left | plus: long | plus: 0.4 }}" y="{{ my | minus: 0.7 }}" width="1.2" height="1.4" rx="0.4"/>{%- endif -%}
+{%- if ends > 1 -%}<rect class="plan-furniture" x="{{ left | minus: 1.6 }}" y="{{ my | minus: 0.7 }}" width="1.2" height="1.4" rx="0.4"/>{%- endif -%}
+{%- when "phone booths" -%}
+{%- assign cols = w | divided_by: 4 | floor | at_least: 1 | at_most: n -%}
+{%- assign rows = n | times: 1.0 | divided_by: cols | ceil -%}
+{%- assign cw = w | times: 1.0 | divided_by: cols -%}{%- assign start = rows | times: -4 | plus: y | plus: h -%}
+{%- assign last = n | minus: 1 -%}
+{%- for i in (0..last) -%}{%- assign col = i | modulo: cols -%}{%- assign row = i | divided_by: cols | floor -%}
+{%- assign bx = col | times: cw | plus: x -%}{%- assign by = row | times: 4 | plus: start -%}
+<rect class="plan-partition" x="{{ bx }}" y="{{ by }}" width="{{ cw }}" height="4"/><circle class="plan-furniture" cx="{{ cw | divided_by: 2 | plus: bx }}" cy="{{ by | plus: 2 }}" r="0.75"/>
+{%- endfor -%}
+{%- when "kitchen" -%}
+{%- assign per = n | divided_by: 2 | floor | at_least: 1 -%}{%- assign last = per | minus: 1 -%}
+{%- assign far = x | plus: w -%}
+<rect class="plan-furniture" x="{{ far | minus: 2.6 }}" y="{{ y | plus: 6.5 }}" width="2" height="{{ h | minus: 7.5 }}"/>
+{%- if h >= w -%}
+{%- assign long = per | times: 2.4 -%}{%- assign most = h | minus: 8.5 -%}{%- assign long = long | at_most: most -%}
+{%- assign tx = w | times: 0.56 | plus: x -%}{%- assign up = y | plus: 7.5 -%}
+<rect class="plan-furniture" x="{{ tx }}" y="{{ up }}" width="3" height="{{ long }}" rx="0.3"/>
+{%- assign step = long | divided_by: per -%}
+{%- for i in (0..last) -%}{%- assign cy = i | plus: 0.5 | times: step | plus: up -%}
+<rect class="plan-furniture" x="{{ tx | minus: 1.6 }}" y="{{ cy | minus: 0.7 }}" width="1.2" height="1.4" rx="0.4"/><rect class="plan-furniture" x="{{ tx | plus: 3.4 }}" y="{{ cy | minus: 0.7 }}" width="1.2" height="1.4" rx="0.4"/>
+{%- endfor -%}
+{%- else -%}
+{%- assign long = per | times: 2.4 -%}{%- assign most = w | minus: 7 -%}{%- assign long = long | at_most: most -%}
+{%- assign left = x | plus: 2 -%}{%- assign ty = y | plus: 8.5 -%}
+<rect class="plan-furniture" x="{{ left }}" y="{{ ty }}" width="{{ long }}" height="3" rx="0.3"/>
+{%- assign step = long | divided_by: per -%}
+{%- for i in (0..last) -%}{%- assign cx = i | plus: 0.5 | times: step | plus: left -%}
+<rect class="plan-furniture" x="{{ cx | minus: 0.7 }}" y="{{ ty | minus: 1.6 }}" width="1.4" height="1.2" rx="0.4"/><rect class="plan-furniture" x="{{ cx | minus: 0.7 }}" y="{{ ty | plus: 3.4 }}" width="1.4" height="1.2" rx="0.4"/>
+{%- endfor -%}
+{%- endif -%}
+{%- endcase -%}
+{%- endif -%}

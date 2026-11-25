@@ -1,0 +1,13 @@
+<section class="bg-base-200 text-base-content">
+  <div class="mx-auto max-w-[84rem] px-5 py-20 md:px-8 md:py-28">
+    <h2 class="title-section">Joining</h2>
+    <ol class="mt-12 grid gap-x-8 gap-y-10 sm:grid-cols-2 xl:grid-cols-4">
+      {%- for step in data.plans-steps %}
+      <li class="step">
+        <h3 class="title-small">{{ step.title }}</h3>
+        <p class="body-copy mt-2">{{ step.text }}</p>
+      </li>
+      {%- endfor %}
+    </ol>
+  </div>
+</section>

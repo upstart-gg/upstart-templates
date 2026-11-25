@@ -1,0 +1,9 @@
+{
+  "alt": "A small office with four wooden desks, a tall window and a glass door standing open",
+  "generated": {
+    "model": "gemini/gemini-nano-banana-2.1",
+    "prompt": "A small private office on the same floor for four people: four wooden desks in two facing pairs with wooden chairs, one tall window in the white brick outer wall, a partition of slim black steel frames and clear glass with a glass door standing open onto the maple floor outside, an old oak filing cabinet. Seen from the open door. Same building, same floor and same light as the reference photograph: the same white-painted brick, the same worn refinished maple floorboards, the same off-white cast-iron columns, dark timber ceiling and tall many-paned windows with pale sky and bare treetops, the same clear bright morning daylight and true colors. Natural architectural interior photograph, straight and level lines, realistic. No people, no computers, no content on any screen, no signs, no logos, no text, no letters, no numbers, no plants, no neon, no posters.",
+    "date": "2026-11-25T12:25:51.585Z",
+    "references": ["/media/river-room.webp"]
+  }
+}

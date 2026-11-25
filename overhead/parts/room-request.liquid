@@ -1,0 +1,51 @@
+<section id="ask" class="scroll-mt-24 bg-base-100 text-base-content">
+  <div class="mx-auto max-w-[84rem] px-5 py-20 md:px-8 md:py-28">
+    <h2 class="title-section">Ask for a room</h2>
+    <div class="mt-10 grid items-start gap-10 lg:grid-cols-12">
+      <form data-prefill hx-post="/_data/room-requests" hx-target="this" hx-swap="outerHTML" hx-status:422="target:#room-request-problems swap:innerHTML" class="flex flex-col gap-9 lg:col-span-8">
+        <fieldset>
+          <legend class="form-part">The room</legend>
+          <div class="mt-4 grid gap-3 sm:grid-cols-3">
+            {%- for zone in data.zones %}{% if zone.kind == "meeting room" %}
+            <label class="choice"><input type="radio" name="room" value="{{ zone.name }}" data-id="{{ zone.id }}" class="radio" required><span><span class="block font-semibold">{{ zone.name }}</span><span class="block text-[0.9375rem]">{{ zone.seats }} seats, {{ zone.price }}</span></span></label>
+            {% endif %}{% endfor %}
+            <label class="choice"><input type="radio" name="room" value="The whole floor" data-id="whole-floor" class="radio" required><span><span class="block font-semibold">The whole floor</span><span class="block text-[0.9375rem]">after 6, from $650</span></span></label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend class="form-part">When, and how many</legend>
+          <div class="mt-2 grid gap-x-5 sm:grid-cols-2">
+            <fieldset class="fieldset"><legend class="fieldset-legend">Date</legend><input name="date" type="date" class="input w-full" required aria-label="Date"></fieldset>
+            <fieldset class="fieldset"><legend class="fieldset-legend">Start</legend><input name="start" type="time" step="900" class="input w-full" required aria-label="Start"></fieldset>
+            <fieldset class="fieldset"><legend class="fieldset-legend">How many hours</legend><input name="hours" type="number" min="1" max="12" class="input w-full" required aria-label="How many hours"></fieldset>
+            <fieldset class="fieldset"><legend class="fieldset-legend">How many people</legend><input name="people" type="number" min="1" max="80" class="input w-full" required aria-label="How many people"></fieldset>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend class="form-part">The setup</legend>
+          <div class="mt-4 grid gap-3 sm:grid-cols-3">
+            <label class="choice"><input type="radio" name="setup" value="boardroom" class="radio" checked><span>Boardroom</span></label>
+            <label class="choice"><input type="radio" name="setup" value="classroom" class="radio"><span>Classroom</span></label>
+            <label class="choice"><input type="radio" name="setup" value="workshop" class="radio"><span>Workshop</span></label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend class="form-part">You</legend>
+          <label class="choice mt-4"><input type="checkbox" name="member" value="true" class="checkbox"><span>I'm a member</span></label>
+          <div class="mt-2 grid gap-x-5 sm:grid-cols-2">
+            <fieldset class="fieldset"><legend class="fieldset-legend">Name</legend><input name="name" type="text" class="input w-full" required maxlength="200" autocomplete="name" aria-label="Name"></fieldset>
+            <fieldset class="fieldset"><legend class="fieldset-legend">Email</legend><input name="email" type="email" class="input w-full" required maxlength="200" autocomplete="email" aria-label="Email"></fieldset>
+            <fieldset class="fieldset sm:col-span-2"><legend class="fieldset-legend">Phone <span class="font-normal text-base-content/70">(if you like)</span></legend><input name="phone" type="tel" class="input w-full" maxlength="30" autocomplete="tel" aria-label="Phone"></fieldset>
+            <fieldset class="fieldset sm:col-span-2"><legend class="fieldset-legend">Anything we should know <span class="font-normal text-base-content/70">(if you like)</span></legend><textarea name="note" rows="3" class="textarea w-full" maxlength="2000" aria-label="Anything we should know"></textarea></fieldset>
+          </div>
+        </fieldset>
+        <div id="room-request-problems" class="empty:hidden"></div>
+        <button class="btn btn-primary btn-lg self-start">Ask for the room</button>
+      </form>
+      <aside class="rounded-box bg-base-200 p-7 md:p-9 lg:sticky lg:top-28 lg:col-span-4">
+        <p class="title-small">We confirm by email within a working day.</p>
+        <p class="body-copy mt-4">Nothing is booked until we do. Members' included hours come off first; the rest goes on your month or is paid by card at the front table.</p>
+      </aside>
+    </div>
+  </div>
+</section>

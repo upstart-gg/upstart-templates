@@ -1,0 +1,9 @@
+{
+  "alt": "A single line of fixed wooden desks under tall windows, with low dividers between the places",
+  "generated": {
+    "model": "gemini/gemini-nano-banana-2.1",
+    "prompt": "The bench row: twelve fixed wooden desks side by side, all in ONE single straight line standing directly against the wall under the tall windows, every desk facing the windows, so that a person sitting there looks out; low wooden dividers between neighbors, a wooden chair tucked under each, small personal things on the desks (a closed sketchbook, a ruler, a jar of pencils, plain folders). Seen obliquely along the line from one end, the window wall with the desks on the left, the open maple floor on the right. No desk stands in the middle of the floor. Same building and same light as the reference photograph: the same white-painted brick, worn refinished maple floorboards, off-white cast-iron columns, dark timber ceiling, the same clear bright morning daylight and true colors. Natural architectural interior photograph, straight and level lines, realistic. No people, no computers, no content on any screen, no signs, no logos, no text, no letters, no numbers, no plants, no neon, no posters.",
+    "date": "2026-11-25T12:28:35.872Z",
+    "references": ["/media/river-room.webp"]
+  }
+}

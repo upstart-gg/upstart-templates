@@ -1,0 +1,25 @@
+{
+  "id": "overhead",
+  "version": "1.0.0",
+  "name": "Overhead",
+  "description": "A coworking floor drawn from above: pick a plan and the rooms it opens light up one after another from the elevator, beside the building's front with its floor lit, rooms by the hour, events and a visit request.",
+  "category": "business",
+  "tags": [
+    "coworking",
+    "coworking space",
+    "shared office",
+    "hot desks",
+    "day pass",
+    "meeting rooms",
+    "office rental",
+    "floor plan",
+    "workspace",
+    "community events"
+  ],
+  "author": {
+    "name": "Upstart",
+    "url": "https://upstart.gg"
+  },
+  "licence": "MIT",
+  "app": "0.2.0"
+}

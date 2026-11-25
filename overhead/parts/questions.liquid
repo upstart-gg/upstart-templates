@@ -1,0 +1,16 @@
+<section class="bg-base-200 text-base-content">
+  <div class="mx-auto grid max-w-[84rem] gap-x-14 gap-y-10 px-5 py-20 md:px-8 md:py-28 lg:grid-cols-12">
+    <div class="lg:col-span-4">
+      <h2 class="title-section">Questions</h2>
+      <p class="body-copy mt-5 max-w-[34ch]">Anything else, call the front table at <a href="tel:+16165550162" class="text-link whitespace-nowrap">(616) 555-0162</a>.</p>
+    </div>
+    <div class="{% if columns == 2 %}grid items-start gap-x-10 md:grid-cols-2 {% endif %}border-t border-base-content/40 lg:col-span-8">
+      {%- for item in items %}
+      <details class="question">
+        <summary><span class="min-w-0 flex-1">{{ item.question }}</span><span class="room-mark" aria-hidden="true"></span></summary>
+        <div class="body-copy reading max-w-[60ch] px-3 pb-6">{{ item.answer }}</div>
+      </details>
+      {%- endfor %}
+    </div>
+  </div>
+</section>

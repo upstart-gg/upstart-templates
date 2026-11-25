@@ -1,0 +1,37 @@
+label: Plans
+fields:
+  - name: name
+    label: Name
+    kind: text
+    required: true
+  - name: price
+    label: Price
+    kind: text
+  - name: period
+    label: Period
+    kind: text
+  - name: description
+    label: In a sentence
+    kind: text
+  - name: hours
+    label: Its hours
+    kind: text
+  - name: meeting_hours
+    label: Its meeting-room hours
+    kind: text
+  - name: features
+    label: What it includes
+    kind: list
+  - name: zones
+    label: The rooms it opens, by name
+    kind: list
+  - name: cta
+    label: Button
+    kind: text
+  - name: href
+    label: Button link
+    kind: link
+  - name: featured
+    label: Most asked for
+    kind: boolean
+order: [day-pass, part-time, full-time, fixed-desk, office, room-by-the-hour]

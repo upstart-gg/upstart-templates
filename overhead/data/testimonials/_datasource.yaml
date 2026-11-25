@@ -1,0 +1,14 @@
+label: Members' words
+fields:
+  - name: name
+    label: Name
+    kind: text
+    required: true
+  - name: role
+    label: Trade and where they sit
+    kind: text
+  - name: quote
+    label: Their words
+    kind: text
+    required: true
+order: [mira, devon, ana]

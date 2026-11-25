@@ -1,0 +1,15 @@
+<section class="bg-base-100 text-base-content">
+  <div class="mx-auto max-w-[84rem] px-5 py-20 md:px-8 md:py-28">
+    <h2 class="title-section">Who's on the floor this winter</h2>
+    <ul class="mono mt-10 border-t border-base-content">
+      {%- for member in data.members %}
+      <li class="directory-line">
+        <span class="min-w-0"><span class="font-semibold">{% if member.link %}<a href="{{ member.link }}" class="text-link" rel="noopener" target="_blank">{{ member.name }}</a>{% else %}{{ member.name }}{% endif %}</span><span class="block text-[0.875rem] text-base-content/80">{{ member.trade }}</span></span>
+        <span class="directory-dots" aria-hidden="true"></span>
+        <span class="shrink-0">{{ member.where }}</span>
+      </li>
+      {%- endfor %}
+    </ul>
+    <p class="body-copy mt-6">Members choose to be listed. Ask at the front table.</p>
+  </div>
+</section>

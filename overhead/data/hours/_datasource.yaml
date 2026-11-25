@@ -1,0 +1,13 @@
+label: Hours
+fields:
+  - name: day
+    label: Days
+    kind: text
+    required: true
+  - name: hours
+    label: Hours
+    kind: text
+  - name: note
+    label: Note
+    kind: text
+order: [weekdays, weekend, members, holidays]

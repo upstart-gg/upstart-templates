@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Plans & passes — Sample Floor</title>
+<meta name="description" content="A day for $25, ten days a month for $155, a desk any day for $265, a fixed desk for $365, offices from $790. Month to month.">
+<meta property="og:title" content="Plans & passes — Sample Floor">
+<meta property="og:description" content="A day for $25, ten days a month for $155, a desk any day for $265, a fixed desk for $365, offices from $790. Month to month.">
+</head>
+<body>
+{% render 'header', page: page %}
+<main>
+{% render 'page-title', title: "Plans & passes", intro: "Month to month, 30 days' notice, no setup fee. Every plan comes with the kitchen, the phone booths and a coffee that's actually good." %}
+{% render 'plan-section', uid: 'plans', large: true %}
+{% render 'plan-rows' %}
+{% render 'with-every-plan' %}
+{% render 'joining' %}
+{% render 'how-it-works' %}
+{% render 'questions', items: data.plans-faq, columns: 2 %}
+{% render 'day-band', title: "Not sure which? Come for a day." %}
+</main>
+{% render 'footer' %}
+</body>
+</html>

@@ -1,0 +1,16 @@
+label: Team
+fields:
+  - name: name
+    label: Name
+    kind: text
+    required: true
+  - name: role
+    label: Role
+    kind: text
+  - name: photo
+    label: Portrait
+    kind: image
+  - name: line
+    label: A few lines
+    kind: text
+order: [lena-brouwer, andre-whitfield, rosa-ibarra, sam-okafor]

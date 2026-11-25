@@ -1,0 +1,22 @@
+{
+  "name": "Overhead floor plan",
+  "kind": "features",
+  "source": "upstart",
+  "description": "The floor from above with a plan picker: the rooms a plan opens light up from the elevator, over the list of rooms with what each holds and costs, and a dated line on the offices.",
+  "tags": ["features", "floor plan", "plans", "pricing", "rooms", "coworking"],
+  "mood": ["professional", "minimal"],
+  "synonyms": [
+    "floor plan",
+    "plan picker",
+    "rooms by plan",
+    "office map",
+    "plan des lieux",
+    "formules et salles",
+    "plan interactif",
+    "tarifs coworking"
+  ],
+  "data": {
+    "name": "zones",
+    "family": "collection"
+  }
+}

@@ -1,0 +1,26 @@
+<section class="overflow-x-clip bg-base-200 text-base-content" aria-labelledby="walk-heading">
+  <div class="mx-auto max-w-[84rem] px-5 py-20 md:px-8 md:py-28" data-carousel>
+    <div class="flex flex-wrap items-end justify-between gap-x-10 gap-y-6">
+      <h2 id="walk-heading" class="title-section">A walk across the floor</h2>
+      <div class="flex items-center gap-4">
+        <p class="mono text-[0.875rem] tabular-nums" aria-live="polite"><span data-slot="now">1</span> of <span data-slot="all">{{ data.gallery.size }}</span></p>
+        <div class="flex gap-2">
+          <a href="#walk-1" class="btn btn-outline btn-square" data-carousel-prev aria-label="Previous room"><svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20 12H4m6-6-6 6 6 6"/></svg></a>
+          <a href="#walk-{{ data.gallery.size }}" class="btn btn-outline btn-square" data-carousel-next aria-label="Next room"><svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="walk-viewport mt-10" data-carousel-viewport data-reveal tabindex="0" role="region" aria-labelledby="walk-heading">
+      <ul class="walk-track">
+        {%- for item in data.gallery %}
+        <li id="walk-{{ forloop.index }}" class="walk-slide">
+          <figure>
+            {% if item.image %}<img src="{{ item.image }}" class="aspect-[4/3] w-full rounded-box object-cover" draggable="false">{% else %}<div class="aspect-[4/3] w-full rounded-box bg-secondary"></div>{% endif %}
+            <figcaption class="mt-4 leading-snug"><span class="heading block text-[1.375rem] font-medium">{{ item.room }}</span><span class="body-copy mt-1 block">{{ item.caption }}</span></figcaption>
+          </figure>
+        </li>
+        {%- endfor %}
+      </ul>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,22 @@
+{
+  "name": "Overhead walk",
+  "kind": "gallery",
+  "source": "upstart",
+  "description": "A walk across the floor: photos with their room's name, dragged by a thumb or the pointer, with previous and next buttons and a count.",
+  "tags": ["gallery", "carousel", "photos", "rooms", "tour"],
+  "mood": ["friendly", "minimal"],
+  "synonyms": [
+    "photo carousel",
+    "photo walk",
+    "room photos",
+    "slider",
+    "visite en photos",
+    "carrousel",
+    "galerie",
+    "photos des salles"
+  ],
+  "data": {
+    "name": "gallery",
+    "family": "collection"
+  }
+}

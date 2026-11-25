@@ -1,0 +1,26 @@
+label: Who's on the floor
+fields:
+  - name: name
+    label: Name
+    kind: text
+    required: true
+  - name: trade
+    label: Trade
+    kind: text
+  - name: where
+    label: Where they sit
+    kind: text
+  - name: link
+    label: Their site
+    kind: link
+order:
+  [
+    marrow-and-may,
+    dunes-and-daughters,
+    kestrel-trail-maps,
+    slow-ferry-films,
+    fallow-and-finch,
+    mira-vance,
+    first-page-grants,
+    okay-kettle,
+  ]

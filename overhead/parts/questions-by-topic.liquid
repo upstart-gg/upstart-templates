@@ -1,0 +1,21 @@
+<section class="bg-base-200 text-base-content">
+  <div class="mx-auto max-w-[84rem] px-5 py-20 md:px-8 md:py-28">
+    <h2 class="title-section">Questions</h2>
+    <div class="mt-10 grid gap-x-12 gap-y-12 lg:grid-cols-3">
+      {%- assign topics = data.visit-faq | map: "topic" | uniq -%}
+      {%- for topic in topics %}
+      <div>
+        <h3 class="title-small">{{ topic }}</h3>
+        <div class="mt-5 border-t border-base-content/40">
+          {%- for item in data.visit-faq %}{% if item.topic == topic %}
+          <details class="question">
+            <summary><span class="min-w-0 flex-1">{{ item.question }}</span><span class="room-mark" aria-hidden="true"></span></summary>
+            <div class="body-copy reading px-3 pb-6">{{ item.answer }}</div>
+          </details>
+          {% endif %}{% endfor %}
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,9 @@
+{
+  "alt": "Four plywood phone booths in a row, each with a glass door, a stool and a small lamp",
+  "generated": {
+    "model": "gemini/gemini-nano-banana-2.1",
+    "prompt": "A row of four phone booths on the same floor, built in plain pale maple plywood against a white wall, each a tall narrow cabinet with a clear glass door, inside each a small shelf, a wooden stool and a little warm lamp that is lit; the second door stands open. Seen straight on from the front, the maple floor before them. Same building, same floor and same light as the reference photograph: the same white-painted brick, the same worn refinished maple floorboards, the same off-white cast-iron columns, dark timber ceiling and tall many-paned windows with pale sky and bare treetops, the same clear bright morning daylight and true colors. Natural architectural interior photograph, straight and level lines, realistic. No people, no computers, no content on any screen, no signs, no logos, no text, no letters, no numbers, no plants, no neon, no posters.",
+    "date": "2026-11-25T12:26:17.757Z",
+    "references": ["/media/river-room.webp"]
+  }
+}

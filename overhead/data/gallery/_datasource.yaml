@@ -1,0 +1,13 @@
+label: A walk across the floor
+fields:
+  - name: room
+    label: Room
+    kind: text
+    required: true
+  - name: image
+    label: Photo
+    kind: image
+  - name: caption
+    label: Caption
+    kind: text
+order: [river-room, bench-row, office-4, showroom, phone-booths, kitchen]
